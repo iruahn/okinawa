@@ -1,269 +1,188 @@
 <!-- Redeploy github pages -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#123b45">
 <title>오키나와 6인 가족여행 | 2026.11.24–28</title>
 <style>
-:root{--ink:#17343a;--muted:#61777a;--teal:#176b68;--teal2:#dff1ed;--sand:#f5f1e8;--paper:#fffefa;--line:#e5e6df;--orange:#d87945;--blue:#e9f1f6;--shadow:0 10px 30px rgba(23,52,58,.08)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--sand);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.6}
-header{background:linear-gradient(135deg,#123b45,#176b68);color:white;padding:34px 20px 28px}
-.wrap{max-width:1080px;margin:auto;padding:0 18px}
-.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.8;font-weight:700}
-h1{font-size:clamp(27px,5vw,42px);line-height:1.2;margin:10px 0}
-header p{margin:10px 0 0;color:#d8ebe7}
-.hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.pill{border:1px solid #ffffff55;background:#ffffff16;border-radius:99px;padding:6px 11px;font-size:13px}
-main{padding:22px 0 60px}
-.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-2px}
-.stat{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:15px;box-shadow:var(--shadow)}
-.stat b{display:block;font-size:22px;color:var(--teal)}.stat span{font-size:12px;color:var(--muted)}
-.notice{margin:18px 0;background:#fff6e9;border:1px solid #f0d7b8;border-radius:14px;padding:14px 16px;font-size:14px}
-nav{position:sticky;top:0;z-index:10;background:#f5f1e8ee;backdrop-filter:blur(10px);padding:10px 0;border-bottom:1px solid var(--line);margin:20px 0}
-.navinner{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}.navinner button{white-space:nowrap;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:99px;padding:9px 14px;font-weight:700;cursor:pointer}.navinner button.active{background:var(--teal);color:white;border-color:var(--teal)}
-section{scroll-margin-top:82px;margin:26px 0}
-.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:14px}
-h2{font-size:23px;margin:0}.sub{color:var(--muted);font-size:13px}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);margin:12px 0}
-.daytop{display:flex;gap:12px;align-items:center;margin-bottom:12px}
-.daynum{width:48px;height:48px;border-radius:14px;background:var(--teal2);color:var(--teal);display:grid;place-items:center;font-weight:800;font-size:17px;flex:none}
-.daytop h3{margin:0;font-size:18px}.daytop p{margin:2px 0 0;color:var(--muted);font-size:13px}
-.tag{display:inline-block;background:var(--blue);color:#365c6b;border-radius:7px;padding:3px 8px;font-size:11px;font-weight:700;margin:3px 4px 3px 0}
-.timeline{list-style:none;padding:0;margin:12px 0 0}.timeline li{display:grid;grid-template-columns:92px 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--line)}.timeline time{font-weight:800;color:var(--teal);font-variant-numeric:tabular-nums;font-size:14px}.timeline strong{display:block}.timeline small{display:block;color:var(--muted);font-size:13px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.callout{background:var(--teal2);border-radius:13px;padding:13px 15px;font-size:14px;margin-top:12px}
-.warn{background:#fff2e9;border:1px solid #f1d4c2;border-radius:13px;padding:13px 15px;font-size:14px;margin-top:12px}
-table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-size:12px}
-a{color:var(--teal);font-weight:700;text-decoration:none}a:hover{text-decoration:underline}
-.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.links a{border:1px solid var(--line);border-radius:10px;padding:8px 11px;background:white;font-size:13px}
-.checklist label{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;cursor:pointer}.checklist input{accent-color:var(--teal);width:18px;height:18px;margin-top:2px;flex:none}.checklist input:checked+span{text-decoration:line-through;color:#879494}
-.progress{height:8px;background:#e7ebe7;border-radius:99px;overflow:hidden;margin:12px 0 4px}.progress>div{height:100%;background:var(--teal);width:0;transition:width .2s}
-details{border-top:1px solid var(--line);padding:12px 0}summary{font-weight:800;cursor:pointer}
-footer{text-align:center;color:var(--muted);font-size:12px;padding:25px 18px 40px}
-@media(max-width:700px){.quick{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}.card{padding:15px}.timeline li{grid-template-columns:78px 1fr}.section-head{align-items:start;flex-direction:column}}
-@media print{nav,.no-print{display:none!important}body{background:white}.card,.stat{box-shadow:none;break-inside:avoid}header{print-color-adjust:exact}}
+:root{--ink:#17343a;--muted:#61777a;--sea:#123b45;--sea2:#1d5962;--sand:#f5f0e6;--paper:#fffdf8;--line:#e6e0d5;--coral:#e98262;--mint:#e5f1ec;--blue:#eaf2f4;--shadow:0 12px 34px rgba(23,52,58,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7f6f1;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.6}
+a{color:#176b78;text-underline-offset:3px}button{font:inherit;cursor:pointer}
+.hero{background:linear-gradient(130deg,#123b45 0%,#1d5962 65%,#367b7c 100%);color:#fff;padding:42px 22px 34px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:360px;height:360px;border:1px solid #ffffff26;border-radius:50%;right:-90px;top:-190px;box-shadow:0 0 0 35px #ffffff0b,0 0 0 75px #ffffff08}
+.wrap{max-width:1120px;margin:auto}.eyebrow{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#b8d9d5;font-weight:700}.hero h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.12;margin:12px 0}.hero p{margin:0;color:#d9e9e6}.hero-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.chip{border:1px solid #ffffff45;border-radius:999px;padding:6px 12px;font-size:.85rem;color:#f5fbfa}
+main{max-width:1120px;margin:0 auto;padding:22px 18px 70px}.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-2px}.quick{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}.quick b{display:block;font-size:1.15rem}.quick span{font-size:.82rem;color:var(--muted)}
+.nav{display:flex;gap:8px;overflow:auto;padding:22px 0 14px;position:sticky;top:0;background:#f7f6f1;z-index:5}.nav button,.subnav button{white-space:nowrap;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:9px 15px;font-weight:650}.nav button.active,.subnav button.active{background:var(--sea);color:white;border-color:var(--sea)}
+section.panel{display:none;animation:fade .2s ease}section.panel.active{display:block}@keyframes fade{from{opacity:.45;transform:translateY(4px)}to{opacity:1;transform:none}}
+h2{font-size:1.65rem;margin:12px 0 6px;letter-spacing:-.03em}h3{font-size:1.12rem;margin:0 0 8px}p.lead{color:var(--muted);margin:0 0 20px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:8px 0 16px}.section-head small{color:var(--muted)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);margin:12px 0}.callout{background:var(--mint);border:1px solid #d2e5dc;border-radius:15px;padding:15px 17px;margin:14px 0}.warning{background:#fff2e9;border-color:#f1d7c7}.blue{background:var(--blue);border-color:#d7e5e8}
+.day-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.day-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}.day-top{padding:16px 18px;background:var(--sea);color:#fff}.day-top small{color:#c7dfdc}.day-top h3{font-size:1.15rem;margin:3px 0}.day-body{padding:15px 18px}.route{font-size:.9rem;color:var(--muted);margin-bottom:12px}.timeline{list-style:none;margin:0;padding:0}.timeline li{display:grid;grid-template-columns:86px 1fr;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.92rem}.timeline li:last-child{border:0}.time{font-weight:750;color:var(--sea2);font-variant-numeric:tabular-nums}.note{font-size:.84rem;color:var(--muted)}
+.tag{display:inline-block;border-radius:6px;padding:2px 7px;font-size:.75rem;font-weight:700;background:#edf1ed;color:#47655d;margin-right:4px}.tag.fixed{background:#e3eff1;color:#245b64}.tag.flex{background:#fff0e7;color:#9a563d}
+.subnav{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.schedule{display:none}.schedule.active{display:block}
+table{width:100%;border-collapse:collapse;font-size:.91rem}th,td{text-align:left;padding:10px 9px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-size:.8rem;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}.place{display:flex;justify-content:space-between;gap:12px;align-items:start}.place a{font-size:.85rem;white-space:nowrap}
+.checklist label{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line);cursor:pointer}.checklist input{margin-top:5px;accent-color:var(--sea);width:18px;height:18px;flex:none}.checklist input:checked+span{text-decoration:line-through;color:#8b9996}.progress{height:8px;background:#e8e8e1;border-radius:20px;overflow:hidden;margin:10px 0}.progress div{height:100%;width:0;background:#43877b;transition:width .2s}
+details{border-bottom:1px solid var(--line);padding:12px 0}summary{font-weight:700;cursor:pointer}details p{margin:8px 0 0;color:var(--muted);font-size:.92rem}
+.small-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.small-card{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:15px}
+.footer{margin-top:28px;padding:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}.btn{border:0;background:var(--coral);color:white;border-radius:10px;padding:9px 13px;font-weight:700}.muted{color:var(--muted)}.pill{display:inline-block;background:#f0eee7;padding:4px 9px;border-radius:999px;font-size:.78rem;margin:3px 3px 3px 0}
+@media(max-width:760px){.quick-grid{grid-template-columns:repeat(2,1fr)}.day-grid,.cols{grid-template-columns:1fr}.small-grid{grid-template-columns:1fr}.hero{padding-top:32px}.nav{margin:0 -18px;padding-left:18px;padding-right:18px}.section-head{display:block}}
+@media print{body{background:white}.hero{padding:20px}.nav,.btn,.subnav{display:none!important}main{padding:0}.panel{display:block!important;page-break-inside:avoid}.day-card,.card{box-shadow:none;break-inside:avoid}.day-grid{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
-<header>
+<header class="hero">
  <div class="wrap">
   <div class="eyebrow">Family trip planner · Okinawa</div>
   <h1>오키나와 6인 가족여행</h1>
-  <p>함께 즐기고, 무리하지 않고, 여유롭게 기억하는 4박 5일</p>
-  <div class="hero-meta"><span class="pill">2026.11.24(화) – 11.28(토)</span><span class="pill">성인 5명 + 어린이 1명</span><span class="pill">렌터카 이동</span><span class="pill">티웨이항공 예약정보 기준</span></div>
+  <p>함께 즐기고, 무리하지 않고, 좋은 추억을 남기는 4박 5일</p>
+  <div class="hero-meta"><span class="chip">2026.11.24(화) – 11.28(토)</span><span class="chip">성인 5명 + 어린이 1명</span><span class="chip">렌터카 여행</span></div>
  </div>
 </header>
-<main class="wrap">
- <div class="quick">
-  <div class="stat"><b>4박 5일</b><span>여행 기간</span></div>
-  <div class="stat"><b>6명</b><span>성인 5 · 어린이 1</span></div>
-  <div class="stat"><b>2박 + 2박</b><span>르네상스 + 차탄 추천</span></div>
-  <div class="stat"><b>13:00 전</b><span>11/28 렌터카 반납 목표</span></div>
+<main>
+ <div class="quick-grid">
+  <div class="quick"><b>4박 5일</b><span>11월 24일 – 28일</span></div>
+  <div class="quick"><b>르네상스 2박</b><span>11/24 – 11/26 확정</span></div>
+  <div class="quick"><b>차탄 2박 추천</b><span>11/26 – 11/28 숙소 미정</span></div>
+  <div class="quick"><b>6명</b><span>부모님 · 부부 · 딸</span></div>
  </div>
- <div class="notice"><strong>여행의 핵심 동선</strong><br>11/26 북부(만좌모·츄라우미)를 둘러보고 차탄으로 이동 → 11/27 남부 관광 후 차탄에서 저녁 → 11/28 공항 방향으로 이동합니다. 부모님과 아이의 휴식시간을 확보하는 일정입니다.</div>
- <nav class="no-print"><div class="navinner">
-  <button class="active" data-target="overview">한눈에 보기</button><button data-target="itinerary">날짜별 일정</button><button data-target="stays">숙소 선택</button><button data-target="places">관광지 정보</button><button data-target="check">준비 체크</button>
- </div></nav>
- <section id="overview">
-  <div class="section-head"><h2>여행 동선 한눈에 보기</h2><span class="sub">추천안 · 차탄 2박</span></div>
-  <div class="card">
-   <div class="two">
-    <div><span class="tag">11/24–26</span><h3>르네상스 리조트 2박</h3><p>도착 후 휴식, 다음 날은 리조트 액티비티에 집중합니다.</p></div>
-    <div><span class="tag">11/26–28</span><h3>차탄 지역 2박 추천</h3><p>북부 관광 후 이동하고, 아메리칸 빌리지 저녁 시간을 편하게 보냅니다.</p></div>
+ <nav class="nav" aria-label="주요 메뉴">
+  <button class="active" data-tab="overview">여행 한눈에</button>
+  <button data-tab="itinerary">날짜별 일정</button>
+  <button data-tab="backup">예비 일정</button>
+  <button data-tab="stay">숙소 선택</button>
+  <button data-tab="tips">가족 여행 팁</button>
+  <button data-tab="check">준비 체크</button>
+ </nav>
+
+ <section id="overview" class="panel active">
+  <div class="section-head"><div><h2>여행의 큰 그림</h2><p class="lead">북부 관광은 26일에 모으고, 27일은 남부 관광과 차탄 저녁을 즐기는 구성입니다.</p></div></div>
+  <div class="callout"><strong>가장 추천하는 흐름</strong><br>나하공항 → 르네상스 리조트(2박) → 만좌모·츄라우미 → 차탄(2박) → 오키나와 월드·아메리칸 빌리지 → 우미카지 테라스 → 공항</div>
+  <div class="day-grid">
+   <article class="day-card"><div class="day-top"><small>DAY 1 · 11/24 화</small><h3>오키나와 도착</h3></div><div class="day-body"><div class="route">나하공항 → 르네상스 리조트</div><p>입국과 렌터카 수령 후 리조트로 이동합니다. 첫날은 외부 관광 없이 체크인과 휴식에 집중합니다.</p><span class="tag fixed">숙박 르네상스</span></div></article>
+   <article class="day-card"><div class="day-top"><small>DAY 2 · 11/25 수</small><h3>리조트에서 온전히 즐기기</h3></div><div class="day-body"><div class="route">돌핀 프로그램 · 실내 수영장 · 온천(자격 확인)</div><p>이번 여행의 리조트 데이. 프로그램 사이에 충분히 쉬고, 저녁은 리조트에서 보냅니다.</p><span class="tag fixed">전일 리조트 일정</span></div></article>
+   <article class="day-card"><div class="day-top"><small>DAY 3 · 11/26 목</small><h3>만좌모와 츄라우미 수족관</h3></div><div class="day-body"><div class="route">르네상스 → 만좌모 → 츄라우미 → 차탄</div><p>북부 관광을 마친 뒤 차탄으로 이동합니다. 이날은 이동량이 가장 많아 수족관 관람을 우선합니다.</p><span class="tag fixed">차탄 체크인</span></div></article>
+   <article class="day-card"><div class="day-top"><small>DAY 4 · 11/27 금</small><h3>오키나와 월드와 차탄 저녁</h3></div><div class="day-body"><div class="route">차탄 → 오키나와 월드 → 휴식 → 아메리칸 빌리지</div><p>오전 관광 후 숙소에서 쉬었다가 저녁에는 쇼핑과 식사, 야경을 즐깁니다.</p><span class="tag flex">날씨·체력에 따라 조정</span></div></article>
+   <article class="day-card"><div class="day-top"><small>DAY 5 · 11/28 토</small><h3>우미카지 테라스와 귀국</h3></div><div class="day-body"><div class="route">차탄 → 우미카지 → 렌터카 반납 → 나하공항</div><p>오전 짧게 들른 뒤 렌터카를 반납합니다. 공항 이동과 출국 수속 시간을 넉넉히 확보합니다.</p><span class="tag fixed">15:25 출발</span></div></article>
+  </div>
+  <div class="card"><h3>항공편 정보</h3><table><tr><th>날짜</th><th>구간</th><th>시간</th><th>편명</th></tr><tr><td>11/24</td><td>인천 → 나하</td><td>11:50 → 14:25</td><td>TW0281</td></tr><tr><td>11/28</td><td>나하 → 인천</td><td>15:25 → 17:55</td><td>TW0282</td></tr></table><p class="note">위탁수하물은 제공된 예약정보 기준 1인 15kg입니다. 항공사 명칭과 수하물 조건은 예약증에서 최종 확인하세요.</p></div>
+  <div class="callout warning"><strong>가족 모두 기억할 핵심 3가지</strong><br>① 만좌모는 11/26에 방문 · ② 마지막 2박은 차탄 우선 · ③ 11/28 렌터카는 13:00 이전 반납 목표</div>
+ </section>
+
+ <section id="itinerary" class="panel">
+  <h2>날짜별 상세 일정</h2><p class="lead">날짜를 선택하면 시간대별 계획과 꼭 기억할 점을 볼 수 있습니다.</p>
+  <div class="subnav" id="dayButtons">
+   <button class="active" data-day="d1">11/24 화</button><button data-day="d2">11/25 수</button><button data-day="d3">11/26 목</button><button data-day="d4">11/27 금</button><button data-day="d5">11/28 토</button>
+  </div>
+  <div class="schedule active" id="d1"><div class="card"><h3>DAY 1 · 도착과 체크인</h3><ul class="timeline"><li><span class="time">14:25</span><span>나하공항 도착</span></li><li><span class="time">14:25–15:30</span><span>입국심사·수하물 수령·렌터카 이동</span></li><li><span class="time">15:30–16:40</span><span>르네상스 리조트 이동 <span class="note">(교통·수령 지연 시 더 소요)</span></span></li><li><span class="time">16:40–17:30</span><span>체크인 및 휴식</span></li><li><span class="time">18:00</span><span>리조트 구경과 저녁 식사</span></li><li><span class="time">20:00</span><span>야마다 온천 <span class="note">(이용 자격 확인 후)</span></span></li></ul><div class="callout">첫날은 외부 관광을 추가하지 않습니다. 도착이 늦어지면 저녁과 온천도 유연하게 조정하세요.</div></div></div>
+  <div class="schedule" id="d2"><div class="card"><h3>DAY 2 · 르네상스 리조트 전일</h3><ul class="timeline"><li><span class="time">08:00</span><span>조식</span></li><li><span class="time">09:20</span><span>돌핀 프로그램 준비</span></li><li><span class="time">10:00–10:50</span><span>Dolphin Encounter S (Swim Plus) <span class="note">예약 확정·참가조건 재확인</span></span></li><li><span class="time">11:00–12:00</span><span>샤워 및 휴식</span></li><li><span class="time">12:00</span><span>점심 식사</span></li><li><span class="time">14:00–16:00</span><span>실내 수영장</span></li><li><span class="time">16:00–17:30</span><span>객실 휴식</span></li><li><span class="time">18:00</span><span>저녁 식사</span></li><li><span class="time">20:00</span><span>야마다 온천 <span class="note">(이용 자격 확인)</span></span></li></ul><p class="note">돌핀 프로그램 요금·시간·신장 및 어린이 동반 조건은 예약 시점의 공식 안내를 기준으로 최종 확인하세요. Club Savvy Light만으로 온천 이용이 가능한지 반드시 호텔에 확인해야 합니다.</p></div></div>
+  <div class="schedule" id="d3"><div class="card"><h3>DAY 3 · 만좌모 → 츄라우미 → 차탄</h3><ul class="timeline"><li><span class="time">07:30–08:30</span><span>조식</span></li><li><span class="time">08:30–10:30</span><span>짐 정리 및 여유 시간</span></li><li><span class="time">11:00</span><span>르네상스 체크아웃 및 출발</span></li><li><span class="time">11:30–12:10</span><span>만좌모 관람 (약 40분)</span></li><li><span class="time">12:15–13:00</span><span>점심 식사 (온나 인근)</span></li><li><span class="time">13:00–14:10</span><span>츄라우미 수족관 이동</span></li><li><span class="time">14:10–17:15</span><span>츄라우미 수족관 관람</span></li><li><span class="time">17:30–19:10</span><span>차탄 이동</span></li><li><span class="time">19:10 이후</span><span>숙소 체크인 및 간단한 저녁</span></li></ul><div class="callout warning"><strong>오늘의 최우선은 츄라우미!</strong><br>수족관 최종 입장시간에 늦지 않도록 합니다. 일정이 밀리면 만좌모 체류를 줄이고 점심은 간단히 해결하세요. 26일은 여행 중 이동량이 가장 많은 날입니다.</div><p class="note">츄라우미는 본관 중심 2~2.5시간, 부속시설까지 포함하면 약 3시간을 예상합니다. 북문 P7 주차장 이용을 검토하세요.</p></div></div>
+  <div class="schedule" id="d4"><div class="card"><h3>DAY 4 · 오키나와 월드 → 휴식 → 아메리칸 빌리지</h3><ul class="timeline"><li><span class="time">08:00</span><span>조식</span></li><li><span class="time">09:00</span><span>차탄 출발</span></li><li><span class="time">10:00–10:15</span><span>오키나와 월드 도착</span></li><li><span class="time">10:30–11:00</span><span>슈퍼 에이사 공연 (공연시간 재확인)</span></li><li><span class="time">11:00–12:30</span><span>왕국촌 및 옥천동 선택 관람</span></li><li><span class="time">12:30–13:20</span><span>점심</span></li><li><span class="time">13:20–14:30</span><span>차탄 복귀</span></li><li><span class="time">14:30–16:30</span><span>숙소에서 휴식</span></li><li><span class="time">17:00–20:30</span><span>아메리칸 빌리지 저녁·쇼핑·야경</span></li></ul><div class="callout">부모님이 동굴의 계단과 경사를 부담스러워하시면 옥천동은 생략하고 왕국촌과 공연 위주로 관람해도 충분합니다. 숙소가 도보권이면 저녁에 차를 운전하지 않아도 됩니다.</div></div></div>
+  <div class="schedule" id="d5"><div class="card"><h3>DAY 5 · 우미카지 테라스 → 귀국</h3><ul class="timeline"><li><span class="time">07:30–08:30</span><span>조식</span></li><li><span class="time">09:00–09:30</span><span>체크아웃</span></li><li><span class="time">09:30</span><span>차탄 출발</span></li><li><span class="time">10:20–11:40</span><span>우미카지 테라스 산책·쇼핑·이른 점심</span></li><li><span class="time">11:45–12:00</span><span>우미카지 출발</span></li><li><span class="time">12:00–12:30</span><span>주유 및 렌터카 영업소 이동</span></li><li><span class="time">12:30–13:00</span><span>렌터카 반납 완료 목표</span></li><li><span class="time">13:00–13:30</span><span>공항 셔틀 이동</span></li><li><span class="time">13:30–15:00</span><span>체크인·수하물·출국 수속</span></li><li><span class="time">15:25</span><span>나하공항 출발 (TW0282)</span></li></ul><div class="callout warning"><strong>귀국일은 공항 시간이 최우선입니다.</strong><br>렌터카 업체가 더 이른 반납을 요구하면 그 규정을 따르세요. 우미카지 체류를 줄이거나 생략하고, 국제선 수속 시간을 확보합니다.</div></div></div>
+ </section>
+
+ <section id="backup" class="panel">
+  <h2>날씨와 컨디션에 따른 예비 일정</h2><p class="lead">예비 관광지는 “추가로 다 가는 곳”이 아니라, 기존 일정이 취소되거나 여유가 생겼을 때 고르는 대안입니다.</p>
+  <div class="callout warning">렌터카는 1대이므로 두 그룹이 동시에 다른 장소로 움직이기는 어렵습니다. 가능하면 한 곳을 골라 함께 이동하세요.</div>
+  <div class="subnav" id="backupButtons"><button class="active" data-back="b25">11/25 리조트 주변</button><button data-back="b26">11/26 수족관 주변</button><button data-back="b27">11/27 일정 대체</button><button data-back="b28">11/28 귀국일</button></div>
+  <div class="schedule active" id="b25"><div class="cols">
+   <div class="card"><div class="place"><h3>비오스의 언덕</h3><a href="https://www.bios-hill.co.jp/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">A그룹 · 자연 체험</span><p>르네상스에서 가까운 아열대 숲과 호수. 유람선과 자연 관찰을 즐길 수 있어 딸과 함께하기 좋은 후보입니다.</p><p class="note">계획상 체류 2~3시간 · 리조트에서 차량 약 10~15분(추정) · 야외 비중 있음</p></div>
+   <div class="card"><div class="place"><h3>류큐무라</h3><a href="https://www.ryukyumura.co.jp/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">B그룹 · 전통문화</span><p>오키나와 전통가옥과 민속문화, 공연·공예 체험을 둘러보는 곳입니다.</p><p class="note">계획상 체류 1.5~2.5시간 · 리조트에서 차량 약 5~10분(추정) · 공연 및 체험 일정 확인</p></div>
+  </div><p class="note">11/25는 돌핀 프로그램과 리조트 일정이 우선입니다. 취소되거나 큰 공백이 생긴 경우에만 고려하세요.</p></div>
+  <div class="schedule" id="b26"><div class="cols">
+   <div class="card"><div class="place"><h3>해양문화관·플라네타리움</h3><a href="https://oki-park.jp/kaiyohaku/en/inst/" target="_blank" rel="noopener">공식 안내 ↗</a></div><span class="tag">A그룹 · 실내 체험</span><p>츄라우미 수족관과 같은 해양박공원 안에 있어 이동을 추가하지 않고 들를 수 있는 후보입니다.</p><p class="note">계획상 45~70분 · 플라네타리움은 상영 회차가 맞을 때만</p></div>
+   <div class="card"><div class="place"><h3>열대드림센터</h3><a href="https://oki-park.jp/kaiyohaku/en/inst/38/" target="_blank" rel="noopener">공식 안내 ↗</a></div><span class="tag">B그룹 · 식물 관람</span><p>열대식물과 난초를 감상하는 온실 중심 시설입니다. 조용한 관람을 선호하는 가족에게 적합합니다.</p><p class="note">계획상 40~60분 · 시설 간 이동과 부모님 컨디션 고려</p></div>
+  </div><p class="note">수족관 관람이 일찍 끝나고 모두 여유가 있을 때만 선택합니다. 16:00 이후 새로운 관광을 시작하지 않는 편이 안전합니다.</p></div>
+  <div class="schedule" id="b27"><div class="cols">
+   <div class="card"><div class="place"><h3>오키나와 어린이왕국</h3><a href="https://www.okzm.jp/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">A그룹 · 동물원</span><p>동물원과 어린이 체험시설이 있어 딸의 동물·놀이 선호에 맞는 오키나와 월드 대체 후보입니다.</p><p class="note">계획상 2~3시간 · 야외 비중 높음 · 보행량 보통~높음</p></div>
+   <div class="card"><div class="place"><h3>현립박물관·미술관</h3><a href="https://okimu.jp/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">B그룹 · 실내 문화</span><p>오키나와의 역사·문화·자연을 실내에서 볼 수 있습니다. 동굴 계단이 부담스러울 때 대안으로 고려하세요.</p><p class="note">계획상 1.5~2시간 · 전시별 운영시간·요금 확인</p></div>
+   <div class="card"><div class="place"><h3>DMM 가리유시 수족관</h3><a href="https://kariyushi-aquarium.com/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">전원 · 우천 대안</span><p>실내 전시 중심의 수족관입니다. 비가 오거나 야외 일정이 어려울 때 전원이 함께 즐기는 대안입니다.</p><p class="note">계획상 1.5~2시간 · 차탄에서 이동시간 여유 필요</p></div>
+   <div class="card"><div class="place"><h3>이온몰 오키나와 라이카무</h3><a href="https://en.aeonmall.global/mall/okinawarycom" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">전원 · 쇼핑/실내</span><p>식사·쇼핑·카페를 한곳에서 해결할 수 있는 실내 중심 대안입니다. 비가 많이 오면 아메리칸 빌리지 대신 선택할 수 있습니다.</p><p class="note">계획상 2~3시간 · 쇼핑몰 규모가 커 보행량은 있을 수 있음</p></div>
+   <div class="card"><div class="place"><h3>동남식물낙원</h3><a href="https://www.southeast-botanical.jp/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">A그룹 · 야간 풍경</span><p>시즌에 따라 야간 일루미네이션을 즐기는 후보입니다. 아메리칸 빌리지와는 대체 일정으로 생각하세요.</p><p class="note">2026/11/27 행사 운영 여부·시간 확인 필수 · 야외 보행</p></div>
+  </div></div>
+  <div class="schedule" id="b28"><div class="cols">
+   <div class="card"><div class="place"><h3>DMM 가리유시 수족관</h3><a href="https://kariyushi-aquarium.com/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">A그룹 · 실내</span><p>우미카지 테라스에 비·강풍이 있을 때 고려할 후보입니다. 귀국일이므로 관람을 짧게 하고 지연 시 생략하세요.</p><p class="note">60~75분 이내로 제한 · 주차/이동 지연 시 즉시 생략</p></div>
+   <div class="card"><div class="place"><h3>이아스 오키나와 도요사키</h3><a href="https://www.iias.jp/okinawa/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">전원 · 실내 쇼핑</span><p>쇼핑·식사·카페를 실내에서 해결하기 좋아 우미카지 테라스의 경사와 계단이 부담스러울 때 대안입니다.</p><p class="note">60~90분 정도 · 렌터카 반납 시간을 먼저 확보</p></div>
+   <div class="card"><div class="place"><h3>아시비나 아울렛</h3><a href="https://www.okinawastory.jp/spot/600001191" target="_blank" rel="noopener">관광 안내 ↗</a></div><span class="tag">B그룹 · 쇼핑</span><p>브랜드 쇼핑을 원할 때 후보입니다. 일부 야외 이동이 있어 강한 비에는 이아스가 더 편리합니다.</p><p class="note">60~90분 · 실제 영업시간 확인</p></div>
+  </div><div class="callout warning">귀국일은 예비 관광을 넣지 않아도 괜찮습니다. 렌터카 업체의 반납 규정과 공항 수속 시간을 우선하세요.</div></div>
+ </section>
+
+ <section id="stay" class="panel">
+  <h2>마지막 2박, 어디에서 잘까?</h2><p class="lead">현재 추천은 차탄입니다. 숙소 예약 전에는 6명 정원, 객실 구성과 주차를 꼭 확인하세요.</p>
+  <div class="card"><div class="place"><h3>1순위 · 차탄</h3><span class="tag fixed">가장 추천</span></div><p>아메리칸 빌리지에서 저녁을 보내기 편하고, 부모님이나 아이가 피곤하면 먼저 숙소로 돌아갈 수 있습니다. 27일 오후 휴식 후 저녁 외출도 수월합니다.</p><ul><li>아메리칸 빌리지 도보 5~10분 권장</li><li>주차 가능, 엘리베이터 여부 확인</li><li>6인 1실 또는 객실 2실 구성 비교</li><li>무료 취소 기한과 총액 확인</li></ul></div>
+  <div class="cols">
+   <div class="card"><h3>2순위 · 나하 / 세나가시마</h3><p>공항과 오키나와 월드 접근은 편리하지만, 츄라우미에서 숙소까지 이동이 길고 아메리칸 빌리지 저녁 후 다시 이동해야 합니다.</p></div>
+   <div class="card"><h3>3순위 · 나고</h3><p>26일 츄라우미 관람 후 이동은 짧지만, 27~28일 남쪽으로 이동하는 거리가 길어 전체 일정에서는 우선순위가 낮습니다.</p></div>
+  </div>
+  <div class="card"><h3>숙소 예약 전 비교표</h3><table><tr><th>확인 항목</th><th>기준</th></tr><tr><td>인원</td><td>성인 5명 + 어린이 1명 모두 숙박 가능</td></tr><tr><td>객실</td><td>넓은 콘도형 1실 또는 커넥팅/인접 객실 2실</td></tr><tr><td>위치</td><td>아메리칸 빌리지 도보권</td></tr><tr><td>편의</td><td>주차장, 엘리베이터, 세탁·식사 편의</td></tr><tr><td>가격</td><td>세금·주차 포함 2박 총액 비교</td></tr><tr><td>조건</td><td>취소·환불 규정, 어린이 요금, 침구 구성</td></tr></table></div>
+ </section>
+
+ <section id="tips" class="panel">
+  <h2>가족 모두 편안하게 여행하기</h2><p class="lead">이번 일정은 관광지를 많이 넣기보다 가족의 체력 차이를 고려해 여유를 두는 것이 핵심입니다.</p>
+  <div class="small-grid">
+   <div class="small-card"><h3>부모님</h3><p>연속 장거리 이동을 줄이고, 화장실·휴식 시간을 확보합니다. 옥천동 동굴은 계단과 경사가 있어 컨디션에 따라 생략해도 좋습니다.</p></div>
+   <div class="small-card"><h3>어린이</h3><p>돌핀 프로그램과 수영장 사이 휴식, 수족관 관람 시간을 충분히 둡니다. 피곤한 저녁에는 간단히 먹고 숙소에서 쉽니다.</p></div>
+   <div class="small-card"><h3>운전자</h3><p>운전시간 외에도 주차·승하차·화장실 시간을 더합니다. 이동이 긴 26일에는 추가 관광을 욕심내지 않습니다.</p></div>
+  </div>
+  <div class="card"><h3>예상 운전시간 (계획용)</h3><table><tr><th>구간</th><th>예상 운전</th><th>일정 배정</th></tr><tr><td>나하공항 → 르네상스</td><td>50~80분</td><td>70~90분</td></tr><tr><td>르네상스 → 만좌모</td><td>25~30분</td><td>35분</td></tr><tr><td>만좌모 → 츄라우미</td><td>60~75분</td><td>80~90분</td></tr><tr><td>츄라우미 → 차탄</td><td>80~100분</td><td>100~120분</td></tr><tr><td>차탄 → 오키나와 월드</td><td>55~70분</td><td>75분</td></tr><tr><td>차탄 → 우미카지</td><td>45~60분</td><td>60~70분</td></tr><tr><td>우미카지 → 나하공항</td><td>약 15분</td><td>20~30분</td></tr></table><p class="note">교통상황을 확정한 값이 아닌 계획용 추정치입니다. 주차와 승하차 시간은 별도입니다.</p></div>
+  <div class="card"><h3>관광지별 권장 체류시간</h3><table><tr><th>장소</th><th>시간</th><th>참고</th></tr><tr><td>만좌모</td><td>30~45분</td><td>짧은 산책</td></tr><tr><td>츄라우미 수족관</td><td>2.5~3시간</td><td>부속시설 포함</td></tr><tr><td>오키나와 월드</td><td>2~3시간</td><td>옥천동 선택</td></tr><tr><td>아메리칸 빌리지</td><td>3~3.5시간</td><td>저녁·쇼핑·야경</td></tr><tr><td>우미카지 테라스</td><td>60~90분</td><td>귀국일 짧게</td></tr></table></div>
+  <div class="card"><h3>기념품 쇼핑 계획</h3><div class="cols"><div><b>11/27 · 아메리칸 빌리지</b><p>이번 여행의 메인 쇼핑 장소. 친스코, 베니이모 타르트, 시사 장식품, 류큐 유리, 공예품, 오리온 굿즈, 비누 등을 둘러봅니다.</p></div><div><b>11/28 · 우미카지 테라스</b><p>빠뜨린 소형 기념품과 선물만 보충합니다. 귀국일에는 대량 쇼핑을 피하고 공항 이동 시간을 확보합니다.</p></div></div></div>
+  <div class="card"><h3>꼭 확인할 운영 조건</h3>
+   <details><summary>야마다 온천 이용 자격</summary><p>모든 투숙객에게 자동 제공되는 시설은 아닙니다. Club Floor, Ryukyu Suite 또는 Club Savvy 대상 조건을 확인하고, Club Savvy Light가 적용되는지 호텔에 직접 문의하세요.</p></details>
+   <details><summary>돌핀 프로그램</summary><p>11월 프로그램 구성, 시작 시간, 요금, 어린이 신장·연령·성인 동반 조건은 바뀔 수 있습니다. 예약 확정 안내를 기준으로 준비하세요.</p></details>
+   <details><summary>츄라우미 수족관</summary><p>11월 운영시간·최종 입장시간을 공식 홈페이지에서 재확인하세요. 수족관 본관 외 돌고래 라군, 바다거북관, 매너티관의 운영시간도 확인하면 좋습니다.</p></details>
+   <details><summary>오키나와 월드</summary><p>공연 시간과 최종 접수시간은 방문 직전에 확인하세요. 옥천동은 계단과 경사 구간이 있어 부모님 컨디션에 따라 관람 여부를 정합니다.</p></details>
+  </div>
+ </section>
+
+ <section id="check" class="panel">
+  <h2>출발 전 준비 체크리스트</h2><p class="lead">체크한 항목은 이 기기 브라우저에 자동 저장됩니다. 가족끼리 진행 상황을 확인할 때 사용하세요.</p>
+  <div class="card"><div class="place"><h3>준비 진행률</h3><button class="btn" id="resetChecks">체크 초기화</button></div><div class="progress"><div id="progressBar"></div></div><p class="note" id="progressText">0 / 0 완료</p></div>
+  <div class="cols">
+   <div class="card checklist"><h3>항공편</h3>
+    <label><input type="checkbox"><span>TW0281 출발·도착 시간 확인</span></label><label><input type="checkbox"><span>TW0282 출발·도착 시간 확인</span></label><label><input type="checkbox"><span>항공사 명칭과 예약번호 확인</span></label><label><input type="checkbox"><span>1인 위탁수하물 15kg 조건 확인</span></label>
    </div>
-   <div class="callout"><strong>추천 순서</strong><br>공항 → 르네상스 → 돌핀 체험 → 만좌모 → 츄라우미 → 차탄 → 오키나와 월드 → 아메리칸 빌리지 → 우미카지 테라스 → 공항</div>
-  </div>
-  <div class="card">
-   <h3>항공편</h3>
-   <table><thead><tr><th>날짜</th><th>구간</th><th>시간</th><th>편명</th></tr></thead><tbody>
-   <tr><td>11/24</td><td>인천 → 나하</td><td>11:50 → 14:25</td><td>TW0281</td></tr>
-   <tr><td>11/28</td><td>나하 → 인천</td><td>15:25 → 17:55</td><td>TW0282</td></tr></tbody></table>
-   <p class="sub">위탁수하물 1인당 15kg(제공된 예약정보 기준). 항공사 명칭과 수하물 조건은 예약증에서 최종 확인하세요.</p>
-  </div>
- </section>
- <section id="itinerary">
-  <div class="section-head"><h2>날짜별 상세 일정</h2><span class="sub">시간은 교통·현장 상황에 따라 조정</span></div>
-  <article class="card">
-   <div class="daytop"><div class="daynum">24</div><div><h3>화요일 · 오키나와 도착</h3><p>공항에서 리조트로 이동하고 충분히 쉬는 날</p></div></div>
-   <span class="tag">숙박: 르네상스 리조트</span><span class="tag">외부 관광 없음</span>
-   <ul class="timeline">
-    <li><time>11:50</time><div><strong>인천공항 출발</strong><small>TW0281</small></div></li>
-    <li><time>14:25</time><div><strong>나하공항 도착</strong><small>입국심사·수하물 수령</small></div></li>
-    <li><time>14:25–15:30</time><div><strong>렌터카 수령</strong><small>수속 및 셔틀 이동시간 여유 확보</small></div></li>
-    <li><time>15:30–17:00</time><div><strong>르네상스 리조트 이동 및 체크인</strong><small>교통과 렌터카 수령 상황에 따라 늦어질 수 있음</small></div></li>
-    <li><time>18:00</time><div><strong>리조트에서 저녁 식사</strong></div></li>
-    <li><time>20:00</time><div><strong>야마다 온천(자격 확인 후)</strong><small>이용 대상 객실·플랜인지 사전 확인</small></div></li>
-   </ul>
-   <div class="warn">첫날은 공항 도착과 렌터카 수령에 변수가 많습니다. 외부 관광을 추가하지 않는 편이 안전합니다.</div>
-  </article>
-  <article class="card">
-   <div class="daytop"><div class="daynum">25</div><div><h3>수요일 · 르네상스 리조트 데이</h3><p>가족 모두 리조트 안에서 여유롭게 즐기는 날</p></div></div>
-   <span class="tag">숙박: 르네상스 리조트</span><span class="tag">종일 리조트</span>
-   <ul class="timeline">
-    <li><time>08:00</time><div><strong>조식</strong></div></li>
-    <li><time>09:20</time><div><strong>돌핀 프로그램 준비</strong><small>참가 조건·집합 장소 재확인</small></div></li>
-    <li><time>10:00–10:50</time><div><strong>Dolphin Encounter S (예약안)</strong><small>프로그램 시간·요금·구성은 예약 확정 내용 우선</small></div></li>
-    <li><time>11:00–12:00</time><div><strong>샤워 및 휴식</strong></div></li>
-    <li><time>12:00</time><div><strong>점심 식사</strong></div></li>
-    <li><time>14:00–16:00</time><div><strong>실내 수영장</strong><small>아이 컨디션에 따라 휴식시간 추가</small></div></li>
-    <li><time>16:00–17:30</time><div><strong>객실 휴식</strong></div></li>
-    <li><time>18:00</time><div><strong>저녁 식사</strong></div></li>
-    <li><time>20:00</time><div><strong>야마다 온천(이용 자격 확인)</strong></div></li>
-   </ul>
-   <div class="warn"><strong>돌핀 체험 확인:</strong> 보고서 조사 당시 안내된 시간·요금·참가 기준은 변경될 수 있습니다. 어린이 키·연령, 보호자 동반 조건, 6명 전체 참여 가능 여부를 리조트에 서면 확인한 뒤 확정하세요.</div>
-  </article>
-  <article class="card">
-   <div class="daytop"><div class="daynum">26</div><div><h3>목요일 · 만좌모 + 츄라우미 수족관</h3><p>여행 중 이동량이 가장 많은 날 · 북부 관광을 마치고 차탄으로</p></div></div>
-   <span class="tag">숙박: 차탄 추천</span><span class="tag">체크아웃</span>
-   <ul class="timeline">
-    <li><time>07:30–08:30</time><div><strong>조식</strong></div></li>
-    <li><time>08:30–10:30</time><div><strong>짐 정리 및 여유시간</strong></div></li>
-    <li><time>11:00</time><div><strong>르네상스 체크아웃·출발</strong></div></li>
-    <li><time>11:30–12:10</time><div><strong><a href="https://www.manzamo.jp/" target="_blank" rel="noopener">만좌모</a></strong><small>30–45분 정도 산책 및 사진</small></div></li>
-    <li><time>12:15–13:00</time><div><strong>점심 식사</strong><small>온나 인근에서 간단히</small></div></li>
-    <li><time>13:00–14:30</time><div><strong>츄라우미 수족관으로 이동</strong><small>계획상 14:00–14:30 도착 목표</small></div></li>
-    <li><time>14:10–17:15</time><div><strong><a href="https://oki-churaumi.jp/en/guide/hour/" target="_blank" rel="noopener">츄라우미 수족관 관람</a></strong><small>본관 및 부속시설 · 최종 입장시간 재확인</small></div></li>
-    <li><time>17:30–19:30</time><div><strong>차탄으로 이동 및 체크인</strong><small>저녁은 숙소 주변에서 간단히</small></div></li>
-   </ul>
-   <div class="warn"><strong>시간이 밀리면:</strong> 츄라우미 관람을 우선하고 만좌모 체류 또는 점심시간을 줄이세요. 수족관 최종 입장시간과 부속시설 운영시간은 방문 직전 공식 공지로 확인해야 합니다.</div>
-   <div class="links"><a href="https://www.manzamo.jp/" target="_blank" rel="noopener">만좌모 공식 사이트 ↗</a><a href="https://oki-churaumi.jp/en/guide/access/" target="_blank" rel="noopener">수족관 주차·접근 ↗</a></div>
-  </article>
-  <article class="card">
-   <div class="daytop"><div class="daynum">27</div><div><h3>금요일 · 오키나와 월드 + 아메리칸 빌리지</h3><p>남부 관광 후 차탄에서 휴식과 저녁 쇼핑</p></div></div>
-   <span class="tag">숙박: 차탄 추천</span><span class="tag">메인 쇼핑</span>
-   <ul class="timeline">
-    <li><time>08:00</time><div><strong>조식</strong></div></li>
-    <li><time>09:00–10:15</time><div><strong>차탄 출발 → 오키나와 월드</strong></div></li>
-    <li><time>10:30–11:00</time><div><strong>슈퍼 에이사 공연(예정)</strong><small>당일 공연시간표 확인</small></div></li>
-    <li><time>11:00–12:30</time><div><strong>왕국촌·옥천동 선택 관람</strong><small>부모님 보행 상태에 따라 동굴 관람 생략 가능</small></div></li>
-    <li><time>12:30–13:20</time><div><strong>점심 식사</strong></div></li>
-    <li><time>13:20–14:30</time><div><strong>차탄 복귀</strong></div></li>
-    <li><time>14:30–16:30</time><div><strong>숙소 휴식</strong><small>부모님·아이 먼저 쉬어도 좋은 시간</small></div></li>
-    <li><time>17:00–20:30</time><div><strong><a href="https://www.okinawa-americanvillage.com/" target="_blank" rel="noopener">아메리칸 빌리지</a></strong><small>저녁·쇼핑·해안 산책·야경</small></div></li>
-   </ul>
-   <div class="callout"><strong>쇼핑 추천 품목</strong><br>친스코, 베니이모 타르트, 시사 장식품, 류큐 유리, 오키나와 공예품, 오리온 굿즈, 향수·비누. 메인 쇼핑은 이 날 하고 귀국일에는 빠뜨린 소품만 보충합니다.</div>
-   <div class="warn">오키나와 월드 공연시간은 변동될 수 있습니다. 옥천동은 계단과 경사 구간이 있어 부모님 컨디션에 따라 왕국촌과 공연 중심으로 조정하세요.</div>
-   <div class="links"><a href="https://www.gyokusendo.co.jp/okinawaworld/showtime/" target="_blank" rel="noopener">공연시간 확인 ↗</a><a href="https://www.gyokusendo.co.jp/okinawaworld/access/" target="_blank" rel="noopener">오키나와 월드 접근 ↗</a></div>
-  </article>
-  <article class="card">
-   <div class="daytop"><div class="daynum">28</div><div><h3>토요일 · 우미카지 테라스 + 귀국</h3><p>공항 근처에서 짧게 즐긴 뒤 여유 있게 출국 수속</p></div></div>
-   <span class="tag">귀국일</span><span class="tag">렌터카 반납 13:00 전 목표</span>
-   <ul class="timeline">
-    <li><time>07:30–08:30</time><div><strong>조식</strong></div></li>
-    <li><time>09:00–09:30</time><div><strong>체크아웃</strong></div></li>
-    <li><time>09:30–10:20</time><div><strong>차탄 → 우미카지 테라스</strong></div></li>
-    <li><time>10:20–11:45</time><div><strong><a href="https://www.umikajiterrace.com/" target="_blank" rel="noopener">우미카지 테라스</a></strong><small>산책·사진·간단한 쇼핑·이른 점심</small></div></li>
-    <li><time>11:45–12:30</time><div><strong>주유 및 렌터카 영업소 이동</strong><small>반납 지점·셔틀 소요시간 확인</small></div></li>
-    <li><time>12:30–13:00</time><div><strong>렌터카 반납 완료 목표</strong></div></li>
-    <li><time>13:00–15:00</time><div><strong>공항 이동·체크인·수하물·출국 수속</strong></div></li>
-    <li><time>15:25</time><div><strong>나하공항 출발</strong><small>TW0282 · 인천 도착 17:55</small></div></li>
-   </ul>
-   <div class="warn">렌터카 업체마다 반납 권장시간과 셔틀 운영이 다릅니다. 업체가 국제선 출발 2시간 이상 전 반납을 요구한다면 우미카지 체류를 줄이거나 생략하세요. 실제 반납 규정이 이 일정의 최우선 기준입니다.</div>
-  </article>
- </section>
- <section id="stays">
-  <div class="section-head"><h2>마지막 2박, 어디에 묵을까?</h2><span class="sub">현재 추천: 차탄</span></div>
-  <div class="card">
-   <table><thead><tr><th>지역</th><th>좋은 점</th><th>아쉬운 점</th><th>판단</th></tr></thead><tbody>
-   <tr><td><strong>차탄</strong></td><td>아메리칸 빌리지 도보 접근, 저녁 일정 편리, 휴식 후 재출발 가능</td><td>26일 수족관에서 숙소까지 이동이 김</td><td><span class="tag">1순위</span></td></tr>
-   <tr><td>나하</td><td>공항·오키나와 월드 접근 편리</td><td>아메리칸 빌리지 왕복 이동 필요</td><td>대안</td></tr>
-   <tr><td>세나가시마</td><td>공항 접근과 온천 선택지</td><td>북부에서 이동이 길고 차탄 저녁 후 복귀 부담</td><td>대안</td></tr>
-   <tr><td>나고</td><td>26일 수족관 관람 후 숙소 이동이 짧음</td><td>27일 남부·차탄, 28일 공항 이동이 길어짐</td><td>조건부</td></tr>
-   <tr><td>모토부</td><td>수족관 접근성 우수</td><td>이후 일정과 공항 이동이 비효율적</td><td>비추천</td></tr>
-   </tbody></table>
-  </div>
-  <div class="two">
-   <div class="card"><h3>차탄 숙소 필수 조건</h3><ul><li>성인 5명 + 어린이 1명 숙박 가능</li><li>객실 2실 또는 넓은 콘도형</li><li>주차 가능 여부 및 비용</li><li>엘리베이터 유무</li><li>아메리칸 빌리지 도보 5–10분권</li><li>취소·환불 규정</li></ul></div>
-   <div class="card"><h3>예약 전 비교할 것</h3><ul><li>2박 총액(세금·주차 포함)</li><li>침대 구성과 침구 추가 가능 여부</li><li>욕실·화장실 개수</li><li>체크인 시간 및 짐 보관</li><li>6인 탑승 렌터카 주차 가능 여부</li></ul></div>
-  </div>
-  <p class="sub">특정 숙소의 객실 재고나 실제 요금은 이 문서에서 확정하지 않았습니다. 6명 숙박 가능 여부와 총액을 예약 사이트에서 확인하세요.</p>
- </section>
- <section id="places">
-  <div class="section-head"><h2>관광지별 핵심 정보</h2><span class="sub">방문 전 공식 사이트에서 재확인</span></div>
-  <div class="card">
-   <table><thead><tr><th>장소</th><th>추천 체류</th><th>가족 동반 팁</th><th>공식 정보</th></tr></thead><tbody>
-   <tr><td><strong>만좌모</strong></td><td>30–45분</td><td>짧은 산책과 사진 위주</td><td><a href="https://www.manzamo.jp/" target="_blank" rel="noopener">공식 사이트 ↗</a></td></tr>
-   <tr><td><strong>츄라우미 수족관</strong></td><td>2.5–3시간</td><td>본관 우선, 주차장·부속시설 이동 고려</td><td><a href="https://oki-churaumi.jp/en/guide/hour/" target="_blank" rel="noopener">운영시간 ↗</a></td></tr>
-   <tr><td><strong>오키나와 월드</strong></td><td>2–3시간</td><td>동굴은 부모님 보행 상태에 따라 선택</td><td><a href="https://www.gyokusendo.co.jp/okinawaworld/fee/" target="_blank" rel="noopener">운영·요금 ↗</a></td></tr>
-   <tr><td><strong>아메리칸 빌리지</strong></td><td>3–3.5시간</td><td>저녁·쇼핑·야경, 숙소 도보권 권장</td><td><a href="https://www.okinawa-americanvillage.com/" target="_blank" rel="noopener">공식 사이트 ↗</a></td></tr>
-   <tr><td><strong>우미카지 테라스</strong></td><td>60–90분</td><td>경사·계단, 귀국일 일정에 여유 확보</td><td><a href="https://www.umikajiterrace.com/" target="_blank" rel="noopener">공식 사이트 ↗</a></td></tr>
-   </tbody></table>
-  </div>
-  <div class="card">
-   <h3>예상 운전시간 (계획용 추정치)</h3>
-   <table><thead><tr><th>구간</th><th>예상 시간</th><th>계획 시 배정</th></tr></thead><tbody>
-   <tr><td>나하공항 → 르네상스</td><td>50–80분</td><td>70–90분</td></tr>
-   <tr><td>르네상스 → 만좌모</td><td>25–30분</td><td>35분</td></tr>
-   <tr><td>만좌모 → 츄라우미</td><td>60–75분</td><td>80–90분</td></tr>
-   <tr><td>츄라우미 → 차탄</td><td>80–100분</td><td>100–120분</td></tr>
-   <tr><td>차탄 → 오키나와 월드</td><td>55–70분</td><td>75분</td></tr>
-   <tr><td>차탄 → 우미카지 테라스</td><td>45–60분</td><td>60–70분</td></tr>
-   <tr><td>우미카지 → 나하공항</td><td>약 15분</td><td>20–30분</td></tr>
-   </tbody></table>
-   <p class="sub">교통정체, 주차장 진입, 승하차·화장실 시간은 별도입니다. 실시간 내비게이션 기준으로 출발시각을 조정하세요.</p>
-  </div>
-  <div class="card">
-   <h3>가족 구성원별 배려 포인트</h3>
-   <div class="two"><div><strong>부모님</strong><ul><li>연속 장거리 이동 뒤 휴식 확보</li><li>옥천동 동굴 관람은 현장 컨디션으로 결정</li><li>관광지마다 화장실·앉을 곳 확인</li></ul></div><div><strong>어린이</strong><ul><li>돌핀 프로그램 키·연령·보호자 규정 확인</li><li>수영장과 수족관 사이 충분한 휴식</li><li>늦은 저녁은 숙소에서 일찍 마무리 가능하게</li></ul></div></div>
-  </div>
- </section>
- <section id="check">
-  <div class="section-head"><h2>예약·출발 전 체크리스트</h2><span class="sub">체크 상태는 이 기기 브라우저에 저장됩니다</span></div>
-  <div class="card">
-   <div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><strong>준비 진행률</strong><span id="count" class="sub">0 / 20 완료</span></div>
-   <div class="progress"><div id="bar"></div></div>
-   <div class="checklist" id="checks">
-    <label><input type="checkbox"><span>TW0281·TW0282 항공편 시간 및 항공사 명칭 확인</span></label>
-    <label><input type="checkbox"><span>1인당 위탁수하물 15kg 조건 확인</span></label>
-    <label><input type="checkbox"><span>르네상스 11/24–26 숙박 예약 확인</span></label>
-    <label><input type="checkbox"><span>11/25 돌핀 프로그램 예약 확정</span></label>
-    <label><input type="checkbox"><span>어린이 키·연령·보호자 동반 조건 확인</span></label>
-    <label><input type="checkbox"><span>6명 모두 참여 가능한 인원 구성 확인</span></label>
-    <label><input type="checkbox"><span>야마다 온천 이용 자격을 객실 플랜으로 확인</span></label>
-    <label><input type="checkbox"><span>실내 수영장·식당 운영 및 예약조건 확인</span></label>
-    <label><input type="checkbox"><span>차탄 숙소 2박 예약 및 6인 숙박 가능 여부 확인</span></label>
-    <label><input type="checkbox"><span>차탄 숙소 주차·엘리베이터·침구 구성 확인</span></label>
-    <label><input type="checkbox"><span>렌터카 6명 탑승 및 수하물 적재공간 확인</span></label>
-    <label><input type="checkbox"><span>렌터카 반납 영업소·셔틀·반납 권장시간 확인</span></label>
-    <label><input type="checkbox"><span>국제운전면허증 및 운전 자격 확인</span></label>
-    <label><input type="checkbox"><span>만좌모 운영시간 확인</span></label>
-    <label><input type="checkbox"><span>츄라우미 운영시간·최종 입장·주차장 확인</span></label>
-    <label><input type="checkbox"><span>오키나와 월드 공연시간 및 운영시간 확인</span></label>
-    <label><input type="checkbox"><span>옥천동 관람 여부를 부모님과 상의</span></label>
-    <label><input type="checkbox"><span>우미카지 테라스 음식점 운영시간 확인</span></label>
-    <label><input type="checkbox"><span>귀국일 주유소와 렌터카 반납 동선 확인</span></label>
-    <label><input type="checkbox"><span>여행 전날 날씨·교통·시설 공지 재확인</span></label>
+   <div class="card checklist"><h3>르네상스 리조트</h3>
+    <label><input type="checkbox"><span>11/24~26 숙박 예약 확인</span></label><label><input type="checkbox"><span>11/25 돌핀 엔카운터 S 예약 확정</span></label><label><input type="checkbox"><span>어린이 참가 조건·준비물 확인</span></label><label><input type="checkbox"><span>실내 수영장 운영시간 확인</span></label><label><input type="checkbox"><span>야마다 온천 이용 자격 확인</span></label><label><input type="checkbox"><span>조식·식당 예약 및 이용조건 확인</span></label>
    </div>
-   <button id="reset" class="no-print" style="margin-top:14px;border:1px solid var(--line);background:white;border-radius:9px;padding:8px 12px;color:var(--muted);cursor:pointer">체크 초기화</button>
-  </div>
- </section>
- <section>
-  <div class="section-head"><h2>가족과 공유할 공식 링크</h2></div>
-  <div class="card">
-   <div class="links">
-    <a href="https://renaissance-okinawa.com/en/pages/activity-information-list" target="_blank" rel="noopener">르네상스 액티비티 ↗</a>
-    <a href="https://renaissance-okinawa.com/en/pages/facilities/" target="_blank" rel="noopener">르네상스 시설·온천 ↗</a>
-    <a href="https://oki-churaumi.jp/en/guide/hour/" target="_blank" rel="noopener">츄라우미 운영시간 ↗</a>
-    <a href="https://www.gyokusendo.co.jp/okinawaworld/showtime/" target="_blank" rel="noopener">오키나와 월드 공연 ↗</a>
-    <a href="https://www.umikajiterrace.com/accessguide/" target="_blank" rel="noopener">우미카지 접근·주차 ↗</a>
-    <a href="https://www.naha-airport.co.jp/flight/route/international_departure/" target="_blank" rel="noopener">나하공항 국제선 출발 ↗</a>
+   <div class="card checklist"><h3>마지막 2박 숙소</h3>
+    <label><input type="checkbox"><span>차탄 지역 숙소 검색</span></label><label><input type="checkbox"><span>6명 숙박 가능 여부 확인</span></label><label><input type="checkbox"><span>객실 1실 또는 2실 구성 비교</span></label><label><input type="checkbox"><span>주차·엘리베이터 확인</span></label><label><input type="checkbox"><span>아메리칸 빌리지 도보거리 확인</span></label><label><input type="checkbox"><span>2박 총액과 취소·환불 조건 확인</span></label>
+   </div>
+   <div class="card checklist"><h3>렌터카</h3>
+    <label><input type="checkbox"><span>6명 탑승 및 수하물 적재공간 확인</span></label><label><input type="checkbox"><span>공항 셔틀·영업소 위치 확인</span></label><label><input type="checkbox"><span>28일 반납 권장시간 확인</span></label><label><input type="checkbox"><span>반납 전 주유소 위치 확인</span></label><label><input type="checkbox"><span>국제선 출발 전 반납 규정 확인</span></label>
+   </div>
+   <div class="card checklist"><h3>관광지·예비 일정</h3>
+    <label><input type="checkbox"><span>만좌모 운영시간 확인</span></label><label><input type="checkbox"><span>츄라우미 운영시간·최종 입장 확인</span></label><label><input type="checkbox"><span>츄라우미 P7 주차장 위치 확인</span></label><label><input type="checkbox"><span>오키나와 월드 공연시간 확인</span></label><label><input type="checkbox"><span>옥천동 관람 여부 가족과 결정</span></label><label><input type="checkbox"><span>우미카지 테라스 영업시간 확인</span></label><label><input type="checkbox"><span>우천 시 공통 대안 1곳 정하기</span></label>
+   </div>
+   <div class="card checklist"><h3>가족별 준비</h3>
+    <label><input type="checkbox"><span>부모님 보행 가능거리와 휴식 필요 확인</span></label><label><input type="checkbox"><span>딸의 동물원·수족관 선호도 확인</span></label><label><input type="checkbox"><span>렌터카 1대 기준 가족 이동 방식 합의</span></label><label><input type="checkbox"><span>여권·운전면허·국제운전면허 등 확인</span></label><label><input type="checkbox"><span>여행자보험 및 비상연락처 확인</span></label>
    </div>
   </div>
  </section>
+
+ <footer class="footer">
+  <b>공식 정보 확인 링크</b><br>
+  <a href="https://renaissance-okinawa.com/en/pages/activity-information-list" target="_blank" rel="noopener">르네상스 액티비티</a> ·
+  <a href="https://renaissance-okinawa.com/en/pages/facilities/" target="_blank" rel="noopener">르네상스 시설</a> ·
+  <a href="https://www.manzamo.jp/" target="_blank" rel="noopener">만좌모</a> ·
+  <a href="https://oki-churaumi.jp/en/guide/hour/" target="_blank" rel="noopener">츄라우미 운영시간</a> ·
+  <a href="https://www.gyokusendo.co.jp/okinawaworld/showtime/" target="_blank" rel="noopener">오키나와 월드 공연</a> ·
+  <a href="https://www.okinawa-americanvillage.com/" target="_blank" rel="noopener">아메리칸 빌리지</a> ·
+  <a href="https://www.umikajiterrace.com/" target="_blank" rel="noopener">우미카지 테라스</a>
+  <p>이 페이지의 시간과 이동시간은 제공된 조사 보고서를 바탕으로 만든 계획용 안내입니다. 실제 운영시간·요금·교통·예약 조건은 변동될 수 있으므로 출발 전 공식 사이트와 예약처에서 확인하세요.</p>
+  <button class="btn" onclick="window.print()">일정 인쇄 / PDF 저장</button>
+ </footer>
 </main>
-<footer>오키나와 가족여행 계획안 · 2026년 11월 기준으로 작성<br>운영시간·요금·교통시간은 변경될 수 있으므로 예약 및 방문 직전 공식 안내를 확인하세요.</footer>
 <script>
-const navButtons=[...document.querySelectorAll('nav button')];
-navButtons.forEach(b=>b.addEventListener('click',()=>{document.getElementById(b.dataset.target).scrollIntoView({behavior:'smooth'});navButtons.forEach(x=>x.classList.toggle('active',x===b))}));
-const checks=[...document.querySelectorAll('#checks input')], key='okinawa-family-checks-2026';
-try{const saved=JSON.parse(localStorage.getItem(key)||'[]');checks.forEach((c,i)=>c.checked=!!saved[i])}catch(e){}
-function update(){const n=checks.filter(c=>c.checked).length;document.getElementById('count').textContent=`${n} / ${checks.length} 완료`;document.getElementById('bar').style.width=`${n/checks.length*100}%`;try{localStorage.setItem(key,JSON.stringify(checks.map(c=>c.checked)))}catch(e){}}
-checks.forEach(c=>c.addEventListener('change',update));update();
-document.getElementById('reset').addEventListener('click',()=>{checks.forEach(c=>c.checked=false);update()});
-const sections=[...document.querySelectorAll('main section[id]')];
-if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){navButtons.forEach(b=>b.classList.toggle('active',b.dataset.target===e.target.id))}})},{rootMargin:'-25% 0px -65% 0px'});sections.forEach(s=>io.observe(s))}
+const tabs=[...document.querySelectorAll('.nav button')];
+tabs.forEach(b=>b.addEventListener('click',()=>{tabs.forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===b.dataset.tab));window.scrollTo({top:document.querySelector('.nav').offsetTop-5,behavior:'smooth'});}));
+function wireSubnav(buttonId,attr,prefix){const bs=[...document.querySelectorAll('#'+buttonId+' button')];bs.forEach(b=>b.addEventListener('click',()=>{bs.forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.schedule[id^="'+prefix+'"]').forEach(s=>s.classList.toggle('active',s.id===b.dataset[attr]));}));}
+wireSubnav('dayButtons','day','d');wireSubnav('backupButtons','back','b');
+const checks=[...document.querySelectorAll('.checklist input[type=checkbox]')];
+const key='okinawa-family-trip-checks-2026';
+try{const saved=JSON.parse(localStorage.getItem(key)||'[]');checks.forEach((c,i)=>c.checked=!!saved[i]);}catch(e){}
+function update(){const done=checks.filter(c=>c.checked).length;document.getElementById('progressBar').style.width=(done/checks.length*100)+'%';document.getElementById('progressText').textContent=`${done} / ${checks.length} 완료`;try{localStorage.setItem(key,JSON.stringify(checks.map(c=>c.checked)));}catch(e){}}
+checks.forEach(c=>c.addEventListener('change',update));document.getElementById('resetChecks').addEventListener('click',()=>{checks.forEach(c=>c.checked=false);update();});update();
 </script>
 </body>
 </html>
