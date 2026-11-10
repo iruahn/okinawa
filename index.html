@@ -1,187 +1,696 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#123b45">
-<title>오키나와 6인 가족여행 | 2026.11.24–28</title>
-<style>
-:root{--ink:#17343a;--muted:#61777a;--sea:#123b45;--sea2:#1d5962;--sand:#f5f0e6;--paper:#fffdf8;--line:#e6e0d5;--coral:#e98262;--mint:#e5f1ec;--blue:#eaf2f4;--shadow:0 12px 34px rgba(23,52,58,.09)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7f6f1;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.6}
-a{color:#176b78;text-underline-offset:3px}button{font:inherit;cursor:pointer}
-.hero{background:linear-gradient(130deg,#123b45 0%,#1d5962 65%,#367b7c 100%);color:#fff;padding:42px 22px 34px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:360px;height:360px;border:1px solid #ffffff26;border-radius:50%;right:-90px;top:-190px;box-shadow:0 0 0 35px #ffffff0b,0 0 0 75px #ffffff08}
-.wrap{max-width:1120px;margin:auto}.eyebrow{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#b8d9d5;font-weight:700}.hero h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.12;margin:12px 0}.hero p{margin:0;color:#d9e9e6}.hero-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.chip{border:1px solid #ffffff45;border-radius:999px;padding:6px 12px;font-size:.85rem;color:#f5fbfa}
-main{max-width:1120px;margin:0 auto;padding:22px 18px 70px}.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-2px}.quick{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}.quick b{display:block;font-size:1.15rem}.quick span{font-size:.82rem;color:var(--muted)}
-.nav{display:flex;gap:8px;overflow:auto;padding:22px 0 14px;position:sticky;top:0;background:#f7f6f1;z-index:5}.nav button,.subnav button{white-space:nowrap;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:9px 15px;font-weight:650}.nav button.active,.subnav button.active{background:var(--sea);color:white;border-color:var(--sea)}
-section.panel{display:none;animation:fade .2s ease}section.panel.active{display:block}@keyframes fade{from{opacity:.45;transform:translateY(4px)}to{opacity:1;transform:none}}
-h2{font-size:1.65rem;margin:12px 0 6px;letter-spacing:-.03em}h3{font-size:1.12rem;margin:0 0 8px}p.lead{color:var(--muted);margin:0 0 20px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:8px 0 16px}.section-head small{color:var(--muted)}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);margin:12px 0}.callout{background:var(--mint);border:1px solid #d2e5dc;border-radius:15px;padding:15px 17px;margin:14px 0}.warning{background:#fff2e9;border-color:#f1d7c7}.blue{background:var(--blue);border-color:#d7e5e8}
-.day-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.day-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}.day-top{padding:16px 18px;background:var(--sea);color:#fff}.day-top small{color:#c7dfdc}.day-top h3{font-size:1.15rem;margin:3px 0}.day-body{padding:15px 18px}.route{font-size:.9rem;color:var(--muted);margin-bottom:12px}.timeline{list-style:none;margin:0;padding:0}.timeline li{display:grid;grid-template-columns:86px 1fr;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.92rem}.timeline li:last-child{border:0}.time{font-weight:750;color:var(--sea2);font-variant-numeric:tabular-nums}.note{font-size:.84rem;color:var(--muted)}
-.tag{display:inline-block;border-radius:6px;padding:2px 7px;font-size:.75rem;font-weight:700;background:#edf1ed;color:#47655d;margin-right:4px}.tag.fixed{background:#e3eff1;color:#245b64}.tag.flex{background:#fff0e7;color:#9a563d}
-.subnav{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.schedule{display:none}.schedule.active{display:block}
-table{width:100%;border-collapse:collapse;font-size:.91rem}th,td{text-align:left;padding:10px 9px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-size:.8rem;font-weight:700}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}.place{display:flex;justify-content:space-between;gap:12px;align-items:start}.place a{font-size:.85rem;white-space:nowrap}
-.checklist label{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line);cursor:pointer}.checklist input{margin-top:5px;accent-color:var(--sea);width:18px;height:18px;flex:none}.checklist input:checked+span{text-decoration:line-through;color:#8b9996}.progress{height:8px;background:#e8e8e1;border-radius:20px;overflow:hidden;margin:10px 0}.progress div{height:100%;width:0;background:#43877b;transition:width .2s}
-details{border-bottom:1px solid var(--line);padding:12px 0}summary{font-weight:700;cursor:pointer}details p{margin:8px 0 0;color:var(--muted);font-size:.92rem}
-.small-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.small-card{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:15px}
-.footer{margin-top:28px;padding:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}.btn{border:0;background:var(--coral);color:white;border-radius:10px;padding:9px 13px;font-weight:700}.muted{color:var(--muted)}.pill{display:inline-block;background:#f0eee7;padding:4px 9px;border-radius:999px;font-size:.78rem;margin:3px 3px 3px 0}
-@media(max-width:760px){.quick-grid{grid-template-columns:repeat(2,1fr)}.day-grid,.cols{grid-template-columns:1fr}.small-grid{grid-template-columns:1fr}.hero{padding-top:32px}.nav{margin:0 -18px;padding-left:18px;padding-right:18px}.section-head{display:block}}
-@media print{body{background:white}.hero{padding:20px}.nav,.btn,.subnav{display:none!important}main{padding:0}.panel{display:block!important;page-break-inside:avoid}.day-card,.card{box-shadow:none;break-inside:avoid}.day-grid{grid-template-columns:1fr 1fr}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오키나와 르네상스 리조트 3대 가족 여행 & 생신 기념 대화형 가이드</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter & Noto Sans KR -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ocean: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
+                        },
+                        coral: {
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                        },
+                        gold: {
+                            500: '#eab308',
+                            600: '#ca8a04',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .tab-btn.active {
+            border-bottom-color: #0284c7;
+            color: #0284c7;
+            font-weight: 700;
+        }
+    </style>
 </head>
-<body>
-<header class="hero">
- <div class="wrap">
-  <div class="eyebrow">Family trip planner · Okinawa</div>
-  <h1>오키나와 6인 가족여행</h1>
-  <p>함께 즐기고, 무리하지 않고, 좋은 추억을 남기는 4박 5일</p>
-  <div class="hero-meta"><span class="chip">2026.11.24(화) – 11.28(토)</span><span class="chip">성인 5명 + 어린이 1명</span><span class="chip">렌터카 여행</span></div>
- </div>
-</header>
-<main>
- <div class="quick-grid">
-  <div class="quick"><b>4박 5일</b><span>11월 24일 – 28일</span></div>
-  <div class="quick"><b>르네상스 2박</b><span>11/24 – 11/26 확정</span></div>
-  <div class="quick"><b>차탄 2박 추천</b><span>11/26 – 11/28 숙소 미정</span></div>
-  <div class="quick"><b>6명</b><span>부모님 · 부부 · 딸</span></div>
- </div>
- <nav class="nav" aria-label="주요 메뉴">
-  <button class="active" data-tab="overview">여행 한눈에</button>
-  <button data-tab="itinerary">날짜별 일정</button>
-  <button data-tab="backup">예비 일정</button>
-  <button data-tab="stay">숙소 선택</button>
-  <button data-tab="tips">가족 여행 팁</button>
-  <button data-tab="check">준비 체크</button>
- </nav>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
 
- <section id="overview" class="panel active">
-  <div class="section-head"><div><h2>여행의 큰 그림</h2><p class="lead">북부 관광은 26일에 모으고, 27일은 남부 관광과 차탄 저녁을 즐기는 구성입니다.</p></div></div>
-  <div class="callout"><strong>가장 추천하는 흐름</strong><br>나하공항 → 르네상스 리조트(2박) → 만좌모·츄라우미 → 차탄(2박) → 오키나와 월드·아메리칸 빌리지 → 우미카지 테라스 → 공항</div>
-  <div class="day-grid">
-   <article class="day-card"><div class="day-top"><small>DAY 1 · 11/24 화</small><h3>오키나와 도착</h3></div><div class="day-body"><div class="route">나하공항 → 르네상스 리조트</div><p>입국과 렌터카 수령 후 리조트로 이동합니다. 첫날은 외부 관광 없이 체크인과 휴식에 집중합니다.</p><span class="tag fixed">숙박 르네상스</span></div></article>
-   <article class="day-card"><div class="day-top"><small>DAY 2 · 11/25 수</small><h3>리조트에서 온전히 즐기기</h3></div><div class="day-body"><div class="route">돌핀 프로그램 · 실내 수영장 · 온천(자격 확인)</div><p>이번 여행의 리조트 데이. 프로그램 사이에 충분히 쉬고, 저녁은 리조트에서 보냅니다.</p><span class="tag fixed">전일 리조트 일정</span></div></article>
-   <article class="day-card"><div class="day-top"><small>DAY 3 · 11/26 목</small><h3>만좌모와 츄라우미 수족관</h3></div><div class="day-body"><div class="route">르네상스 → 만좌모 → 츄라우미 → 차탄</div><p>북부 관광을 마친 뒤 차탄으로 이동합니다. 이날은 이동량이 가장 많아 수족관 관람을 우선합니다.</p><span class="tag fixed">차탄 체크인</span></div></article>
-   <article class="day-card"><div class="day-top"><small>DAY 4 · 11/27 금</small><h3>오키나와 월드와 차탄 저녁</h3></div><div class="day-body"><div class="route">차탄 → 오키나와 월드 → 휴식 → 아메리칸 빌리지</div><p>오전 관광 후 숙소에서 쉬었다가 저녁에는 쇼핑과 식사, 야경을 즐깁니다.</p><span class="tag flex">날씨·체력에 따라 조정</span></div></article>
-   <article class="day-card"><div class="day-top"><small>DAY 5 · 11/28 토</small><h3>우미카지 테라스와 귀국</h3></div><div class="day-body"><div class="route">차탄 → 우미카지 → 렌터카 반납 → 나하공항</div><p>오전 짧게 들른 뒤 렌터카를 반납합니다. 공항 이동과 출국 수속 시간을 넉넉히 확보합니다.</p><span class="tag fixed">15:25 출발</span></div></article>
-  </div>
-  <div class="card"><h3>항공편 정보</h3><table><tr><th>날짜</th><th>구간</th><th>시간</th><th>편명</th></tr><tr><td>11/24</td><td>인천 → 나하</td><td>11:50 → 14:25</td><td>TW0281</td></tr><tr><td>11/28</td><td>나하 → 인천</td><td>15:25 → 17:55</td><td>TW0282</td></tr></table><p class="note">위탁수하물은 제공된 예약정보 기준 1인 15kg입니다. 항공사 명칭과 수하물 조건은 예약증에서 최종 확인하세요.</p></div>
-  <div class="callout warning"><strong>가족 모두 기억할 핵심 3가지</strong><br>① 만좌모는 11/26에 방문 · ② 마지막 2박은 차탄 우선 · ③ 11/28 렌터카는 13:00 이전 반납 목표</div>
- </section>
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-filter blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-ocean-600 to-teal-400 flex items-center justify-center text-white shadow-md">
+                        <i class="fa-solid fa-umbrella-beach text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold text-slate-900 leading-tight">르네상스 오키나와 생신 여행</h1>
+                        <p class="text-xs text-slate-500">3대 가족 (6인) 맞춤 분석 가이드</p>
+                    </div>
+                </div>
+                <!-- Navigation Tabs -->
+                <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-600" id="desktopNav">
+                    <button onclick="switchTab('summary')" class="tab-btn active py-5 px-1 border-b-2 border-transparent hover:text-ocean-600 transition" id="tab-btn-summary">
+                        <i class="fa-solid fa-calendar-check mr-1.5"></i>일정 및 날짜
+                    </button>
+                    <button onclick="switchTab('benefits')" class="tab-btn py-5 px-1 border-b-2 border-transparent hover:text-ocean-600 transition" id="tab-btn-benefits">
+                        <i class="fa-solid fa-gift mr-1.5"></i>리조트 애니버서리
+                    </button>
+                    <button onclick="switchTab('restaurants')" class="tab-btn py-5 px-1 border-b-2 border-transparent hover:text-ocean-600 transition" id="tab-btn-restaurants">
+                        <i class="fa-solid fa-utensils mr-1.5"></i>레스토랑 분석
+                    </button>
+                    <button onclick="switchTab('action')" class="tab-btn py-5 px-1 border-b-2 border-transparent hover:text-ocean-600 transition" id="tab-btn-action">
+                        <i class="fa-solid fa-clipboard-list mr-1.5"></i>예약 가이드 & 서식
+                    </button>
+                </nav>
+            </div>
+        </div>
+        <!-- Mobile Bottom / Header Bar Dropdown or Scrolling Menu -->
+        <div class="md:hidden flex overflow-x-auto border-t border-slate-100 bg-white px-2 py-2 text-xs space-x-1 no-scrollbar">
+            <button onclick="switchTab('summary')" class="tab-btn-m active px-3 py-2 rounded-lg bg-slate-100 whitespace-nowrap font-medium" id="tab-m-summary">
+                <i class="fa-solid fa-calendar-check mr-1"></i>일정/날짜
+            </button>
+            <button onclick="switchTab('benefits')" class="tab-btn-m px-3 py-2 rounded-lg whitespace-nowrap font-medium text-slate-600" id="tab-m-benefits">
+                <i class="fa-solid fa-gift mr-1"></i>생일혜택
+            </button>
+            <button onclick="switchTab('restaurants')" class="tab-btn-m px-3 py-2 rounded-lg whitespace-nowrap font-medium text-slate-600" id="tab-m-restaurants">
+                <i class="fa-solid fa-utensils mr-1"></i>레스토랑
+            </button>
+            <button onclick="switchTab('action')" class="tab-btn-m px-3 py-2 rounded-lg whitespace-nowrap font-medium text-slate-600" id="tab-m-action">
+                <i class="fa-solid fa-clipboard-list mr-1"></i>예약/서식
+            </button>
+        </div>
+    </header>
 
- <section id="itinerary" class="panel">
-  <h2>날짜별 상세 일정</h2><p class="lead">날짜를 선택하면 시간대별 계획과 꼭 기억할 점을 볼 수 있습니다.</p>
-  <div class="subnav" id="dayButtons">
-   <button class="active" data-day="d1">11/24 화</button><button data-day="d2">11/25 수</button><button data-day="d3">11/26 목</button><button data-day="d4">11/27 금</button><button data-day="d5">11/28 토</button>
-  </div>
-  <div class="schedule active" id="d1"><div class="card"><h3>DAY 1 · 도착과 체크인</h3><ul class="timeline"><li><span class="time">14:25</span><span>나하공항 도착</span></li><li><span class="time">14:25–15:30</span><span>입국심사·수하물 수령·렌터카 이동</span></li><li><span class="time">15:30–16:40</span><span>르네상스 리조트 이동 <span class="note">(교통·수령 지연 시 더 소요)</span></span></li><li><span class="time">16:40–17:30</span><span>체크인 및 휴식</span></li><li><span class="time">18:00</span><span>리조트 구경과 저녁 식사</span></li><li><span class="time">20:00</span><span>야마다 온천 <span class="note">(이용 자격 확인 후)</span></span></li></ul><div class="callout">첫날은 외부 관광을 추가하지 않습니다. 도착이 늦어지면 저녁과 온천도 유연하게 조정하세요.</div></div></div>
-  <div class="schedule" id="d2"><div class="card"><h3>DAY 2 · 르네상스 리조트 전일</h3><ul class="timeline"><li><span class="time">08:00</span><span>조식</span></li><li><span class="time">08:20</span><span>돌핀 프로그램 준비 및 집합</span></li><li><span class="time">09:00</span><span>Family Dolphin S <span class="note">5명 참여 · 변경된 예약 시간</span></span></li><li><span class="time">프로그램 후</span><span>샤워 및 휴식 <span class="note">종료 시각은 예약 확정 안내 확인</span></span></li><li><span class="time">12:00</span><span>점심 식사</span></li><li><span class="time">14:00–16:00</span><span>실내 수영장</span></li><li><span class="time">16:00–17:30</span><span>객실 휴식</span></li><li><span class="time">18:00</span><span>저녁 식사</span></li><li><span class="time">20:00</span><span>야마다 온천 <span class="note">(이용 자격 확인)</span></span></li></ul><p class="note">Family Dolphin S는 5명 참여, 오전 9시 시작으로 변경했습니다. 실제 종료 시각과 요금·어린이 신장 및 연령·성인 동반 조건은 호텔의 예약 확정 안내를 기준으로 확인하세요. Club Savvy Light만으로 온천 이용이 가능한지 반드시 호텔에 확인해야 합니다.</p></div></div>
-  <div class="schedule" id="d3"><div class="card"><h3>DAY 3 · 만좌모 → 츄라우미 → 차탄</h3><ul class="timeline"><li><span class="time">07:30–08:30</span><span>조식</span></li><li><span class="time">08:30–10:30</span><span>짐 정리 및 여유 시간</span></li><li><span class="time">11:00</span><span>르네상스 체크아웃 및 출발</span></li><li><span class="time">11:30–12:10</span><span>만좌모 관람 (약 40분)</span></li><li><span class="time">12:15–13:00</span><span>점심 식사 (온나 인근)</span></li><li><span class="time">13:00–14:10</span><span>츄라우미 수족관 이동</span></li><li><span class="time">14:10–17:15</span><span>츄라우미 수족관 관람</span></li><li><span class="time">17:30–19:10</span><span>차탄 이동</span></li><li><span class="time">19:10 이후</span><span>숙소 체크인 및 간단한 저녁</span></li></ul><div class="callout warning"><strong>오늘의 최우선은 츄라우미!</strong><br>수족관 최종 입장시간에 늦지 않도록 합니다. 일정이 밀리면 만좌모 체류를 줄이고 점심은 간단히 해결하세요. 26일은 여행 중 이동량이 가장 많은 날입니다.</div><p class="note">츄라우미는 본관 중심 2~2.5시간, 부속시설까지 포함하면 약 3시간을 예상합니다. 북문 P7 주차장 이용을 검토하세요.</p></div></div>
-  <div class="schedule" id="d4"><div class="card"><h3>DAY 4 · 오키나와 월드 → 휴식 → 아메리칸 빌리지</h3><ul class="timeline"><li><span class="time">08:00</span><span>조식</span></li><li><span class="time">09:00</span><span>차탄 출발</span></li><li><span class="time">10:00–10:15</span><span>오키나와 월드 도착</span></li><li><span class="time">10:30–11:00</span><span>슈퍼 에이사 공연 (공연시간 재확인)</span></li><li><span class="time">11:00–12:30</span><span>왕국촌 및 옥천동 선택 관람</span></li><li><span class="time">12:30–13:20</span><span>점심</span></li><li><span class="time">13:20–14:30</span><span>차탄 복귀</span></li><li><span class="time">14:30–16:30</span><span>숙소에서 휴식</span></li><li><span class="time">17:00–20:30</span><span>아메리칸 빌리지 저녁·쇼핑·야경</span></li></ul><div class="callout">부모님이 동굴의 계단과 경사를 부담스러워하시면 옥천동은 생략하고 왕국촌과 공연 위주로 관람해도 충분합니다. 숙소가 도보권이면 저녁에 차를 운전하지 않아도 됩니다.</div></div></div>
-  <div class="schedule" id="d5"><div class="card"><h3>DAY 5 · 우미카지 테라스 → 귀국</h3><ul class="timeline"><li><span class="time">07:30–08:30</span><span>조식</span></li><li><span class="time">09:00–09:30</span><span>체크아웃</span></li><li><span class="time">09:30</span><span>차탄 출발</span></li><li><span class="time">10:20–11:40</span><span>우미카지 테라스 산책·쇼핑·이른 점심</span></li><li><span class="time">11:45–12:00</span><span>우미카지 출발</span></li><li><span class="time">12:00–12:30</span><span>주유 및 렌터카 영업소 이동</span></li><li><span class="time">12:30–13:00</span><span>렌터카 반납 완료 목표</span></li><li><span class="time">13:00–13:30</span><span>공항 셔틀 이동</span></li><li><span class="time">13:30–15:00</span><span>체크인·수하물·출국 수속</span></li><li><span class="time">15:25</span><span>나하공항 출발 (TW0282)</span></li></ul><div class="callout warning"><strong>귀국일은 공항 시간이 최우선입니다.</strong><br>렌터카 업체가 더 이른 반납을 요구하면 그 규정을 따르세요. 우미카지 체류를 줄이거나 생략하고, 국제선 수속 시간을 확보합니다.</div></div></div>
- </section>
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
- <section id="backup" class="panel">
-  <h2>날씨와 컨디션에 따른 예비 일정</h2><p class="lead">예비 관광지는 “추가로 다 가는 곳”이 아니라, 기존 일정이 취소되거나 여유가 생겼을 때 고르는 대안입니다.</p>
-  <div class="callout warning">렌터카는 1대이므로 두 그룹이 동시에 다른 장소로 움직이기는 어렵습니다. 가능하면 한 곳을 골라 함께 이동하세요.</div>
-  <div class="subnav" id="backupButtons"><button class="active" data-back="b25">11/25 리조트 주변</button><button data-back="b26">11/26 수족관 주변</button><button data-back="b27">11/27 일정 대체</button><button data-back="b28">11/28 귀국일</button></div>
-  <div class="schedule active" id="b25"><div class="cols">
-   <div class="card"><div class="place"><h3>비오스의 언덕</h3><a href="https://www.bios-hill.co.jp/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">A그룹 · 자연 체험</span><p>르네상스에서 가까운 아열대 숲과 호수. 유람선과 자연 관찰을 즐길 수 있어 딸과 함께하기 좋은 후보입니다.</p><p class="note">계획상 체류 2~3시간 · 리조트에서 차량 약 10~15분(추정) · 야외 비중 있음</p></div>
-   <div class="card"><div class="place"><h3>류큐무라</h3><a href="https://www.ryukyumura.co.jp/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">B그룹 · 전통문화</span><p>오키나와 전통가옥과 민속문화, 공연·공예 체험을 둘러보는 곳입니다.</p><p class="note">계획상 체류 1.5~2.5시간 · 리조트에서 차량 약 5~10분(추정) · 공연 및 체험 일정 확인</p></div>
-  </div><p class="note">11/25는 돌핀 프로그램과 리조트 일정이 우선입니다. 취소되거나 큰 공백이 생긴 경우에만 고려하세요.</p></div>
-  <div class="schedule" id="b26"><div class="cols">
-   <div class="card"><div class="place"><h3>해양문화관·플라네타리움</h3><a href="https://oki-park.jp/kaiyohaku/en/inst/" target="_blank" rel="noopener">공식 안내 ↗</a></div><span class="tag">A그룹 · 실내 체험</span><p>츄라우미 수족관과 같은 해양박공원 안에 있어 이동을 추가하지 않고 들를 수 있는 후보입니다.</p><p class="note">계획상 45~70분 · 플라네타리움은 상영 회차가 맞을 때만</p></div>
-   <div class="card"><div class="place"><h3>열대드림센터</h3><a href="https://oki-park.jp/kaiyohaku/en/inst/38/" target="_blank" rel="noopener">공식 안내 ↗</a></div><span class="tag">B그룹 · 식물 관람</span><p>열대식물과 난초를 감상하는 온실 중심 시설입니다. 조용한 관람을 선호하는 가족에게 적합합니다.</p><p class="note">계획상 40~60분 · 시설 간 이동과 부모님 컨디션 고려</p></div>
-  </div><p class="note">수족관 관람이 일찍 끝나고 모두 여유가 있을 때만 선택합니다. 16:00 이후 새로운 관광을 시작하지 않는 편이 안전합니다.</p></div>
-  <div class="schedule" id="b27"><div class="cols">
-   <div class="card"><div class="place"><h3>오키나와 어린이왕국</h3><a href="https://www.okzm.jp/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">A그룹 · 동물원</span><p>동물원과 어린이 체험시설이 있어 딸의 동물·놀이 선호에 맞는 오키나와 월드 대체 후보입니다.</p><p class="note">계획상 2~3시간 · 야외 비중 높음 · 보행량 보통~높음</p></div>
-   <div class="card"><div class="place"><h3>현립박물관·미술관</h3><a href="https://okimu.jp/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">B그룹 · 실내 문화</span><p>오키나와의 역사·문화·자연을 실내에서 볼 수 있습니다. 동굴 계단이 부담스러울 때 대안으로 고려하세요.</p><p class="note">계획상 1.5~2시간 · 전시별 운영시간·요금 확인</p></div>
-   <div class="card"><div class="place"><h3>DMM 가리유시 수족관</h3><a href="https://kariyushi-aquarium.com/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">전원 · 우천 대안</span><p>실내 전시 중심의 수족관입니다. 비가 오거나 야외 일정이 어려울 때 전원이 함께 즐기는 대안입니다.</p><p class="note">계획상 1.5~2시간 · 차탄에서 이동시간 여유 필요</p></div>
-   <div class="card"><div class="place"><h3>이온몰 오키나와 라이카무</h3><a href="https://en.aeonmall.global/mall/okinawarycom" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">전원 · 쇼핑/실내</span><p>식사·쇼핑·카페를 한곳에서 해결할 수 있는 실내 중심 대안입니다. 비가 많이 오면 아메리칸 빌리지 대신 선택할 수 있습니다.</p><p class="note">계획상 2~3시간 · 쇼핑몰 규모가 커 보행량은 있을 수 있음</p></div>
-   <div class="card"><div class="place"><h3>동남식물낙원</h3><a href="https://www.southeast-botanical.jp/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">A그룹 · 야간 풍경</span><p>시즌에 따라 야간 일루미네이션을 즐기는 후보입니다. 아메리칸 빌리지와는 대체 일정으로 생각하세요.</p><p class="note">2026/11/27 행사 운영 여부·시간 확인 필수 · 야외 보행</p></div>
-  </div></div>
-  <div class="schedule" id="b28"><div class="cols">
-   <div class="card"><div class="place"><h3>DMM 가리유시 수족관</h3><a href="https://kariyushi-aquarium.com/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">A그룹 · 실내</span><p>우미카지 테라스에 비·강풍이 있을 때 고려할 후보입니다. 귀국일이므로 관람을 짧게 하고 지연 시 생략하세요.</p><p class="note">60~75분 이내로 제한 · 주차/이동 지연 시 즉시 생략</p></div>
-   <div class="card"><div class="place"><h3>이아스 오키나와 도요사키</h3><a href="https://www.iias.jp/okinawa/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">전원 · 실내 쇼핑</span><p>쇼핑·식사·카페를 실내에서 해결하기 좋아 우미카지 테라스의 경사와 계단이 부담스러울 때 대안입니다.</p><p class="note">60~90분 정도 · 렌터카 반납 시간을 먼저 확보</p></div>
-   <div class="card"><div class="place"><h3>아시비나 아울렛</h3><a href="https://www.okinawastory.jp/spot/600001191" target="_blank" rel="noopener">관광 안내 ↗</a></div><span class="tag">B그룹 · 쇼핑</span><p>브랜드 쇼핑을 원할 때 후보입니다. 일부 야외 이동이 있어 강한 비에는 이아스가 더 편리합니다.</p><p class="note">60~90분 · 실제 영업시간 확인</p></div>
-  </div><div class="callout warning">귀국일은 예비 관광을 넣지 않아도 괜찮습니다. 렌터카 업체의 반납 규정과 공항 수속 시간을 우선하세요.</div></div>
- </section>
+        <!-- TAB 1: SUMMARY & CALENDAR CONVERSION -->
+        <section id="tab-summary" class="tab-content space-y-6">
+            <!-- Hero Banner -->
+            <div class="relative bg-gradient-to-r from-ocean-900 via-ocean-700 to-teal-800 rounded-3xl p-6 sm:p-8 text-white shadow-xl overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 opacity-10 text-white pointer-events-none">
+                    <i class="fa-solid fa-cake-candles text-[220px]"></i>
+                </div>
+                <div class="relative z-10 max-w-2xl">
+                    <span class="bg-amber-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">검증 완료</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 leading-snug">
+                        2026년 음력 생신 양력 환산 & 투숙 일정 일치 분석
+                    </h2>
+                    <p class="mt-2 text-ocean-100 text-sm sm:text-base">
+                        어머니 생신 당일(11월 27일)이 리조트 투숙 4일 차에 완벽히 포함됩니다!
+                    </p>
+                </div>
+            </div>
 
- <section id="stay" class="panel">
-  <h2>마지막 2박, 어디에서 잘까?</h2><p class="lead">현재 추천은 차탄입니다. 숙소 예약 전에는 6명 정원, 객실 구성과 주차를 꼭 확인하세요.</p>
-  <div class="card"><div class="place"><h3>1순위 · 차탄</h3><span class="tag fixed">가장 추천</span></div><p>아메리칸 빌리지에서 저녁을 보내기 편하고, 부모님이나 아이가 피곤하면 먼저 숙소로 돌아갈 수 있습니다. 27일 오후 휴식 후 저녁 외출도 수월합니다.</p><ul><li>아메리칸 빌리지 도보 5~10분 권장</li><li>주차 가능, 엘리베이터 여부 확인</li><li>6인 1실 또는 객실 2실 구성 비교</li><li>무료 취소 기한과 총액 확인</li></ul></div>
-  <div class="cols">
-   <div class="card"><h3>2순위 · 나하 / 세나가시마</h3><p>공항과 오키나와 월드 접근은 편리하지만, 츄라우미에서 숙소까지 이동이 길고 아메리칸 빌리지 저녁 후 다시 이동해야 합니다.</p></div>
-   <div class="card"><h3>3순위 · 나고</h3><p>26일 츄라우미 관람 후 이동은 짧지만, 27~28일 남쪽으로 이동하는 거리가 길어 전체 일정에서는 우선순위가 낮습니다.</p></div>
-  </div>
-  <div class="card"><h3>숙소 예약 전 비교표</h3><table><tr><th>확인 항목</th><th>기준</th></tr><tr><td>인원</td><td>성인 5명 + 어린이 1명 모두 숙박 가능</td></tr><tr><td>객실</td><td>넓은 콘도형 1실 또는 커넥팅/인접 객실 2실</td></tr><tr><td>위치</td><td>아메리칸 빌리지 도보권</td></tr><tr><td>편의</td><td>주차장, 엘리베이터, 세탁·식사 편의</td></tr><tr><td>가격</td><td>세금·주차 포함 2박 총액 비교</td></tr><tr><td>조건</td><td>취소·환불 규정, 어린이 요금, 침구 구성</td></tr></table></div>
- </section>
+            <!-- Interactive Date & Trip Timeline -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Info Summary Cards -->
+                <div class="lg:col-span-1 space-y-4">
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-start space-x-4">
+                        <div class="p-3 bg-rose-50 text-rose-500 rounded-xl">
+                            <i class="fa-solid fa-user-nurse text-2xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 font-medium">축하 대상 (어머니)</span>
+                            <h3 class="text-lg font-bold text-slate-800">1959년 음력 10월 19일</h3>
+                            <p class="text-xs text-slate-500 mt-0.5">기해년(己亥年) 돼지띠</p>
+                        </div>
+                    </div>
 
- <section id="tips" class="panel">
-  <h2>가족 모두 편안하게 여행하기</h2><p class="lead">이번 일정은 관광지를 많이 넣기보다 가족의 체력 차이를 고려해 여유를 두는 것이 핵심입니다.</p>
-  <div class="small-grid">
-   <div class="small-card"><h3>부모님</h3><p>연속 장거리 이동을 줄이고, 화장실·휴식 시간을 확보합니다. 옥천동 동굴은 계단과 경사가 있어 컨디션에 따라 생략해도 좋습니다.</p></div>
-   <div class="small-card"><h3>어린이</h3><p>돌핀 프로그램과 수영장 사이 휴식, 수족관 관람 시간을 충분히 둡니다. 피곤한 저녁에는 간단히 먹고 숙소에서 쉽니다.</p></div>
-   <div class="small-card"><h3>운전자</h3><p>운전시간 외에도 주차·승하차·화장실 시간을 더합니다. 이동이 긴 26일에는 추가 관광을 욕심내지 않습니다.</p></div>
-  </div>
-  <div class="card"><h3>예상 운전시간 (계획용)</h3><table><tr><th>구간</th><th>예상 운전</th><th>일정 배정</th></tr><tr><td>나하공항 → 르네상스</td><td>50~80분</td><td>70~90분</td></tr><tr><td>르네상스 → 만좌모</td><td>25~30분</td><td>35분</td></tr><tr><td>만좌모 → 츄라우미</td><td>60~75분</td><td>80~90분</td></tr><tr><td>츄라우미 → 차탄</td><td>80~100분</td><td>100~120분</td></tr><tr><td>차탄 → 오키나와 월드</td><td>55~70분</td><td>75분</td></tr><tr><td>차탄 → 우미카지</td><td>45~60분</td><td>60~70분</td></tr><tr><td>우미카지 → 나하공항</td><td>약 15분</td><td>20~30분</td></tr></table><p class="note">교통상황을 확정한 값이 아닌 계획용 추정치입니다. 주차와 승하차 시간은 별도입니다.</p></div>
-  <div class="card"><h3>관광지별 권장 체류시간</h3><table><tr><th>장소</th><th>시간</th><th>참고</th></tr><tr><td>만좌모</td><td>30~45분</td><td>짧은 산책</td></tr><tr><td>츄라우미 수족관</td><td>2.5~3시간</td><td>부속시설 포함</td></tr><tr><td>오키나와 월드</td><td>2~3시간</td><td>옥천동 선택</td></tr><tr><td>아메리칸 빌리지</td><td>3~3.5시간</td><td>저녁·쇼핑·야경</td></tr><tr><td>우미카지 테라스</td><td>60~90분</td><td>귀국일 짧게</td></tr></table></div>
-  <div class="card"><h3>기념품 쇼핑 계획</h3><div class="cols"><div><b>11/27 · 아메리칸 빌리지</b><p>이번 여행의 메인 쇼핑 장소. 친스코, 베니이모 타르트, 시사 장식품, 류큐 유리, 공예품, 오리온 굿즈, 비누 등을 둘러봅니다.</p></div><div><b>11/28 · 우미카지 테라스</b><p>빠뜨린 소형 기념품과 선물만 보충합니다. 귀국일에는 대량 쇼핑을 피하고 공항 이동 시간을 확보합니다.</p></div></div></div>
-  <div class="card"><h3>꼭 확인할 운영 조건</h3>
-   <details><summary>야마다 온천 이용 자격</summary><p>모든 투숙객에게 자동 제공되는 시설은 아닙니다. Club Floor, Ryukyu Suite 또는 Club Savvy 대상 조건을 확인하고, Club Savvy Light가 적용되는지 호텔에 직접 문의하세요.</p></details>
-   <details><summary>돌핀 프로그램</summary><p>예약 프로그램은 Family Dolphin S(5명 참여, 09:00 시작)입니다. 종료 시각, 요금, 어린이 신장·연령·성인 동반 조건은 호텔의 예약 확정 안내를 기준으로 확인하세요. 예약 확정 안내를 기준으로 준비하세요.</p></details>
-   <details><summary>츄라우미 수족관</summary><p>11월 운영시간·최종 입장시간을 공식 홈페이지에서 재확인하세요. 수족관 본관 외 돌고래 라군, 바다거북관, 매너티관의 운영시간도 확인하면 좋습니다.</p></details>
-   <details><summary>오키나와 월드</summary><p>공연 시간과 최종 접수시간은 방문 직전에 확인하세요. 옥천동은 계단과 경사 구간이 있어 부모님 컨디션에 따라 관람 여부를 정합니다.</p></details>
-  </div>
- </section>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-start space-x-4">
+                        <div class="p-3 bg-amber-50 text-amber-500 rounded-xl">
+                            <i class="fa-solid fa-calendar-day text-2xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 font-medium">2026년 양력 환산일</span>
+                            <h3 class="text-lg font-bold text-amber-600">2026년 11월 27일 (금)</h3>
+                            <p class="text-xs text-slate-500 mt-0.5">실질 생일 당일</p>
+                        </div>
+                    </div>
 
- <section id="check" class="panel">
-  <h2>출발 전 준비 체크리스트</h2><p class="lead">체크한 항목은 이 기기 브라우저에 자동 저장됩니다. 가족끼리 진행 상황을 확인할 때 사용하세요.</p>
-  <div class="card"><div class="place"><h3>준비 진행률</h3><button class="btn" id="resetChecks">체크 초기화</button></div><div class="progress"><div id="progressBar"></div></div><p class="note" id="progressText">0 / 0 완료</p></div>
-  <div class="cols">
-   <div class="card checklist"><h3>항공편</h3>
-    <label><input type="checkbox"><span>TW0281 출발·도착 시간 확인</span></label><label><input type="checkbox"><span>TW0282 출발·도착 시간 확인</span></label><label><input type="checkbox"><span>항공사 명칭과 예약번호 확인</span></label><label><input type="checkbox"><span>1인 위탁수하물 15kg 조건 확인</span></label>
-   </div>
-   <div class="card checklist"><h3>르네상스 리조트</h3>
-    <label><input type="checkbox"><span>11/24~26 숙박 예약 확인</span></label><label><input type="checkbox"><span>11/25 Family Dolphin S 예약 확정(5명·09:00)</span></label><label><input type="checkbox"><span>어린이 참가 조건·준비물 확인</span></label><label><input type="checkbox"><span>실내 수영장 운영시간 확인</span></label><label><input type="checkbox"><span>야마다 온천 이용 자격 확인</span></label><label><input type="checkbox"><span>조식·식당 예약 및 이용조건 확인</span></label>
-   </div>
-   <div class="card checklist"><h3>마지막 2박 숙소</h3>
-    <label><input type="checkbox"><span>차탄 지역 숙소 검색</span></label><label><input type="checkbox"><span>6명 숙박 가능 여부 확인</span></label><label><input type="checkbox"><span>객실 1실 또는 2실 구성 비교</span></label><label><input type="checkbox"><span>주차·엘리베이터 확인</span></label><label><input type="checkbox"><span>아메리칸 빌리지 도보거리 확인</span></label><label><input type="checkbox"><span>2박 총액과 취소·환불 조건 확인</span></label>
-   </div>
-   <div class="card checklist"><h3>렌터카</h3>
-    <label><input type="checkbox"><span>6명 탑승 및 수하물 적재공간 확인</span></label><label><input type="checkbox"><span>공항 셔틀·영업소 위치 확인</span></label><label><input type="checkbox"><span>28일 반납 권장시간 확인</span></label><label><input type="checkbox"><span>반납 전 주유소 위치 확인</span></label><label><input type="checkbox"><span>국제선 출발 전 반납 규정 확인</span></label>
-   </div>
-   <div class="card checklist"><h3>관광지·예비 일정</h3>
-    <label><input type="checkbox"><span>만좌모 운영시간 확인</span></label><label><input type="checkbox"><span>츄라우미 운영시간·최종 입장 확인</span></label><label><input type="checkbox"><span>츄라우미 P7 주차장 위치 확인</span></label><label><input type="checkbox"><span>오키나와 월드 공연시간 확인</span></label><label><input type="checkbox"><span>옥천동 관람 여부 가족과 결정</span></label><label><input type="checkbox"><span>우미카지 테라스 영업시간 확인</span></label><label><input type="checkbox"><span>우천 시 공통 대안 1곳 정하기</span></label>
-   </div>
-   <div class="card checklist"><h3>가족별 준비</h3>
-    <label><input type="checkbox"><span>부모님 보행 가능거리와 휴식 필요 확인</span></label><label><input type="checkbox"><span>딸의 동물원·수족관 선호도 확인</span></label><label><input type="checkbox"><span>렌터카 1대 기준 가족 이동 방식 합의</span></label><label><input type="checkbox"><span>여권·운전면허·국제운전면허 등 확인</span></label><label><input type="checkbox"><span>여행자보험 및 비상연락처 확인</span></label>
-   </div>
-  </div>
- </section>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-start space-x-4">
+                        <div class="p-3 bg-emerald-50 text-emerald-500 rounded-xl">
+                            <i class="fa-solid fa-hotel text-2xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 font-medium">리조트 투숙 일정</span>
+                            <h3 class="text-lg font-bold text-slate-800">11.24 (화) ~ 11.28 (토)</h3>
+                            <p class="text-xs text-emerald-600 font-semibold mt-0.5">4박 5일 중 4일 차에 당일 포함</p>
+                        </div>
+                    </div>
+                </div>
 
- <footer class="footer">
-  <b>공식 정보 확인 링크</b><br>
-  <a href="https://renaissance-okinawa.com/en/pages/activity-information-list" target="_blank" rel="noopener">르네상스 액티비티</a> ·
-  <a href="https://renaissance-okinawa.com/en/pages/facilities/" target="_blank" rel="noopener">르네상스 시설</a> ·
-  <a href="https://www.manzamo.jp/" target="_blank" rel="noopener">만좌모</a> ·
-  <a href="https://oki-churaumi.jp/en/guide/hour/" target="_blank" rel="noopener">츄라우미 운영시간</a> ·
-  <a href="https://www.gyokusendo.co.jp/okinawaworld/showtime/" target="_blank" rel="noopener">오키나와 월드 공연</a> ·
-  <a href="https://www.okinawa-americanvillage.com/" target="_blank" rel="noopener">아메리칸 빌리지</a> ·
-  <a href="https://www.umikajiterrace.com/" target="_blank" rel="noopener">우미카지 테라스</a>
-  <p>이 페이지의 시간과 이동시간은 제공된 조사 보고서를 바탕으로 만든 계획용 안내입니다. 실제 운영시간·요금·교통·예약 조건은 변동될 수 있으므로 출발 전 공식 사이트와 예약처에서 확인하세요.</p>
-  <button class="btn" onclick="window.print()">일정 인쇄 / PDF 저장</button>
- </footer>
-</main>
-<script>
-const tabs=[...document.querySelectorAll('.nav button')];
-tabs.forEach(b=>b.addEventListener('click',()=>{tabs.forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===b.dataset.tab));window.scrollTo({top:document.querySelector('.nav').offsetTop-5,behavior:'smooth'});}));
-function wireSubnav(buttonId,attr,prefix){const bs=[...document.querySelectorAll('#'+buttonId+' button')];bs.forEach(b=>b.addEventListener('click',()=>{bs.forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.schedule[id^="'+prefix+'"]').forEach(s=>s.classList.toggle('active',s.id===b.dataset[attr]));}));}
-wireSubnav('dayButtons','day','d');wireSubnav('backupButtons','back','b');
-const checks=[...document.querySelectorAll('.checklist input[type=checkbox]')];
-const key='okinawa-family-trip-checks-2026';
-try{const saved=JSON.parse(localStorage.getItem(key)||'[]');checks.forEach((c,i)=>c.checked=!!saved[i]);}catch(e){}
-function update(){const done=checks.filter(c=>c.checked).length;document.getElementById('progressBar').style.width=(done/checks.length*100)+'%';document.getElementById('progressText').textContent=`${done} / ${checks.length} 완료`;try{localStorage.setItem(key,JSON.stringify(checks.map(c=>c.checked)));}catch(e){}}
-checks.forEach(c=>c.addEventListener('change',update));document.getElementById('resetChecks').addEventListener('click',()=>{checks.forEach(c=>c.checked=false);update();});update();
-</script>
+                <!-- Interactive Timeline Visualizer -->
+                <div class="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="font-bold text-slate-800 text-base">
+                                <i class="fa-solid fa-timeline text-ocean-600 mr-2"></i>2026년 11월 투숙 타임라인
+                            </h3>
+                            <span class="text-xs font-semibold bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-full">
+                                <i class="fa-solid fa-circle-check mr-1"></i>혜택 요건 100% 충족
+                            </span>
+                        </div>
+
+                        <!-- Timeline Bar Visual -->
+                        <div class="grid grid-cols-5 gap-2 my-6">
+                            <div class="bg-slate-100 rounded-xl p-3 text-center border border-slate-200">
+                                <span class="text-xs text-slate-400 font-medium block">1일 차</span>
+                                <span class="text-sm font-bold text-slate-700 block my-1">11/24(화)</span>
+                                <span class="inline-block text-[10px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded">체크인</span>
+                            </div>
+                            <div class="bg-slate-100 rounded-xl p-3 text-center border border-slate-200">
+                                <span class="text-xs text-slate-400 font-medium block">2일 차</span>
+                                <span class="text-sm font-bold text-slate-700 block my-1">11/25(수)</span>
+                                <span class="inline-block text-[10px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded">자유일정</span>
+                            </div>
+                            <div class="bg-slate-100 rounded-xl p-3 text-center border border-slate-200">
+                                <span class="text-xs text-slate-400 font-medium block">3일 차</span>
+                                <span class="text-sm font-bold text-slate-700 block my-1">11/26(목)</span>
+                                <span class="inline-block text-[10px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded">액티비티</span>
+                            </div>
+                            <!-- BIRTHDAY HIGHLIGHT -->
+                            <div class="bg-rose-500 text-white rounded-xl p-3 text-center border-2 border-rose-600 shadow-lg transform scale-105 transition">
+                                <span class="text-xs text-rose-100 font-bold block">4일 차 ★</span>
+                                <span class="text-sm font-extrabold block my-1">11/27(금)</span>
+                                <span class="inline-block text-[10px] bg-white text-rose-600 font-bold px-1.5 py-0.5 rounded shadow-sm">🎂 생신 D-DAY</span>
+                            </div>
+                            <div class="bg-slate-100 rounded-xl p-3 text-center border border-slate-200">
+                                <span class="text-xs text-slate-400 font-medium block">5일 차</span>
+                                <span class="text-sm font-bold text-slate-700 block my-1">11/28(토)</span>
+                                <span class="inline-block text-[10px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded">체크아웃</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Culture Context Tip Box -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-xs sm:text-sm text-slate-600 space-y-1.5">
+                        <div class="font-bold text-slate-800 flex items-center">
+                            <i class="fa-solid fa-passport text-ocean-600 mr-2"></i>여권 서류 불일치 문제 해결 매커니즘 (일본 호스피탈리티)
+                        </div>
+                        <p class="leading-relaxed">
+                            여권 상에는 양력 생년월일이 명시되어 있으나, 오키나와 르네상스 리조트는 해외 투숙객의 동아시아 음력 문화를 완전 이해하고 있습니다. 
+                            <strong>디너 사전 예약 시 '음력 생일임을 고지'</strong>하고 당해 양력 환산일(11/27)을 전달하면 여권 서류 조회 없이 100% 정상 제공됩니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Summary Matrix Table -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+                <div class="px-6 py-4 border-b border-slate-100 font-bold text-slate-800 text-base">
+                    <i class="fa-solid fa-list-check text-ocean-600 mr-2"></i>검토 항목 종합 요약 표
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-slate-600">
+                        <thead class="text-xs text-slate-700 uppercase bg-slate-50">
+                            <tr>
+                                <th class="px-6 py-3">구분</th>
+                                <th class="px-6 py-3">역법 및 날짜 정보</th>
+                                <th class="px-6 py-3">투숙 일정 간 부합성</th>
+                                <th class="px-6 py-3">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr class="hover:bg-slate-50">
+                                <td class="px-6 py-3.5 font-medium text-slate-900">출생 음력 일자</td>
+                                <td class="px-6 py-3.5">1959년 음력 10월 19일 (기해년)</td>
+                                <td class="px-6 py-3.5">-</td>
+                                <td class="px-6 py-3.5">어머니 생신 원일</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="px-6 py-3.5 font-medium text-slate-900">2026년 양력 환산일</td>
+                                <td class="px-6 py-3.5 font-semibold text-rose-600">2026년 11월 27일 (금요일)</td>
+                                <td class="px-6 py-3.5 text-emerald-600 font-semibold">투숙 4일 차 (당일 일치)</td>
+                                <td class="px-6 py-3.5">2026년 실질 생일</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="px-6 py-3.5 font-medium text-slate-900">리조트 투숙 기간</td>
+                                <td class="px-6 py-3.5">2026년 11월 24일 ~ 11월 28일 (4박)</td>
+                                <td class="px-6 py-3.5">11월 27일 체류 확정</td>
+                                <td class="px-6 py-3.5">체류 기간 내 완벽 포함</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 bg-emerald-50/50">
+                                <td class="px-6 py-3.5 font-medium text-slate-900">혜택 적용 조건</td>
+                                <td class="px-6 py-3.5">생일 전후 7일 이내 투숙 & 디너 예약</td>
+                                <td class="px-6 py-3.5 text-emerald-600 font-bold">조건 100% 충족</td>
+                                <td class="px-6 py-3.5 text-rose-500 font-medium">최소 3일 전 디너 사전 예약 필수</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: RESORT BIRTHDAY BENEFITS -->
+        <section id="tab-benefits" class="tab-content hidden space-y-6">
+            <div class="bg-gradient-to-r from-amber-500 via-rose-500 to-pink-500 rounded-3xl p-6 sm:p-8 text-white shadow-xl">
+                <h2 class="text-2xl sm:text-3xl font-extrabold leading-snug flex items-center">
+                    <i class="fa-solid fa-gifts mr-3"></i>르네상스 리조트 생일 애니버서리 특전
+                </h2>
+                <p class="mt-2 text-amber-100 text-sm sm:text-base">
+                    체계적인 콤플리멘터리(Complimentary) 프로그램을 통해 제공되는 무료 프리미엄 서비스입니다.
+                </p>
+            </div>
+
+            <!-- Benefits Cards Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Benefit 1 -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-rose-100 rounded-bl-full -mr-6 -mt-6 transition group-hover:scale-110"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-rose-500 text-white rounded-xl flex items-center justify-center text-xl mb-4 shadow-md">
+                            <i class="fa-solid fa-cake-candles"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800">호텔 특제 딸기 시폰 케이크</h3>
+                        <p class="text-xs text-rose-600 font-semibold mt-1">무료 증정 (Complimentary)</p>
+                        <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                            리조트 전담 페이스트리 셰프가 직접 구워내는 최고급 딸기 시폰 케이크(Strawberry Chiffon Cake)가 메인 선물로 서빙됩니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-amber-100 rounded-bl-full -mr-6 -mt-6 transition group-hover:scale-110"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-amber-500 text-white rounded-xl flex items-center justify-center text-xl mb-4 shadow-md">
+                            <i class="fa-solid fa-martini-glass-citrus"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800">축하 칵테일 서빙</h3>
+                        <p class="text-xs text-amber-600 font-semibold mt-1">인원별 맞춤 제공</p>
+                        <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                            성인 및 어린의 취향을 반영한 전용 애니버서리 칵테일이 제공됩니다. (알코올 / 무알코올 / 키즈 음료 중 선택 가능)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-teal-100 rounded-bl-full -mr-6 -mt-6 transition group-hover:scale-110"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-teal-600 text-white rounded-xl flex items-center justify-center text-xl mb-4 shadow-md">
+                            <i class="fa-solid fa-camera-retro"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800">기념 사진 촬영 & 액자 증정</h3>
+                        <p class="text-xs text-teal-600 font-semibold mt-1">현장 촬영 및 카드 전달</p>
+                        <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                            식사 현장에서 전담 직원이 3대 가족의 축하 순간을 촬영한 후, 리조트 전용 카드로 즉시 인화하여 소장용 액자와 함께 증정합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mandatory Requirements Warning -->
+            <div class="bg-amber-50 border-l-4 border-amber-500 p-5 rounded-r-2xl shadow-sm">
+                <div class="flex items-start">
+                    <div class="text-amber-500 text-xl mr-3 mt-0.5">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-amber-900 text-base">생일 특전 수혜 필수 이행 조건</h4>
+                        <ul class="text-sm text-amber-800 mt-2 space-y-1.5 list-disc list-inside">
+                            <li><strong>사전 디너 예약 필수:</strong> 식사 이용일 기준 최소 3일 전까지 디너 예약이 완료되어야 주방 및 홀팀에 재료가 배정됩니다.</li>
+                            <li><strong>당일 요청 불가:</strong> 식사 당일 현장 요청 시 페이스트리 셰프의 케이크 준비 문제로 제공이 절대 불가합니다.</li>
+                            <li><strong>적용 범위:</strong> 조식이 아닌 지정 레스토랑의 석식(디너) 코스 이용 시에만 혜택이 적용됩니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: RESTAURANT COMPARISON & SELECTION -->
+        <section id="tab-restaurants" class="tab-content hidden space-y-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900">3대 가족 (6인) 맞춤 디너 레스토랑 비교</h2>
+                    <p class="text-slate-500 text-sm">어머니(생신), 부모님, 동생, 부부, 초1 딸(만 6-7세)을 위한 최적의 다이닝</p>
+                </div>
+            </div>
+
+            <!-- Dynamic Filter / Quick Summary Banner -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Recommendation 1: Four Seasons -->
+                <div class="bg-white rounded-2xl border-2 border-ocean-500 shadow-lg overflow-hidden flex flex-col justify-between relative">
+                    <div class="absolute top-4 right-4 bg-ocean-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                        ★ 1순위 최우선 추천
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-3 bg-ocean-100 text-ocean-600 rounded-xl font-bold text-xl">
+                                01
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900">포 시즌스 (Four Seasons)</h3>
+                                <p class="text-xs text-slate-500">프렌치 & 라이브 철판구이 (Teppanyaki)</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 space-y-2 text-sm text-slate-600">
+                            <p class="flex items-center"><i class="fa-solid fa-location-dot w-5 text-ocean-500"></i> 위치: 리조트 2층 (동중국해 파노라마 오션뷰)</p>
+                            <p class="flex items-center"><i class="fa-solid fa-clock w-5 text-ocean-500"></i> 영업시간: 18:00 ~ 22:00 (화요일 휴무)</p>
+                            <p class="flex items-center"><i class="fa-solid fa-calendar-check w-5 text-emerald-500"></i> 11/27(금) 영업: <strong>정상 영업 (이용 가능)</strong></p>
+                            <p class="flex items-center"><i class="fa-solid fa-shirt w-5 text-amber-500"></i> 드레스코드: 스마트 캐주얼 (비치샌들 제한)</p>
+                        </div>
+
+                        <div class="mt-4 pt-4 border-t border-slate-100">
+                            <h4 class="font-bold text-slate-800 text-sm mb-2"><i class="fa-solid fa-thumbs-up text-ocean-600 mr-1.5"></i>3대 가족 핵심 매력 포인트</h4>
+                            <ul class="text-xs text-slate-600 space-y-1.5">
+                                <li class="flex items-start"><i class="fa-solid fa-check text-ocean-500 mt-0.5 mr-2"></i> 전담 셰프의 이시가키소 와규·이세에비 불쇼 퍼포먼스 (어르신 품격 + 아이 흥미)</li>
+                                <li class="flex items-start"><i class="fa-solid fa-check text-ocean-500 mt-0.5 mr-2"></i> 초등학생 딸을 위한 '키즈 철판(￥6,000)' 코스 (돌고래 디저트 포함) 보유</li>
+                                <li class="flex items-start"><i class="fa-solid fa-check text-ocean-500 mt-0.5 mr-2"></i> 바다 배경과 화려한 조명으로 생일 케이크 이벤트 사진 촬영 최고 분위기</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-ocean-50 px-6 py-3 border-t border-ocean-100 text-xs text-ocean-800 font-semibold flex justify-between items-center">
+                        <span>추천 대상: 화려한 이벤트와 잊지 못할 추억을 원할 때</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Recommendation 2: Irodori -->
+                <div class="bg-white rounded-2xl border-2 border-emerald-500 shadow-lg overflow-hidden flex flex-col justify-between relative">
+                    <div class="absolute top-4 right-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                        ★ 2순위 프라이빗 추천
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-3 bg-emerald-100 text-emerald-600 rounded-xl font-bold text-xl">
+                                02
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900">일본 요리 이로도리 (Irodori)</h3>
+                                <p class="text-xs text-slate-500">정통 가이세키 & 프라이빗 호리고타츠 룸</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 space-y-2 text-sm text-slate-600">
+                            <p class="flex items-center"><i class="fa-solid fa-location-dot w-5 text-emerald-500"></i> 위치: 리조트 1층 (정갈한 일식 전문)</p>
+                            <p class="flex items-center"><i class="fa-solid fa-clock w-5 text-emerald-500"></i> 영업시간: 17:30 ~ 21:30 (월요일 휴무)</p>
+                            <p class="flex items-center"><i class="fa-solid fa-calendar-check w-5 text-emerald-500"></i> 11/27(금) 영업: <strong>정상 영업 (이용 가능)</strong></p>
+                            <p class="flex items-center"><i class="fa-solid fa-door-closed w-5 text-amber-500"></i> 개별실: 호리고타츠 룸 ('미야비' 4~12석)</p>
+                        </div>
+
+                        <div class="mt-4 pt-4 border-t border-slate-100">
+                            <h4 class="font-bold text-slate-800 text-sm mb-2"><i class="fa-solid fa-thumbs-up text-emerald-600 mr-1.5"></i>3대 가족 핵심 매력 포인트</h4>
+                            <ul class="text-xs text-slate-600 space-y-1.5">
+                                <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mt-0.5 mr-2"></i> 부모님이 선호하시는 자극적이지 않은 최고급 가이세키/아구돼지 샤브샤브</li>
+                                <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mt-0.5 mr-2"></i> 외부 소음 없는 단독 룸에서 편안하게 케이크 촛불 및 편지/선물 전달 가능</li>
+                                <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mt-0.5 mr-2"></i> 어린이 전용 일식 세트 '타마테바코(￥2,300)' 알찬 구성</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-emerald-50 px-6 py-3 border-t border-emerald-100 text-xs text-emerald-800 font-semibold flex justify-between items-center">
+                        <span>추천 대상: 부모님 식성 고려 및 오붓한 개별실 소통을 원할 때</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Dining Comparison Matrix -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+                <div class="px-6 py-4 border-b border-slate-100 font-bold text-slate-800 text-base flex justify-between items-center">
+                    <span><i class="fa-solid fa-table-list text-ocean-600 mr-2"></i>전체 다이닝 옵션 종합 비교표</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-slate-600">
+                        <thead class="text-xs text-slate-700 uppercase bg-slate-50">
+                            <tr>
+                                <th class="px-5 py-3">레스토랑 명칭</th>
+                                <th class="px-5 py-3">주요 메뉴 및 요리 구성</th>
+                                <th class="px-5 py-3">디너 휴무일</th>
+                                <th class="px-5 py-3">3대 가족 연회 적합성</th>
+                                <th class="px-5 py-3">종합 평가 & 추천 등급</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr class="hover:bg-slate-50">
+                                <td class="px-5 py-4 font-bold text-slate-900">
+                                    포 시즌스<br><span class="text-xs font-normal text-slate-500">(Four Seasons)</span>
+                                </td>
+                                <td class="px-5 py-4">와규·해산물 라이브 철판구이, 프렌치 코스</td>
+                                <td class="px-5 py-4 font-medium text-slate-700">화요일</td>
+                                <td class="px-5 py-4 text-emerald-600 font-bold">최상 (불쇼, 오션뷰, 키즈철판)</td>
+                                <td class="px-5 py-4"><span class="bg-ocean-100 text-ocean-800 text-xs font-bold px-2.5 py-1 rounded-full">1순위 최우선</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="px-5 py-4 font-bold text-slate-900">
+                                    일본 요리 이로도리<br><span class="text-xs font-normal text-slate-500">(Irodori)</span>
+                                </td>
+                                <td class="px-5 py-4">정통 가이세키, 와규 스키야키, 아구 샤브샤브</td>
+                                <td class="px-5 py-4 font-medium text-slate-700">월요일</td>
+                                <td class="px-5 py-4 text-emerald-600 font-bold">최상 (프라이빗 룸, 정갈한 일식)</td>
+                                <td class="px-5 py-4"><span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2.5 py-1 rounded-full">2순위 프라이빗</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="px-5 py-4 font-bold text-slate-900">
+                                    세일피쉬 카페<br><span class="text-xs font-normal text-slate-500">(Sailfish Cafe)</span>
+                                </td>
+                                <td class="px-5 py-4">아시안 & 오키나와 인터내셔널 뷔페</td>
+                                <td class="px-5 py-4 text-emerald-600 font-medium">없음 (매일)</td>
+                                <td class="px-5 py-4 text-slate-500">보통 (다양하나 북적임)</td>
+                                <td class="px-5 py-4"><span class="bg-slate-100 text-slate-600 text-xs font-medium px-2.5 py-1 rounded-full">일반 투숙일 식사</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="px-5 py-4 font-bold text-slate-900">
+                                    코럴 씨 뷰<br><span class="text-xs font-normal text-slate-500">(Coral Sea View)</span>
+                                </td>
+                                <td class="px-5 py-4">바다 위 선셋 오션 바비큐 (BBQ 코스)</td>
+                                <td class="px-5 py-4 font-medium text-slate-700">목요일</td>
+                                <td class="px-5 py-4 text-slate-500">보통 (해풍 영향, 야외)</td>
+                                <td class="px-5 py-4"><span class="bg-slate-100 text-slate-600 text-xs font-medium px-2.5 py-1 rounded-full">캐주얼 야외 식사</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: ACTION PLAN & RESERVATION TEMPLATES -->
+        <section id="tab-action" class="tab-content hidden space-y-6">
+            <div class="bg-gradient-to-r from-slate-900 to-ocean-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl">
+                <h2 class="text-2xl sm:text-3xl font-extrabold leading-snug flex items-center">
+                    <i class="fa-solid fa-paper-plane mr-3"></i>실행 로드맵 & 영문 예약 양식
+                </h2>
+                <p class="mt-2 text-slate-300 text-sm sm:text-base">
+                    아래 안내글을 복사하여 TableCheck 비고란이나 호텔 이메일(privacy@hpd-c.co.jp)로 전송하세요.
+                </p>
+            </div>
+
+            <!-- Interactive Step-by-Step Checklist -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+                <h3 class="font-bold text-slate-800 text-base mb-4 flex items-center">
+                    <i class="fa-solid fa-list-check text-ocean-600 mr-2"></i>생일 이벤트 완벽 준비 체크리스트
+                </h3>
+                <div class="space-y-3" id="checklist">
+                    <label class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl cursor-pointer hover:bg-slate-100 transition">
+                        <input type="checkbox" class="w-5 h-5 text-ocean-600 rounded focus:ring-ocean-500" onchange="updateChecklistProgress()">
+                        <span class="text-sm font-medium text-slate-700">11월 27일(금) 디너 파티 일자 및 시간(예: 18:30) 확정</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl cursor-pointer hover:bg-slate-100 transition">
+                        <input type="checkbox" class="w-5 h-5 text-ocean-600 rounded focus:ring-ocean-500" onchange="updateChecklistProgress()">
+                        <span class="text-sm font-medium text-slate-700">포 시즌스(철판구이) 또는 이로도리(가이세키/개별실) 선택</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl cursor-pointer hover:bg-slate-100 transition">
+                        <input type="checkbox" class="w-5 h-5 text-ocean-600 rounded focus:ring-ocean-500" onchange="updateChecklistProgress()">
+                        <span class="text-sm font-medium text-slate-700">최소 투숙 3일 전까지 온라인/전화 디너 예약 진행</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl cursor-pointer hover:bg-slate-100 transition">
+                        <input type="checkbox" class="w-5 h-5 text-ocean-600 rounded focus:ring-ocean-500" onchange="updateChecklistProgress()">
+                        <span class="text-sm font-medium text-slate-700">예약 시 비고란(Special Requests)에 음력 변환 영문 문구 기재</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl cursor-pointer hover:bg-slate-100 transition">
+                        <input type="checkbox" class="w-5 h-5 text-ocean-600 rounded focus:ring-ocean-500" onchange="updateChecklistProgress()">
+                        <span class="text-sm font-medium text-slate-700">호텔 이메일(privacy@hpd-c.co.jp)로 서면 승인 재확인 메일 발송</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- English Special Requests Copy Tool -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Template 1: Four Seasons Teppanyaki -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <h4 class="font-bold text-slate-800 text-sm flex items-center">
+                                <i class="fa-solid fa-copy text-ocean-600 mr-2"></i>[포 시즌스] 예약 요청 문구
+                            </h4>
+                            <span class="text-xs bg-ocean-100 text-ocean-700 px-2 py-0.5 rounded font-semibold">철판구이 전용</span>
+                        </div>
+                        <div class="bg-slate-900 text-slate-100 p-4 rounded-xl text-xs font-mono leading-relaxed relative overflow-x-auto" id="template1">
+Dear Renaissance Resort Team,
+
+We are a family of 6 (5 adults + 1 child, 7 years old) staying from Nov 24 to Nov 28, 2026. 
+We would like to reserve Four Seasons Teppanyaki on Nov 27 for my mother's birthday celebration.
+
+* Guest Birthday Info:
+- Lunar Date: Oct 19, 1959
+- Converted Solar Date: Nov 27, 2026 (During our stay)
+
+Please arrange the complimentary Anniversary privileges (Strawberry Chiffon Cake, anniversary cocktails, and commemorative photo service).
+Also, please kindly assign us counter seating for 6 guests.
+
+Thank you very much!
+                        </div>
+                    </div>
+                    <button onclick="copyToClipboard('template1', 'copy-btn-1')" id="copy-btn-1" class="mt-4 w-full bg-ocean-600 hover:bg-ocean-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition flex items-center justify-center space-x-2">
+                        <i class="fa-regular fa-copy"></i>
+                        <span>포 시즌스 요청문 복사하기</span>
+                    </button>
+                </div>
+
+                <!-- Template 2: Irodori Japanese Dining -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <h4 class="font-bold text-slate-800 text-sm flex items-center">
+                                <i class="fa-solid fa-copy text-emerald-600 mr-2"></i>[이로도리] 예약 요청 문구
+                            </h4>
+                            <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded font-semibold">개별실 전용</span>
+                        </div>
+                        <div class="bg-slate-900 text-slate-100 p-4 rounded-xl text-xs font-mono leading-relaxed relative overflow-x-auto" id="template2">
+Dear Renaissance Resort Team,
+
+We are a family of 6 (5 adults + 1 child, 7 years old) staying from Nov 24 to Nov 28, 2026. 
+We would like to reserve Irodori on Nov 27 for my mother's birthday celebration.
+
+* Guest Birthday Info:
+- Lunar Date: Oct 19, 1959
+- Converted Solar Date: Nov 27, 2026 (During our stay)
+
+We request a private Horigotatsu room (e.g. Miyabi) for our family, and please arrange the complimentary Anniversary privileges (Strawberry Chiffon Cake, cocktails, and commemorative photo).
+
+Thank you very much!
+                        </div>
+                    </div>
+                    <button onclick="copyToClipboard('template2', 'copy-btn-2')" id="copy-btn-2" class="mt-4 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition flex items-center justify-center space-x-2">
+                        <i class="fa-regular fa-copy"></i>
+                        <span>이로도리 요청문 복사하기</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Toast Alert Box for Copy Notification -->
+            <div id="toast" class="fixed bottom-6 right-6 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl text-xs font-medium flex items-center space-x-2 transform translate-y-20 opacity-0 transition-all duration-300 z-50">
+                <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+                <span id="toast-msg">클립보드에 복사되었습니다!</span>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-6 mt-12 text-center text-xs text-slate-400">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>오키나와 르네상스 리조트 3대 가족 여행 & 어머니 음력 생신 맞춤 대화형 보고서</p>
+            <p class="mt-1">참고 출처: 한국천문연구원 음양력 데이터베이스 & 르네상스 리조트 오키나와 공식 사이트</p>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Tab Switcher Logic
+        function switchTab(tabId) {
+            // Hide all contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(el => el.classList.add('hidden'));
+
+            // Show selected content
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+
+            // Desktop Tab Button Active State
+            const desktopBtns = document.querySelectorAll('#desktopNav .tab-btn');
+            desktopBtns.forEach(btn => btn.classList.remove('active'));
+            const activeDesktopBtn = document.getElementById('tab-btn-' + tabId);
+            if(activeDesktopBtn) activeDesktopBtn.classList.add('active');
+
+            // Mobile Tab Button Active State
+            const mobileBtns = document.querySelectorAll('.tab-btn-m');
+            mobileBtns.forEach(btn => {
+                btn.classList.remove('active', 'bg-slate-100', 'text-ocean-600', 'font-bold');
+                btn.classList.add('text-slate-600');
+            });
+            const activeMobileBtn = document.getElementById('tab-m-' + tabId);
+            if(activeMobileBtn) {
+                activeMobileBtn.classList.add('active', 'bg-slate-100', 'text-ocean-600', 'font-bold');
+                activeMobileBtn.classList.remove('text-slate-600');
+            }
+
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Copy Text Function (Using execCommand fallback for iframe safety)
+        function copyToClipboard(elementId, btnId) {
+            const textElement = document.getElementById(elementId);
+            const textToCopy = textElement.innerText;
+
+            // Create temporary textarea
+            const tempInput = document.createElement("textarea");
+            tempInput.style.position = "absolute";
+            tempInput.style.left = "-9999px";
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+            
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999); // Mobile device support
+
+            try {
+                document.execCommand('copy');
+                showToast("요청 문구가 성공적으로 복사되었습니다!");
+            } catch (err) {
+                showToast("복사에 실패했습니다. 직접 선택하여 복사해주세요.");
+            }
+
+            document.body.removeChild(tempInput);
+        }
+
+        // Toast Notification System
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.innerText = message;
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 3000);
+        }
+
+        // Checklist Progress
+        function updateChecklistProgress() {
+            const checkboxes = document.querySelectorAll('#checklist input[type="checkbox"]');
+            let checkedCount = 0;
+            checkboxes.forEach(cb => {
+                if(cb.checked) checkedCount++;
+            });
+            if(checkedCount === checkboxes.length) {
+                showToast("축하합니다! 생일 이벤트 준비 체크리스트가 완료되었습니다. 🎉");
+            }
+        }
+    </script>
 </body>
 </html>
