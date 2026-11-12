@@ -1,581 +1,458 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>오키나와 르네상스 리조트 3대 가족 여행 & 생신 기념 대화형 가이드</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts Inter & Noto Sans KR -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        ocean: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            500: '#0284c7',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            900: '#0c4a6e',
-                        },
-                        coral: {
-                            500: '#f43f5e',
-                            600: '#e11d48',
-                        },
-                        gold: {
-                            500: '#eab308',
-                            600: '#ca8a04',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Noto Sans KR', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { font-family: 'Noto Sans KR', sans-serif; }
-        .tab-btn.active {
-            border-bottom-color: #0284c7;
-            color: #0284c7;
-            font-weight: 700;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123b45">
+<title>오키나와 6인 가족여행 | 2026.11.24–28 (수정본)</title>
+<style>
+:root{--ink:#17343a;--muted:#61777a;--sea:#123b45;--sea2:#1d5962;--sand:#f5f0e6;--paper:#fffdf8;--line:#e6e0d5;--coral:#e98262;--mint:#e5f1ec;--blue:#eaf2f4;--shadow:0 12px 34px rgba(23,52,58,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7f6f1;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.6}
+a{color:#176b78;text-underline-offset:3px}button{font:inherit;cursor:pointer}
+.hero{background:linear-gradient(130deg,#123b45 0%,#1d5962 65%,#367b7c 100%);color:#fff;padding:42px 22px 34px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:360px;height:360px;border:1px solid #ffffff26;border-radius:50%;right:-90px;top:-190px;box-shadow:0 0 0 35px #ffffff0b,0 0 0 75px #ffffff08}
+.wrap{max-width:1120px;margin:auto}.eyebrow{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#b8d9d5;font-weight:700}.hero h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.12;margin:12px 0}.hero p{margin:0;color:#d9e9e6}.hero-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.chip{border:1px solid #ffffff45;border-radius:999px;padding:6px 12px;font-size:.85rem;color:#f5fbfa}
+main{max-width:1120px;margin:0 auto;padding:22px 18px 70px}.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-2px}.quick{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}.quick b{display:block;font-size:1.15rem}.quick span{font-size:.82rem;color:var(--muted)}
+.nav{display:flex;gap:8px;overflow:auto;padding:22px 0 14px;position:sticky;top:0;background:#f7f6f1;z-index:5}.nav button,.subnav button{white-space:nowrap;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:9px 15px;font-weight:650}.nav button.active,.subnav button.active{background:var(--sea);color:#ffffff;border-color:var(--sea)}
+section.panel{display:none;animation:fade .2s ease}section.panel.active{display:block}@keyframes fade{from{opacity:.45;transform:translateY(4px)}to{opacity:1;transform:none}}
+h2{font-size:1.65rem;margin:12px 0 6px;letter-spacing:-.03em}h3{font-size:1.12rem;margin:0 0 8px}p.lead{color:var(--muted);margin:0 0 20px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:8px 0 16px}.section-head small{color:var(--muted)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);margin:12px 0}.callout{background:var(--mint);border:1px solid #d2e5dc;border-radius:15px;padding:15px 17px;margin:14px 0}.warning{background:#fff2e9;border-color:#f1d7c7}.blue{background:var(--blue);border-color:#d7e5e8}
+.day-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.day-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}.day-top{padding:16px 18px;background:var(--sea);color:#fff}.day-top small{color:#c7dfdc}.day-top h3{font-size:1.15rem;margin:3px 0}.day-body{padding:15px 18px}.route{font-size:.9rem;color:var(--muted);margin-bottom:12px}.timeline{list-style:none;margin:0;padding:0}.timeline li{display:grid;grid-template-columns:86px 1fr;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.92rem}.timeline li:last-child{border:0}.time{font-weight:750;color:var(--sea2);font-variant-numeric:tabular-nums}.note{font-size:.84rem;color:var(--muted)}#info .card>p,#info .card li{font-size:.92rem}
+.tag{display:inline-block;border-radius:6px;padding:2px 7px;font-size:.75rem;font-weight:700;background:#edf1ed;color:#47655d;margin-right:4px}.tag.fixed{background:#e3eff1;color:#245b64}.tag.flex{background:#fff0e7;color:#9a563d}
+.subnav{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.schedule{display:none}.schedule.active{display:block}
+table{width:100%;border-collapse:collapse;font-size:.91rem}th,td{text-align:left;padding:10px 9px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-size:.8rem;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}.place{display:flex;justify-content:space-between;gap:12px;align-items:start}.place a{font-size:.85rem;white-space:nowrap}
+.checklist label{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line);cursor:pointer}.checklist input{margin-top:5px;accent-color:var(--sea);width:18px;height:18px;flex:none}.checklist input:checked+span{text-decoration:line-through;color:#8b9996}.progress{height:8px;background:#e8e8e1;border-radius:20px;overflow:hidden;margin:10px 0}.progress div{height:100%;width:0;background:#43877b;transition:width .2s}
+details{border-bottom:1px solid var(--line);padding:12px 0}summary{font-weight:700;cursor:pointer}details p{margin:8px 0 0;color:var(--muted);font-size:.92rem}
+.small-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.small-card{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:15px}
+.footer{margin-top:28px;padding:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}.btn{border:0;background:var(--coral);color:white;border-radius:10px;padding:9px 13px;font-weight:700}.muted{color:var(--muted)}.pill{display:inline-block;background:#f0eee7;padding:4px 9px;border-radius:999px;font-size:.78rem;margin:3px 3px 3px 0}
+@media(max-width:760px){.quick-grid{grid-template-columns:repeat(2,1fr)}.day-grid,.cols{grid-template-columns:1fr}.small-grid{grid-template-columns:1fr}.hero{padding-top:32px}.nav{margin:0 -18px;padding-left:18px;padding-right:18px}.section-head{display:block}}
+@media print{body{background:white}.hero{padding:20px}.nav,.btn,.subnav{display:none!important}main{padding:0}.panel{display:block!important;page-break-inside:avoid}.day-card,.card{box-shadow:none;break-inside:avoid}.day-grid{grid-template-columns:1fr 1fr}}
+#gate{position:fixed;inset:0;z-index:9999;background:linear-gradient(130deg,#123b45 0%,#1d5962 65%,#367b7c 100%);display:flex;align-items:center;justify-content:center;padding:20px}
+.gate-box{background:var(--paper);border-radius:18px;padding:28px 24px;max-width:360px;width:100%;text-align:center;box-shadow:0 12px 34px rgba(0,0,0,.3)}
+.gate-box h2{margin:10px 0 4px}
+.gate-box input{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:14px 0 10px}
+.gate-box .btn{width:100%}
+.gate-err{color:#b3402a;font-size:.85rem;min-height:1.3em;margin:8px 0 0}
+body.locked{overflow:hidden}
+body.locked>header,body.locked>main{visibility:hidden}
+</style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+<body class="locked">
+<div id="gate"><div class="gate-box"><div class="eyebrow" style="color:#1d5962">Family trip planner · Okinawa</div><h2>오키나와 가족여행 일정표</h2><p class="muted" style="margin:0;font-size:.9rem">가족 전용 페이지입니다.<br>비밀번호를 입력하세요.</p><input id="gatePw" type="password" placeholder="비밀번호" autocomplete="off"><button class="btn" id="gateBtn">일정 보기</button><p class="gate-err" id="gateErr"></p></div></div>
+<header class="hero">
+ <div class="wrap">
+  <div class="eyebrow">Family trip planner · Okinawa</div>
+  <h1>오키나와 6인 가족여행</h1>
+  <p>함께 즐기고, 무리하지 않고, 좋은 추억을 남기는 4박 5일</p>
+  <div class="hero-meta"><span class="chip">2026.11.24(화) – 11.28(토)</span><span class="chip">성인 5명 + 어린이 1명</span><span class="chip">렌터카 여행</span><span class="chip">수정본 · 2026.11.12</span></div>
+ </div>
+</header>
+<main>
+ <div class="quick-grid">
+  <div class="quick"><b>4박 5일</b><span>11월 24일 – 28일</span></div>
+  <div class="quick"><b>르네상스 2박</b><span>11/24 – 11/26 확정</span></div>
+  <div class="quick"><b>아쿠아 펠리스 차탄 2박</b><span>11/26 – 11/28 확정</span></div>
+  <div class="quick"><b>6명</b><span>부모님 · 부부 · 남동생 · 딸</span></div>
+ </div>
+ <nav class="nav" aria-label="주요 메뉴">
+  <button class="active" data-tab="overview">여행 한눈에</button>
+  <button data-tab="itinerary">날짜별 일정</button>
+  <button data-tab="backup">예비 일정</button>
+  <button data-tab="stay">숙소 정보</button>
+   <button data-tab="rental">렌터카 정보</button>
+  <button data-tab="tips">가족 여행 팁</button>
+  <button data-tab="info">여행 준비 정보</button>
+  <button data-tab="check">준비 체크</button>
+ </nav>
 
-    <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-ocean-600 to-teal-400 flex items-center justify-center text-white shadow-md">
-                        <i class="fa-solid fa-umbrella-beach text-xl"></i>
-                    </div>
-                    <div>
-                        <h1 class="text-lg font-bold text-slate-900 leading-tight">르네상스 오키나와 생신 여행</h1>
-                        <p class="text-xs text-slate-500">3대 가족 (6인) 맞춤 분석 및 예약 보고서</p>
-                    </div>
-                </div>
-                <!-- Navigation Tabs -->
-                <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-600" id="desktopNav">
-                    <button onclick="switchTab('summary')" class="tab-btn active py-5 px-1 border-b-2 border-transparent hover:text-ocean-600 transition" id="tab-btn-summary">
-                        <i class="fa-solid fa-calendar-check mr-1.5"></i>1. 날짜 환산 & 일치성
-                    </button>
-                    <button onclick="switchTab('benefits')" class="tab-btn py-5 px-1 border-b-2 border-transparent hover:text-ocean-600 transition" id="tab-btn-benefits">
-                        <i class="fa-solid fa-gift mr-1.5"></i>2. 애니버서리 특전
-                    </button>
-                    <button onclick="switchTab('restaurants')" class="tab-btn py-5 px-1 border-b-2 border-transparent hover:text-ocean-600 transition" id="tab-btn-restaurants">
-                        <i class="fa-solid fa-utensils mr-1.5"></i>3. 레스토랑 종합 비교
-                    </button>
-                    <button onclick="switchTab('action')" class="tab-btn py-5 px-1 border-b-2 border-transparent hover:text-ocean-600 transition" id="tab-btn-action">
-                        <i class="fa-solid fa-clipboard-list mr-1.5"></i>4. 실행 전략 & 가이드
-                    </button>
-                    <button onclick="switchTab('conclusion')" class="tab-btn py-5 px-1 border-b-2 border-transparent hover:text-ocean-600 transition" id="tab-btn-conclusion">
-                        <i class="fa-solid fa-flag-checkered mr-1.5"></i>5. 결론 및 제언
-                    </button>
-                </nav>
-            </div>
-        </div>
-        <!-- Mobile Navigation Menu -->
-        <div class="md:hidden flex overflow-x-auto border-t border-slate-100 bg-white px-2 py-2 text-xs space-x-1 no-scrollbar">
-            <button onclick="switchTab('summary')" class="tab-btn-m active px-3 py-2 rounded-lg bg-slate-100 font-bold text-ocean-600 whitespace-nowrap" id="tab-m-summary">
-                1. 날짜검토
-            </button>
-            <button onclick="switchTab('benefits')" class="tab-btn-m px-3 py-2 rounded-lg whitespace-nowrap text-slate-600" id="tab-m-benefits">
-                2. 생일특전
-            </button>
-            <button onclick="switchTab('restaurants')" class="tab-btn-m px-3 py-2 rounded-lg whitespace-nowrap text-slate-600" id="tab-m-restaurants">
-                3. 레스토랑분석
-            </button>
-            <button onclick="switchTab('action')" class="tab-btn-m px-3 py-2 rounded-lg whitespace-nowrap text-slate-600" id="tab-m-action">
-                4. 실행가이드
-            </button>
-            <button onclick="switchTab('conclusion')" class="tab-btn-m px-3 py-2 rounded-lg whitespace-nowrap text-slate-600" id="tab-m-conclusion">
-                5. 결론
-            </button>
-        </div>
-    </header>
+ <section id="overview" class="panel active">
+  <div class="section-head"><div><h2>여행의 큰 그림</h2><p class="lead">북부 관광은 26일에 모으고, 27일은 남부 관광과 차탄 저녁을 즐기는 구성입니다.</p></div></div>
+  <div class="callout"><strong>가장 추천하는 흐름</strong><br>나하공항 → 르네상스 리조트(2박) → 만좌모·츄라우미 → 아쿠아 펠리스 차탄(2박) → 오키나와 월드·아메리칸 빌리지 → 우미카지 테라스 → 공항</div>
+  <div class="callout warning"><strong>출발 전 확인 4가지 (수정본 추가)</strong><br>① 항공 운임 종류와 수하물 15kg 적용 여부 · ② 돌핀 비참가자 1명 확정 · ③ 아쿠아 펠리스 객실 타입·배정 건물 · ④ Guest My Page 사전 등록과 Check-in Code 저장</div>
+  <div class="day-grid">
+   <article class="day-card"><div class="day-top"><small>DAY 1 · 11/24 화</small><h3>오키나와 도착</h3></div><div class="day-body"><div class="route">나하공항 → 르네상스 리조트</div><p>입국과 렌터카 수령 후 리조트로 이동합니다. 첫날은 외부 관광 없이 체크인과 휴식에 집중합니다.</p><span class="tag fixed">숙박 르네상스</span></div></article>
+   <article class="day-card"><div class="day-top"><small>DAY 2 · 11/25 수</small><h3>리조트에서 온전히 즐기기</h3></div><div class="day-body"><div class="route">돌핀 프로그램 · 실내 수영장 · 온천(자격 확인)</div><p>이번 여행의 리조트 데이. 프로그램 사이에 충분히 쉬고, 저녁은 리조트에서 보냅니다.</p><span class="tag fixed">전일 리조트 일정</span></div></article>
+   <article class="day-card"><div class="day-top"><small>DAY 3 · 11/26 목</small><h3>만좌모와 츄라우미 수족관</h3></div><div class="day-body"><div class="route">르네상스 → 만좌모 → 츄라우미 → 아쿠아 펠리스 차탄</div><p>북부 관광을 마친 뒤 차탄으로 이동합니다. 이날은 이동량이 가장 많아 수족관 관람을 우선합니다.</p><span class="tag fixed">숙박 아쿠아 펠리스 차탄</span></div></article>
+   <article class="day-card"><div class="day-top"><small>DAY 4 · 11/27 금 · 어머니 생신</small><h3>오키나와 월드와 차탄 저녁</h3></div><div class="day-body"><div class="route">차탄 → 오키나와 월드 → 휴식 → 아메리칸 빌리지</div><p>오전 관광 후 숙소에서 쉬었다가 저녁에는 쇼핑과 식사, 야경을 즐깁니다. 오늘은 어머니 생신(음력 10월 19일 → 양력 11월 27일)으로, 저녁 U-SHI에서 생일을 축하합니다.</p><span class="tag flex">날씨·체력에 따라 조정</span></div></article>
+   <article class="day-card"><div class="day-top"><small>DAY 5 · 11/28 토</small><h3>우미카지 테라스와 귀국</h3></div><div class="day-body"><div class="route">차탄 → 우미카지 → 렌터카 반납 → 나하공항</div><p>오전 짧게 들른 뒤 렌터카를 반납합니다. 공항 이동과 출국 수속 시간을 넉넉히 확보합니다.</p><span class="tag fixed">15:25 출발</span></div></article>
+  </div>
+  <div class="card"><h3>항공편 정보</h3><table><tr><th>날짜</th><th>구간</th><th>시간</th><th>편명</th></tr><tr><td>11/24</td><td>인천 → 나하</td><td>11:50 → 14:25</td><td>TW0281</td></tr><tr><td>11/28</td><td>나하 → 인천</td><td>15:25 → 17:55</td><td>TW0282</td></tr></table><p class="note">항공사: Trinity Airways (구 티웨이항공, 2026.9.10 사명 변경 · TW 코드·편명은 그대로 유지). 인천 출발 터미널은 제1터미널입니다 (예약증에서 확인).<br>위탁수하물: Smart 운임 기준 1인 15kg, Event 운임은 일본 노선 위탁수하물 무료 제공 없음 — <strong>예약증에서 운임 종류를 반드시 확인</strong>하세요. 기내 수하물은 1인 10kg 합산입니다.<br>귀국 수하물: 기념품을 사면 15kg를 넘기 쉬우니 출발 전 무게를 확인하세요. 추가 수하물은 출발 25시간 전까지 온라인 구매가 공항보다 저렴합니다.<br>귀국편 체크인 마감: <strong>14:35 (출발 50분 전)</strong> · 온라인 체크인은 출발 1시간 전 마감. 공항 13:30 도착을 목표로 하세요.<br>면세 쇼핑 시: 2026.11.1부터 출국 시 면세 환급 방식이 변경되어, 면세품은 수하물 위탁 전 세관 키오스크에서 확인받아야 합니다.</p></div>
+  <div class="callout warning"><strong>가족 모두 기억할 핵심 3가지</strong><br>① 만좌모는 11/26에 방문 · ② 마지막 2박은 아쿠아 펠리스 차탄 확정 · ③ 11/28 렌터카 13:00 반납 · 공항 13:30 도착 목표 (체크인 마감 14:35)</div>
+ </section>
 
-    <!-- Main Content Area -->
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+ <section id="itinerary" class="panel">
+  <h2>날짜별 상세 일정</h2><p class="lead">날짜를 선택하면 시간대별 계획과 꼭 기억할 점을 볼 수 있습니다.</p>
+  <div class="subnav" id="dayButtons">
+   <button class="active" data-day="d1">11/24 화</button><button data-day="d2">11/25 수</button><button data-day="d3">11/26 목</button><button data-day="d4">11/27 금</button><button data-day="d5">11/28 토</button>
+  </div>
+  <div class="schedule active" id="d1"><div class="card"><h3>DAY 1 · 인천 출발, 도착과 체크인</h3><ul class="timeline"><li><span class="time">09:50</span><span>인천공항 제1터미널 도착 목표 <span class="note">(출발 2시간 전 · 좌석 확인 — 아이 옆자리에 보호자 배정됐는지 확인)</span></span></li><li><span class="time">11:50</span><span>TW0281 출발 (인천 → 나하)</span></li><li><span class="time">14:25</span><span>나하공항 도착</span></li><li><span class="time">14:25–15:30</span><span>입국심사·수하물 수령 후 택시로 COLDIO 렌터카 영업소 이동 <span class="note">(택시 영수증 보관, 실비 환불)</span></span></li><li><span class="time">15:30 이후</span><span>COLDIO 렌터카 차량 수령 후 르네상스 리조트 이동 <span class="note">(예약 시작 시각 15:30)</span></span></li><li><span class="time">16:40–17:30</span><span>체크인 및 휴식 <span class="note">(입국 지연 시 17시 이후 도착 가능 · 예약 도착시간 16:00과 달라지면 호텔에 연락)</span></span></li><li><span class="time">18:00</span><span>리조트 구경과 저녁 식사</span></li><li><span class="time">20:00</span><span>야마다 온천 <span class="note">(6명 전원 이용 가능 · 운영시간 내 자유 이용)</span></span></li></ul><div class="callout warning"><strong>첫날 연결이 빠듯합니다.</strong><br>14:25 도착 후 입국·수하물·택시를 거쳐 15:30 렌터카 수령은 지연 여유가 거의 없습니다. 비행이 늦어지면 COLDIO(050-3815-4823)에 바로 연락해 수령 시각을 조정하고, 르네상스 도착이 늦어지면 호텔(098-965-0707)에도 알려주세요. 첫날은 외부 관광을 추가하지 않고, 도착이 늦어지면 저녁과 온천을 유연하게 조정합니다.</div></div></div>
+  <div class="schedule" id="d2"><div class="card"><h3>DAY 2 · 르네상스 리조트 전일 (돌핀 프로그램)</h3><ul class="timeline"><li><span class="time">07:30–08:20</span><span>조식 및 수영복 착용 완료</span></li><li><span class="time">08:30</span><span>액티비티 카운터 방문 <span class="note">★결제(JPY 100,000) 및 신장 측정 필수 (예외 승인 특례 적용) · 키즈 잡 체험도 이때 함께 예약 (선착순)</span></span></li><li><span class="time">09:00</span><span>Family Dolphin S (Swim Plus) <span class="note">참가자 5명 (초1 어린이 포함) · 정시 시작</span></span></li><li><span class="time">프로그램 후</span><span>샤워 및 휴식 · 캔디하우스 + 스탬프랠리 <span class="note">캔디하우스 10:00–20:00, 투숙 중 1회 · 동반자는 안전상 체험 공간 입장 불가</span></span></li><li><span class="time">12:00</span><span>점심 식사</span></li><li><span class="time">14:00–16:00</span><span>실내 수영장 <span class="note">(실내 9:00–22:00 연중 · 실외 수영장은 난방이 안 돼 11월엔 실내만 이용 · 워터슬라이드·어린이 구역 있음)</span></span></li><li><span class="time">16:00–17:30</span><span>객실 휴식 · 17:30경 해변 일몰 산책 <span class="note">(일몰 17:37경 · 리조트가 서쪽 해변이라 객실·해변에서 일몰 감상 가능)</span></span></li><li><span class="time">18:00</span><span>저녁 식사 <span class="note">(디너 원드링크 특전 사용 — 투숙 중 1회 · 디너 사전 예약 권장)</span></span></li><li><span class="time">20:00</span><span>야마다 온천 <span class="note">(6명 전원 이용 가능 · 운영시간 내 자유 이용)</span></span></li></ul><div class="callout warning"><strong>★ 액티비티 카운터 08:30 방문 필수!</strong><br>원래 결제 및 신장 체크는 전날 17:00까지 마쳐야 하나, 전날 17시 이후 도착으로 인해 11/25 오전 8:30 카운터 수속 특례가 적용되었습니다. 09:00 프로그램 시작 전 <strong>모든 참가자가 수영복 착용 및 준비를 완전히 마친 상태</strong>로 8:30에 액티비티 카운터로 방문해야 합니다.</div><p class="note">Family Dolphin S는 총 5명(초1 어린이 포함) 참가 확정되었습니다. 신장 110cm 미만 어린이는 돌핀 수영에 참가할 수 없으므로 현장 신장 체크가 수행됩니다. 동반자는 안전상의 이유로 돌고래 시설 내 접근이 금지됩니다. <strong>비참가자 1명: ___ (누구인지 확인 필요)</strong> · 프로그램 시간 동안 대기 장소를 미리 정하세요. 결제 수단(카드/현금)도 사전 확인하세요. 취소 규정: 당일 100%, 전일 50% 수수료가 발생합니다.</p></div></div>
+  <div class="schedule" id="d3"><div class="card"><h3>DAY 3 · 만좌모 → 츄라우미 → 아쿠아 펠리스 차탄</h3><ul class="timeline"><li><span class="time">07:30–08:30</span><span>조식</span></li><li><span class="time">08:30–09:30</span><span>짐 정리 및 체크아웃 준비</span></li><li><span class="time">09:30</span><span>르네상스 체크아웃 및 출발 <span class="note">(11:00 출발에서 앞당김 — 차탄 해 지기 전 도착을 위해)</span></span></li><li><span class="time">10:00–11:00</span><span>만좌모 관람 (약 1시간 — 전망대·시설 포함 여유 있게)</span></li><li><span class="time">11:30–12:30</span><span>점심 식사 · 하나무라 소바 <span class="note">(1063 Serakaki, Onna · 목요일 영업 11:30–15:00 · 나카무라 소바는 목요일 휴무라 이용 불가 · 백업: 온나노에키 마켓)</span></span></li><li><span class="time">12:30–13:40</span><span>츄라우미 수족관 이동</span></li><li><span class="time">13:40–16:45</span><span>츄라우미 수족관 관람 <span class="note">(고래상어 먹이주기 15:00 우선 — 돌고래쇼도 15:00라 겹침, 돌핀은 11/25에 이미 체험)</span></span></li><li><span class="time">16:45–18:30</span><span>차탄 이동</span></li><li><span class="time">18:30 이후</span><span>아쿠아 펠리스 차탄 체크인 및 저녁 <span class="note">(포시즌스 스테이크하우스 16:30–22:30 또는 레드 랍스터 11:00–22:00 · 사전 예약 권장 — 식당 후보는 “여행 준비 정보” 탭 참조)</span></span></li></ul><div class="callout warning"><strong>오늘의 최우선은 츄라우미!</strong><br>츄라우미 운영시간 8:30–18:30, 최종 입장 17:30 (11월 기준 확인). 고래상어 먹이주기 15:00에 맞춰 관람 동선을 짜세요. 일정이 밀리면 만좌모 체류를 줄이고 점심은 간단히 해결하세요. 26일은 여행 중 이동량이 가장 많은 날입니다. 11월 하순 일몰은 17:37경 — 차탄 도착(18:30경)은 해 진 직후가 됩니다.</div><p class="note">츄라우미는 본관 중심 2~2.5시간, 부속시설까지 포함하면 약 3시간을 예상합니다. 고래상어 먹이주기 15:00/17:00, 돌고래 쇼 10:30/11:30/13:00/15:00/17:00 — 15:00에는 두 행사가 겹치므로 고래상어 먹이주기를 우선하세요. 쿠로시오 수조 상부 관람 코스는 임시 폐쇄 중입니다. 북문 P7 주차장 이용을 검토하세요. 차량에 짐이 실린 채 관광하므로 귀중품은 차 안에 두지 마세요.</p></div></div>
+  <div class="schedule" id="d4"><div class="card"><h3>DAY 4 · 오키나와 월드 → 휴식 → 아메리칸 빌리지 (어머니 생신)</h3><ul class="timeline"><li><span class="time">08:00</span><span>조식</span></li><li><span class="time">09:00</span><span>아쿠아 펠리스 차탄 출발</span></li><li><span class="time">10:00–10:15</span><span>오키나와 월드 도착</span></li><li><span class="time">10:30–11:00</span><span>슈퍼 에이사 공연 <span class="note">(10:30·12:30·14:30 중 10:30 확정 · 좌석 선착순이라 일찍 도착, 공연 중 촬영 불가)</span></span></li><li><span class="time">11:00–12:30</span><span>왕국촌 및 옥천동 선택 관람</span></li><li><span class="time">12:30–13:20</span><span>점심 · SANGO (오키나와 월드 내) <span class="note">(9:00–18:00 · 공원 안에서 해결, 이동 없음 · 대안: 하마베노차야, 공원에서 677m 해변 카페)</span></span></li><li><span class="time">13:20–14:30</span><span>차탄 복귀</span></li><li><span class="time">14:30–16:30</span><span>숙소(아쿠아 펠리스 차탄)에서 휴식</span></li><li><span class="time">17:00</span><span><strong>U-SHI 차탄점 저녁 식사 예약</strong> <span class="note">· 예약 확정 · 어머니 생신 저녁 (음력 10월 19일 → 양력 11월 27일) · 예약자명·인원 6명·어린이 의자 여부 확인 필요 · <a href="https://u-shi.net/chatan/" target="_blank" rel="noopener">식당 홈페이지 ↗</a></span></span></li><li><span class="time">식사 후</span><span>아메리칸 빌리지 쇼핑·야경 <span class="note">(일몰 17:37경은 식사 시간과 겹침 — 일몰 사진을 원하면 16:30쯤 미리 나가기)</span></span></li></ul><div class="callout">오키나와 월드 운영시간 9:00–17:30, 최종 접수 16:00. 공식 권장 관람 시간은 3–5시간으로, 일정표의 2시간 반은 빠듯합니다. 부모님이 동굴의 계단과 경사를 부담스러워하시면 옥천동은 생략하고 왕국촌과 공연 위주로 관람해도 충분합니다. 옥천동 관람 여부는 출발 전에 미리 정해두세요. 숙소가 아메리칸 빌리지 도보권(아쿠아 펠리스 차탄)이므로 저녁에 차를 운전하지 않고 편하게 왕래할 수 있습니다.</div></div></div>
+  <div class="schedule" id="d5"><div class="card"><h3>DAY 5 · 우미카지 테라스 → 귀국</h3><ul class="timeline"><li><span class="time">07:30–08:30</span><span>조식 <span class="note">(콘도 조식 미포함 가능성 — 11/27 저녁에 구입한 식재료로 간단히 해결 또는 편의점 이용)</span></span></li><li><span class="time">09:00–09:30</span><span>체크아웃 (아쿠아 펠리스 차탄)</span></li><li><span class="time">09:30</span><span>차탄 출발</span></li><li><span class="time">10:20–11:40</span><span>우미카지 테라스 산책·쇼핑·이른 점심 <span class="note">(상점 10:00부터, 식당은 11:00부터 영업)</span></span></li><li><span class="time">11:45–12:00</span><span>우미카지 출발</span></li><li><span class="time">12:00–12:30</span><span>COLDIO 렌터카 영업소 이동 <span class="note">(주유 없이 반납 옵션 예약)</span></span></li><li><span class="time">12:30–13:00</span><span>렌터카 반납 완료 목표 <span class="note">(예약 반납 시각 13:00)</span></span></li><li><span class="time">반납 후</span><span>무료 셔틀로 나하공항 이동 <span class="note">(마지막 출발 17:00, 직원에게 이용 요청)</span></span></li><li><span class="time">13:30</span><span>나하공항 도착 목표</span></li><li><span class="time">14:35</span><span>체크인 마감 (출발 50분 전) <span class="note">면세품 구매 시 수하물 위탁 전 세관 키오스크에서 확인 필요</span></span></li><li><span class="time">14:45경</span><span>탑승 시작</span></li><li><span class="time">15:25</span><span>나하공항 출발 (TW0282)</span></li></ul><div class="callout warning"><strong>귀국일은 공항 시간이 최우선입니다.</strong><br>체크인 마감은 <strong>14:35</strong>입니다. 렌터카 업체가 더 이른 반납을 요구하면 그 규정을 따르세요. 우미카지 체류를 줄이거나 생략하고, 국제선 수속 시간을 확보합니다.</div></div></div>
+ </section>
 
-        <!-- SECTION 1: CALENDAR CONVERSION -->
-        <section id="tab-summary" class="tab-content space-y-6">
-            <div class="relative bg-gradient-to-r from-ocean-900 via-ocean-700 to-teal-800 rounded-3xl p-6 sm:p-8 text-white shadow-xl overflow-hidden">
-                <div class="relative z-10 max-w-3xl">
-                    <span class="bg-amber-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">1. 음력 생일 양력 환산 검토</span>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 leading-snug">
-                        2026년 음력 생일의 양력 환산 및 투숙 일정과의 일치성 검토
-                    </h2>
-                    <p class="mt-2 text-ocean-100 text-sm sm:text-base leading-relaxed">
-                        투숙객 어머니(1959년 음력 10월 19일생)를 위한 리조트 생일 기념 이벤트 적용 여부를 판단하기 위해서는 해당 음력 날짜의 2026년 양력 환산일을 정확히 도출하는 과정이 선행되어야 합니다.
-                    </p>
-                </div>
-            </div>
+ <section id="backup" class="panel">
+  <h2>날씨와 컨디션에 따른 예비 일정</h2><p class="lead">예비 관광지는 “추가로 다 가는 곳”이 아니라, 기존 일정이 취소되거나 여유가 생겼을 때 고르는 대안입니다.</p>
+  <div class="callout warning">렌터카는 1대이므로 두 그룹이 동시에 다른 장소로 움직이기는 어렵습니다. 가능하면 한 곳을 골라 함께 이동하세요.</div>
+  <div class="subnav" id="backupButtons"><button class="active" data-back="b25">11/25 리조트 주변</button><button data-back="b26">11/26 수족관 주변</button><button data-back="b27">11/27 일정 대체</button><button data-back="b28">11/28 귀국일</button></div>
+  <div class="schedule active" id="b25"><div class="cols">
+   <div class="card"><div class="place"><h3>비오스의 언덕</h3><a href="https://www.bios-hill.co.jp/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">A그룹 · 자연 체험</span><p>르네상스에서 가까운 아열대 숲과 호수. 유람선과 자연 관찰을 즐길 수 있어 딸과 함께하기 좋은 후보입니다.</p><p class="note">계획상 체류 2~3시간 · 리조트에서 차량 약 10~15분(추정) · 야외 비중 있음</p></div>
+   <div class="card"><div class="place"><h3>류큐무라</h3><a href="https://www.ryukyumura.co.jp/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">B그룹 · 전통문화</span><p>오키나와 전통가옥과 민속문화, 공연·공예 체험을 둘러보는 곳입니다.</p><p class="note">계획상 체류 1.5~2.5시간 · 리조트에서 차량 약 5~10분(추정) · 공연 및 체험 일정 확인</p></div>
+  </div><p class="note">11/25는 돌핀 프로그램과 리조트 일정이 우선입니다. 취소되거나 큰 공백이 생긴 경우에만 고려하세요.</p></div>
+  <div class="schedule" id="b26"><div class="cols">
+   <div class="card"><div class="place"><h3>해양문화관·플라네타리움</h3><a href="https://oki-park.jp/kaiyohaku/en/inst/" target="_blank" rel="noopener">공식 안내 ↗</a></div><span class="tag">A그룹 · 실내 체험</span><p>츄라우미 수족관과 같은 해양박공원 안에 있어 이동을 추가하지 않고 들를 수 있는 후보입니다.</p><p class="note">계획상 45~70분 · 플라네타리움은 상영 회차가 맞을 때만</p></div>
+   <div class="card"><div class="place"><h3>열대드림센터</h3><a href="https://oki-park.jp/kaiyohaku/en/inst/38/" target="_blank" rel="noopener">공식 안내 ↗</a></div><span class="tag">B그룹 · 식물 관람</span><p>열대식물과 난초를 감상하는 온실 중심 시설입니다. 조용한 관람을 선호하는 가족에게 적합합니다.</p><p class="note">계획상 40~60분 · 시설 간 이동과 부모님 컨디션 고려</p></div>
+  </div><p class="note">수족관 관람이 일찍 끝나고 모두 여유가 있을 때만 선택합니다. 16:00 이후 새로운 관광을 시작하지 않는 편이 안전합니다.</p></div>
+  <div class="schedule" id="b27"><div class="cols">
+   <div class="card"><div class="place"><h3>오키나와 어린이왕국</h3><a href="https://www.okzm.jp/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">A그룹 · 동물원</span><p>동물원과 어린이 체험시설이 있어 딸의 동물·놀이 선호에 맞는 오키나와 월드 대체 후보입니다.</p><p class="note">계획상 2~3시간 · 야외 비중 높음 · 보행량 보통~높음</p></div>
+   <div class="card"><div class="place"><h3>현립박물관·미술관</h3><a href="https://okimu.jp/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">B그룹 · 실내 문화</span><p>오키나와의 역사·문화·자연을 실내에서 볼 수 있습니다. 동굴 계단이 부담스러울 때 대안으로 고려하세요.</p><p class="note">계획상 1.5~2시간 · 전시별 운영시간·요금 확인</p></div>
+   <div class="card"><div class="place"><h3>DMM 가리유시 수족관</h3><a href="https://kariyushi-aquarium.com/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">전원 · 우천 대안</span><p>실내 전시 중심의 수족관입니다. 비가 오거나 야외 일정이 어려울 때 전원이 함께 즐기는 대안입니다.</p><p class="note">계획상 1.5~2시간 · 차탄에서 이동시간 여유 필요</p></div>
+   <div class="card"><div class="place"><h3>이온몰 오키나와 라이카무</h3><a href="https://en.aeonmall.global/mall/okinawarycom" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">전원 · 쇼핑/실내</span><p>식사·쇼핑·카페를 한곳에서 해결할 수 있는 실내 중심 대안입니다. 비가 많이 오면 아메리칸 빌리지 대신 선택할 수 있습니다.</p><p class="note">계획상 2~3시간 · 쇼핑몰 규모가 커 보행량은 있을 수 있음</p></div>
+   <div class="card"><div class="place"><h3>동남식물낙원</h3><a href="https://www.southeast-botanical.jp/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">A그룹 · 야간 풍경</span><p>시즌에 따라 야간 일루미네이션을 즐기는 후보입니다. 아메리칸 빌리지와는 대체 일정으로 생각하세요.</p><p class="note">2026/11/27 행사 운영 여부·시간 확인 필수 · 야외 보행</p></div>
+  </div></div>
+  <div class="schedule" id="b28"><div class="cols">
+   <div class="card"><div class="place"><h3>DMM 가리유시 수족관</h3><a href="https://kariyushi-aquarium.com/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">A그룹 · 실내</span><p>우미카지 테라스에 비·강풍이 있을 때 고려할 후보입니다. 귀국일이므로 관람을 짧게 하고 지연 시 생략하세요.</p><p class="note">60~75분 이내로 제한 · 주차/이동 지연 시 즉시 생략</p></div>
+   <div class="card"><div class="place"><h3>이아스 오키나와 도요사키</h3><a href="https://www.iias.jp/okinawa/" target="_blank" rel="noopener">공식 사이트 ↗</a></div><span class="tag">전원 · 실내 쇼핑</span><p>쇼핑·식사·카페를 실내에서 해결하기 좋아 우미카지 테라스의 경사와 계단이 부담스러울 때 대안입니다.</p><p class="note">60~90분 정도 · 렌터카 반납 시간을 먼저 확보</p></div>
+   <div class="card"><div class="place"><h3>아시비나 아울렛</h3><a href="https://www.okinawastory.jp/spot/600001191" target="_blank" rel="noopener">관광 안내 ↗</a></div><span class="tag">B그룹 · 쇼핑</span><p>브랜드 쇼핑을 원할 때 후보입니다. 일부 야외 이동이 있어 강한 비에는 이아스가 더 편리합니다.</p><p class="note">60~90분 · 실제 영업시간 확인</p></div>
+  </div><div class="callout warning">귀국일은 예비 관광을 넣지 않아도 괜찮습니다. 렌터카 업체의 반납 규정과 공항 수속 시간을 우선하세요.</div></div>
+ </section>
 
-            <!-- Detailed Explanation Text -->
-            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
-                <p>
-                    천문역법 대조 및 음양력 변환 데이터 분석 결과, 1959년 음력 10월 19일생의 2026년 당해 음력 생일은 <strong>양력 2026년 11월 27일(금요일)</strong>에 정확히 해당합니다. 요청된 여행 일정이 2026년 11월 24일부터 11월 28일까지 4박 5일간 이어지므로, 11월 27일은 전체 투숙 일정 중 4일 차에 해당하여 실질적인 생일 당일이 리조트 체류 기간 내에 완전히 포함되는 것으로 확인됩니다.
-                </p>
-                <p>
-                    르네상스 리조트 오키나와의 애니버서리 서비스 정책에 따르면, 축하 대상자의 생일 전후 7일 이내에 리조트에 투숙하고 최소 3일 전까지 디너 예약을 마친 고객에 한해 생일 특전을 제공합니다. 이때 여권 상 생년월일이 양력으로 표기되어 발생하는 일자 상의 불일치는 동아시아권 호스피탈리티 업계의 관례에 따라 원만하게 해결됩니다. 일본의 주요 리조트는 해외 투숙객의 문화적 특성을 고려하여 사전 예약 시 음력 생일임을 명시하고 당해 양력 환산일을 고지할 경우, 해당 날짜를 생일로 인정하여 이벤트를 정상 제공하는 매커니즘을 갖추고 있습니다. 여권 서류와의 엄격한 일치 여부보다 식사 사전 예약을 통한 사전 고지 절차가 서비스 제공의 핵심 기준이 되므로, 11월 27일 디너 이용 시 생일 혜택을 수혜하는 데 있어 제도적 장애 요소는 존재하지 않습니다.
-                </p>
-            </div>
+ <section id="stay" class="panel">
+  <h2>숙소 정보</h2><p class="lead">여행 전반부와 후반부, 두 숙소의 예약 및 체크인 정보를 한곳에 정리했습니다.</p>
+  <div class="callout"><strong>전체 숙박 일정</strong><br>11/24(화)~11/26(목) 르네상스 리조트 오키나와 · 2박<br>11/26(목)~11/28(토) Aqua Palace Chatan by Coldio Premium · 2박</div>
+  <div class="card">
+   <div class="place"><h3>첫 2박 · 르네상스 리조트 오키나와</h3><span class="tag fixed">예약 확정</span></div>
+   <p><strong>예약번호:</strong> 4044-1720-0944</p>
+   <table>
+    <tr><th>항목</th><th>예약 내용</th></tr>
+    <tr><td>숙박 기간</td><td>2026.11.24(화) 체크인 ~ 11.26(목) 체크아웃 · 2박</td></tr>
+    <tr><td>예약자 / 인원</td><td>AHN SUNGHO · 성인 5명 + 초등학생 1명 (총 6명)<br><span class="note">딸은 초등학교 1학년(만 6~7세)으로 정리됨. 츄라우미 요금은 초등학생 ¥710 적용.</span></td></tr>
+    <tr><td>객실</td><td>디럭스 플리퍼스 · 8~10층 · 코스트뷰</td></tr>
+    <tr><td>예약 플랜</td><td>반짝반짝 겨울여행★ 가족으로 즐기는 크리스마스＆뉴이어 · 캔디 하우스＆일 도전 반액 · 플리퍼스 룸</td></tr>
+    <tr><td>체크인 / 아웃</td><td>체크인 14:00~24:00 (예약 도착시간 16:00) · 체크아웃 11:00</td></tr>
+    <tr><td>결제</td><td>현지 지불</td></tr>
+    <tr><td>숙박 요금</td><td>총 ¥264,000 (세금 포함)<br>11/24 ¥132,000 · 11/25 ¥132,000</td></tr>
+    <tr><td>취소 규정</td><td>당일 100% · 1일 전 50% · 2일 전 30% · 7일 전 20% · 무단 취소 100%</td></tr>
+   </table>
+   
+   <div class="callout blue">
+    <strong>★ 돌핀 프로그램 예약 확정 정보 (액티비티 카운터 이메일 회신)</strong>
+    <table>
+     <tr><th>프로그램</th><td>Family Dolphin S (Swim Plus)</td></tr>
+     <tr><th>일시</th><td>2026년 11월 25일(수) 오전 09:00 시작</td></tr>
+     <tr><th>참가 인원</th><td>총 5명 (초1 어린이 1명 포함)</td></tr>
+     <tr><th>총 요금</th><td>JPY 100,000 (세금 포함) · 결제 수단(카드/현금) 사전 확인 필요</td></tr>
+     <tr><th>수속 특례 및 수속 시간</th><td><strong>11월 25일 오전 8:30까지 액티비티 카운터 방문 필수</strong><br>(원래 17:00 카운터 마감으로 전날 수속이 원칙이나, 11/24 17시 이후 도착 고객에 대해 당일 아침 수속 특례 적용 완료. 09:00 시작을 위해 8:30 방문 시 전원 수영복 착용 등 복장/체험 준비 완료 필수)</td></tr>
+     <tr><th>신장 제한</th><td>신장 110cm 미만 어린이는 돌고래 수영(Swim) 불가 (현장 신장 체크 진행)</td></tr>
+     <tr><th>동반자 규정</th><td>체험 프로그램 참가자만 돌고래 시설 입장 가능 (안전상 동반 보호자/관람자의 돌고래 및 참가자 접근 불가)<br><strong>비참가자 1명: ___ (확인 필요)</strong> · 프로그램 시간 동안 대기 장소를 미리 정하세요.</td></tr>
+     <tr><th>준비물 및 촬영</th><td>수영복 개인 지참 필수 / 카메라 지참 가능(개인 책임 하에 사용)</td></tr>
+     <tr><th>액티비티 취소 규정</th><td>체험 전일 취소 시 50% 수수료 / 체험 당일 취소 시 100% 수수료 발생</td></tr>
+     <tr><th>문의처</th><td>액티비티 카운터 (운영시간 08:30~17:00 / ☎ 098-965-5629 / omrcjapan@gmail.com)</td></tr>
+    </table>
+   </div>
 
-            <!-- Summary Table -->
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-                <div class="px-6 py-4 border-b border-slate-100 font-bold text-slate-800 text-base">
-                    <i class="fa-solid fa-table text-ocean-600 mr-2"></i>[표 1] 역법 및 날짜 정보 & 투숙 일정 간 부합성
-                </div>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm text-left text-slate-600">
-                        <thead class="text-xs text-slate-700 uppercase bg-slate-50">
-                            <tr>
-                                <th class="px-6 py-3">구분</th>
-                                <th class="px-6 py-3">역법 및 날짜 정보</th>
-                                <th class="px-6 py-3">투숙 일정 간 부합성</th>
-                                <th class="px-6 py-3">비고</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-100">
-                            <tr class="hover:bg-slate-50">
-                                <td class="px-6 py-3.5 font-medium text-slate-900">출생 음력 일자</td>
-                                <td class="px-6 py-3.5">1959년 음력 10월 19일 (기해년)</td>
-                                <td class="px-6 py-3.5">-</td>
-                                <td class="px-6 py-3.5">어머니 생신 원일</td>
-                            </tr>
-                            <tr class="hover:bg-slate-50">
-                                <td class="px-6 py-3.5 font-medium text-slate-900">2026년 양력 환산일</td>
-                                <td class="px-6 py-3.5 font-bold text-rose-600">2026년 11월 27일 (금요일)</td>
-                                <td class="px-6 py-3.5 text-emerald-600 font-bold">투숙 4일 차 (당일 일치)</td>
-                                <td class="px-6 py-3.5">2026년 실질 생일</td>
-                            </tr>
-                            <tr class="hover:bg-slate-50">
-                                <td class="px-6 py-3.5 font-medium text-slate-900">리조트 투숙 기간</td>
-                                <td class="px-6 py-3.5">2026년 11월 24일 ~ 11월 28일 (4박)</td>
-                                <td class="px-6 py-3.5">11월 27일 체류 확정</td>
-                                <td class="px-6 py-3.5">체류 기간 내 생일 완벽 포함</td>
-                            </tr>
-                            <tr class="hover:bg-slate-50 bg-emerald-50/50">
-                                <td class="px-6 py-3.5 font-medium text-slate-900">혜택 적용 조건</td>
-                                <td class="px-6 py-3.5">생일 전후 7일 이내 투숙 & 디너 예약</td>
-                                <td class="px-6 py-3.5 text-emerald-600 font-bold">조건 100% 충족</td>
-                                <td class="px-6 py-3.5 text-rose-500 font-bold">최소 3일 전 디너 사전 예약 필수</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+   <h3 style="margin-top:18px">예약 플랜 혜택</h3>
+   <ul>
+    <li><strong>조식:</strong> 포함 (플랜 원문 확인 필요 — 기존 표기 “내 와인 채식 조식”은 번역 오류로 보임)</li>
+    <li><strong>캔디 하우스:</strong> 3세~초등학생 이하 어린이 과자 포장 무제한 초대, 투숙 중 1회 (10:00~20:00)</li>
+    <li><strong>처음☆일 도전:</strong> 호텔 직업 체험을 통상 요금의 반액으로 이용. 체크인 후 액티비티 카운터(08:30~17:00)에서 선착순 예약</li>
+    <li><strong>디너 특전:</strong> 디너 이용 시 원 드링크 제공, 투숙 중 1회</li>
+    <li><strong>연박 특전:</strong> 2연박 한정 Club Savvy Light</li>
+    <li><strong>플리퍼스 프로그램:</strong> 성인 동반 시 어린이 메뉴와 청량음료 제공. 초등학생은 세일피쉬 카페 대상</li>
+    <li><strong>어린이 스탬프 랠리:</strong> 기모노 맵 스탬프를 모아 상품 수령 (3세~초등학생)</li>
+   </ul>
+   <div class="callout blue">
+     <strong>호텔 회신으로 확인된 혜택 · 2026.11.05 12:10</strong>
+     <p>르네상스 리조트 예약팀의 이메일 회신으로 아래 내용이 확인되었습니다. <strong>예약에 포함된 6명 전원</strong>에게 Club Savvy Light 혜택이 적용되며, 디럭스 플리퍼스 룸 예약에 따라 6명 모두 야마다 온천과 Club Savvy 라운지를 이용할 수 있습니다.</p>
+     <h3 style="margin-top:14px">Club Savvy Light</h3>
+     <ul>
+      <li><strong>적용 인원:</strong> 예약에 포함된 성인·어린이 총 6명 전원</li>
+      <li><strong>활동 혜택:</strong> 일부 액티비티 무료 또는 할인</li>
+      <li><strong>어린이 디너:</strong> 만 3~12세 어린이가 성인과 동반할 경우 지정 레스토랑에서 어린이 저녁 식사 무료</li>
+      <li><strong>이용 시설:</strong> 디럭스 플리퍼스 룸 예약 혜택으로 6명 모두 야마다 온천 및 Club Savvy 라운지 이용 가능</li>
+     </ul>
+     <h3 style="margin-top:14px">야마다 온천</h3>
+     <p>운영시간 6:00–10:00 / 13:00–24:00 (최종 입장 23:15) · 목요일 9:30–15:30 청소 휴무 (이번 일정은 화·수 이용이라 해당 없음). 투숙 기간 중 원하는 횟수만큼 이용할 수 있으며, 1회 이용 제한이 없습니다. 문신·어린이 이용 규칙은 체크인 시 확인하세요.</p>
+     <h3 style="margin-top:14px">숙박 패키지 추가 혜택</h3>
+     <ul>
+      <li><strong>캔디 하우스:</strong> 만 3세부터 초등학생까지 과자 봉투 채우기 체험 · 투숙 중 1회 · 10:00~20:00</li>
+      <li><strong>키즈 잡 체험:</strong> 정가의 50% 할인. 호텔 직업을 체험하고 ‘Leaf’를 받아 지정 매장·레스토랑에서 사용 가능. 체크인 후 액티비티 카운터에서 선착순 예약하며, 잔여석에 따라 이용 가능 · 카운터 08:30~17:00</li>
+      <li><strong>디너 무료 음료:</strong> 저녁 식사 시 음료 1잔 무료 · 투숙 중 1회</li>
+      <li><strong>수영장:</strong> 투숙 기간 중 호텔 수영장 이용 가능</li>
+     </ul>
+     <p class="note">Club Savvy Light 상세 안내: <a href="https://renaissance-okinawa.com/en/pages/clubsavvy" target="_blank" rel="noopener">공식 혜택 안내 페이지 ↗</a></p>
+    </div>
+    <div class="callout warning"><strong>이용 전 확인할 점</strong><br>야마다 온천과 라운지 이용 자격은 호텔 회신으로 확인되었습니다. 다만 시설별 운영시간, 지정 레스토랑 및 어린이 메뉴 적용 조건, 액티비티별 예약 가능 시간은 현장에서 다시 확인하세요. 디너는 혼잡할 수 있으므로 사전 예약을 권장합니다.</div>
+   <p class="note">호텔 회신 수신: 2026.11.05 12:10 · 호텔 전화: 098-965-0707 · <a href="https://renaissance-okinawa.com/restaurant/#con_reservation" target="_blank" rel="noopener">레스토랑 예약</a> · <a href="https://go-hpd.reservation.jp/ko/mypage/reservations" target="_blank" rel="noopener">예약·포인트 확인</a></p>
+  </div>
+  <div class="card">
+   <div class="place"><h3>마지막 2박 · Aqua Palace Chatan by Coldio Premium</h3><span class="tag fixed">예약 확정</span></div>
+   <p><strong>숙박 기간:</strong> 2026.11.26(목) 체크인 ~ 11.28(토) 체크아웃 · 2박</p>
+   <p><strong>객실 유형:</strong> Premium Suite Condo로 기존 일정표에 기재된 내용입니다. 이번 안내 메일에는 객실 타입이 명시되어 있지 않으므로 Booking.com 예약 상세에서 최종 확인하세요.</p>
+   <h3 style="margin-top:18px">사전 체크인 절차</h3>
+   <ol>
+    <li><strong>Guest My Page 접속:</strong> 예약 대표자 정보를 사전 등록하고, 미결제 숙박 요금이 있으면 신용카드로 결제합니다.</li>
+    <li><strong>체크인 코드 수령:</strong> 등록 완료 후 발급되는 Check-in Code를 보관합니다.</li>
+    <li><strong>현장 체크인:</strong> 숙소 태블릿에 코드를 입력하면 객실 번호와 도어 출입 코드가 표시됩니다.</li>
+   </ol>
+   <p>Guest My Page 사전 등록 링크는 개인 파일 참조</p>
+   <div class="callout warning"><strong>여권 등록 필수</strong><br>예약 대표자를 포함한 모든 투숙객은 체크인 시 여권을 등록해야 합니다. 동반 투숙객의 사전 등록은 필요하지 않지만, 현장 등록을 위해 여권을 모두 준비하세요.</div>
+   <h3 style="margin-top:18px">체크인 장소 및 주차</h3>
+   <p>건물별 체크인 주소와 주차 가능 대수가 다릅니다. 객실 배정은 막판에 변경될 수 있어 객실 번호를 사전에 안내할 수 없다고 합니다.</p>
+   <table>
+    <tr><th>건물</th><th>체크인 주소</th><th>주차 가능 대수</th></tr>
+    <tr><td>Aqua Palace Main Building</td><td>1chome-9-37 Kuwae, Chatan-cho, Nakagami-gun, Okinawa</td><td>Premium Suite Condo 7~9층: 2대<br>Premium Suite Condo 2~6층: 1대</td></tr>
+    <tr><td>Annex [Yui no Ie]</td><td>1chome-4-21 Kuwae, Chatan-cho, Nakagami-gun, Okinawa</td><td>Yui no Ie I: 1대<br>Yui no Ie II: 2대</td></tr>
+    <tr><td>Annex [Clover]</td><td>1chome-2-22 Kuwae, Chatan-cho, Nakagami-gun, Okinawa</td><td>1대 (높이 2m 미만)</td></tr>
+   </table>
+   <p class="note">주차는 예약할 수 없습니다. 체크인 장소에 표시된 주차 안내에 따라 지정 구역에 주차하세요. 안내 메일의 첨부 문서도 확인하세요.<br>⚠ 알파드 전고 약 1.93m — Clover(높이 2m 미만) 배정 시 여유가 거의 없으니 배정 건물 확인 후 높이 제한을 재확인하세요.</p>
+   <h3 style="margin-top:18px">이용 조건</h3>
+   <table>
+    <tr><th>항목</th><th>안내 내용</th></tr>
+    <tr><td>체크인</td><td>15:00부터</td></tr>
+    <tr><td>체크아웃</td><td>11:00까지 (예약 플랜에 따라 다를 수 있음)</td></tr>
+    <tr><td>늦은 체크아웃</td><td>60분당 ¥5,000</td></tr>
+    <tr><td>결제</td><td>완전 캐시리스 · 신용카드만 가능 · 현금 불가</td></tr>
+    <tr><td>청소·수건</td><td>투숙 중 청소 및 침구·수건 교체 없음</td></tr>
+    <tr><td>어메니티</td><td>예약 인원수 기준 제공 · 추가 또는 교환 불가</td></tr>
+    <tr><td>짐 보관</td><td>불가</td></tr>
+    <tr><td>금연·화기</td><td>시설 전체 금연 · 모닥불, 양초, 불꽃놀이 등 화기 사용 금지</td></tr>
+   </table>
+   <div class="callout warning"><strong>도착 전 준비 체크</strong><br>① Guest My Page 사전 등록 및 필요 시 카드 결제 ② Check-in Code 저장 ③ 6명 전원의 여권 준비 ④ 배정된 건물의 체크인 장소와 주차 안내 확인</div>
+   <p class="note">이메일: ap@coldioresort.okinawa · 전화: 050-3362-0171</p>
+  </div>
+  <div class="card"><h3>숙소별 핵심 비교</h3><table>
+   <tr><th>구분</th><th>르네상스 리조트</th><th>아쿠아 팰리스 차탄</th></tr>
+   <tr><td>숙박</td><td>11/24~11/26 · 2박</td><td>11/26~11/28 · 2박</td></tr>
+   <tr><td>객실</td><td>디럭스 플리퍼스 · 코스트뷰</td><td>Premium Suite Condo (기존 일정표 기재, 예약 메일 재확인 필요)</td></tr>
+   <tr><td>체크인</td><td>14:00~24:00</td><td>15:00부터 · 무인 체크인</td></tr>
+   <tr><td>체크아웃</td><td>11:00</td><td>11:00까지</td></tr>
+   <tr><td>결제</td><td>현지 지불</td><td>신용카드만 가능 · 현금 불가</td></tr>
+  </table></div>
+ </section>
 
-        <!-- SECTION 2: RESORT BIRTHDAY BENEFITS -->
-        <section id="tab-benefits" class="tab-content hidden space-y-6">
-            <div class="bg-gradient-to-r from-amber-500 via-rose-500 to-pink-500 rounded-3xl p-6 sm:p-8 text-white shadow-xl">
-                <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">2. 생일 애니버서리 특전</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 leading-snug flex items-center">
-                    <i class="fa-solid fa-gifts mr-3"></i>르네상스 리조트 오키나와 생일 애니버서리 특전 및 적용 매커니즘
-                </h2>
-            </div>
+   <section id="rental" class="panel">
+   <h2>COLDIO 오키나와 렌터카</h2>
+   <p class="lead">11월 24일 나하공항 도착 후 영업소에서 차량을 수령하고, 11월 28일 반납 후 무료 셔틀로 공항에 이동합니다.</p>
+   <div class="callout">
+    <strong>예약 핵심 정보</strong><br>
+    예약번호: <strong>r58460951</strong><br>
+    이용 기간: <strong>2026.11.24(화) 15:30 ~ 11.28(토) 13:00</strong><br>
+    차량: <strong>최신형 알파드 40계 Z 트림 하이브리드 · 금연 · AT</strong><br>
+    합계 요금: <strong>89,800엔</strong> · 매장에서 신용카드 결제
+   </div>
+   <div class="card">
+    <h3>영업소 위치 및 연락처</h3>
+    <p><strong>COLDIO 렌터카 나하 공항 점포</strong></p>
+    <p>沖縄県豊見城市豊崎1-411 ライフスタイルセンター TOMITON 1F<br>
+    (우체국 옆, 알스타 렌터카와 같은 점포 내)</p>
+    <p>나하공항에서 택시로 약 15분</p>
+    <table>
+     <tr><th>전화</th><td>050-3815-4823</td></tr>
+     <tr><th>이메일</th><td><a href="mailto:coldiorentalcar@imhome-okinawa.co.jp">coldiorentalcar@imhome-okinawa.co.jp</a></td></tr>
+     <tr><th>예약 사이트</th><td><a href="https://reserve.rentacar-samurai.jp/coldio-rentacar" target="_blank" rel="noopener">COLDIO 렌터카 예약 사이트 ↗</a></td></tr>
+    </table>
+   </div>
+   <div class="cols">
+    <div class="card">
+     <h3>11월 24일 · 차량 수령</h3>
+     <ol>
+      <li>나하공항 도착 후 1층 택시 승강장에서 택시를 이용합니다.</li>
+      <li>영업소까지 이동한 뒤 택시 영수증을 반드시 받아 보관합니다.</li>
+      <li>택시 요금은 영업소에서 실비로 환불받습니다. (택시 최대 2대까지 지원)</li>
+      <li>15:30 예약 시각에 맞춰 차량을 수령합니다.</li>
+     </ol>
+     <div class="callout warning"><strong>중요:</strong> 공항에서 렌터카 영업소까지 무료 픽업을 이용하는 방식이 아닙니다. 공항 1층 택시 승강장에서 직접 택시를 타고 이동한 뒤, 영수증을 꼭 챙기세요.</div>
+    </div>
+    <div class="card">
+     <h3>11월 28일 · 차량 반납</h3>
+     <ol>
+      <li>예약 반납 시각은 13:00입니다. 일정표대로 12:30~13:00 반납 완료를 목표로 합니다.</li>
+      <li>반납 후 무료 셔틀 이용을 직원에게 요청합니다.</li>
+      <li>셔틀 운행 편수가 제한되어 있으므로 여유 있게 반납합니다.</li>
+     </ol>
+     <div class="callout warning"><strong>셔틀 마지막 출발:</strong> 17:00입니다. 반납 후 공항까지 무료 셔틀을 이용할 수 있습니다.</div>
+    </div>
+   </div>
+   <div class="card">
+    <h3>예약 차량 및 옵션</h3>
+    <table>
+     <tr><th>항목</th><th>예약 내용</th></tr>
+     <tr><td>차종</td><td>하이브리드 차량 확정 플랜 · 최신형 알파드 40계 Z 트림</td></tr>
+     <tr><td>차량 조건</td><td>금연차 · AT · 4WD 지정 없음</td></tr>
+     <tr><td>ETC 카드</td><td>1개 대여 · 고속도로 통행료 전액 포함 / 무제한 이용 <span class="note">(“통행료 포함”이 총액에 포함된 것인지, 카드 대여만 포함인지 수령 시 확인)</span></td></tr>
+     <tr><td>주유 없이 반납</td><td>1개</td></tr>
+     <tr><td>NOC 보상</td><td>요금 포함 · 1개</td></tr>
+     <tr><td>주니어 시트</td><td>4세 이상용 · 1개</td></tr>
+     <tr><td>짐 공간</td><td><strong>확인 필요:</strong> 6명 탑승 시 3열을 세우면 트렁크가 좁아집니다. 위탁수하물 6개와 기내 가방이 다 들어가는지 수령 시 확인하고, 안 되면 좌석·짐 배치를 조정하세요.</td></tr>
+     <tr><td>결제</td><td>매장에서 신용카드 결제</td></tr>
+     <tr><td>총액</td><td><strong>89,800엔</strong></td></tr>
+    </table>
+    <p class="note">예약 정보에 기재된 옵션 기준입니다. 차량 수령 시 옵션 장착·제공 여부와 이용 조건을 현장에서 확인하세요.</p>
+   </div>
+   <div class="card">
+    <h3>예약자 및 운전자</h3>
+    <table>
+     <tr><th>항목</th><th>등록 정보</th></tr>
+     <tr><td>예약자</td><td>안성호</td></tr>
+     <tr><td>운전자</td><td>안성호</td></tr>
+     <tr><td>연락처</td><td>___ (개인 파일 참조)</td></tr>
+     <tr><td>이메일</td><td>___ (개인 파일 참조)</td></tr>
+     <tr><td>주소</td><td>___ (개인 파일 참조)</td></tr>
+    </table>
+    <p class="note">면허증 종류·번호·유효기간·취득일은 예약 내용에 기재되어 있지 않습니다. 실제 운전 전 국제운전면허증 등 필요한 서류를 반드시 준비하고, 영업소에 제시할 서류를 확인하세요.<br>운전자는 안성호님 1명만 등록돼 있습니다. 11/26 장거리 이동일의 피로를 고려해 제2 운전자 등록이 필요한지 검토하세요.</p>
+   </div>
+   <div class="callout blue">
+    <strong>여행 일정과 연결되는 핵심 사항</strong><br>
+    · 11/24 14:25 나하공항 도착 → 택시로 영업소 이동 → 15:30 차량 수령<br>
+    · 택시 영수증 보관 → 영업소에서 택시비 실비 환불<br>
+    · 11/28 13:00까지 차량 반납 → 무료 셔틀로 공항 이동<br>
+    · 주유 없이 반납 옵션을 예약했으므로 반납 전 주유는 필수 일정에서 제외
+   </div>
+   <p class="note">본 예약 안내는 COLDIO 오키나와 렌터카 예약 메일 내용을 정리한 것입니다. 문의: coldiorentalcar@imhome-okinawa.co.jp (본 메일은 발신 전용)</p>
+  </section>
 
-            <!-- Detailed Analysis Text -->
-            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
-                <p>
-                    르네상스 리조트 오키나오는 고객의 특별한 날을 기념하기 위해 체계적인 콤플리멘터리(Complimentary) 애니버서리 프로그램을 운영하고 있습니다. 생일 특전은 조식이 아닌 지정된 레스토랑에서 석식(디너)을 이용할 때 제공되며, 리조트 페이스트리 셰프가 직접 구워내는 '호텔 특제 딸기 시폰 케이크(Strawberry Chiffon Cake)'가 메인 선물로 준비됩니다.
-                </p>
-                <p>
-                    이와 더불어 성인 및 어린이 구성원의 취향에 맞춘 축하 칵테일(알코올 또는 무알코올 선택 가능)이 잔별로 제공되며, 식사 현장에서 전담 직원이 촬영한 기념 사진을 액자나 전용 카드로 제작하여 증정하는 서비스가 함께 구성됩니다.
-                </p>
-                <p>
-                    해당 특전을 차질 없이 제공받기 위해서는 리조트가 규정한 사전 행정 절차를 엄격히 준수해야 합니다. 가장 결정적인 조건은 식사 이용일 기준 최소 3일 전까지 대상 레스토랑의 디너 예약을 완료해야 한다는 점입니다. 레스토랑 온라인 예약 플랫폼이나 전화를 통한 사전 예약 과정에서 비고란(Special Requests)을 통해 생일 축하 목적과 음력 변환 정보(Lunar Calendar Oct 19 -> Solar Nov 27)를 영문 또는 일문으로 전달해야 리조트 주방 및 홀팀에 식자재 준비와 연출 동선이 사전 배정됩니다.
-                </p>
-            </div>
+ <section id="tips" class="panel">
+  <h2>가족 모두 편안하게 여행하기</h2><p class="lead">이번 일정은 관광지를 많이 넣기보다 가족의 체력 차이를 고려해 여유를 두는 것이 핵심입니다.</p>
+  <div class="small-grid">
+   <div class="small-card"><h3>부모님</h3><p>연속 장거리 이동을 줄이고, 화장실·휴식 시간을 확보합니다. 옥천동 동굴은 계단과 경사가 있어 컨디션에 따라 생략해도 좋습니다.</p></div>
+   <div class="small-card"><h3>어린이</h3><p>돌핀 프로그램과 수영장 사이 휴식, 수족관 관람 시간을 충분히 둡니다. 피곤한 저녁에는 간단히 먹고 숙소에서 쉽니다.</p></div>
+   <div class="small-card"><h3>운전자</h3><p>운전시간 외에도 주차·승하차·화장실 시간을 더합니다. 이동이 긴 26일에는 추가 관광을 욕심내지 않습니다.</p></div>
+  </div>
+  <div class="card"><h3>예상 운전시간 (계획용)</h3><table><tr><th>구간</th><th>예상 운전</th><th>일정 배정</th></tr><tr><td>나하공항 → 르네상스</td><td>50~80분</td><td>70~90분</td></tr><tr><td>르네상스 → 만좌모</td><td>25~30분</td><td>35분</td></tr><tr><td>만좌모 → 츄라우미</td><td>60~75분</td><td>80~90분</td></tr><tr><td>츄라우미 → 차탄 (아쿠아 펠리스)</td><td>80~100분</td><td>100~120분</td></tr><tr><td>차탄 → 오키나와 월드</td><td>55~70분</td><td>75분</td></tr><tr><td>차탄 → 우미카지</td><td>45~60분</td><td>60~70분</td></tr><tr><td>우미카지 → 나하공항</td><td>약 15분</td><td>20~30분</td></tr></table><p class="note">교통상황을 확정한 값이 아닌 계획용 추정치입니다. 주차와 승하차 시간은 별도입니다. 11월 하순 일몰은 17:37경으로, 11/26 츄라우미→차탄 이동은 해 진 뒤 운전이 됩니다.</p></div>
+  <div class="card"><h3>관광지별 권장 체류시간</h3><table><tr><th>장소</th><th>시간</th><th>참고</th></tr><tr><td>만좌모</td><td>30~60분</td><td>짧은 산책 · 시설 포함 시 1시간</td></tr><tr><td>츄라우미 수족관</td><td>2.5~3시간</td><td>부속시설 포함</td></tr><tr><td>오키나와 월드</td><td>2~3시간</td><td>옥천동 선택</td></tr><tr><td>아메리칸 빌리지</td><td>3~3.5시간</td><td>저녁·쇼핑·야경</td></tr><tr><td>우미카지 테라스</td><td>60~90분</td><td>귀국일 짧게</td></tr></table></div>
+  <div class="card"><h3>기념품 쇼핑 계획</h3><div class="cols"><div><b>11/27 · 아메리칸 빌리지</b><p>이번 여행의 메인 쇼핑 장소. 친스코, 베니이모 타르트, 시사 장식품, 류큐 유리, 공예품, 오리온 굿즈, 비누 등을 둘러봅니다.</p></div><div><b>11/28 · 우미카지 테라스</b><p>빠뜨린 소형 기념품과 선물만 보충합니다. 귀국일에는 대량 쇼핑을 피하고 공항 이동 시간을 확보합니다.</p></div></div></div>
+  <div class="card"><h3>꼭 확인할 운영 조건</h3>
+   <details><summary>야마다 온천·Club Savvy 라운지</summary><p>2026/11/05 호텔 회신으로 디럭스 플리퍼스 룸 예약에 포함된 6명 전원이 야마다 온천과 Club Savvy 라운지를 이용할 수 있음을 확인했습니다. 야마다 온천은 투숙 기간 중 운영시간 내 횟수 제한 없이 이용 가능합니다.</p></details>
+   <details><summary>돌핀 프로그램 (Family Dolphin S)</summary><p>확정 프로그램: Family Dolphin S(Swim Plus), 11/25 09:00 시작, 참가자 5명(초1 어린이 포함), 총액 JPY 100,000.<br>・<strong>특례 수속:</strong> 11/25 오전 08:30까지 액티비티 카운터에 전원 수영복을 착용한 상태로 도착해 결제 및 신장 측정을 완료해야 함.<br>・<strong>신장 제한:</strong> 110cm 미만 어린이는 돌고래와 수영 불가.<br>・<strong>동반자 제한:</strong> 체험 참가자 외에는 안전상 돌고래 시설 접근 불가능. 비참가자 1명(누구인지 확인 필요)의 대기 장소를 정하세요.<br>・<strong>취소 정책:</strong> 전일 취소 50%, 당일 취소 100% 수수료 적용.</p></details>
+   <details><summary>츄라우미 수족관</summary><p>비수기 8:30–18:30, 최종 입장 17:30 (2026년 11월 기준 확인). 성인 ¥2,180, 고등학생 ¥1,440, 초·중학생 ¥710, 6세 미만 무료. 고래상어 먹이주기 15:00/17:00, 가오리 먹이주기 9:30, 돌고래 쇼 10:30/11:30/13:00/15:00/17:00. 15:00에는 고래상어 먹이주기와 돌고래쇼가 겹치므로 고래상어 먹이주기를 우선하세요. 쿠로시오 수조 상부 관람 코스는 임시 폐쇄 중입니다. 수족관 본관 외 돌고래 라군, 바다거북관, 매너티관의 운영시간도 확인하면 좋습니다.</p></details>
+   <details><summary>오키나와 월드</summary><p>9:00–17:30, 최종 접수 16:00. 슈퍼 에이사 10:30/12:30/14:30(약 30분), 하부·몽구스 쇼 11:30/13:30/15:30(약 20분). 공식 권장 관람 3–5시간으로, 일정표의 2시간 반은 빠듯합니다. 옥천동은 계단과 경사 구간이 있어 부모님 컨디션에 따라 관람 여부를 미리 정합니다.</p></details>
+   <details><summary>만좌모 · 우미카지 테라스</summary><p>만좌모 11월–2월 8:00–19:00, 입장료 ¥100. 우미카지 테라스 전체 10:00–21:00, 상점 10:00–20:00, 식당 11:00–21:00(라스트오더 20:30).</p></details>
+  </div>
+ </section>
 
-            <!-- Benefits Table -->
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-                <div class="px-6 py-4 border-b border-slate-100 font-bold text-slate-800 text-base">
-                    <i class="fa-solid fa-list-check text-rose-500 mr-2"></i>[표 2] 생일 애니버서리 혜택 항목 및 적용 조건
-                </div>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm text-left text-slate-600">
-                        <thead class="text-xs text-slate-700 uppercase bg-slate-50">
-                            <tr>
-                                <th class="px-6 py-3">혜택 항목</th>
-                                <th class="px-6 py-3">세부 내용</th>
-                                <th class="px-6 py-3">적용 조건</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-100">
-                            <tr class="hover:bg-slate-50">
-                                <td class="px-6 py-3.5 font-bold text-slate-900">축하 케이크</td>
-                                <td class="px-6 py-3.5">호텔 특제 딸기 시폰 케이크 무료 증정</td>
-                                <td class="px-6 py-3.5">생일 전후 7일 이내 투숙</td>
-                            </tr>
-                            <tr class="hover:bg-slate-50">
-                                <td class="px-6 py-3.5 font-bold text-slate-900">축하 음료</td>
-                                <td class="px-6 py-3.5">애니버서리 칵테일 (알코올 / 무알코올 선택)</td>
-                                <td class="px-6 py-3.5 text-rose-600 font-bold">최소 3일 전 디너 사전 예약 완료</td>
-                            </tr>
-                            <tr class="hover:bg-slate-50">
-                                <td class="px-6 py-3.5 font-bold text-slate-900">기념 사진</td>
-                                <td class="px-6 py-3.5">현장 사진 촬영 및 전용 액자/카드 증정</td>
-                                <td class="px-6 py-3.5">지정 레스토랑 석식 코스 이용 시</td>
-                            </tr>
-                            <tr class="hover:bg-slate-50 bg-amber-50/50">
-                                <td class="px-6 py-3.5 font-bold text-slate-900">예약 필수 사항</td>
-                                <td class="px-6 py-3.5 font-semibold text-amber-800">온라인/전화 예약 시 음력 생일 양력 환산 정보 명시</td>
-                                <td class="px-6 py-3.5 font-bold text-rose-600">당일 현장 요청 시 제공 불가</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+ <section id="info" class="panel">
+  <h2>여행 준비 정보</h2><p class="lead">일정표에 없던 출입국·예산·식사·내비·비상 정보를 한곳에 모았습니다. 빈칸(___)은 출발 전에 채워주세요.</p>
+  <div class="card"><h3>출입국 · 서류</h3><table><tr><th>항목</th><th>확인 내용</th></tr>
+   <tr><td>여권</td><td>6명 전원 유효기간 확인. 일본 입국은 체류 기간 동안 유효한 여권이 필요하지만, 6개월 이상 남아 있는 것이 안전합니다.</td></tr>
+   <tr><td>Visit Japan Web</td><td>입국·세관 신고 QR 사전 등록 (선택 사항이지만 입국 수속 단축). 등록 후 QR을 휴대폰에 저장하세요.</td></tr>
+   <tr><td>국제운전면허증</td><td>제네바협약 방식, 발급일로부터 1년 유효. 한국 운전면허 원본과 여권을 함께 지참해야 합니다.</td></tr>
+   <tr><td>예약증</td><td>항공 e티켓·숙소·렌터카·돌핀 프로그램 예약 확인서를 한 폴더에 모아 오프라인에서도 볼 수 있게 저장하세요.</td></tr>
+  </table></div>
+  <div class="card"><h3>예산표 (확정 + 미정)</h3><table><tr><th>항목</th><th>금액</th><th>상태</th></tr>
+   <tr><td>르네상스 2박</td><td>¥264,000</td><td>확정 · 현지 지불</td></tr>
+   <tr><td>돌핀 프로그램</td><td>¥100,000</td><td>확정 · 11/25 카운터 결제</td></tr>
+   <tr><td>렌터카</td><td>¥89,800</td><td>확정 · 매장 카드 결제</td></tr>
+   <tr><td>확정 소계</td><td><strong>¥453,800</strong></td><td></td></tr>
+   <tr><td>아쿠아 펠리스 2박</td><td>___</td><td>Booking.com에서 금액·결제 상태 확인 필요</td></tr>
+   <tr><td>항공권</td><td>___</td><td>예약증 확인</td></tr>
+   <tr><td>츄라우미</td><td>성인 ¥2,180×5 + 어린이 ¥710 또는 무료</td><td>어린이 요금은 나이 확인 후 결정</td></tr>
+   <tr><td>만좌모</td><td>¥100×6 = ¥600</td><td>현장 결제</td></tr>
+   <tr><td>오키나와 월드</td><td>___</td><td>티켓 종류·요금 확인 필요</td></tr>
+   <tr><td>식비·쇼핑·기타</td><td>___</td><td></td></tr>
+  </table><p class="note">아쿠아 펠리스는 완전 캐시리스(신용카드만 가능)입니다. 만좌모 입장료 등 소액 결제를 위해 엔화 현금을 조금 준비하세요.</p></div>
+  <div class="card"><h3>식사 계획</h3><table><tr><th>날짜</th><th>점심</th><th>저녁</th></tr>
+   <tr><td>11/24</td><td>기내/공항</td><td>리조트 (미정 — 디너 예약 권장)</td></tr>
+   <tr><td>11/25</td><td>___ (리조트 내)</td><td>___ (디너 1회 원드링크 특전 사용)</td></tr>
+   <tr><td>11/26</td><td>하나무라 소바 11:30–12:30 (온나 · 목요일 영업)</td><td>포시즌스 스테이크하우스 또는 레드 랍스터 (차탄 · 사전 예약 권장)</td></tr>
+   <tr><td>11/27</td><td>SANGO (오키나와 월드 내)</td><td>U-SHI 차탄점 17:00 예약 확정 (어머니 생신 저녁)</td></tr>
+   <tr><td>11/28</td><td>우미카지 테라스 (식당 11:00부터)</td><td>기내/귀국 후</td></tr>
+  </table><p class="note">조식: 르네상스 2박은 플랜에 포함. 아쿠아 펠리스는 조식 미포함일 가능성이 크니 11/27 저녁에 조식거리를 구입하세요. 알레르기·못 먹는 음식: ___</p></div>
+  <div class="card"><h3>식당 후보 (2차 조사)</h3><table><tr><th>언제</th><th>식당</th><th>정보</th></tr>
+   <tr><td>11/26 점심</td><td><strong>하나무라 소바</strong></td><td>1063 Serakaki, Onna · 오키나와 소바 ¥800 · 목요일 영업 11:30–15:00 (일부 출처 11:00–16:00, 방문 전 확인) · 주차 가능 · 만좌모에서 차로 약 5분</td></tr>
+   <tr><td>11/26 점심 백업</td><td><strong>온나노에키 나카유쿠이 마켓</strong></td><td>온나 · 노점·과일·튀김 ¥300–¥1,000 · 시간 유연, 전 연령 · 소바집 대기 시 대안</td></tr>
+   <tr><td>11/26 저녁</td><td><strong>포시즌스 스테이크하우스</strong></td><td>2-5-2 Mihama, Chatan (아메리칸 빌리지 입구) · 목요일 저녁 16:30–22:30 · 스테이크 · 유아용 의자·주차·예약 가능 · 18시부터 줄 서니 사전 예약 권장</td></tr>
+   <tr><td>11/26 저녁 대안</td><td><strong>레드 랍스터 차탄점</strong></td><td>아메리칸 빌리지 2F, 8-10 Mihama · 11:00–22:00 (L.O. 21:30) · 해산물·BBQ · 온라인 예약 가능 · 키즈 메뉴 ¥715 · 테라스 석양</td></tr>
+   <tr><td>11/27 점심</td><td><strong>SANGO</strong></td><td>오키나와 월드 내 (1336 Maekawa) · 9:00–18:00 매일 · 크래프트 비어·고기 요리 · 공원 안에서 해결, 이동 없음</td></tr>
+   <tr><td>11/27 점심 대안</td><td><strong>하마베노차야</strong></td><td>2-1 Tamagusuku, Nanjo (오키나와 월드에서 677m) · 금요일 08:00–20:00 · 해변 카페, 피자·가벼운 식사 · 주차 가능</td></tr>
+  </table><p class="note">⚠ 나카무라 소바(만좌모 인근 유명 맛집)는 목요일 휴무라 11/26에는 이용할 수 없습니다. 식당 영업시간은 변동될 수 있으니 방문 전 공식 정보로 재확인하세요.</p></div>
+  <div class="card"><h3>장소 주소 · 내비</h3><table><tr><th>장소</th><th>주소 · 내비 정보</th></tr>
+   <tr><td>르네상스 리조트</td><td>3425-2 Yamada, Onna-son, Kunigami-gun</td></tr>
+   <tr><td>만좌모</td><td>2767 Onna, Onna-son, Kunigami-gun</td></tr>
+   <tr><td>츄라우미 수족관</td><td>424 Ishikawa, Motobu-cho · MapCode 553 075 797 · 북문 P7 주차장 검토</td></tr>
+   <tr><td>오키나와 월드</td><td>1336 Maekawa, Tamagusuku, Nanjo-shi · MapCode 232 495 330*28</td></tr>
+   <tr><td>우미카지 테라스</td><td>174-6 Senaga, Tomigusuku-shi</td></tr>
+   <tr><td>아쿠아 펠리스 차탄</td><td>건물별 주소는 “숙소 정보” 탭 참조 (배정 건물 확인 후 저장)</td></tr>
+   <tr><td>COLDIO 렌터카</td><td>Toyosaki 1-411, Tomigusuku-shi (TOMITON 1F) — “렌터카 정보” 탭 참조</td></tr>
+  </table><p class="note">MapCode는 츄라우미·오키나와 월드만 확인된 값입니다. 나머지는 출발 전 공식 사이트에서 확인해 채워두면 내비 입력이 편합니다.</p></div>
+  <div class="card"><h3>날씨 · 옷차림 · 짐</h3>
+   <p>11월 하순 나하 평균 최고 24도, 최저 19도. 낮에는 반팔에 얇은 겉옷, 저녁·바닷가·야외는 바람막이가 필요합니다. 일몰은 17:37경이라 오후 야외 일정은 어두워지기 전에 마무리하세요. 11월은 월 강수일 8일 정도로 소나기가 올 수 있습니다.</p>
+   <ul>
+    <li>수영복(돌핀 참가자 5명 — 11/25 08:30 전 착용 완료), 갈아입을 옷·수건</li>
+    <li>우산·우비, 편한 신발(만좌모·옥천동·우미카지 계단)</li>
+    <li>상비약·선크림·모자, 어린이 짐(간식·물·여벌 옷)</li>
+    <li>eSIM·포켓와이파이 등 통신 수단: ___</li>
+    <li>유모차 사용 여부: ___</li>
+   </ul></div>
+  <div class="card"><h3>비상 · 의료</h3><table><tr><th>항목</th><th>내용</th></tr>
+   <tr><td>일본 긴급전화</td><td>경찰 110 · 구급/소방 119</td></tr>
+   <tr><td>여행자보험</td><td>증권번호 ___ · 보장 내용 ___ · 긴급 연락처 ___</td></tr>
+   <tr><td>부모님 상비약·지병</td><td>___</td></tr>
+   <tr><td>알레르기·식사 제한</td><td>___</td></tr>
+   <tr><td>관할 공관</td><td>주후쿠오카 대한민국 총영사관(오키나와 관할) — 전화번호 확인 후 기재</td></tr>
+  </table><p class="note">위 빈칸은 출발 전에 채우고 가족 단톡방에도 공유해두세요.</p></div>
+ </section>
 
-        <!-- SECTION 3: RESTAURANT ANALYSIS -->
-        <section id="tab-restaurants" class="tab-content hidden space-y-6">
-            <div class="bg-gradient-to-r from-teal-800 via-ocean-800 to-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl">
-                <span class="bg-teal-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full uppercase">3. 맞춤 다이닝 분석</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 leading-snug">
-                    3대 가족(6인) 맞춤형 생일 축하 레스토랑 종합 비교 및 평가
-                </h2>
-                <p class="mt-2 text-teal-100 text-sm sm:text-base">
-                    구성원: 1959년생 어머니(생일 당사자), 아버지, 남동생, 아내, 초1 딸(만 6~7세), 본인 등 총 6명 대가족
-                </p>
-            </div>
+ <section id="check" class="panel">
+  <h2>출발 전 준비 체크리스트</h2><p class="lead">체크한 항목은 이 기기 브라우저에만 저장됩니다. 가족과 공유되지 않으니, 진행 상황 공유는 캡처나 메신저로 따로 전달하세요. 수정본에서는 체크 항목이 바뀌어 이전 체크 상태가 초기화됩니다.</p>
+  <div class="card"><div class="place"><h3>준비 진행률</h3><button class="btn" id="resetChecks">체크 초기화</button></div><div class="progress"><div id="progressBar"></div></div><p class="note" id="progressText">0 / 0 완료</p></div>
+  <div class="cols">
+   <div class="card checklist"><h3>항공편</h3>
+    <label><input type="checkbox"><span>TW0281 출발·도착 시간 확인</span></label><label><input type="checkbox"><span>TW0282 출발·도착 시간 확인</span></label><label><input type="checkbox"><span>항공사 Trinity Airways(구 티웨이) 표기와 예약번호 확인</span></label><label><input type="checkbox"><span>운임 종류(Event/Smart) 확인 — Event는 위탁수하물 무료 없음, Smart는 1인 15kg</span></label><label><input type="checkbox"><span>기내 수하물 10kg 합산 조건 확인</span></label><label><input type="checkbox"><span>귀국편 체크인 마감 14:35 가족과 공유</span></label><label><input type="checkbox"><span>온라인 체크인 가능 여부 확인 (출발 24시간 전~1시간 전)</span></label><label><input type="checkbox"><span>인천 제1터미널·09:50 도착 계획 가족과 공유</span></label><label><input type="checkbox"><span>좌석 지정 확인 (아이 옆자리 보호자 배정)</span></label><label><input type="checkbox"><span>귀국 수하물 무게 확인 (기념품 포함 15kg 이내)</span></label>
+   </div>
+   <div class="card checklist"><h3>르네상스 리조트 & 돌핀 프로그램</h3>
+    <label><input type="checkbox"><span>11/24~26 숙박 예약 확인</span></label><label><input type="checkbox" checked><span>11/25 Family Dolphin S 예약 확정 (5명·09:00·JPY 100,000)</span></label><label><input type="checkbox"><span>11/25 오전 08:30 액티비티 카운터 방문 (결제 및 신장 측정 특례)</span></label><label><input type="checkbox"><span>08:30 전 참가자 5명 수영복 착용 완료 상태 준비</span></label><label><input type="checkbox"><span>초1 어린이 신장 110cm 이상 확인 (미만 시 수영 불가)</span></label><label><input type="checkbox"><span>비참가 동반자 시설 접근 불가 안내 가족 공유</span></label><label><input type="checkbox"><span>야마다 온천·Club Savvy 라운지 운영시간 및 이용 방법 확인</span></label><label><input type="checkbox"><span>조식·식당 예약 및 이용조건 확인</span></label><label><input type="checkbox"><span>키즈 잡 체험 11/25 08:30 카운터에서 동시 예약</span></label><label><input type="checkbox"><span>캔디하우스·스탬프랠리 11/25 일정에 반영</span></label>
+   </div>
+   <div class="card checklist"><h3>마지막 2박 숙소 (아쿠아 펠리스 차탄)</h3>
+    <label><input type="checkbox" checked><span>Aqua Palace Chatan by Coldio Premium 예약 확정</span></label><label><input type="checkbox"><span>Premium Suite Condo 객실 타입 Booking.com에서 최종 확인 (안내 메일에 타입 미기재)</span></label><label><input type="checkbox"><span>체크인 시각 및 주차/열쇠 수령 안내 확인</span></label><label><input type="checkbox"><span>Guest My Page 사전 등록 및 Check-in Code 저장</span></label><label><input type="checkbox"><span>배정 건물 확인 및 주차 높이 제한(알파드 약 1.93m) 확인</span></label><label><input type="checkbox"><span>6명 전원 여권 준비 (현장 등록 필수)</span></label><label><input type="checkbox"><span>아메리칸 빌리지 도보 이동 동선 확인</span></label><label><input type="checkbox"><span>객실 내 세탁기/주방용품 구비 확인</span></label>
+   </div>
+   <div class="card checklist"><h3>렌터카</h3>
+    <label><input type="checkbox" checked><span>COLDIO 렌터카 예약 확정 (r58460951 · 11/24 15:30~11/28 13:00)</span></label><label><input type="checkbox"><span>택시로 영업소 이동 및 영수증 보관 (실비 환불)</span></label><label><input type="checkbox"><span>6명 탑승 및 수하물 적재공간 확인</span></label><label><input type="checkbox"><span>ETC 카드·주니어 시트 제공 확인</span></label><label><input type="checkbox"><span>11/28 13:00까지 차량 반납 및 무료 셔틀 요청</span></label><label><input type="checkbox"><span>셔틀 마지막 출발 17:00 및 운행 편수 확인</span></label><label><input type="checkbox"><span>국제운전면허증 등 운전 서류 준비</span></label><label><input type="checkbox"><span>제2 운전자 등록 필요 여부 검토</span></label>
+   </div>
+   <div class="card checklist"><h3>관광지·예비 일정</h3>
+    <label><input type="checkbox"><span>만좌모 운영시간 확인</span></label><label><input type="checkbox"><span>츄라우미 운영시간·최종 입장 확인</span></label><label><input type="checkbox"><span>츄라우미 P7 주차장 위치 확인</span></label><label><input type="checkbox"><span>오키나와 월드 공연시간 확인</span></label><label><input type="checkbox"><span>옥천동 관람 여부 가족과 결정</span></label><label><input type="checkbox"><span>우미카지 테라스 영업시간 확인</span></label><label><input type="checkbox"><span>우천 시 공통 대안 1곳 정하기</span></label>
+   </div>
+   <div class="card checklist"><h3>가족별 준비</h3>
+    <label><input type="checkbox"><span>부모님 보행 가능거리와 휴식 필요 확인</span></label><label><input type="checkbox"><span>딸의 동물원·수족관 선호도 확인</span></label><label><input type="checkbox"><span>렌터카 1대 기준 가족 이동 방식 합의</span></label><label><input type="checkbox"><span>여권·운전면허·국제운전면허 등 확인</span></label><label><input type="checkbox"><span>여행자보험 및 비상연락처 확인</span></label>
+   </div>
+   <div class="card checklist"><h3>출입국 · 서류 · 통신</h3>
+    <label><input type="checkbox"><span>6명 전원 여권 유효기간 확인</span></label><label><input type="checkbox"><span>Visit Japan Web 입국·세관 QR 사전 등록</span></label><label><input type="checkbox"><span>국제운전면허증 발급 및 한국 면허 원본 준비</span></label><label><input type="checkbox"><span>eSIM·포켓와이파이 등 통신 수단 준비</span></label><label><input type="checkbox"><span>항공 e티켓·숙소·렌터카 예약증 한곳에 저장</span></label>
+   </div>
+   <div class="card checklist"><h3>식사 · 예산</h3>
+    <label><input type="checkbox"><span>르네상스 디너 예약 (혼잡 시 사전 예약 권장)</span></label><label><input type="checkbox"><span>11/26 점심 하나무라 소바 영업시간 최종 확인 (11:30 개점 여부)</span></label><label><input type="checkbox"><span>11/26 저녁 식당 예약 (포시즌스 스테이크하우스 또는 레드 랍스터)</span></label><label><input type="checkbox"><span>U-SHI 예약자명·인원 6명·어린이 의자 확인</span></label><label><input type="checkbox"><span>U-SHI에 어머니 생신이라고 미리 전달 (케이크·축하 가능 여부 확인)</span></label><label><input type="checkbox"><span>아쿠아 펠리스 요금·결제 상태 Booking.com에서 확인</span></label><label><input type="checkbox"><span>알레르기·못 먹는 음식 가족과 공유</span></label><label><input type="checkbox"><span>엔화 현금 준비 (만좌모 입장료·소액 결제용)</span></label><label><input type="checkbox"><span>11/27 저녁에 11/28 조식거리 구입</span></label>
+   </div>
+  </div>
+ </section>
 
-            <!-- Intro Text -->
-            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-slate-700 text-sm sm:text-base leading-relaxed">
-                3대 가족 식사는 어르신의 식성 및 좌석 편의성, 어린이가 지루해하지 않을 시각적 요소, 가족 전체가 소통할 수 있는 공간적 쾌적성, 키즈 전용 메뉴 보유 여부 등을 복합적으로 고려하여 결정해야 합니다. 르네상스 리조트 오키나와 내 9개 식음료장 중 기념일 연회에 가장 적합한 곳은 <strong>'포 시즌스(Four Seasons)'</strong>와 <strong>'일본 요리 이로도리(Irodori)'</strong>입니다.
-            </div>
-
-            <!-- Detailed Restaurant Cards -->
-            <div class="space-y-6">
-                <!-- 3.1 Four Seasons Detail -->
-                <div class="bg-white p-6 sm:p-8 rounded-2xl border-2 border-ocean-500 shadow-md space-y-4">
-                    <div class="flex flex-wrap justify-between items-center gap-2">
-                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center">
-                            <span class="bg-ocean-600 text-white text-sm px-3 py-1 rounded-lg mr-3">3.1 [최우선 추천]</span>
-                            포 시즌스 (Four Seasons) - 프렌치 & 철판구이 (Teppanyaki)
-                        </h3>
-                    </div>
-                    <div class="text-slate-700 text-sm sm:text-base leading-relaxed space-y-3">
-                        <p>
-                            리조트 2층에 위치하여 동중국해의 파노라마 오션뷰를 확보하고 있는 포 시즌스는 고급스러운 분위기 속에서 정통 프렌치 코스 및 라이브 철판구이(Teppanyaki)를 선보이는 미식 공간입니다. 6인 대가족이 철판 카운터 테이블에 둘러앉아 식사할 경우, 전담 셰프가 오키나와산 프리미엄 와규(이시가키소, 모토부소)와 이세에비(닭새우), 현지 해산물 및 섬 야채를 눈앞에서 화려한 불쇼와 함께 구워내는 몰입형 다이닝을 경험할 수 있습니다. 이러한 라이브 퍼포먼스는 어르신에게는 대접받는 품격을 제공하고, 초등학교 1학년 어린이에게는 훌륭한 볼거리를 제공하여 3대 가족 모두의 만족도를 극대화합니다.
-                        </p>
-                        <p>
-                            어린이 손님을 위한 메뉴 체계 역시 우수하게 구축되어 있습니다. 미니 스테이크, 옥수수 크림 수프, 그라탕, 돌고래 형상 디저트로 구성된 <strong>'키즈 철판(Kids Teppan, ￥6,000)'</strong>과 <strong>'주니어 현대 접시(￥2,900)'</strong>가 준비되어 있어 초등학생 딸아이도 성인과 동일하게 디너 코스를 즐길 수 있습니다.
-                        </p>
-                        <p>
-                            리조트 특제 생일 케이크 및 칵테일 서빙, 기념 사진 촬영 이벤트가 진행될 때 포 시즌스의 우아한 조명과 바다 배경이 더해져 파티 분위기를 연출하기에 가장 최적화되어 있습니다. 디너 영업시간은 18:00부터 22:00까지이며 화요일이 정기 휴무일이나, <strong>생일 당일인 11월 27일 금요일은 정상 영업</strong>하므로 이용에 차질이 없습니다. 식사 시 남성은 셔츠와 긴바지, 여성은 리조트 드레스 등 스마트 캐주얼 드레스 코드가 요구되며 비치 샌들 차림은 제한됩니다.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- 3.2 Irodori Detail -->
-                <div class="bg-white p-6 sm:p-8 rounded-2xl border-2 border-emerald-500 shadow-md space-y-4">
-                    <div class="flex flex-wrap justify-between items-center gap-2">
-                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center">
-                            <span class="bg-emerald-600 text-white text-sm px-3 py-1 rounded-lg mr-3">3.2 [차선 추천]</span>
-                            일본 요리 이로도리 (Irodori) - 가이세키 & 프라이빗 룸
-                        </h3>
-                    </div>
-                    <div class="text-slate-700 text-sm sm:text-base leading-relaxed space-y-3">
-                        <p>
-                            일본 요리 이로도리는 오키나와의 신선한 제철 식재료를 활용하여 정갈한 전통 일식과 류큐 왕국 전통 가이세키 요리를 제공하는 전문 다이닝입니다. 정갈하고 자극적이지 않은 식사를 선호하는 부모님의 식성을 최우선으로 고려하고, 외부 소음 없이 가족들만의 오붓한 대화를 원할 때 최적의 선택지가 됩니다.
-                        </p>
-                        <p>
-                            이로도리의 가장 큰 강점은 발을 편안하게 내릴 수 있는 구조의 프라이빗 호리고타츠 개별실('쿠니' 2~4석, '미야비' 4~12석)을 보유하고 있다는 점입니다. 6인 가족이 단독 룸을 예약할 경우, 타인의 시선에서 벗어나 자유롭게 어머니의 생일 케이크 촛불을 켜고 감사 편지나 선물을 전달하는 단란한 시간을 보낼 수 있습니다.
-                        </p>
-                        <p>
-                            메뉴로는 <strong>오키나와 섬두부 가이세키(￥7,800), 아구돼지 샤브샤브(￥9,800), 와규 스키야키(￥14,500), 류큐 가이세키(￥16,500)</strong> 등 부모님이 선호하는 고급 일식 라인업이 풍부합니다. 어린이를 위해서도 치킨, 새우튀김, 스테이크, 계란구이, 아이스크림 등으로 구성된 <strong>'타마테바코(玉手箱, ￥2,300)'</strong> 메뉴가 마련되어 있습니다. 디너 영업시간은 17:30부터 21:30까지이며 월요일 휴무를 제외하고 정상 가동됩니다. 개별실 및 스키야키/샤브샤브 코스는 사전 예약이 필수적입니다.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- 3.3 Other Options Detail -->
-                <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-                    <h3 class="text-xl font-bold text-slate-900">3.3 기타 리조트 다이닝 옵션 검토</h3>
-                    <div class="text-slate-700 text-sm sm:text-base leading-relaxed space-y-3">
-                        <p>
-                            1층에 위치한 <strong>'세일피쉬 카페(Sailfish Cafe)'</strong>는 인터내셔널 뷔페 레스토랑으로 메뉴의 다양성이 뛰어나고 아이가 음식 선택을 하기 용이하나, 이용객이 많아 북적이고 소음이 발생하므로 차분한 생일 연회 장소로는 다소 아쉬움이 남습니다.
-                        </p>
-                        <p>
-                            바다 위에 위치한 선셋 BBQ <strong>'코럴 씨 뷰(Coral Sea View)'</strong>나 바닷속 숯불구이 <strong>'우미카지(Umikaji)'</strong>는 이색적인 해변 분위기를 선사하지만, 야외 해풍의 영향과 어르신 좌석의 편의성을 감안할 때 기념일 디너로서는 포 시즌스나 이로도리의 정중한 서비스에 비해 완성도가 낮게 평가됩니다.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Full Restaurant Comparison Table -->
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-                <div class="px-6 py-4 border-b border-slate-100 font-bold text-slate-800 text-base">
-                    <i class="fa-solid fa-utensils text-ocean-600 mr-2"></i>[표 3] 레스토랑 종합 비교 및 평가표
-                </div>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm text-left text-slate-600">
-                        <thead class="text-xs text-slate-700 uppercase bg-slate-50">
-                            <tr>
-                                <th class="px-5 py-3">레스토랑 명칭</th>
-                                <th class="px-5 py-3">주요 메뉴 및 요리 구성</th>
-                                <th class="px-5 py-3">디너 휴무일</th>
-                                <th class="px-5 py-3">3대 가족 연회 적합성</th>
-                                <th class="px-5 py-3">종합 평가 및 추천 등급</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-100">
-                            <tr class="hover:bg-slate-50">
-                                <td class="px-5 py-4 font-bold text-slate-900">
-                                    포 시즌스<br><span class="text-xs font-normal text-slate-500">(Four Seasons)</span>
-                                </td>
-                                <td class="px-5 py-4">와규·해산물 라이브 철판구이, 프렌치 코스</td>
-                                <td class="px-5 py-4 font-medium text-slate-700">화요일</td>
-                                <td class="px-5 py-4 text-emerald-600 font-bold">최상 (화려한 불쇼 퍼포먼스, 오션뷰, 키즈 철판 보유)</td>
-                                <td class="px-5 py-4"><span class="bg-ocean-100 text-ocean-800 text-xs font-bold px-2.5 py-1 rounded-full">[1순위 추천] 시각적 즐거움과 이벤트 연출에 최적화</span></td>
-                            </tr>
-                            <tr class="hover:bg-slate-50">
-                                <td class="px-5 py-4 font-bold text-slate-900">
-                                    일본 요리 이로도리<br><span class="text-xs font-normal text-slate-500">(Irodori)</span>
-                                </td>
-                                <td class="px-5 py-4">정통 가이세키, 와규 스키야키, 아구 샤브샤브</td>
-                                <td class="px-5 py-4 font-medium text-slate-700">월요일</td>
-                                <td class="px-5 py-4 text-emerald-600 font-bold">최상 (프라이빗 룸 보유, 어르신 맞춤 정갈한 일식)</td>
-                                <td class="px-5 py-4"><span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2.5 py-1 rounded-full">[2순위 추천] 단독 룸에서 차분한 가족 연회를 원할 때 최적</span></td>
-                            </tr>
-                            <tr class="hover:bg-slate-50">
-                                <td class="px-5 py-4 font-bold text-slate-900">
-                                    세일피쉬 카페<br><span class="text-xs font-normal text-slate-500">(Sailfish Cafe)</span>
-                                </td>
-                                <td class="px-5 py-4">아시안 & 오키나와 인터내셔널 뷔페</td>
-                                <td class="px-5 py-4 text-emerald-600 font-medium">없음 (매일)</td>
-                                <td class="px-5 py-4 text-slate-500">보통 (다양한 메뉴, 캐주얼하나 분위기가 북적임)</td>
-                                <td class="px-5 py-4"><span class="bg-slate-100 text-slate-600 text-xs font-medium px-2.5 py-1 rounded-full">일반 투숙일 식사로 적합</span></td>
-                            </tr>
-                            <tr class="hover:bg-slate-50">
-                                <td class="px-5 py-4 font-bold text-slate-900">
-                                    코럴 씨 뷰<br><span class="text-xs font-normal text-slate-500">(Coral Sea View)</span>
-                                </td>
-                                <td class="px-5 py-4">오션 바비큐 (BBQ 코스)</td>
-                                <td class="px-5 py-4 font-medium text-slate-700">목요일</td>
-                                <td class="px-5 py-4 text-slate-500">보통 (바다 위 선셋 관람, 야외 해풍 영향 존재)</td>
-                                <td class="px-5 py-4"><span class="bg-slate-100 text-slate-600 text-xs font-medium px-2.5 py-1 rounded-full">캐주얼 야외 식사로 적합</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 4: ACTION PLAN & RESERVATION TEMPLATES -->
-        <section id="tab-action" class="tab-content hidden space-y-6">
-            <div class="bg-gradient-to-r from-slate-900 via-ocean-900 to-slate-800 rounded-3xl p-6 sm:p-8 text-white shadow-xl">
-                <span class="bg-ocean-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">4. 실행 전략 가이드</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 leading-snug">
-                    실행 전략 및 단계별 예약 가이드
-                </h2>
-            </div>
-
-            <!-- Detailed Roadmap Explanation -->
-            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
-                <p>
-                    어머니의 음력 생신을 오키나와 르네상스 리조트에서 성공적으로 기념하기 위해 수립해야 할 실행 로드맵은 사전 행정 절차와 현장 이용 전략으로 구분됩니다.
-                </p>
-                <p>
-                    가장 먼저 투숙 일정 중 생일 당일에 해당하는 <strong>2026년 11월 27일(금요일) 저녁</strong>을 생일 디너 파티 일자로 확정해야 합니다. 레스토랑 선택 단계에서는 화려한 퍼포먼스와 이벤트 감성을 원할 경우 포 시즌스 철판구이를, 프라이빗 룸에서의 정갈한 식사와 오붓한 소통을 원할 경우 이로도리를 지정하여 예약 절차를 진행합니다.
-                </p>
-                <p>
-                    온라인 예약 플랫폼(TableCheck 등) 이용 시 비고란(Special Requests)에 아래의 영문 요청 문구를 명확하게 기재해야 합니다.
-                </p>
-                <p>
-                    예약 제출 후에는 리조트 대표 이메일 창구(<strong>privacy@hpd-c.co.jp</strong>) 또는 공식 메일 채널을 통해 예약 내역을 재확인하고, 음력 생일 적용 및 케이크 준비 여부에 대한 서면 확답을 받아두는 것이 안전합니다. 식사 당일에는 포 시즌스나 이로도리의 복장 규정에 따라 슬리퍼나 비치 샌들을 지양하고 단정한 리조트 캐주얼 착장을 준비해야 합니다. 또한 리조트 3박 이상 연박 시 제공되는 '클럽 사비(Club Savvy)' 혜택을 활용하여 낮 시간대 프리 스낵이나 액티비티 혜택을 연계하면 3대 가족 여행 전체의 만족도를 배가시킬 수 있습니다.
-                </p>
-            </div>
-
-            <!-- Interactive Templates with One-Click Copy -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <!-- Template 1: Four Seasons Teppanyaki -->
-                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-3">
-                            <h4 class="font-bold text-slate-800 text-sm flex items-center">
-                                <i class="fa-solid fa-copy text-ocean-600 mr-2"></i>[포 시즌스] 영문 예약 요청 서식
-                            </h4>
-                            <span class="text-xs bg-ocean-100 text-ocean-700 px-2 py-0.5 rounded font-semibold">철판구이 전용</span>
-                        </div>
-                        <div class="bg-slate-900 text-slate-100 p-4 rounded-xl text-xs font-mono leading-relaxed relative overflow-x-auto" id="template1">
-Dear Renaissance Resort Team,
-
-We are a family of 6 (5 adults + 1 child, 7 years old) staying from Nov 24 to Nov 28, 2026. 
-We would like to reserve Four Seasons Teppanyaki on Nov 27 for my mother's birthday celebration.
-
-* Guest Birthday Info:
-- Lunar Date: Oct 19, 1959
-- Converted Solar Date: Nov 27, 2026 (During our stay)
-
-Please arrange the complimentary Anniversary privileges (Strawberry Chiffon Cake, anniversary cocktails, and commemorative photo service).
-Also, please kindly assign us counter seating for 6 guests.
-
-Thank you very much!
-                        </div>
-                    </div>
-                    <button onclick="copyToClipboard('template1')" class="mt-4 w-full bg-ocean-600 hover:bg-ocean-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition flex items-center justify-center space-x-2">
-                        <i class="fa-regular fa-copy"></i>
-                        <span>포 시즌스 요청문 복사하기</span>
-                    </button>
-                </div>
-
-                <!-- Template 2: Irodori Japanese Dining -->
-                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-3">
-                            <h4 class="font-bold text-slate-800 text-sm flex items-center">
-                                <i class="fa-solid fa-copy text-emerald-600 mr-2"></i>[이로도리] 영문 예약 요청 서식
-                            </h4>
-                            <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded font-semibold">개별실 전용</span>
-                        </div>
-                        <div class="bg-slate-900 text-slate-100 p-4 rounded-xl text-xs font-mono leading-relaxed relative overflow-x-auto" id="template2">
-Dear Renaissance Resort Team,
-
-We are a family of 6 (5 adults + 1 child, 7 years old) staying from Nov 24 to Nov 28, 2026. 
-We would like to reserve Irodori on Nov 27 for my mother's birthday celebration.
-
-* Guest Birthday Info:
-- Lunar Date: Oct 19, 1959
-- Converted Solar Date: Nov 27, 2026 (During our stay)
-
-We request a private Horigotatsu room (e.g. Miyabi) for our family, and please arrange the complimentary Anniversary privileges (Strawberry Chiffon Cake, cocktails, and commemorative photo).
-
-Thank you very much!
-                        </div>
-                    </div>
-                    <button onclick="copyToClipboard('template2')" class="mt-4 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition flex items-center justify-center space-x-2">
-                        <i class="fa-regular fa-copy"></i>
-                        <span>이로도리 요청문 복사하기</span>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 5: CONCLUSION & RECOMMENDATION -->
-        <section id="tab-conclusion" class="tab-content hidden space-y-6">
-            <div class="bg-gradient-to-r from-emerald-800 via-teal-700 to-ocean-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl">
-                <span class="bg-emerald-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full uppercase">5. 최종 결론</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 leading-snug">
-                    결론 및 종합 제언
-                </h2>
-            </div>
-
-            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
-                <p>
-                    본 연구 분석 결과, 어머니의 1959년 음력 10월 19일 생신은 <strong>2026년 양력 11월 27일(금요일)</strong>로 환산되며, 이는 여행 일정(11월 24일~28일) 중 4일 차에 완벽하게 일치합니다. 르네상스 리조트 오키나오는 음력 생일이라 하더라도 사전 예약을 통한 양력 환산일 고지 시 호텔 특제 딸기 시폰 케이크, 애니버서리 칵테일, 기념 사진 촬영 서비스를 무료로 차질 없이 제공합니다.
-                </p>
-                <p>
-                    3대 가족 연회를 위한 레스토랑으로는 화려한 라이브 불쇼 퍼포먼스와 오션뷰, 유아 전용 철판 코스를 겸비한 <strong>'포 시즌스(Four Seasons)' 철판구이</strong>를 최우선으로 추천합니다. 부모님의 한식/일식 선호도가 높고 단독 공간에서의 차분한 식사를 원할 경우에는 <strong>'일본 요리 이로도리(Irodori)'</strong>의 프라이빗 호리고타츠 룸과 가이세키 코스가 훌륭한 대안이 됩니다. 최소 3일 전 디너 예약을 완료하고 생일 요청 사항을 명시함으로써, 어머니에게 잊지 못할 고품격 리조트 생신 연회를 선사할 수 있을 것입니다.
-                </p>
-            </div>
-
-            <!-- References Box -->
-            <div class="bg-slate-100 p-6 rounded-2xl border border-slate-200 text-xs text-slate-500 space-y-2">
-                <h4 class="font-bold text-slate-700 text-sm mb-2"><i class="fa-solid fa-link mr-1.5"></i>참고 문헌 및 출처</h4>
-                <ol class="list-decimal list-inside space-y-1">
-                    <li>superkts.com (양력 음력 변환, 1959년 10월 19일)</li>
-                    <li>한국천문연구원 (astro.kasi.re.kr) 월별 음양력 데이터</li>
-                    <li>month2k.com 2026년 11월 달력 (음력 및 공휴일)</li>
-                    <li>tools.devcomma.com 음력 달력 계산기</li>
-                    <li>DateDB (datedb.net) 2026년 10월 음력 평달</li>
-                    <li>르네상스 리조트 오키나와 공식 사이트 (renaissance-okinawa.com) 레스토랑 및 애니버서리 서비스 정책</li>
-                </ol>
-            </div>
-        </section>
-
-        <!-- Toast Alert Box -->
-        <div id="toast" class="fixed bottom-6 right-6 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl text-xs font-medium flex items-center space-x-2 transform translate-y-20 opacity-0 transition-all duration-300 z-50">
-            <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
-            <span id="toast-msg">클립보드에 복사되었습니다!</span>
-        </div>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-6 mt-12 text-center text-xs text-slate-400">
-        <div class="max-w-7xl mx-auto px-4">
-            <p>오키나와 르네상스 리조트 3대 가족 여행 & 어머니 음력 생신 맞춤 대화형 보고서</p>
-        </div>
-    </footer>
-
-    <!-- Interactive JavaScript -->
-    <script>
-        // Tab Switcher Logic
-        function switchTab(tabId) {
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(el => el.classList.add('hidden'));
-
-            document.getElementById('tab-' + tabId).classList.remove('hidden');
-
-            const desktopBtns = document.querySelectorAll('#desktopNav .tab-btn');
-            desktopBtns.forEach(btn => btn.classList.remove('active'));
-            const activeDesktopBtn = document.getElementById('tab-btn-' + tabId);
-            if(activeDesktopBtn) activeDesktopBtn.classList.add('active');
-
-            const mobileBtns = document.querySelectorAll('.tab-btn-m');
-            mobileBtns.forEach(btn => {
-                btn.classList.remove('active', 'bg-slate-100', 'text-ocean-600', 'font-bold');
-                btn.classList.add('text-slate-600');
-            });
-            const activeMobileBtn = document.getElementById('tab-m-' + tabId);
-            if(activeMobileBtn) {
-                activeMobileBtn.classList.add('active', 'bg-slate-100', 'text-ocean-600', 'font-bold');
-                activeMobileBtn.classList.remove('text-slate-600');
-            }
-
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Copy Text Function
-        function copyToClipboard(elementId) {
-            const textElement = document.getElementById(elementId);
-            const textToCopy = textElement.innerText;
-
-            const tempInput = document.createElement("textarea");
-            tempInput.style.position = "absolute";
-            tempInput.style.left = "-9999px";
-            tempInput.value = textToCopy;
-            document.body.appendChild(tempInput);
-            
-            tempInput.select();
-            tempInput.setSelectionRange(0, 99999);
-
-            try {
-                document.execCommand('copy');
-                showToast("요청 문구가 클립보드에 성공적으로 복사되었습니다!");
-            } catch (err) {
-                showToast("복사에 실패했습니다. 직접 선택하여 복사해주세요.");
-            }
-
-            document.body.removeChild(tempInput);
-        }
-
-        // Toast Notification System
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            const toastMsg = document.getElementById('toast-msg');
-            toastMsg.innerText = message;
-
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
-
-            setTimeout(() => {
-                toast.classList.add('translate-y-20', 'opacity-0');
-                toast.classList.remove('translate-y-0', 'opacity-100');
-            }, 3000);
-        }
-    </script>
+ <footer class="footer">
+  <b>공식 정보 확인 링크</b><br>
+  <a href="https://renaissance-okinawa.com/en/pages/activity-information-list" target="_blank" rel="noopener">르네상스 액티비티</a> ·
+  <a href="https://renaissance-okinawa.com/en/pages/facilities/" target="_blank" rel="noopener">르네상스 시설</a> ·
+  <a href="https://www.manzamo.jp/" target="_blank" rel="noopener">만좌모</a> ·
+  <a href="https://oki-churaumi.jp/en/guide/hour/" target="_blank" rel="noopener">츄라우미 운영시간</a> ·
+  <a href="https://www.gyokusendo.co.jp/okinawaworld/showtime/" target="_blank" rel="noopener">오키나와 월드 공연</a> ·
+  <a href="https://www.okinawa-americanvillage.com/" target="_blank" rel="noopener">아메리칸 빌리지</a> ·
+  <a href="https://www.umikajiterrace.com/" target="_blank" rel="noopener">우미카지 테라스</a>
+  <p>이 페이지의 시간과 이동시간은 제공된 조사 보고서를 바탕으로 만든 계획용 안내입니다. 실제 운영시간·요금·교통·예약 조건은 변동될 수 있으므로 출발 전 공식 사이트와 예약처에서 확인하세요.</p>
+  <p><strong>배포용 안내:</strong> 이 페이지는 비밀번호 화면이 적용된 공유용 버전으로, 개인 연락처·이메일·생년월일·주소·체크인 링크는 제외돼 있습니다. 전체 정보는 개인 파일을 참조하세요.</p>
+  <p class="note">수정본(2026.11.12): 항공사명·수하물·체크인 마감 정정, 운영시간 검증 결과 반영, 확인 필요 항목 표시, “여행 준비 정보” 탭과 체크리스트 항목 추가, 여행 준비 정보 탭 폰트 크기 통일. 2차 수정: Day 3 시간표 조정(09:30 출발), Day 2 리조트 혜택 일정화, 온천·수영장 시간 반영, 식당 후보 추가, 인천 출발 일정 추가. 3차 수정: 딸 초1 표기 통일, 11/27 어머니 생신·U-SHI 저녁 확정 반영. 배포용: 비밀번호 화면 추가, 개인 연락처·이메일·생년월일·주소·체크인 링크 제외.</p>
+  <button class="btn" onclick="window.print()">일정 인쇄 / PDF 저장</button>
+ </footer>
+</main>
+<script>
+const tabs=[...document.querySelectorAll('.nav button')];
+tabs.forEach(b=>b.addEventListener('click',()=>{tabs.forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===b.dataset.tab));window.scrollTo({top:document.querySelector('.nav').offsetTop-5,behavior:'smooth'});}));
+function wireSubnav(buttonId,attr,prefix){const bs=[...document.querySelectorAll('#'+buttonId+' button')];bs.forEach(b=>b.addEventListener('click',()=>{bs.forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.schedule[id^="'+prefix+'"]').forEach(s=>s.classList.toggle('active',s.id===b.dataset[attr]));}));}
+wireSubnav('dayButtons','day','d');wireSubnav('backupButtons','back','b');
+const checks=[...document.querySelectorAll('.checklist input[type=checkbox]')];
+const key='okinawa-family-trip-checks-2026-v2';
+try{const raw=localStorage.getItem(key);if(raw){const saved=JSON.parse(raw);checks.forEach((c,i)=>{if(i<saved.length)c.checked=!!saved[i];});}}catch(e){}
+function update(){const done=checks.filter(c=>c.checked).length;document.getElementById('progressBar').style.width=(done/checks.length*100)+'%';document.getElementById('progressText').textContent=`${done} / ${checks.length} 완료`;try{localStorage.setItem(key,JSON.stringify(checks.map(c=>c.checked)));}catch(e){}}
+checks.forEach(c=>c.addEventListener('change',update));document.getElementById('resetChecks').addEventListener('click',()=>{checks.forEach(c=>c.checked=false);update();});update();
+</script>
+<script>
+(function(){var gate=document.getElementById('gate');var input=document.getElementById('gatePw');var err=document.getElementById('gateErr');function open(){try{sessionStorage.setItem('okinawa-gate','1');}catch(e){}gate.remove();document.body.classList.remove('locked');}try{if(sessionStorage.getItem('okinawa-gate')==='1'){gate.remove();document.body.classList.remove('locked');return;}}catch(e){}function check(){if(input.value==='okinawa1124'){open();}else{err.textContent='비밀번호가 맞지 않습니다. 다시 입력하세요.';input.value='';input.focus();}}document.getElementById('gateBtn').addEventListener('click',check);input.addEventListener('keydown',function(e){if(e.key==='Enter')check();});input.focus();})();
+</script>
 </body>
 </html>
