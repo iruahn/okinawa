@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>르네상스 리조트 오키나와 · 하온이와 함께 2박 3일 키즈 가이드</title>
+<meta name="description" content="2026년 11월 24일~26일 르네상스 리조트 오키나와 2박 3일, 아이와 즐길 거리 정리 · 일정 플래너 · 예상 비용 계산기">
+<style>
+  :root{
+    --ink:#10243a; --ink-soft:#4a5f75; --line:#dde7ef;
+    --bg:#f4f9fc; --card:#ffffff;
+    --teal:#0e7490; --teal-deep:#0b5566; --teal-light:#e6f4f8;
+    --coral:#ef6c4d; --coral-light:#fdeee9;
+    --amber:#b45309; --amber-light:#fdf3e3;
+    --green:#15803d; --green-light:#e8f6ec;
+    --blue:#1d4ed8; --blue-light:#e9eefd;
+    --pink:#be185d; --pink-light:#fdeaf1;
+    --shadow:0 1px 2px rgba(16,36,58,.06), 0 8px 24px -12px rgba(16,36,58,.22);
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Malgun Gothic","Noto Sans KR",sans-serif;
+    line-height:1.55; -webkit-text-size-adjust:100%;
+    padding-bottom:64px;
+  }
+  .wrap{width:100%; max-width:1120px; margin:0 auto; padding:0 16px}
+
+  /* ── header ── */
+  .hero{
+    background:linear-gradient(150deg,#0b5566 0%,#0e7490 45%,#1a9ab0 100%);
+    color:#fff; padding:26px 0 30px; position:relative; overflow:hidden;
+  }
+  .hero:after{
+    content:""; position:absolute; right:-70px; top:-60px; width:280px; height:280px;
+    background:radial-gradient(circle,rgba(255,255,255,.18),rgba(255,255,255,0) 70%);
+    border-radius:50%;
+  }
+  .eyebrow{margin:0 0 8px; font-size:13px; letter-spacing:.06em; text-transform:uppercase; opacity:.9}
+  .hero h1{margin:0; font-size:clamp(21px,4.4vw,30px); line-height:1.3; font-weight:800; letter-spacing:-.01em}
+  .hero h1 span{display:block; font-size:clamp(16px,3.2vw,20px); font-weight:600; opacity:.95; margin-top:4px}
+  .hero .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}
+  .hero .chip{
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+    padding:5px 11px; border-radius:999px; font-size:12.5px; backdrop-filter:blur(4px);
+  }
+  .hero .chip b{font-weight:700}
+  .csl-box{
+    margin-top:18px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.3);
+    border-radius:14px; padding:12px 14px; display:flex; gap:12px; align-items:center; flex-wrap:wrap;
+  }
+  .csl-box .txt{flex:1 1 220px; min-width:200px}
+  .csl-box .txt strong{display:block; font-size:14.5px}
+  .csl-box .txt small{display:block; font-size:12px; opacity:.9; margin-top:2px; line-height:1.45}
+  .switch{
+    display:inline-flex; align-items:center; gap:9px; cursor:pointer; user-select:none;
+    background:rgba(0,0,0,.16); border:1px solid rgba(255,255,255,.35);
+    padding:7px 12px 7px 8px; border-radius:999px; color:#fff; font-size:13px; font-weight:700;
+    font-family:inherit;
+  }
+  .switch .track{width:40px; height:22px; border-radius:999px; background:rgba(255,255,255,.35); position:relative; transition:background .18s}
+  .switch .knob{position:absolute; top:2px; left:2px; width:18px; height:18px; border-radius:50%; background:#fff; transition:transform .18s}
+  .switch[aria-pressed="true"] .track{background:#ffd166}
+  .switch[aria-pressed="true"] .knob{transform:translateX(18px)}
+
+  /* ── tabs ── */
+  .tabs{
+    position:sticky; top:0; z-index:30; background:rgba(244,249,252,.93);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+  }
+  .tabs-inner{display:flex; gap:6px; overflow-x:auto; padding:9px 16px; max-width:1120px; margin:0 auto; scrollbar-width:none}
+  .tabs-inner::-webkit-scrollbar{display:none}
+  .tab{
+    flex:0 0 auto; font:inherit; font-size:14px; font-weight:700; color:var(--ink-soft);
+    background:transparent; border:1px solid transparent; border-radius:10px;
+    padding:8px 14px; cursor:pointer; white-space:nowrap;
+  }
+  .tab[aria-selected="true"]{background:#fff; color:var(--teal-deep); border-color:var(--line); box-shadow:var(--shadow)}
+  .tab .n{font-weight:800; color:var(--coral)}
+
+  /* ── filter bar ── */
+  .filters{margin:18px 0 0; background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:14px; box-shadow:var(--shadow)}
+  .f-lab{font-size:12px; font-weight:800; letter-spacing:.04em; color:var(--ink-soft); text-transform:uppercase; margin:0 0 8px}
+  .chips{display:flex; flex-wrap:wrap; gap:7px}
+  .chipbtn{
+    font:inherit; font-size:13px; font-weight:600; color:var(--ink); background:#f2f7fa;
+    border:1px solid var(--line); border-radius:999px; padding:7px 13px; cursor:pointer; display:inline-flex; gap:6px; align-items:center;
+  }
+  .chipbtn .cnt{font-size:11.5px; color:var(--ink-soft); font-weight:700}
+  .chipbtn[aria-pressed="true"]{background:var(--teal); border-color:var(--teal); color:#fff}
+  .chipbtn[aria-pressed="true"] .cnt{color:rgba(255,255,255,.85)}
+  .toggle-row{display:flex; flex-wrap:wrap; gap:7px; margin-top:14px; padding-top:12px; border-top:1px dashed var(--line)}
+  .toggle{
+    font:inherit; font-size:13px; font-weight:600; color:var(--ink); background:#fff;
+    border:1px solid var(--line); border-radius:10px; padding:7px 11px; cursor:pointer;
+  }
+  .toggle[aria-pressed="true"]{background:var(--teal-light); border-color:var(--teal); color:var(--teal-deep)}
+  .result-line{display:flex; justify-content:space-between; align-items:center; gap:10px; margin:14px 2px 10px; font-size:13px; color:var(--ink-soft)}
+  .result-line button{font:inherit; font-size:12.5px; color:var(--teal); background:none; border:none; cursor:pointer; text-decoration:underline; padding:2px}
+
+  /* ── cards ── */
+  .cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:15px 15px 12px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:9px;
+    position:relative;
+  }
+  .card.planned{border-color:var(--coral); box-shadow:0 0 0 2px var(--coral-light), var(--shadow)}
+  .tags{display:flex; flex-wrap:wrap; gap:5px}
+  .tag{font-size:11px; font-weight:800; padding:3px 8px; border-radius:6px; letter-spacing:.01em}
+  .tag.dolphin{background:var(--teal-light); color:var(--teal-deep)}
+  .tag.animal{background:var(--green-light); color:var(--green)}
+  .tag.work{background:var(--amber-light); color:var(--amber)}
+  .tag.pool{background:var(--blue-light); color:var(--blue)}
+  .tag.kids{background:var(--pink-light); color:var(--pink)}
+  .tag.soft{background:#f2f7fa; color:var(--ink-soft)}
+  .tag.hot{background:var(--coral-light); color:#c2410c}
+  .tag.wed{background:#eef2ff; color:#4338ca}
+  .card h3{margin:0; font-size:16.5px; font-weight:800; letter-spacing:-.01em}
+  .card h3 .sub{display:block; font-size:11.5px; font-weight:600; color:var(--ink-soft); margin-top:2px; letter-spacing:0}
+  .meta{display:flex; flex-wrap:wrap; gap:4px 12px; font-size:12.5px; color:var(--ink-soft)}
+  .meta span b{color:var(--ink); font-weight:700}
+  .note{margin:0; font-size:13px; color:#33495e; background:#f8fbfd; border-left:3px solid #cfe3ec; padding:7px 10px; border-radius:0 8px 8px 0}
+  .price-row{margin-top:auto; display:flex; align-items:flex-end; justify-content:space-between; gap:10px; flex-wrap:wrap; padding-top:4px}
+  .price{font-size:18px; font-weight:800; letter-spacing:-.02em}
+  .price .unit{font-size:11.5px; font-weight:600; color:var(--ink-soft); margin-left:3px}
+  .price.cut{font-size:13px; font-weight:600; color:#93a6b8; text-decoration:line-through}
+  .csl-price{font-size:12px; font-weight:800; color:var(--coral); text-align:right}
+  .csl-price.none{color:#9aa9b8; font-weight:600}
+  .add-row{display:flex; gap:6px; margin-top:6px}
+  .daybtn{
+    flex:1; font:inherit; font-size:12.5px; font-weight:700; padding:8px 4px; border-radius:9px;
+    border:1px solid var(--line); background:#fff; color:var(--ink); cursor:pointer;
+  }
+  .daybtn:hover{border-color:var(--teal)}
+  .daybtn[aria-pressed="true"]{background:var(--teal); border-color:var(--teal); color:#fff}
+  .daybtn:disabled{opacity:.36; cursor:not-allowed; text-decoration:line-through}
+
+  /* ── planner ── */
+  .summary{
+    margin:18px 0 16px; background:linear-gradient(160deg,#0e7490,#0b5566); color:#fff;
+    border-radius:var(--radius); padding:16px 18px; box-shadow:var(--shadow);
+  }
+  .summary .row{display:flex; flex-wrap:wrap; gap:6px 26px; align-items:baseline}
+  .summary .big{font-size:26px; font-weight:800; letter-spacing:-.02em}
+  .summary .small{font-size:12.5px; opacity:.9}
+  .summary .save{background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.3); border-radius:999px; padding:4px 10px; font-size:12.5px; font-weight:700}
+  .summary .actions{display:flex; gap:8px; margin-top:12px; flex-wrap:wrap}
+  .summary .actions button{
+    font:inherit; font-size:12.5px; font-weight:700; padding:7px 12px; border-radius:9px; cursor:pointer;
+    background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.3);
+  }
+  .summary .actions button:hover{background:rgba(255,255,255,.24)}
+  .days{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+  @media (max-width:860px){ .days{grid-template-columns:1fr} }
+  .day{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); display:flex; flex-direction:column; min-height:150px}
+  .day header{padding:13px 14px 11px; border-bottom:1px solid var(--line)}
+  .day header .d{font-size:12px; font-weight:800; color:var(--teal); letter-spacing:.05em}
+  .day header h2{margin:2px 0 0; font-size:17px; font-weight:800}
+  .day header .hint{font-size:12px; color:var(--ink-soft); margin-top:3px}
+  .day .items{list-style:none; margin:0; padding:8px; display:flex; flex-direction:column; gap:8px; flex:1}
+  .day .empty{font-size:12.5px; color:#93a6b8; padding:16px 10px; text-align:center; border:1px dashed var(--line); border-radius:10px; margin:4px}
+  .plan-item{background:#f8fbfd; border:1px solid #e6eef4; border-radius:11px; padding:9px 10px}
+  .plan-item .top{display:flex; gap:8px; align-items:flex-start; justify-content:space-between}
+  .plan-item .timesel{
+    font:inherit; font-size:12.5px; font-weight:700; padding:3px 5px; border-radius:7px;
+    border:1px solid var(--line); background:#fff; color:var(--teal-deep); margin-right:4px;
+  }
+  .plan-item .nm{font-size:13.5px; font-weight:800; line-height:1.35}
+  .plan-item .rm{font:inherit; font-size:16px; line-height:1; border:none; background:none; color:#9aa9b8; cursor:pointer; padding:2px 4px}
+  .plan-item .rm:hover{color:var(--coral)}
+  .plan-item .bot{display:flex; justify-content:space-between; align-items:center; gap:8px; margin-top:7px}
+  .qty{display:inline-flex; align-items:center; gap:2px; background:#fff; border:1px solid var(--line); border-radius:8px}
+  .qty button{font:inherit; font-size:14px; font-weight:800; width:24px; height:24px; border:none; background:none; cursor:pointer; color:var(--teal-deep)}
+  .qty span{font-size:12.5px; font-weight:800; min-width:16px; text-align:center}
+  .plan-item .amt{font-size:13px; font-weight:800; text-align:right}
+  .plan-item .amt small{display:block; font-weight:600; color:var(--ink-soft); font-size:11px}
+  .plan-item .warn{margin-top:6px; font-size:11.5px; font-weight:700; color:#b45309; background:var(--amber-light); border-radius:7px; padding:4px 7px}
+  .day footer{padding:10px 14px; border-top:1px dashed var(--line); display:flex; justify-content:space-between; align-items:center; font-size:12.5px}
+  .day footer .tot{font-weight:800}
+  .day footer button{font:inherit; font-size:11.5px; color:var(--ink-soft); background:none; border:none; cursor:pointer; text-decoration:underline}
+
+  /* ── tips ── */
+  .tips{display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:14px; margin-top:18px}
+  .tip{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow)}
+  .tip h2{margin:0 0 4px; font-size:16px; font-weight:800; display:flex; gap:8px; align-items:center}
+  .tip h2 .ico{font-size:18px}
+  .tip p, .tip li{font-size:13.2px; color:#33495e}
+  .tip ul, .tip ol{margin:8px 0 0; padding-left:18px}
+  .tip li{margin:4px 0}
+  .tip .src{display:block; margin-top:10px; font-size:11.5px; color:#93a6b8}
+  .tip table{width:100%; border-collapse:collapse; margin-top:8px; font-size:12.3px}
+  .tip th, .tip td{text-align:left; padding:5px 6px; border-bottom:1px solid var(--line); vertical-align:top}
+  .tip th{color:var(--ink-soft); font-weight:800; font-size:11.5px; letter-spacing:.02em}
+  .tip .closed{color:var(--coral); font-weight:800}
+  .tip a{color:var(--teal); text-decoration:none; border-bottom:1px solid rgba(14,116,144,.3)}
+  .tip.wide{grid-column:1/-1}
+  .ckgroup{margin-top:10px}
+  .ckgroup h3{margin:12px 0 4px; font-size:13px; font-weight:800; color:var(--teal-deep)}
+  .ck{display:flex; gap:9px; align-items:flex-start; padding:7px 0; border-bottom:1px dashed var(--line); font-size:13.2px; cursor:pointer}
+  .ck:last-child{border-bottom:none}
+  .ck input{margin:3px 0 0; width:17px; height:17px; accent-color:var(--teal); flex:0 0 auto}
+  .ck span.done{text-decoration:line-through; color:#9aa9b8}
+  .ck-bar{display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:12px; font-size:12.5px; color:var(--ink-soft)}
+  .ck-bar button{font:inherit; font-size:12px; border:1px solid var(--line); background:#fff; border-radius:8px; padding:5px 10px; cursor:pointer}
+  footer.site{margin:28px 0 0; padding:18px 0 0; border-top:1px solid var(--line); font-size:11.5px; color:#8b9cad; line-height:1.7}
+  .sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0)}
+  .hidden{display:none !important}
+  .toast{
+    position:fixed; left:50%; bottom:22px; transform:translate(-50%,16px); opacity:0;
+    background:#10243a; color:#fff; font-size:13px; font-weight:700; padding:10px 16px; border-radius:999px;
+    box-shadow:var(--shadow); pointer-events:none; transition:all .22s; z-index:80;
+  }
+  .toast.on{transform:translate(-50%,0); opacity:1}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">2026. 11. 24 (화) – 11. 26 (목) · 2박 3일</p>
+    <h1>르네상스 리조트 오키나와<span>하온이와 함께하는 키즈 가이드</span></h1>
+    <div class="chips">
+      <span class="chip">📍 오키나와 온나손 · 야마다 3425-2</span>
+      <span class="chip">🌤 11월 하순 <b>18~21°C</b> · 바람/비 대비</span>
+      <span class="chip">🏊 실내수영장 <b>09:00–22:00</b></span>
+      <span class="chip" id="heroStat">🗓 담은 일정 <b id="heroCount">0</b>개 · <b id="heroSum">¥0</b></span>
+    </div>
+    <div class="csl-box">
+      <div class="txt">
+        <strong>클럽 사비 라이트 (Club Savvy Light)</strong>
+        <small>2박 숙박 · 2026.10/1–2027.3/19 기준. 켜면 모든 가격이 라이트 적용가(무료/할인)로 바뀌고 합계도 다시 계산됩니다. 카드의 ‘클럽 사비 %’는 3박 이상 숙박 시 할인율입니다.</small>
+      </div>
+      <button class="switch" id="cslSwitch" aria-pressed="true" data-act="csl">
+        <span class="track"><span class="knob"></span></span>
+        <span id="cslLabel">적용가 보기</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" role="tablist" aria-label="보기 선택">
+  <div class="tabs-inner">
+    <button class="tab" role="tab" data-act="tab" data-tab="activities" aria-selected="true">① 액티비티 찾기</button>
+    <button class="tab" role="tab" data-act="tab" data-tab="plan" aria-selected="false">② 나만의 일정 <span class="n" id="tabPlanCount">0</span></button>
+    <button class="tab" role="tab" data-act="tab" data-tab="tips" aria-selected="false">③ 꿀팁 &amp; 체크리스트</button>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- ────────── TAB 1 ────────── -->
+  <section id="panel-activities" role="tabpanel">
+    <div class="filters">
+      <p class="f-lab">카테고리</p>
+      <div class="chips" id="catChips"></div>
+      <div class="toggle-row">
+        <button class="toggle" data-act="toggle" data-key="indoor" aria-pressed="false">🏠 실내/우천 OK</button>
+        <button class="toggle" data-act="toggle" data-key="free" aria-pressed="false">🎁 무료/스탬프 랠리</button>
+        <button class="toggle" data-act="toggle" data-key="wed" aria-pressed="false">📅 수요일 한정(11/25)</button>
+        <button class="toggle" data-act="toggle" data-key="csl" aria-pressed="false">💳 클럽 사비 라이트 할인</button>
+      </div>
+    </div>
+    <div class="result-line">
+      <span id="resultCount">전체 보기</span>
+      <button data-act="reset-filter">필터 초기화</button>
+    </div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <!-- ────────── TAB 2 ────────── -->
+  <section id="panel-plan" role="tabpanel" class="hidden">
+    <div class="summary">
+      <div class="row">
+        <div>
+          <div class="small" id="sumMode">정가 합계</div>
+          <div class="big" id="sumTotal">¥0</div>
+        </div>
+        <div class="small" id="sumDetail">담은 활동 0개</div>
+        <div class="save" id="sumSave">클럽 사비 라이트로 절약 ¥0</div>
+      </div>
+      <div class="actions">
+        <button data-act="copy">📋 일정 텍스트 복사</button>
+        <button data-act="clear-all">전체 비우기</button>
+      </div>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="small" style="margin-top:14px; color:var(--ink-soft); font-size:12.5px">
+      담은 내용은 이 브라우저(localStorage)에 저장됩니다. 다음에 열어도 그대로 남아 있어요.
+    </p>
+  </section>
+
+  <!-- ────────── TAB 3 ────────── -->
+  <section id="panel-tips" role="tabpanel" class="hidden">
+    <div class="tips">
+
+      <article class="tip">
+        <h2><span class="ico">🎟</span> 예약은 이렇게</h2>
+        <ul>
+          <li><b>액티비티 카운터</b>는 로비 1층, <b>08:30–17:00</b>. 체크인 후 숙박 기간 안의 프로그램을 <b>선착순</b>으로 접수합니다.</li>
+          <li>전화 예약은 받지 않습니다(일부 메뉴 제외). 접수 마감은 <b>각 프로그램 시작 1시간 전</b>.</li>
+          <li><b>사전예약 가능</b>: 패밀리 돌핀 S, 돌핀 인카운터 S, 돌핀 어드벤처, 미나지마 스노클링, 트롤링, 보트 피싱, 패러세일링, 요트 크루징 → 숙박객은 <b>체크인 전날까지</b> 전화(+81 98-964-5629, 09:00–17:00)로 예약하고, <b>참가 전날까지 카운터에서 수속</b>(신장 확인).</li>
+          <li>체크인 당일 날짜는 사전예약이 안 됩니다.</li>
+          <li>취소·변경 수수료: 전날 17:00까지 정가 <b>50%</b>, 당일 <b>100%</b>.</li>
+          <li>날씨·해황·동물 컨디션에 따라 중지·시간 변경이 있을 수 있고, 결정은 <b>시작 1시간 전</b>에 나옵니다. 출발 전 카운터 확인이 안전해요.</li>
+        </ul>
+        <span class="src">출처: 공식 ‘액티비티 예약 안내’ 페이지</span>
+      </article>
+
+      <article class="tip">
+        <h2><span class="ico">🎒</span> 플리퍼스 백 &amp; 스탬프 랠리</h2>
+        <p>3~12세(초등학생) 숙박객에게 <b>플리퍼스 백</b>을 줍니다. 색칠공부·크레용·돌고래 스펀지·어린이 칫솔이 들어 있어요. 프런트에 말하면 됩니다.</p>
+        <ul>
+          <li><b>키즈 파자마</b> 대여 — S 80cm / M 100cm / L 120cm</li>
+          <li><b>비치 샌들</b> 대여 — 19cm / 21cm</li>
+          <li><b>유모차(A·B형)·침대 가드·발판·보조 변기</b> 무료 대여 / 유아용 침대는 1박 ¥1,000(1세까지)</li>
+          <li><b>플리퍼스 스탬프 랠리</b> — 스태프와 가위바위보로 스탬프를 모아 상품 교환. 대기 시간이나 식사 전후에 한 판씩.</li>
+        </ul>
+        <span class="src">출처: 공식 ‘Kids &amp; Family’ 페이지</span>
+      </article>
+
+      <article class="tip">
+        <h2><span class="ico">🍃</span> 리프(Leaf) 화폐 사용법</h2>
+        <p>‘처음☆직업 도전’은 호텔 일을 체험하고 <b>급여(리프)</b>를 받는 프로그램입니다. 대상은 <b>4~12세(초등학생)</b>, 1메뉴 <b>¥2,000~</b>.</p>
+        <ul>
+          <li>일이 끝나면 직업별로 <b>300~600리프</b> 지급(케이크 300, 바텐더 400, 함박 500, 에이사·쿠마노미호 선장·하류선 크루 600 등).</li>
+          <li>리프는 <b>숍과 레스토랑의 지정 메뉴</b>에 쓸 수 있습니다. 마켓 플라자에서 간식·기념품으로 바꾸는 게 아이에겐 가장 재미있는 마무리.</li>
+          <li>메뉴는 <b>아이만 참가</b>이고 보호자는 일부 견학만 가능. 초등학생 이하는 스태프가 도와줍니다.</li>
+          <li>직업마다 <b>요일이 정해져 있어요</b> — 예: 함박 화·목·일 / 피자 목 / 케이크 월·수·토 / 바텐더 월·목. 아래 일정표에서 요일 필터로 확인하세요.</li>
+        </ul>
+        <span class="src">출처: 공식 활동 목록(프로그램별 급여·요일 표기)</span>
+      </article>
+
+      <article class="tip wide">
+        <h2><span class="ico">🍽</span> 어린이 저녁 무료 — 어느 날 어디가 열까</h2>
+        <p>2박 숙박 + 2026.10/1–2027.3/19 기간이면 <b>클럽 사비 라이트</b>가 적용되어, 성인 동석 시 <b>초등학생(6~12세) 저녁이 지정 레스토랑에서 무료</b>입니다(3~5세는 레스토랑별 키즈 메뉴 — 키즈 BBQ·우동 세트·키즈 디너 등). 다른 특전과 중복 사용은 안 됩니다.</p>
+        <table>
+          <thead><tr><th>레스토랑</th><th>저녁 시간</th><th>휴무</th><th>이번 여행</th></tr></thead>
+          <tbody>
+            <tr><td>세일피쉬 카페 (뷔페)</td><td>17:30–21:30</td><td class="closed">수요일</td><td>11/24 화 · 11/26 목</td></tr>
+            <tr><td>스시 바 로이즈 (패밀리 SUSHI 바이킹)</td><td>17:30–21:30</td><td class="closed">금요일</td><td>3일 모두</td></tr>
+            <tr><td>코랄 씨 뷰 (주니어 바비큐)</td><td>17:30–21:30</td><td class="closed">목요일</td><td>11/24·25 (계절 영업, 확인 필요)</td></tr>
+            <tr><td>이로도리 (타마테바코·우동 세트)</td><td>17:30–21:30</td><td class="closed">월요일</td><td>3일 모두</td></tr>
+            <tr><td>포 시즌스 (키즈 모던 플레이트)</td><td>18:00–22:00</td><td class="closed">화요일</td><td>11/25·26</td></tr>
+            <tr><td>마칸 마칸 (코코 가든)</td><td>18:00–21:30</td><td>—</td><td>3일 모두</td></tr>
+          </tbody>
+        </table>
+        <ul>
+          <li><b>11/24(화)</b> — 포 시즌스 휴무. 세일피쉬 카페 뷔페가 첫날 저녁으로 무난.</li>
+          <li><b>11/25(수)</b> — <b>세일피쉬 카페 휴무(공식 표기)</b>. 로이즈·이로도리·코랄 씨 뷰·포 시즌스 중에서. 조식도 같은 휴무인지 체크인 때 확인하세요.</li>
+          <li><b>11/26(목)</b> — 체크아웃일. 코랄 씨 뷰는 목요일 휴무.</li>
+          <li>예약은 레스토랑별 온라인(이용일 <b>전날까지</b>), 당일은 전화(+81 98-965-0707, 내선 13 / 09:00–18:00).</li>
+          <li>⚠️ 4/1–10/31 ‘Meal Free’ 캠페인과는 별개입니다. 11월은 <b>클럽 사비 라이트 혜택</b>으로 적용되고, 예약 상품에 <b>‘Club Savvy’ 표기가 없으면 대상에서 빠질 수</b> 있으니 예약 내역을 확인하세요.</li>
+        </ul>
+        <span class="src">출처: 공식 ‘Club Savvy’·‘Kids &amp; Family’·‘Restaurants’ 페이지 (2026년 4월 1일 기준 요금표)</span>
+      </article>
+
+      <article class="tip">
+        <h2><span class="ico">🏊</span> 수영장 &amp; 물놀이</h2>
+        <ul>
+          <li><b>실내 수영장 09:00–22:00</b> — 높이 5m 워터슬라이드 + 길이 15m 루프 슬라이드, 수심 50cm 키즈풀. 투숙객 무료, 타월은 실내 수영장 안 카운터에서 대여.</li>
+          <li><b>야외 수영장 09:00–17:00</b>(10/1–4/30) — <b>비온수 풀이 아닙니다.</b> 11월 하순엔 물이 차가워 아이와 오래 놀기엔 실내가 유리.</li>
+          <li>키즈 스플래시 존(7/1–10/31)은 11월엔 운영하지 않습니다.</li>
+          <li>수영장 안에 들어갈 때는 수영복 위에 겉옷을 걸치고, 젖은 발은 닦고 이동하도록 안내되어 있어요.</li>
+          <li>야외 수영장 옆 <b>리프 가든</b>은 무료 관람 — 거북이·왈라비 먹이 주기 체험도 이곳에서 합니다.</li>
+        </ul>
+        <span class="src">출처: 공식 ‘시설’ 페이지</span>
+      </article>
+
+      <article class="tip">
+        <h2><span class="ico">🌡</span> 11월 하순 준비물</h2>
+        <ul>
+          <li>낮 <b>18~21°C</b> 수준으로 쌀쌀하고 바닷바람이 붑니다. 반소매 + <b>가디건·바람막이</b> 조합이 편해요.</li>
+          <li>수영 후 체온이 떨어지기 쉬우니 <b>큰 수건 2장, 여분 래시가드</b>를 챙기세요.</li>
+          <li>비·강풍이면 야외 해양 프로그램이 중지될 수 있어 <b>실내 체험(직업 도전·애니멀 라이브러리·리프 가든·실내 수영장)</b>으로 바꾸기 좋게 오전·오후를 나눠 두면 안전합니다.</li>
+          <li>야마다 온천 06:00–10:00 / 13:00–24:00(최종 입장 23:15), <b>목요일 09:30–15:30은 청소로 휴무</b>. 클럽 사비 라이트는 <b>디럭스룸</b>만 이용 대상(△)입니다.</li>
+          <li>체크인 14:00 / 체크아웃 11:00, 주차 200대 무료.</li>
+        </ul>
+        <span class="src">출처: 공식 ‘시설’·‘호텔 개요’ 페이지 + 현지 기후 참고</span>
+      </article>
+
+      <article class="tip">
+        <h2><span class="ico">🚫</span> 이번 시즌엔 쉬는 프로그램</h2>
+        <p>11월에 운영하지 않거나 기간이 끝난 메뉴입니다. 헛걸음하지 않게 미리 빼 두세요.</p>
+        <ul>
+          <li>SUP 투어(5/1–9/30), 블루 케이브 스노클링(4/1–10/31), 미나지마 스노클링(5/1–10/31)</li>
+          <li>트롤링·보트 피싱(5/1–10/31), 야간 크루즈·해적선 크루즈(여름), 키즈 스플래시(7/1–10/31)</li>
+          <li>설탕 수확 체험(1/10–3/10), 개미 연구팀(7~9월), 삼선 교실(월요일만 — 이번 일정엔 없음)</li>
+          <li>선박 정비 휴지: 패러세일링 12/1–12/20, 요트 크루징·스노클링 베케이션 1/6–1/31, 쿠마노미호 2/1–2/19, 보물찾기 2/20–3/20 → <b>11월은 해당 없음</b></li>
+        </ul>
+        <span class="src">출처: 공식 활동 목록의 개최 기간 표기, 2026.9.3 공지</span>
+      </article>
+
+      <article class="tip wide">
+        <h2><span class="ico">✅</span> 준비 체크리스트</h2>
+        <div id="checklist"></div>
+        <div class="ck-bar">
+          <span id="ckProgress">0 / 0 완료</span>
+          <button data-act="reset-check">체크 초기화</button>
+        </div>
+      </article>
+
+      <article class="tip wide">
+        <h2><span class="ico">🔗</span> 공식 페이지 바로가기</h2>
+        <ul>
+          <li><a href="https://renaissance-okinawa.com/ko/collections/activity" target="_blank" rel="noopener">액티비티 목록 · 요일/요금/할인</a></li>
+          <li><a href="https://renaissance-okinawa.com/ko/pages/activity-information-list" target="_blank" rel="noopener">액티비티 예약 안내 · 사전예약</a></li>
+          <li><a href="https://renaissance-okinawa.com/ko/pages/clubsavvy" target="_blank" rel="noopener">Club Savvy / Club Savvy Light 혜택</a></li>
+          <li><a href="https://renaissance-okinawa.com/ko/pages/kids-family" target="_blank" rel="noopener">Kids &amp; Family · 키즈 어메니티</a></li>
+          <li><a href="https://renaissance-okinawa.com/ko/pages/facilities" target="_blank" rel="noopener">시설 · 수영장 · 리프 가든 · 온천</a></li>
+          <li><a href="https://renaissance-okinawa.com/ko/pages/restaurants" target="_blank" rel="noopener">레스토랑 운영시간 · 휴무일</a></li>
+        </ul>
+        <span class="src">요금·요일·시간은 2026년 4월 1일 기준 공식 요금표와 활동 목록에서 확인한 값입니다. 현장 사정으로 바뀔 수 있으니 예약 전 카운터 안내를 확인하세요.</span>
+      </article>
+
+    </div>
+    <footer class="site">
+      르네상스 리조트 오키나와 · 2026.11.24–26 · 안성호 님 가족(하온이) 키즈 가이드 ·
+      공식 사이트 확인일 2026-11-14. 표시 가격은 세금 포함, 인원·팀 단위는 카드에 적었습니다.
+    </footer>
+  </section>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+
+/* ─────────────────────────── 데이터 ─────────────────────────── */
+var CATS = {
+  all:     { label: "전체",              icon: "" },
+  dolphin: { label: "돌고래·해양",        icon: "🐬" },
+  animal:  { label: "동물·자연",          icon: "🐢" },
+  work:    { label: "어린이 직업체험",     icon: "👩‍🍳" },
+  pool:    { label: "수영장·실내",        icon: "🏊" },
+  kids:    { label: "키즈 어메니티·식사",  icon: "🎁" }
+};
+var DAYKEYS = ["tue", "wed", "thu"];
+var DAYMETA = {
+  tue: { name: "Day 1", date: "11/24 (화)", chip: "화 24", short: "화",
+         hint: "체크인 14:00 · 도착 후 오후 프로그램 위주로" },
+  wed: { name: "Day 2", date: "11/25 (수)", chip: "수 25", short: "수",
+         hint: "온종일 · 수요일만 여는 프로그램을 챙기기 좋은 날" },
+  thu: { name: "Day 3", date: "11/26 (목)", chip: "목 26", short: "목",
+         hint: "체크아웃 11:00 · 오전 프로그램만" }
+};
+
+var A = [
+  /* ── 돌고래·해양 ── */
+  { id:"family-dolphin", cat:"dolphin", name:"패밀리 돌핀 S (스윔 플러스)", sub:"Family Dolphin S · Swim Plus",
+    days:["tue","wed","thu"], times:["09:00"], dur:"약 50분", unit:"1팀(1~5명)", price:90000,
+    priceNote:"숙박객 사전예약가 · 정가 ¥100,000", csl:"none", age:"미취학 아동은 보호자(고교생 이상) 동반",
+    height:"110cm 이상은 돌고래를 잡고 1회 수영", indoor:false, free:false, planned:true,
+    book:"사전예약(전화)", note:"한 팀만 들어가는 프라이빗 프로그램. 얕은 물에서 노는 게 중심이고 참가비의 10%가 유니세프에 기부됩니다. 숙박객 사전예약가는 ¥90,000(정가 ¥100,000). 캘린더에 이미 잡혀 있는 일정이라 시간은 예약 내역을 확인하세요." },
+
+  { id:"dolphin-encounter", cat:"dolphin", name:"돌핀 인카운터 S (스윔 플러스)", sub:"Dolphin Encounter S",
+    days:["tue","wed","thu"], times:["10:00"], dur:"약 50분", unit:"1인", price:18000,
+    csl:"none", age:"미취학 아동은 보호자 동반(유료)", height:"110cm 이상은 돌고래를 잡고 1회 수영",
+    indoor:false, free:false, book:"사전예약(전화)",
+    note:"무릎 깊이 물에서 노는, 돌고래 프로그램 중 가장 쉬운 코스. 클럽 사비(3박~) 30% 할인 대상이지만 라이트 할인은 없습니다." },
+
+  { id:"dolphin-adventure", cat:"dolphin", name:"돌핀 어드벤처", sub:"Dolphin Adventure",
+    days:["tue","wed","thu"], times:["11:00"], dur:"약 80분", unit:"1인", price:30000,
+    csl:"none", age:"초등학생은 보호자 동반(유료)", height:"130cm 이상 & 수영 가능",
+    indoor:false, free:false, book:"사전예약(전화)",
+    note:"앞 20분은 SDGs 학습, 이후 돌고래와 수영하고 스노클로 돌고래 헤엄을 관찰합니다. 130cm·수영 조건이 있어 하온이 키를 확인해 보세요." },
+
+  { id:"dolphin-splash", cat:"dolphin", name:"돌핀 스플래시", sub:"Dolphin Splash",
+    days:["tue","wed","thu"], times:["16:00"], dur:"약 30분", unit:"1인", price:3500,
+    csl:50, age:"미취학 아동은 보호자 동반", indoor:false, free:false, book:"당일 카운터",
+    note:"물에 들어가지 않고 물보라를 일으키는 돌고래를 가까이서 봅니다. 저녁 식사 전 16:00에 넣기 좋은 짧은 프로그램." },
+
+  { id:"happy-dolphin", cat:"dolphin", name:"해피 돌핀", sub:"Happy Dolphin",
+    days:["tue","wed","thu"], times:["09:30","15:00"], dur:"약 30분", unit:"1팀(1~5명)", price:25000,
+    csl:"none", age:"미취학 아동은 보호자 동반", indoor:false, free:false, book:"당일 카운터",
+    note:"바다에 들어가지 않고 돌고래와 교감하는 30분. 물이 부담스러운 아이와도 가능합니다." },
+
+  { id:"dolphin-dynamic", cat:"dolphin", name:"돌핀 다이나믹 (보트 관람)", sub:"Dolphin Dynamic",
+    days:["wed"], times:["15:30"], dur:"약 30분", unit:"1조(부모+자녀)", price:8000,
+    csl:"none", age:"보트 승선 프로그램", indoor:false, free:false, book:"당일 카운터",
+    note:"보트를 타고 돌고래 점프와 퍼포먼스를 봅니다. 11/1–3/31 기간 수·토요일에만 운영 → 이번 여행에서는 11/25(수) 하루뿐입니다." },
+
+  { id:"dolphin-post", cat:"dolphin", name:"돌고래 우체국", sub:"Dolphin Postman",
+    days:["tue","wed","thu"], times:[], window:"09:00–15:00", dur:"약 30분", unit:"1세트", price:300,
+    csl:"none", indoor:false, free:false, book:"당일 카운터",
+    note:"돌고래 그림 엽서에 마음을 적어 보내는 체험. 판매 수익 10%가 SDGs 사업에 기부됩니다." },
+
+  { id:"banana-boat", cat:"dolphin", name:"바나나 보트", sub:"Banana Boat",
+    days:["tue","wed","thu"], times:[], dur:"약 10분", unit:"1인", price:1100,
+    csl:"free", age:"초등학생 이하는 보호자(고교생 이상) 동반", height:"110cm 이상",
+    indoor:false, free:false, book:"당일 해변 카운터",
+    note:"가족·그룹에게 가장 인기 있는 해양 액티비티. 당일 접수만 가능합니다." },
+
+  { id:"big-mable", cat:"dolphin", name:"빅 마블 (4인승)", sub:"Big Mable",
+    days:["tue","wed","thu"], times:[], dur:"약 10분", unit:"1인", price:2500,
+    csl:10, age:"초등학생 이하는 보호자 동반(유료)", indoor:false, free:false, book:"당일 해변 카운터",
+    note:"4인승 튜브로 파도 위를 달립니다. 클럽 사비(3박~) 50% 할인." },
+
+  { id:"sombrero", cat:"dolphin", name:"솜브레로", sub:"Sombrero",
+    days:["tue","wed","thu"], times:[], dur:"약 10분", unit:"1인", price:2500,
+    csl:10, age:"초등학생 이하는 보호자 동반(유료)", indoor:false, free:false, book:"당일 해변 카운터",
+    note:"수면을 가까이서 느끼는 강한 액티비티. 물이 무섭지 않은 아이와." },
+
+  { id:"biscuit", cat:"dolphin", name:"비스킷 튜브", sub:"Biscuit Tube",
+    days:["tue","wed","thu"], times:[], dur:"약 10분", unit:"1인", price:2500,
+    csl:10, age:"초등학생 이하는 보호자 동반(유료)", indoor:false, free:false, book:"당일 해변 카운터",
+    note:"파도에 튀어 오르는 스릴. 3종 튜브 중 하나만 골라도 충분합니다." },
+
+  { id:"jet-ski", cat:"dolphin", name:"제트 스키", sub:"Jet Ski",
+    days:["tue","wed","thu"], times:[], dur:"약 10분", unit:"1인", price:4400,
+    csl:"none", height:"110cm 이상(강사 동승)", indoor:false, free:false, book:"당일 해변 카운터",
+    note:"초등학생까지는 보호자와 2인 1조로 탑니다. 라이트 할인은 없고 클럽 사비 50% 대상." },
+
+  { id:"canoe", cat:"dolphin", name:"카누 대여", sub:"Canoe Rental",
+    days:["tue","wed","thu"], times:[], dur:"약 30분", unit:"1척", price:1100,
+    csl:50, age:"초등학생 이하는 보호자 동반", indoor:false, free:false, book:"당일 해변 카운터",
+    note:"해변 가까운 잔잔한 바다에서 30분. 클럽 사비/라이트 모두 50% 할인(라이트는 무료)." },
+
+  { id:"snorkel-rental", cat:"dolphin", name:"스노클링 렌탈", sub:"Snorkel Rental",
+    days:["tue","wed","thu"], times:[], dur:"1시간", unit:"1인", price:1100,
+    csl:50, indoor:false, free:false, book:"당일 해변 카운터",
+    note:"마스크·스노클·구명조끼 대여. 해변에서 직접 쓸 때 구명조끼는 무료 대여도 됩니다." },
+
+  { id:"haryu-boat", cat:"dolphin", name:"하류선 유리보트 물고기 관찰", sub:"HARYU Boat",
+    days:["tue","wed","thu"], times:["09:00","10:00","13:30","15:30"], dur:"약 20분", unit:"1인", price:3000,
+    priceNote:"초등학생 무료", csl:50, indoor:false, free:false, book:"전날까지 예약 권장",
+    note:"류큐 전통 배 모양 유리보트로 산호와 열대어를 봅니다. 2명 이상, 짧고 편해서 첫날 오후에 넣기 좋아요." },
+
+  { id:"coral-cruise", cat:"dolphin", name:"코랄 어드벤처 크루즈", sub:"Coral Adventure Cruise",
+    days:["tue","wed","thu"], times:["10:30","11:30","14:30"], dur:"약 40분", unit:"1인", price:3000,
+    priceNote:"성인·중학생 기준, 초등 ¥1,000", csl:50, indoor:false, free:false, book:"당일 카운터",
+    note:"수중 관람실에서 산호 바다를 들여다봅니다. 2명 이상, 비가 와도 배 안에서 볼 수 있어 우천 대안이 됩니다." },
+
+  { id:"yacht-cruise", cat:"dolphin", name:"요트 크루징", sub:"Yacht Cruising",
+    days:["tue","wed","thu"], times:["09:30"], dur:"약 50분", unit:"1인", price:2750,
+    priceNote:"성인·중학생 기준, 초등 ¥1,100", csl:30, indoor:false, free:false, book:"전날까지 예약",
+    note:"11/1–3/31은 09:30 출발. 2명 이상, 바람만으로 달리는 50분." },
+
+  { id:"yacht-sunset", cat:"dolphin", name:"요트 선셋 세일링", sub:"Yacht Sunset Sailing",
+    days:["tue","wed","thu"], times:[], window:"일몰 시각 출발", dur:"약 60분", unit:"1인", price:4400,
+    priceNote:"성인 기준, 초등 ¥2,200", csl:30, indoor:false, free:false, book:"전날까지 예약",
+    note:"동중국해 일몰을 보는 1시간, 음료 1잔 포함. 4명 이상 출항이라 가족 단위로." },
+
+  { id:"snorkel-vacation", cat:"dolphin", name:"스노클링 베케이션", sub:"Snorkeling Vacation",
+    days:["tue","wed","thu"], times:["11:00","14:00"], dur:"약 1시간 10분", unit:"1인", price:7500,
+    csl:"none", height:"110cm 이상, 65세까지", indoor:false, free:false, book:"전날까지 예약",
+    note:"11/1–3/31은 11:00·14:00 두 편. 대형 요트로 나가 스노클링, 음료 1잔 포함. 초등학생 이하는 보호자 동반(유료)." },
+
+  { id:"snorkel-school", cat:"dolphin", name:"스노클링 스쿨", sub:"Snorkel School",
+    days:["tue","wed","thu"], times:["08:00"], dur:"40분", unit:"1인", price:2000,
+    csl:50, age:"월·수·금·일은 4세부터 / 화·목·토는 초등학생부터", indoor:false, free:false, book:"전날까지 예약",
+    note:"스노클 처음인 아이를 위한 수업. 11/1–4/30은 08:00 시작, 악천후엔 실내 수영장에서 진행됩니다." },
+
+  { id:"parasailing", cat:"dolphin", name:"패러세일링", sub:"Parasailing",
+    days:["tue","wed","thu"], times:["16:00"], dur:"40~90분(체공 약 10분)", unit:"1인", price:8800,
+    csl:10, age:"8~65세, 25kg 이상", indoor:false, free:false, book:"사전예약(전화)",
+    note:"하늘에서 오키나와 바다를 내려다봅니다. 12/1–12/20은 선박 정비로 휴지 — 11월은 운영됩니다." },
+
+  /* ── 동물·자연 ── */
+  { id:"fish-class", cat:"animal", name:"물고기 수업", sub:"Fish Class",
+    days:["tue","wed","thu"], times:["10:30"], dur:"약 30분", unit:"1인", price:3500,
+    csl:50, age:"미취학 아동은 보호자 동반(유료)", indoor:true, free:false, book:"당일 카운터",
+    note:"가오리·상어·물고기를 보며 바다 쓰레기에 대해 생각해 봅니다. 비 오는 날 오전에 딱 맞는 실내 수업." },
+
+  { id:"turtle-class", cat:"animal", name:"바다거북 수업", sub:"Turtle Class",
+    days:["tue","wed","thu"], times:["14:00"], dur:"약 30분", unit:"1인", price:3500,
+    csl:50, age:"미취학 아동은 보호자 동반(유료)", indoor:true, free:false, book:"당일 카운터",
+    note:"바다거북과 바다의 풍요, 음식물 쓰레기를 함께 이야기하는 30분." },
+
+  { id:"animal-library", cat:"animal", name:"애니멀 라이브러리", sub:"Animal Library",
+    days:["tue","wed","thu"], times:["14:30"], dur:"약 30분", unit:"1인", price:3500,
+    csl:50, age:"미취학 아동은 보호자 동반(유료)", indoor:true, free:false, book:"당일 카운터",
+    note:"숲과 생물, 환경의 관계를 배우는 실내 프로그램. 오후 2시대의 안전한 카드." },
+
+  { id:"tortoise-keeper", cat:"animal", name:"육지거북 키퍼", sub:"Tortoise Keeper",
+    days:["tue","wed","thu"], times:["10:00"], dur:"약 30분", unit:"1조(최대 5명)", price:14000,
+    csl:50, age:"미취학 아동은 보호자 동반(유료)", indoor:false, free:false, book:"당일 카운터",
+    note:"거북을 돌보며 환경을 생각하는 체험. 한 조(최대 5명) 요금이라 가족이 함께 들어갑니다." },
+
+  { id:"churaumi", cat:"animal", name:"추라우미 조사팀", sub:"Chura-umi Researcher",
+    days:["tue","thu"], times:["15:00"], dur:"약 1시간", unit:"1조(부모+자녀)", price:8000,
+    csl:50, age:"4세 이상", indoor:false, free:false, book:"당일 카운터",
+    note:"배를 타고 바다를 조사하는 체험. 화·목·금요일에만 운영 → 11/24(화)·11/26(목)에 가능." },
+
+  { id:"vetiver-craft", cat:"animal", name:"베티바 크래프트", sub:"Vetiver Craft",
+    days:["wed"], times:["15:00"], dur:"약 1시간", unit:"1세트", price:4000,
+    csl:50, age:"초등학생 이상", indoor:true, free:false, book:"당일 카운터",
+    note:"바다의 적토 유출을 막는 식물 베티바로 리스를 만듭니다. 월·수요일만 → 이번엔 11/25(수)뿐." },
+
+  { id:"beach-cleanup", cat:"animal", name:"해변 청소", sub:"Beach Cleaning",
+    days:["tue","thu"], times:["07:30"], dur:"약 1시간 20분", unit:"1조(부모+자녀)", price:8000,
+    csl:50, age:"4세 이상", indoor:false, free:false, book:"당일 카운터",
+    note:"11~3월 화·목·토 이른 아침 07:30. 일찍 일어나는 아이와 함께하는 SDGs 체험 — 대신 아침잠은 포기." },
+
+  { id:"night-walk", cat:"animal", name:"나이트 자부자부 워킹", sub:"Night Beach Walking",
+    days:["wed"], times:["19:00"], dur:"약 2시간", unit:"1조(부모+자녀)", price:16000,
+    csl:50, age:"7세 이상", indoor:false, free:false, book:"당일 카운터",
+    note:"밤 해변에서 생물을 찾는 2시간. 월·수·금만 운영하고 조수에 따라 시간이 조정될 수 있어요. 저녁 식사는 17:30에." },
+
+  { id:"reef-garden", cat:"animal", name:"리프 가든", sub:"Reef Garden",
+    days:["tue","wed","thu"], times:[], window:"자유 관람", dur:"야외 수영장 옆", unit:"숙박객", price:0,
+    csl:"none", indoor:false, free:true, book:"예약 불필요",
+    note:"오키나와 ‘이노(산호초 얕은 바다)’를 재현한 600㎡ 수족관. 거북이·왈라비 사육 체험도 이곳에서. 예약 없이 무료로 들를 수 있어 대기 시간을 채우기 좋습니다." },
+
+  { id:"ryukyu-photo", cat:"animal", name:"류큐 의상 기념 촬영", sub:"Ryukyu Costume Photo",
+    days:["tue","wed","thu"], times:["09:00","15:30","16:30"], dur:"30분~1시간", unit:"1조(1~3명)", price:4400,
+    priceNote:"촬영 구성에 따라 추가", csl:10, indoor:true, free:false, book:"전날 09:00까지",
+    note:"류소 의상을 입고 전문 작가가 찍어 줍니다. 비 오는 날 기념사진으로 좋은 대안." },
+
+  { id:"mogurinpa", cat:"animal", name:"모구린파 (부모+자녀 물놀이)", sub:"Mogurin-pa!",
+    days:["tue","thu"], times:["08:00"], dur:"약 1시간", unit:"1조(부모+자녀)", price:1200,
+    csl:50, age:"3~6세", indoor:true, free:false, book:"전날 예약",
+    note:"얼굴을 물에 담그는 걸 목표로 하는 놀이 수업. 화·목·토요일 08:00 — 대상 연령이 3~6세라 하온이에게 맞는지 확인하세요." },
+
+  /* ── 어린이 직업체험 ── */
+  { id:"work-bell", cat:"work", name:"벨 스태프", sub:"Job Challenge · Bell Staff",
+    days:["tue","wed","thu"], times:["12:40"], dur:"약 1시간", unit:"1인", price:2000,
+    csl:10, age:"6세~초등학생", leaf:300, indoor:true, free:false, book:"당일/전날 카운터",
+    note:"매일 운영되는 유일한 직업 도전. 셔틀버스 안내와 승차를 돕고 300리프를 받습니다. 첫날 워밍업으로 추천." },
+
+  { id:"work-hamburger", cat:"work", name:"호텔 셰프 · 함박 쿠킹", sub:"Job Challenge · Hotel Chef",
+    days:["tue","thu"], times:["11:00","13:00"], dur:"약 1시간", unit:"1인", price:2700,
+    csl:10, age:"4세~초등학생", leaf:500, indoor:true, free:false, book:"당일/전날 카운터",
+    note:"반죽하고 양념해 굽는 함박 만들기, 급여 500리프로 가장 짠한 메뉴. 화·목·일요일 11:00·13:00." },
+
+  { id:"work-cake", cat:"work", name:"케이크 파티시에", sub:"Job Challenge · Cake Pattisier",
+    days:["wed"], times:["13:00","15:00"], dur:"약 50분", unit:"1인", price:2700,
+    csl:10, age:"4세~초등학생", leaf:300, indoor:true, free:false, book:"당일/전날 카운터",
+    note:"생크림을 휘핑해 과일로 장식하는 케이크. 월·수·토 13:00·15:00 → 11/25(수)에만 가능." },
+
+  { id:"work-eisa", cat:"work", name:"에이사 챌린지", sub:"Job Challenge · Eisa Dance",
+    days:["wed"], times:["14:00"], dur:"약 1시간 30분", unit:"1인", price:2200,
+    csl:10, age:"4세~초등학생", leaf:600, indoor:false, free:false, book:"당일/전날 카운터",
+    note:"오키나와 전통 예능 에이사와 카차시를 배워 발표합니다. 수·일요일만, 급여 600리프. 90분이라 오후 하나만 잡으세요." },
+
+  { id:"work-bartender", cat:"work", name:"셰이크! 셰이크! 바텐더", sub:"Job Challenge · Bartender",
+    days:["thu"], times:["14:00","15:30"], dur:"약 40분", unit:"1인", price:2000,
+    csl:10, age:"4세~초등학생", leaf:400, indoor:true, free:false, book:"당일/전날 카운터",
+    note:"좋아하는 주스를 셰이커로 흔들어 칵테일 만들기. 월·목요일만 → 11/26(목) 오후." },
+
+  { id:"work-pizza", cat:"work", name:"호텔 셰프 · 피자 쿠킹", sub:"Job Challenge · Pizza",
+    days:["thu"], times:["15:00"], dur:"약 1시간", unit:"1인", price:2700,
+    csl:10, age:"4세~초등학생", leaf:400, indoor:true, free:false, book:"당일/전날 카운터",
+    note:"좋아하는 토핑으로 피자 만들기, 목요일 15:00 단 한 편. 체크아웃일 오후 일정이니 짐 보관을 먼저 정하세요." },
+
+  { id:"work-kumanomi", cat:"work", name:"쿠마노미호 선장", sub:"Job Challenge · Captain Kumanomi",
+    days:["tue","thu"], times:["14:15"], dur:"약 1시간", unit:"1인", price:2000,
+    csl:10, age:"4세~초등학생", leaf:600, indoor:false, free:false, book:"당일/전날 카운터",
+    note:"배 위에서 크루와 함께 선장을 돕고 600리프. 화·목·토·일 운영, 결항 시 로프워크 체험으로 바뀝니다." },
+
+  { id:"work-haryu", cat:"work", name:"하류선 크루", sub:"Job Challenge · HARYU Crew",
+    days:["wed"], times:["13:15"], dur:"약 40분", unit:"1인", price:2000,
+    csl:10, age:"4세~초등학생", leaf:600, indoor:false, free:false, book:"당일/전날 카운터",
+    note:"유리보트를 매는 로프워크를 배우고 열대어 포인트까지 크루즈. 월·수·금·일 13:15, 급여 600리프." },
+
+  { id:"parent-rburger", cat:"work", name:"R버거 만들기 (부모+자녀)", sub:"Original R Burger",
+    days:["wed"], times:["11:00"], dur:"약 45분", unit:"1조(부모+자녀)", price:5000,
+    csl:10, age:"4세~초등학생", indoor:true, free:false, book:"당일/전날 카운터",
+    note:"셰프 레시피 패티로 만드는 오리지널 R버거. 급여(리프)는 없는 부모 동반 프로그램, 월·수·금·토 11:00." },
+
+  { id:"parent-sweets", cat:"work", name:"부모-자녀 스위트 스튜디오", sub:"Sweets Studio",
+    days:["tue"], times:["15:00"], dur:"약 1시간", unit:"1조(부모+자녀)", price:5000,
+    csl:10, age:"4세~초등학생", indoor:true, free:false, book:"당일/전날 카운터",
+    note:"전문가와 함께 케이크를 만드는 부모 동반 클래스. 화·금요일 15:00 → 첫날 오후에 넣기 좋습니다." },
+
+  /* ── 수영장·실내 ── */
+  { id:"indoor-pool", cat:"pool", name:"실내 수영장 + 워터슬라이드", sub:"Indoor Pool",
+    days:["tue","wed","thu"], times:[], window:"09:00–22:00", dur:"투숙객 무료", unit:"숙박객", price:0,
+    csl:"none", indoor:true, free:true, book:"예약 불필요",
+    note:"높이 5m 워터슬라이드와 길이 15m 루프 슬라이드, 수심 50cm 키즈풀. 11월 하순 오키나와의 확실한 카드 — 저녁 식사 전후로도 열려 있습니다. 타월은 실내 수영장 안 카운터에서." },
+
+  { id:"outdoor-pool", cat:"pool", name:"야외 수영장", sub:"Outdoor Pool",
+    days:["tue","wed","thu"], times:[], window:"09:00–17:00", dur:"투숙객 무료", unit:"숙박객", price:0,
+    csl:"none", indoor:false, free:true, book:"예약 불필요",
+    note:"10/1–4/30은 09:00–17:00, 비온수 풀이 아닙니다. 맑고 바람 없는 날 짧게. 50cm 키즈풀과 무료 팔 도우미가 있습니다." },
+
+  { id:"flippers-stamp", cat:"pool", name:"플리퍼스 스탬프 랠리", sub:"Flippers Stamp Rally",
+    days:["tue","wed","thu"], times:[], window:"숙박 중 아무 때나", dur:"무료", unit:"숙박객", price:0,
+    csl:"none", indoor:true, free:true, book:"예약 불필요",
+    note:"스태프와 가위바위보로 스탬프를 모아 상품으로 교환합니다. 이동 중·식사 대기 중에 한 판씩 채우기 좋아요." },
+
+  /* ── 키즈 어메니티·식사 ── */
+  { id:"flippers-bag", cat:"kids", name:"플리퍼스 백 (어린이 어메니티)", sub:"Flippers Bag",
+    days:["tue","wed","thu"], times:[], window:"체크인 시", dur:"무료", unit:"3~12세", price:0,
+    csl:"none", indoor:true, free:true, book:"프런트에 요청",
+    note:"색칠공부·크레용·돌고래 스펀지·어린이 칫솔이 든 가방. 파자마(S 80 / M 100 / L 120cm)와 비치 샌들(19·21cm) 대여도 함께 요청하세요." },
+
+  { id:"kids-pajama", cat:"kids", name:"키즈 파자마 대여", sub:"Kids Pajamas",
+    days:["tue","wed","thu"], times:[], window:"체크인 시", dur:"무료", unit:"어린이 1인", price:0,
+    csl:"none", indoor:true, free:true, book:"프런트에 요청",
+    note:"S 80cm / M 100cm / L 120cm. 인기 사이즈는 일찍 나가니 체크인 때 바로 말하는 게 좋습니다." },
+
+  { id:"beach-sandals", cat:"kids", name:"비치 샌들 대여", sub:"Beach Sandals",
+    days:["tue","wed","thu"], times:[], window:"체크인 시", dur:"무료", unit:"어린이 1인", price:0,
+    csl:"none", indoor:true, free:true, book:"프런트에 요청",
+    note:"19cm / 21cm 두 사이즈." },
+
+  { id:"dinner-sailfish", cat:"kids", name:"세일피쉬 카페 (뷔페 저녁)", sub:"Sailfish Cafe · The Buffet",
+    days:["tue","thu"], times:[], window:"17:30–21:30", dur:"어린이 무료", unit:"어린이 1인", price:0,
+    priceNote:"성인 식사는 별도", csl:"none", indoor:true, free:true, book:"온라인(전날까지)/당일 전화",
+    note:"키즈 무료 대상 1순위. 공식 레스토랑 안내에 수요일 휴무로 표기되어 있어 11/25에는 이용이 어렵습니다. 조식에도 같은 휴무가 적용되는지 체크인 때 확인하세요." },
+
+  { id:"dinner-loys", cat:"kids", name:"스시 바 로이즈 (패밀리 SUSHI 바이킹)", sub:"Sushi Bar Loy’s",
+    days:["tue","wed","thu"], times:[], window:"17:30–21:30", dur:"어린이 무료", unit:"어린이 1인", price:0,
+    priceNote:"성인 식사는 별도", csl:"none", indoor:true, free:true, book:"온라인(전날까지)/당일 전화",
+    note:"초밥을 조금씩 골라 먹는 뷔페, 키즈 코너에 어린이 손 감기까지. 금요일 휴무라 이번 일정은 3일 모두 가능." },
+
+  { id:"dinner-coral", cat:"kids", name:"코랄 씨 뷰 (주니어 바비큐)", sub:"Coral Sea View",
+    days:["tue","wed"], times:[], window:"17:30–21:30", dur:"어린이 무료", unit:"어린이 1인", price:0,
+    priceNote:"성인 식사는 별도", csl:"none", indoor:false, free:true, book:"온라인(전날까지)/당일 전화",
+    note:"바다 위 레스토랑에서 노을 보며 바비큐, 음료 30종 무료. 목요일 휴무이고 계절 영업이라 11월 운영 여부는 예약 시 확인하세요." },
+
+  { id:"dinner-irodori", cat:"kids", name:"이로도리 (타마테바코·우동 세트)", sub:"Japanese Irodori",
+    days:["tue","wed","thu"], times:[], window:"17:30–21:30", dur:"어린이 무료", unit:"어린이 1인", price:0,
+    priceNote:"성인 식사는 별도", csl:"none", indoor:true, free:true, book:"온라인(전날까지)/당일 전화",
+    note:"3~5세는 부드러운 우동 세트, 초등학생은 타마테바코. 월요일 휴무. 수요일 점심(12:00–14:00)도 영업합니다." },
+
+  { id:"dinner-four-seasons", cat:"kids", name:"포 시즌스 (키즈 모던 플레이트)", sub:"Four Seasons",
+    days:["wed","thu"], times:[], window:"18:00–22:00", dur:"어린이 무료", unit:"어린이 1인", price:0,
+    priceNote:"성인 식사는 별도", csl:"none", indoor:true, free:true, book:"온라인(전날까지)/당일 전화",
+    note:"철판·프렌치 다이닝. 화요일 휴무라 첫날 저녁엔 못 갑니다. 조식(6:30–9:30)은 수요일에도 열려요." },
+
+  { id:"dinner-makan", cat:"kids", name:"마칸 마칸 (코코 가든)", sub:"Makan Makan",
+    days:["tue","wed","thu"], times:[], window:"18:00–21:30", dur:"어린이 무료", unit:"어린이 1인", price:0,
+    priceNote:"성인 식사는 별도", csl:"none", indoor:true, free:true, book:"온라인(전날까지)/당일 전화",
+    note:"그룹 호텔 코코 가든 리조트 안. 휴무가 없어 다른 곳이 막혔을 때의 플랜 B." }
+];
+
+var BY_ID = {};
+A.forEach(function (a) { BY_ID[a.id] = a; });
+
+/* 클럽 사비(3박 이상) 할인율 — 공식 활동 목록 표기 */
+var CS = {
+  "dolphin-encounter": 30, "dolphin-adventure": 10, "dolphin-dynamic": 10, "dolphin-splash": 50,
+  "happy-dolphin": 30, "banana-boat": "free", "big-mable": 50, "sombrero": 50, "biscuit": 50,
+  "jet-ski": 50, "canoe": "free", "snorkel-rental": 50, "haryu-boat": 50, "coral-cruise": "free",
+  "yacht-cruise": "free", "yacht-sunset": "free", "snorkel-vacation": 50, "snorkel-school": "free",
+  "parasailing": 30, "fish-class": 50, "turtle-class": 50, "animal-library": 50,
+  "tortoise-keeper": 50, "churaumi": 50, "vetiver-craft": 50, "beach-cleanup": 50,
+  "night-walk": 50, "ryukyu-photo": 10, "mogurinpa": "free",
+  "work-bell": 30, "work-hamburger": 30, "work-cake": 30, "work-eisa": 30, "work-bartender": 30,
+  "work-pizza": 30, "work-kumanomi": 30, "work-haryu": 30, "parent-rburger": 30, "parent-sweets": 30
+};
+
+/* ─────────────────────────── 상태 ─────────────────────────── */
+var KEY = "rokids.guide.v1";
+var DEFAULT_STATE = {
+  csl: true,
+  cat: "all",
+  toggles: { indoor: false, free: false, wed: false, csl: false },
+  plan: { tue: [], wed: [], thu: [] },
+  checks: {},
+  tab: "activities"
+};
+var state = load();
+
+function load() {
+  var s = JSON.parse(JSON.stringify(DEFAULT_STATE));
+  try {
+    var raw = localStorage.getItem(KEY);
+    if (raw) {
+      var saved = JSON.parse(raw);
+      if (saved && typeof saved === "object") {
+        if (typeof saved.csl === "boolean") s.csl = saved.csl;
+        if (saved.cat && CATS[saved.cat]) s.cat = saved.cat;
+        if (saved.toggles) {
+          ["indoor", "free", "wed", "csl"].forEach(function (k) {
+            if (typeof saved.toggles[k] === "boolean") s.toggles[k] = saved.toggles[k];
+          });
+        }
+        if (saved.plan) {
+          DAYKEYS.forEach(function (d) {
+            var arr = saved.plan[d];
+            if (!Array.isArray(arr)) return;
+            s.plan[d] = arr.filter(function (e) {
+              return e && typeof e.id === "string" && BY_ID[e.id];
+            }).map(function (e) {
+              return { id: e.id, qty: clampQty(e.qty), time: typeof e.time === "string" ? e.time : "" };
+            });
+          });
+        }
+        if (saved.checks && typeof saved.checks === "object") s.checks = saved.checks;
+        if (saved.tab) s.tab = saved.tab;
+      }
+    }
+  } catch (err) { /* 저장값이 깨졌으면 기본값으로 */ }
+  return s;
+}
+function clampQty(q) {
+  var n = parseInt(q, 10);
+  if (isNaN(n) || n < 1) return 1;
+  if (n > 20) return 20;
+  return n;
+}
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (err) {}
+}
+
+/* ─────────────────────────── 도우미 ─────────────────────────── */
+function fmtNum(n) {
+  return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+function yen(n) {
+  if (!n) return "무료";
+  return "¥" + fmtNum(n);
+}
+function yen0(n) { return "¥" + fmtNum(n || 0); }
+function cslAmount(a) {
+  if (a.csl === "free") return 0;
+  if (a.csl === "none" || typeof a.csl !== "number") return a.price;
+  return Math.round(a.price * (100 - a.csl) / 100);
+}
+function unitPrice(a) {
+  if (state.csl && a.csl !== "none") return cslAmount(a);
+  return a.price;
+}
+function unitLabel(a) { return a.unit || "1인"; }
+function isWedOnly(a) {
+  return a.days.indexOf("wed") !== -1 && a.days.indexOf("tue") === -1 && a.days.indexOf("thu") === -1;
+}
+function daysText(a) {
+  if (a.days.length === 3) return "매일";
+  return a.days.map(function (d) { return DAYMETA[d].short; }).join("·") + "요일";
+}
+function timeText(a) {
+  if (a.times && a.times.length) return a.times.join(" · ");
+  if (a.window) return a.window;
+  return "시간 자유";
+}
+function esc(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+function toast(msg) {
+  var t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("on");
+  clearTimeout(toast._t);
+  toast._t = setTimeout(function () { t.classList.remove("on"); }, 1800);
+}
+function inPlan(day, id) {
+  return state.plan[day].some(function (e) { return e.id === id; });
+}
+
+/* ─────────────────────────── 탭 ─────────────────────────── */
+function renderTabs() {
+  var tabs = document.querySelectorAll('[data-act="tab"]');
+  for (var i = 0; i < tabs.length; i++) {
+    tabs[i].setAttribute("aria-selected", tabs[i].getAttribute("data-tab") === state.tab ? "true" : "false");
+  }
+  document.getElementById("panel-activities").classList.toggle("hidden", state.tab !== "activities");
+  document.getElementById("panel-plan").classList.toggle("hidden", state.tab !== "plan");
+  document.getElementById("panel-tips").classList.toggle("hidden", state.tab !== "tips");
+}
+
+/* ─────────────────────────── 필터 ─────────────────────────── */
+function matches(a) {
+  if (state.cat !== "all" && a.cat !== state.cat) return false;
+  var t = state.toggles;
+  if (t.indoor && !a.indoor) return false;
+  if (t.free && !a.free) return false;
+  if (t.wed && !isWedOnly(a)) return false;
+  if (t.csl && a.csl === "none") return false;
+  return true;
+}
+function renderFilters() {
+  var host = document.getElementById("catChips");
+  var html = "";
+  Object.keys(CATS).forEach(function (k) {
+    var n = A.filter(function (a) { return k === "all" || a.cat === k; }).length;
+    html += '<button class="chipbtn" data-act="cat" data-cat="' + k + '" aria-pressed="' +
+      (state.cat === k ? "true" : "false") + '">' +
+      (CATS[k].icon ? CATS[k].icon + " " : "") + CATS[k].label +
+      ' <span class="cnt">' + n + "</span></button>";
+  });
+  host.innerHTML = html;
+
+  var togs = document.querySelectorAll('[data-act="toggle"]');
+  for (var i = 0; i < togs.length; i++) {
+    var k = togs[i].getAttribute("data-key");
+    togs[i].setAttribute("aria-pressed", state.toggles[k] ? "true" : "false");
+  }
+}
+
+/* ─────────────────────────── 카드 ─────────────────────────── */
+function renderCards() {
+  var host = document.getElementById("cards");
+  var list = A.filter(matches);
+  var html = "";
+
+  list.forEach(function (a) {
+    var tags = '<span class="tag ' + a.cat + '">' + CATS[a.cat].label + "</span>";
+    if (a.planned) tags += '<span class="tag hot">📌 캘린더 예정</span>';
+    if (isWedOnly(a)) tags += '<span class="tag wed">수요일 한정</span>';
+    if (a.indoor) tags += '<span class="tag soft">실내</span>';
+    if (a.free && a.price === 0) tags += '<span class="tag soft">무료</span>';
+    if (a.leaf) tags += '<span class="tag soft">리프 ' + a.leaf + "</span>";
+    if (CS[a.id]) tags += '<span class="tag soft">클럽 사비 ' + (CS[a.id] === "free" ? "무료" : CS[a.id] + "%") + "</span>";
+
+    var meta = "";
+    meta += "<span>🕒 <b>" + esc(timeText(a)) + "</b>" + (a.dur ? " · " + esc(a.dur) : "") + "</span>";
+    if (a.age) meta += "<span>👶 " + esc(a.age) + "</span>";
+    if (a.height) meta += "<span>📏 " + esc(a.height) + "</span>";
+    meta += "<span>📅 " + esc(daysText(a)) + "</span>";
+    if (a.book) meta += "<span>🎫 " + esc(a.book) + "</span>";
+
+    var priceHtml;
+    if (a.price === 0) {
+      priceHtml = '<div class="price">무료<span class="unit">/ ' + esc(unitLabel(a)) + "</span></div>";
+      if (a.priceNote) priceHtml += '<div class="csl-price none">' + esc(a.priceNote) + "</div>";
+    } else if (state.csl && a.csl !== "none") {
+      priceHtml = '<div class="price cut">' + yen(a.price) + "</div>" +
+        '<div class="csl-price">라이트 ' + (a.csl === "free" ? "무료" : yen(cslAmount(a))) +
+        " (" + (a.csl === "free" ? "100" : a.csl) + "%↓)</div>";
+    } else {
+      priceHtml = '<div class="price">' + yen(a.price) + '<span class="unit">/ ' + esc(unitLabel(a)) + "</span></div>";
+      if (a.csl === "none") priceHtml += '<div class="csl-price none">라이트 할인 없음</div>';
+      else if (state.csl) priceHtml += '<div class="csl-price none">' + esc(a.priceNote || "") + "</div>";
+      else priceHtml += '<div class="csl-price none">라이트 ' + (a.csl === "free" ? "무료" : a.csl + "%↓") + "</div>";
+    }
+
+    var addBtns = "";
+    DAYKEYS.forEach(function (d) {
+      var ok = a.days.indexOf(d) !== -1;
+      var on = inPlan(d, a.id);
+      addBtns += '<button class="daybtn" data-act="add" data-id="' + a.id + '" data-day="' + d + '"' +
+        (ok ? "" : " disabled") + ' aria-pressed="' + (on ? "true" : "false") + '"' +
+        (ok ? "" : ' title="이 날은 운영하지 않습니다"') + ">" +
+        (on ? "✓ " : "+ ") + DAYMETA[d].chip + "</button>";
+    });
+
+    html += '<article class="card' + (a.planned ? " planned" : "") + '">' +
+      '<div class="tags">' + tags + "</div>" +
+      "<h3>" + esc(a.name) + '<span class="sub">' + esc(a.sub) + "</span></h3>" +
+      '<div class="meta">' + meta + "</div>" +
+      '<p class="note">' + esc(a.note) + "</p>" +
+      '<div class="price-row">' + priceHtml + "</div>" +
+      '<div class="add-row">' + addBtns + "</div>" +
+      "</article>";
+  });
+
+  host.innerHTML = html || '<p class="empty" style="padding:32px;text-align:center;color:#93a6b8">조건에 맞는 프로그램이 없습니다. 필터를 풀어 보세요.</p>';
+
+  var bits = [];
+  if (state.cat !== "all") bits.push(CATS[state.cat].label);
+  Object.keys(state.toggles).forEach(function (k) {
+    if (!state.toggles[k]) return;
+    bits.push({ indoor: "실내/우천", free: "무료/스탬프", wed: "수요일 한정", csl: "라이트 할인" }[k]);
+  });
+  document.getElementById("resultCount").textContent =
+    (bits.length ? bits.join(" · ") + " · " : "전체 · ") + list.length + "개 프로그램";
+}
+
+/* ─────────────────────────── 플래너 ─────────────────────────── */
+function planEntries(day) {
+  var out = [];
+  state.plan[day].forEach(function (e, idx) {
+    var a = BY_ID[e.id];
+    if (!a) return;
+    out.push({ e: e, a: a, idx: idx });
+  });
+  out.sort(function (x, y) {
+    var tx = x.e.time || (x.a.times && x.a.times[0]) || "";
+    var ty = y.e.time || (y.a.times && y.a.times[0]) || "";
+    if (!tx && !ty) return x.idx - y.idx;
+    if (!tx) return 1;
+    if (!ty) return -1;
+    if (tx < ty) return -1;
+    if (tx > ty) return 1;
+    return x.idx - y.idx;
+  });
+  return out;
+}
+
+function renderPlan() {
+  var host = document.getElementById("days");
+  var html = "";
+  var grandBase = 0, grandNow = 0, count = 0;
+
+  DAYKEYS.forEach(function (day) {
+    var entries = planEntries(day);
+    var dayBase = 0, dayNow = 0;
+    var items = "";
+
+    entries.forEach(function (x) {
+      var a = x.a, e = x.e;
+      var now = unitPrice(a) * e.qty;
+      var base = a.price * e.qty;
+      dayBase += base; dayNow += now; count += 1;
+
+      var timeCell;
+      if (a.times && a.times.length > 1) {
+        var opts = "";
+        a.times.forEach(function (t) {
+          opts += '<option value="' + t + '"' + ((e.time || a.times[0]) === t ? " selected" : "") + ">" + t + "</option>";
+        });
+        timeCell = '<select class="timesel" data-act="time" data-day="' + day + '" data-idx="' + x.idx + '">' + opts + "</select>";
+      } else {
+        var t0 = e.time || (a.times && a.times[0]) || "";
+        timeCell = '<span class="timesel">' + esc(t0 || "자유") + "</span>";
+      }
+
+      var warn = "";
+      if (a.days.indexOf(day) === -1) {
+        warn += '<div class="warn">이 날은 운영하지 않는 프로그램입니다 (운영: ' + daysText(a) + ")</div>";
+      }
+      if (day === "thu") {
+        var t1 = e.time || (a.times && a.times[0]) || "";
+        if (t1 && t1 >= "11:00") warn += '<div class="warn">체크아웃 11:00 이후 일정 — 짐 보관을 먼저 정하세요</div>';
+      }
+      var wedMark = isWedOnly(a) ? '<span class="tag wed" style="margin-left:6px">수요일 전용</span>' : "";
+
+      items += '<li class="plan-item">' +
+        '<div class="top"><div>' + timeCell +
+        '<span class="nm">' + esc(a.name) + "</span>" + wedMark + "</div>" +
+        '<button class="rm" data-act="remove" data-day="' + day + '" data-idx="' + x.idx + '" title="빼기">✕</button></div>' +
+        '<div class="bot">' +
+        '<span class="qty"><button data-act="qty-" data-day="' + day + '" data-idx="' + x.idx + '">−</button>' +
+        "<span>" + e.qty + '</span><button data-act="qty+" data-day="' + day + '" data-idx="' + x.idx + '">+</button></span>' +
+        '<span class="amt">' + yen(now) + "<small>" + esc(unitLabel(a)) + " × " + e.qty + "</small></span>" +
+        "</div>" + warn + "</li>";
+    });
+
+    if (!items) {
+      items = '<li class="empty">아직 담은 활동이 없어요.<br>‘액티비티 찾기’에서 + 버튼으로 담아 보세요.</li>';
+    }
+
+    html += '<section class="day"><header>' +
+      '<div class="d">' + DAYMETA[day].name + "</div>" +
+      "<h2>" + DAYMETA[day].date + "</h2>" +
+      '<div class="hint">' + DAYMETA[day].hint + "</div></header>" +
+      '<ul class="items">' + items + "</ul>" +
+      "<footer><span>" + entries.length + "개 · <span class=\"tot\">" + yen0(dayNow) + "</span></span>" +
+      (entries.length ? '<button data-act="clear-day" data-day="' + day + '">이 날 비우기</button>' : "<span></span>") +
+      "</footer></section>";
+
+    grandBase += dayBase; grandNow += dayNow;
+  });
+
+  host.innerHTML = html;
+
+  document.getElementById("sumTotal").textContent = yen0(grandNow);
+  document.getElementById("sumMode").textContent = state.csl ? "클럽 사비 라이트 적용 합계" : "정가 합계";
+  document.getElementById("sumDetail").textContent = "담은 활동 " + count + "개" +
+    (state.csl && grandBase > grandNow ? " · 정가 기준 " + yen(grandBase) : "");
+  var saveEl = document.getElementById("sumSave");
+  if (state.csl) {
+    var saved = grandBase - grandNow;
+    saveEl.textContent = saved > 0 ? "라이트 혜택으로 절약 " + yen(saved) : "라이트 할인 대상 없음";
+  } else {
+    saveEl.textContent = "라이트 켜면 할인가로 계산";
+  }
+
+  document.getElementById("tabPlanCount").textContent = count;
+  document.getElementById("heroCount").textContent = count;
+  document.getElementById("heroSum").textContent = yen0(grandNow);
+}
+
+/* ─────────────────────────── 체크리스트 ─────────────────────────── */
+var CHECKLIST = [
+  { g: "여행 준비", items: [
+    "여권·항공권·호텔 바우처 확인 (아이 여권 유효기간 포함)",
+    "패밀리 돌핀 S 예약 확인 — 숙박객 사전예약은 체크인 전날까지 전화 +81 98-964-5629",
+    "저녁 레스토랑 예약 (온라인은 이용일 전날까지, 당일은 내선 13)",
+    "예약 상품에 ‘Club Savvy’ 표기가 있는지 확인 (없으면 라이트 혜택 제외)",
+    "여행자 보험·해외 결제 카드·엔화 현금"
+  ] },
+  { g: "아이 물놀이", items: [
+    "수영복·래시가드 2벌 이상",
+    "아쿠아슈즈·방수 가방",
+    "큰 수건 2장 (수영장 타월은 실내 수영장 카운터에서 대여)",
+    "보안경·물안경, 필요하면 수영 기저귀",
+    "슬라이드 탈 때 쓸 여분 속옷"
+  ] },
+  { g: "11월 하순 옷차림", items: [
+    "반소매 + 가디건·바람막이",
+    "긴 바지·양말 여분",
+    "얇은 우비·작은 우산",
+    "아이 상비약·체온계·립밤"
+  ] },
+  { g: "현지에서", items: [
+    "체크인 후 1층 액티비티 카운터(08:30–17:00)에서 다음날 프로그램 접수",
+    "키즈 어메니티 요청 (파자마 사이즈, 샌들 19/21cm)",
+    "플리퍼스 스탬프 랠리 시작",
+    "직업체험 급여 ‘리프’ 사용처 확인 (마켓 플라자·지정 메뉴)",
+    "수요일(11/25) 저녁은 세일피쉬 카페 휴무 표기 — 다른 레스토랑으로 예약"
+  ] }
+];
+
+function renderChecklist() {
+  var host = document.getElementById("checklist");
+  var html = "";
+  var total = 0, done = 0;
+
+  CHECKLIST.forEach(function (group, gi) {
+    html += '<div class="ckgroup"><h3>' + esc(group.g) + "</h3>";
+    group.items.forEach(function (txt, ii) {
+      var k = gi + "-" + ii;
+      total += 1;
+      var on = !!state.checks[k];
+      if (on) done += 1;
+      html += '<label class="ck"><input type="checkbox" data-act="check" data-key="' + k + '"' +
+        (on ? " checked" : "") + '><span class="' + (on ? "done" : "") + '">' + esc(txt) + "</span></label>";
+    });
+    html += "</div>";
+  });
+
+  host.innerHTML = html;
+  document.getElementById("ckProgress").textContent = done + " / " + total + " 완료";
+}
+
+/* ─────────────────────────── 전체 렌더 ─────────────────────────── */
+function renderAll() {
+  renderTabs();
+  renderFilters();
+  renderCards();
+  renderPlan();
+  renderChecklist();
+  var sw = document.getElementById("cslSwitch");
+  sw.setAttribute("aria-pressed", state.csl ? "true" : "false");
+  document.getElementById("cslLabel").textContent = state.csl ? "적용가 보기" : "정가 보기";
+}
+
+/* ─────────────────────────── 이벤트 ─────────────────────────── */
+function findEntry(day, idx) {
+  var arr = state.plan[day];
+  if (!arr || !arr[idx]) return null;
+  return arr[idx];
+}
+
+document.addEventListener("click", function (ev) {
+  var el = ev.target.closest("[data-act]");
+  if (!el) return;
+  var act = el.getAttribute("data-act");
+
+  if (act === "tab") {
+    state.tab = el.getAttribute("data-tab");
+    save(); renderAll();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+
+  if (act === "csl") {
+    state.csl = !state.csl;
+    save(); renderAll();
+    toast(state.csl ? "클럽 사비 라이트 적용가로 표시합니다" : "정가로 표시합니다");
+    return;
+  }
+
+  if (act === "cat") {
+    state.cat = el.getAttribute("data-cat");
+    save(); renderAll();
+    return;
+  }
+
+  if (act === "toggle") {
+    var k = el.getAttribute("data-key");
+    state.toggles[k] = !state.toggles[k];
+    save(); renderAll();
+    return;
+  }
+
+  if (act === "reset-filter") {
+    state.cat = "all";
+    state.toggles = { indoor: false, free: false, wed: false, csl: false };
+    save(); renderAll();
+    return;
+  }
+
+  if (act === "add") {
+    var id = el.getAttribute("data-id");
+    var day = el.getAttribute("data-day");
+    var a = BY_ID[id];
+    if (!a) return;
+    if (a.days.indexOf(day) === -1) {
+      toast("이 날은 운영하지 않는 프로그램입니다");
+      return;
+    }
+    var existing = -1;
+    state.plan[day].forEach(function (e, i) { if (e.id === id) existing = i; });
+    if (existing >= 0) {
+      state.plan[day].splice(existing, 1);
+      toast(a.name + " — " + DAYMETA[day].chip + "에서 뺐습니다");
+    } else {
+      state.plan[day].push({ id: id, qty: 1, time: (a.times && a.times[0]) || "" });
+      toast(a.name + " — " + DAYMETA[day].chip + "에 담았습니다");
+    }
+    save(); renderAll();
+    return;
+  }
+
+  if (act === "remove") {
+    var rday = el.getAttribute("data-day");
+    var ridx = parseInt(el.getAttribute("data-idx"), 10);
+    if (state.plan[rday] && state.plan[rday][ridx]) {
+      state.plan[rday].splice(ridx, 1);
+      save(); renderAll();
+    }
+    return;
+  }
+
+  if (act === "qty+" || act === "qty-") {
+    var qday = el.getAttribute("data-day");
+    var qidx = parseInt(el.getAttribute("data-idx"), 10);
+    var entry = findEntry(qday, qidx);
+    if (!entry) return;
+    entry.qty = clampQty(entry.qty + (act === "qty+" ? 1 : -1));
+    save(); renderAll();
+    return;
+  }
+
+  if (act === "clear-day") {
+    var cday = el.getAttribute("data-day");
+    if (!state.plan[cday].length) return;
+    if (window.confirm(DAYMETA[cday].date + " 일정을 모두 비울까요?")) {
+      state.plan[cday] = [];
+      save(); renderAll();
+    }
+    return;
+  }
+
+  if (act === "clear-all") {
+    if (window.confirm("담은 일정을 전부 비울까요?")) {
+      state.plan = { tue: [], wed: [], thu: [] };
+      save(); renderAll();
+      toast("일정을 비웠습니다");
+    }
+    return;
+  }
+
+  if (act === "copy") {
+    copyPlan();
+    return;
+  }
+
+  if (act === "reset-check") {
+    state.checks = {};
+    save(); renderChecklist();
+    return;
+  }
+});
+
+document.addEventListener("change", function (ev) {
+  var el = ev.target;
+  if (el.getAttribute && el.getAttribute("data-act") === "time") {
+    var day = el.getAttribute("data-day");
+    var idx = parseInt(el.getAttribute("data-idx"), 10);
+    var entry = findEntry(day, idx);
+    if (entry) {
+      entry.time = el.value;
+      save(); renderPlan();
+    }
+    return;
+  }
+  if (el.getAttribute && el.getAttribute("data-act") === "check") {
+    var key = el.getAttribute("data-key");
+    if (el.checked) state.checks[key] = true;
+    else delete state.checks[key];
+    save(); renderChecklist();
+    return;
+  }
+});
+
+function copyPlan() {
+  var lines = ["[르네상스 리조트 오키나와 · 2박 3일]"];
+  var total = 0;
+  DAYKEYS.forEach(function (day) {
+    var entries = planEntries(day);
+    if (!entries.length) return;
+    lines.push("");
+    lines.push(DAYMETA[day].name + " · " + DAYMETA[day].date);
+    entries.forEach(function (x) {
+      var t = x.e.time || (x.a.times && x.a.times[0]) || "";
+      total += unitPrice(x.a) * x.e.qty;
+      lines.push(" · " + (t ? t + " " : "") + x.a.name + " ×" + x.e.qty + " — " + yen(unitPrice(x.a) * x.e.qty));
+    });
+  });
+  if (lines.length === 1) {
+    toast("담은 일정이 없습니다");
+    return;
+  }
+  lines.push("");
+  lines.push((state.csl ? "클럽 사비 라이트 적용 합계 " : "정가 합계 ") + yen0(total));
+
+  var text = lines.join("\n");
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function () {
+      toast("일정을 복사했습니다");
+    }, function () { fallbackCopy(text); });
+  } else {
+    fallbackCopy(text);
+  }
+}
+function fallbackCopy(text) {
+  var ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed";
+  ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand("copy"); toast("일정을 복사했습니다"); }
+  catch (err) { toast("복사가 막혔습니다. 화면에서 직접 확인해 주세요"); }
+  document.body.removeChild(ta);
+}
+
+/* ─────────────────────────── 시작 ─────────────────────────── */
+renderAll();
+</script>
+</body>
+</html>
