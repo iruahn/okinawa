@@ -80,6 +80,7 @@
   }
   .tab[aria-selected="true"]{background:#fff; color:var(--teal-deep); border-color:var(--line); box-shadow:var(--shadow)}
   .tab .n{font-weight:800; color:var(--coral)}
+  a.tab{text-decoration:none}
 
   /* ── filter bar ── */
   .filters{margin:18px 0 0; background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:14px; box-shadow:var(--shadow)}
@@ -265,7 +266,7 @@
   "use strict";
   var GATE_HASH = "2f8ab5af0780af67990558c5cdb14088dd1232e4a336de437afa49c3acb0af56";
   var SALT = "rk:";
-  var SKEY = "okinawa-kids-gate";
+  var SKEY = "okinawa-gate";
   var gate = document.getElementById("gate");
 
   function unlock() {
@@ -389,6 +390,7 @@
 
 <nav class="tabs" role="tablist" aria-label="보기 선택">
   <div class="tabs-inner">
+    <a class="tab" href="index.html">← 전체 일정표</a>
     <button class="tab" role="tab" data-act="tab" data-tab="activities" aria-selected="true">① 액티비티 찾기</button>
     <button class="tab" role="tab" data-act="tab" data-tab="plan" aria-selected="false">② 나만의 일정 <span class="n" id="tabPlanCount">0</span></button>
     <button class="tab" role="tab" data-act="tab" data-tab="tips" aria-selected="false">③ 꿀팁 &amp; 체크리스트</button>
