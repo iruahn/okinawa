@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>일본 택스 리펀 가이드 · 오키나와 6인 가족여행</title>
+<meta name="description" content="2026년 11월 1일부터 바뀐 일본 면세 환급 방식 정리 · 대행사 비교 · 오키나와 매장별 대행사 · 나하공항 동선 · 토스 체크카드 확인사항">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root{
+    --ink:#10243a; --ink-soft:#4a5f75; --line:#dde7ef;
+    --bg:#f4f9fc; --card:#ffffff;
+    --teal:#0e7490; --teal-deep:#0b5566; --teal-light:#e6f4f8;
+    --coral:#ef6c4d; --coral-light:#fdeee9;
+    --amber:#b45309; --amber-light:#fdf3e3;
+    --green:#15803d; --green-light:#e8f6ec;
+    --blue:#1d4ed8; --blue-light:#e9eefd;
+    --pink:#be185d; --pink-light:#fdeaf1;
+    --shadow:0 1px 2px rgba(16,36,58,.06), 0 8px 24px -12px rgba(16,36,58,.22);
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Malgun Gothic","Noto Sans KR",sans-serif;
+    line-height:1.55; -webkit-text-size-adjust:100%;
+    padding-bottom:64px;
+  }
+  .wrap{width:100%; max-width:1120px; margin:0 auto; padding:0 16px}
+  section{scroll-margin-top:64px}
+
+  /* ── header ── */
+  .hero{
+    background:linear-gradient(150deg,#0b5566 0%,#0e7490 45%,#1a9ab0 100%);
+    color:#fff; padding:26px 0 30px; position:relative; overflow:hidden;
+  }
+  .hero:after{
+    content:""; position:absolute; right:-70px; top:-60px; width:280px; height:280px;
+    background:radial-gradient(circle,rgba(255,255,255,.18),rgba(255,255,255,0) 70%);
+    border-radius:50%;
+  }
+  .eyebrow{margin:0 0 8px; font-size:13px; letter-spacing:.06em; text-transform:uppercase; opacity:.9}
+  .hero h1{margin:0; font-size:clamp(21px,4.4vw,30px); line-height:1.3; font-weight:800; letter-spacing:-.01em}
+  .hero h1 span{display:block; font-size:clamp(16px,3.2vw,20px); font-weight:600; opacity:.95; margin-top:4px}
+  .hero .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}
+  .hero .chip{
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+    padding:5px 11px; border-radius:999px; font-size:12.5px; backdrop-filter:blur(4px);
+  }
+  .hero .chip b{font-weight:700}
+
+  /* ── tabs ── */
+  .tabs{
+    position:sticky; top:0; z-index:30; background:rgba(244,249,252,.93);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+  }
+  .tabs-inner{display:flex; gap:6px; overflow-x:auto; padding:9px 16px; max-width:1120px; margin:0 auto; scrollbar-width:none}
+  .tabs-inner::-webkit-scrollbar{display:none}
+  .tab{
+    flex:0 0 auto; font:inherit; font-size:14px; font-weight:700; color:var(--ink-soft);
+    background:transparent; border:1px solid transparent; border-radius:10px;
+    padding:8px 14px; cursor:pointer; white-space:nowrap;
+  }
+  a.tab{text-decoration:none}
+  a.tab:hover{color:var(--teal-deep)}
+  a.tab.home{background:#fff; color:var(--teal-deep); border-color:var(--line); box-shadow:var(--shadow)}
+
+  /* ── sections ── */
+  .sec-head{margin:26px 0 4px}
+  .sec-head h2{margin:0; font-size:19px; font-weight:800; letter-spacing:-.01em}
+  .sec-head p{margin:4px 0 0; font-size:13px; color:var(--ink-soft)}
+
+  /* ── cards ── */
+  .cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px; margin-top:14px}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:15px 15px 12px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:9px;
+    position:relative;
+  }
+  .card.hot{border-color:var(--coral); box-shadow:0 0 0 2px var(--coral-light), var(--shadow)}
+  .tags{display:flex; flex-wrap:wrap; gap:5px}
+  .tag{font-size:11px; font-weight:800; padding:3px 8px; border-radius:6px; letter-spacing:.01em}
+  .tag.teal{background:var(--teal-light); color:var(--teal-deep)}
+  .tag.green{background:var(--green-light); color:var(--green)}
+  .tag.amber{background:var(--amber-light); color:var(--amber)}
+  .tag.blue{background:var(--blue-light); color:var(--blue)}
+  .tag.pink{background:var(--pink-light); color:var(--pink)}
+  .tag.coral{background:var(--coral-light); color:#c2410c}
+  .tag.soft{background:#f2f7fa; color:var(--ink-soft)}
+  .card h3{margin:0; font-size:16.5px; font-weight:800; letter-spacing:-.01em}
+  .card h3 .sub{display:block; font-size:11.5px; font-weight:600; color:var(--ink-soft); margin-top:2px; letter-spacing:0}
+  .card p{margin:0; font-size:13.2px; color:#33495e}
+  .card ul{margin:0; padding-left:18px; font-size:13.2px; color:#33495e}
+  .card li{margin:4px 0}
+  .note{margin:0; font-size:13px; color:#33495e; background:#f8fbfd; border-left:3px solid #cfe3ec; padding:7px 10px; border-radius:0 8px 8px 0}
+
+  /* ── callouts ── */
+  .callout{margin:14px 0 0; border-radius:var(--radius); padding:14px 16px; font-size:13.5px; line-height:1.6; box-shadow:var(--shadow)}
+  .callout strong{font-weight:800}
+  .callout.info{background:var(--teal-light); border:1px solid #bfe3ec; color:#0b3d4a}
+  .callout.warn{background:var(--amber-light); border:1px solid #f3ddb0; color:#5c3a06}
+  .callout.good{background:var(--green-light); border:1px solid #bfe6c8; color:#14532d}
+  .callout.coral{background:var(--coral-light); border:1px solid #f6c9b8; color:#7c2d12}
+
+  /* ── steps ── */
+  .steps{list-style:none; margin:14px 0 0; padding:0; display:flex; flex-direction:column; gap:10px}
+  .steps li{
+    display:flex; gap:12px; background:var(--card); border:1px solid var(--line);
+    border-radius:var(--radius); padding:13px 15px; box-shadow:var(--shadow);
+  }
+  .steps .n{
+    flex:0 0 auto; width:28px; height:28px; border-radius:50%; background:var(--teal); color:#fff;
+    font-size:14px; font-weight:800; display:flex; align-items:center; justify-content:center; margin-top:1px;
+  }
+  .steps .t b{display:block; font-size:14.5px}
+  .steps .t span{font-size:13px; color:#33495e}
+
+  /* ── tables ── */
+  .tbl-wrap{margin-top:14px; background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); overflow-x:auto}
+  .tbl{width:100%; border-collapse:collapse; font-size:13px; min-width:640px}
+  .tbl th, .tbl td{text-align:left; padding:9px 11px; border-bottom:1px solid var(--line); vertical-align:top}
+  .tbl thead th{background:#f2f7fa; font-size:12px; letter-spacing:.02em; color:var(--ink-soft); white-space:nowrap}
+  .tbl tbody tr:last-child td{border-bottom:none}
+  .tbl .best{background:var(--green-light); font-weight:800; color:var(--green)}
+  .tbl .bad{color:#b3402a; font-weight:700}
+  .tbl .muted{color:var(--ink-soft)}
+  .tbl a{color:var(--teal); text-decoration:none; border-bottom:1px solid rgba(14,116,144,.3)}
+
+  /* ── checklist ── */
+  .ckgroup{margin-top:14px; background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow)}
+  .ckgroup h3{margin:14px 0 4px; font-size:13.5px; font-weight:800; color:var(--teal-deep)}
+  .ckgroup h3:first-child{margin-top:0}
+  .ck{display:flex; gap:9px; align-items:flex-start; padding:7px 0; border-bottom:1px dashed var(--line); font-size:13.2px; cursor:pointer}
+  .ck:last-child{border-bottom:none}
+  .ck input{margin:3px 0 0; width:17px; height:17px; accent-color:var(--teal); flex:0 0 auto}
+  .ck span.done{text-decoration:line-through; color:#9aa9b8}
+  .ck-bar{display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:12px; font-size:12.5px; color:var(--ink-soft)}
+  .ck-bar button{font:inherit; font-size:12px; border:1px solid var(--line); background:#fff; border-radius:8px; padding:5px 10px; cursor:pointer}
+
+  .src-list{margin:14px 0 0; padding:0; list-style:none; font-size:12.5px; color:var(--ink-soft)}
+  .src-list li{margin:5px 0}
+  .src-list a{color:var(--teal); text-decoration:none; border-bottom:1px solid rgba(14,116,144,.3); word-break:break-all}
+  footer.site{margin:28px 0 0; padding:18px 0 0; border-top:1px solid var(--line); font-size:11.5px; color:#8b9cad; line-height:1.7}
+  .hidden{display:none !important}
+
+  /* ── 비밀번호 잠금 ── */
+  body.locked{overflow:hidden}
+  body.locked>.hero, body.locked>.tabs, body.locked>main{visibility:hidden}
+  #gate{
+    position:fixed; inset:0; z-index:1000; display:flex; align-items:center; justify-content:center; padding:20px;
+    background:linear-gradient(150deg,#0b5566 0%,#0e7490 45%,#1a9ab0 100%);
+  }
+  .gate-box{
+    width:100%; max-width:360px; text-align:center; background:var(--card); border:1px solid var(--line);
+    border-radius:var(--radius); padding:28px 24px; box-shadow:0 24px 60px -18px rgba(0,0,0,.45);
+  }
+  .gate-eyebrow{margin:0 0 8px; font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--teal)}
+  .gate-box h2{margin:0 0 6px; font-size:20px; line-height:1.35; letter-spacing:-.01em}
+  .gate-sub{margin:0 0 16px; font-size:13px; color:var(--ink-soft); line-height:1.55}
+  .gate-box input{
+    width:100%; margin:0 0 10px; padding:11px 13px; font:inherit; font-size:16px; color:var(--ink);
+    background:#fbfdfe; border:1px solid var(--line); border-radius:10px;
+  }
+  .gate-box input:focus{outline:2px solid var(--teal-light); border-color:var(--teal)}
+  .gate-btn{
+    width:100%; border:0; border-radius:10px; padding:12px 14px; font:inherit; font-weight:800; color:#fff;
+    background:var(--coral); cursor:pointer;
+  }
+  .gate-btn:active{transform:translateY(1px)}
+  .gate-err{margin:10px 0 0; min-height:1.2em; font-size:12.5px; color:#b3402a}
+</style>
+</head>
+<body class="locked">
+
+<!-- ────────── 비밀번호 잠금 ────────── -->
+<div id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-box">
+    <p class="gate-eyebrow">Family only · Okinawa</p>
+    <h2 id="gateTitle">택스 리펀 가이드</h2>
+    <p class="gate-sub">가족 전용 페이지입니다.<br>비밀번호를 입력하세요.</p>
+    <input id="gatePw" type="password" placeholder="비밀번호" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="비밀번호">
+    <button type="button" class="gate-btn" id="gateBtn">들어가기</button>
+    <p class="gate-err" id="gateErr" role="alert"></p>
+  </div>
+</div>
+<script>
+/* 비밀번호 잠금 — 소스에는 평문 비밀번호 대신 SHA-256 해시만 둡니다.
+   · https(GitHub Pages)에서는 crypto.subtle 사용, http·구형 WebView에서는 내장 SHA-256으로 폴백
+   · 한 번 풀면 이 탭(sessionStorage)에서는 다시 묻지 않습니다 (일정표·키즈 가이드와 같은 키)
+   · 비밀번호를 바꾸려면 아래 GATE_HASH를 SHA-256("rk:" + 새 비밀번호) 값으로 바꾸세요 */
+(function () {
+  "use strict";
+  var GATE_HASH = "2f8ab5af0780af67990558c5cdb14088dd1232e4a336de437afa49c3acb0af56";
+  var SALT = "rk:";
+  var SKEY = "okinawa-gate";
+  var gate = document.getElementById("gate");
+
+  function unlock() {
+    try { sessionStorage.setItem(SKEY, "1"); } catch (e) {}
+    if (gate && gate.parentNode) gate.parentNode.removeChild(gate);
+    document.body.classList.remove("locked");
+  }
+  try { if (sessionStorage.getItem(SKEY) === "1") { unlock(); return; } } catch (e) {}
+
+  function rotr(x, n) { return (x >>> n) | (x << (32 - n)); }
+  function sha256Hex(str) {
+    var K = [0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,
+             0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,
+             0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,
+             0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,
+             0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,
+             0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,
+             0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,
+             0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+    var H = [0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];
+    var s = unescape(encodeURIComponent(str)), bytes = [], i;
+    for (i = 0; i < s.length; i++) bytes.push(s.charCodeAt(i));
+    var len = bytes.length;
+    bytes.push(0x80);
+    while (bytes.length % 64 !== 56) bytes.push(0);
+    var bits = len * 8, hi = Math.floor(bits / 4294967296), lo = bits >>> 0;
+    bytes.push((hi >>> 24) & 255, (hi >>> 16) & 255, (hi >>> 8) & 255, hi & 255,
+               (lo >>> 24) & 255, (lo >>> 16) & 255, (lo >>> 8) & 255, lo & 255);
+    var w = new Array(64), t, a, b, c, d, e, f, g, h, s0, s1, S0, S1, ch, maj, t1, t2, off;
+    for (off = 0; off < bytes.length; off += 64) {
+      for (t = 0; t < 16; t++) {
+        w[t] = (bytes[off + t * 4] << 24) | (bytes[off + t * 4 + 1] << 16) | (bytes[off + t * 4 + 2] << 8) | bytes[off + t * 4 + 3];
+      }
+      for (t = 16; t < 64; t++) {
+        s0 = rotr(w[t - 15], 7) ^ rotr(w[t - 15], 18) ^ (w[t - 15] >>> 3);
+        s1 = rotr(w[t - 2], 17) ^ rotr(w[t - 2], 19) ^ (w[t - 2] >>> 10);
+        w[t] = (w[t - 16] + s0 + w[t - 7] + s1) | 0;
+      }
+      a = H[0]; b = H[1]; c = H[2]; d = H[3]; e = H[4]; f = H[5]; g = H[6]; h = H[7];
+      for (t = 0; t < 64; t++) {
+        S1 = rotr(e, 6) ^ rotr(e, 11) ^ rotr(e, 25);
+        ch = (e & f) ^ (~e & g);
+        t1 = (h + S1 + ch + K[t] + w[t]) | 0;
+        S0 = rotr(a, 2) ^ rotr(a, 13) ^ rotr(a, 22);
+        maj = (a & b) ^ (a & c) ^ (b & c);
+        t2 = (S0 + maj) | 0;
+        h = g; g = f; f = e; e = (d + t1) | 0; d = c; c = b; b = a; a = (t1 + t2) | 0;
+      }
+      H[0] = (H[0] + a) | 0; H[1] = (H[1] + b) | 0; H[2] = (H[2] + c) | 0; H[3] = (H[3] + d) | 0;
+      H[4] = (H[4] + e) | 0; H[5] = (H[5] + f) | 0; H[6] = (H[6] + g) | 0; H[7] = (H[7] + h) | 0;
+    }
+    var out = "";
+    for (i = 0; i < 8; i++) out += ("00000000" + ((H[i] >>> 0).toString(16))).slice(-8);
+    return out;
+  }
+
+  function check(value, done) {
+    var src = SALT + value;
+    var c = window.crypto || window.msCrypto;
+    if (c && c.subtle && c.subtle.digest && typeof TextEncoder !== "undefined") {
+      try {
+        c.subtle.digest("SHA-256", new TextEncoder().encode(src)).then(function (buf) {
+          var arr = new Uint8Array(buf), hex = "", i;
+          for (i = 0; i < arr.length; i++) hex += ("0" + arr[i].toString(16)).slice(-2);
+          done(hex === GATE_HASH);
+        }, function () { done(sha256Hex(src) === GATE_HASH); });
+        return;
+      } catch (e) {}
+    }
+    done(sha256Hex(src) === GATE_HASH);
+  }
+
+  var input = document.getElementById("gatePw");
+  var err = document.getElementById("gateErr");
+  var btn = document.getElementById("gateBtn");
+  var busy = false;
+
+  function submit() {
+    if (busy) return;
+    var v = input.value;
+    if (!v) { err.textContent = "비밀번호를 입력하세요."; input.focus(); return; }
+    busy = true;
+    check(v, function (ok) {
+      busy = false;
+      if (ok) { unlock(); return; }
+      err.textContent = "비밀번호가 맞지 않습니다. 다시 입력하세요.";
+      input.value = "";
+      input.focus();
+    });
+  }
+  btn.addEventListener("click", submit);
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || e.keyCode === 13) { e.preventDefault(); submit(); }
+  });
+  try { input.focus(); } catch (e) {}
+})();
+</script>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">2026. 11. 24 (화) – 11. 28 (토) · 오키나와 6인 가족여행</p>
+    <h1>일본 택스 리펀 가이드<span>2026.11.1부터 바뀐 면세 환급 방식, 우리 가족 정리본</span></h1>
+    <div class="chips">
+      <span class="chip">📅 새 제도 <b>2026.11.1 시행</b></span>
+      <span class="chip">🛫 출국 당일 <b>나하공항 세관 확인</b></span>
+      <span class="chip">💴 최소 구매 <b>¥5,000(세금 제외) / 매장·1일</b></span>
+      <span class="chip">💳 환급은 <b>토스 체크카드</b>로</span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="섹션 이동">
+  <div class="tabs-inner">
+    <a class="tab home" href="index.html">← 전체 일정표</a>
+    <a class="tab" href="#summary">핵심 요약</a>
+    <a class="tab" href="#flow">새 제도 흐름</a>
+    <a class="tab" href="#recommend">우리 가족 추천</a>
+    <a class="tab" href="#compare">대행사 비교</a>
+    <a class="tab" href="#shops">오키나와 매장</a>
+    <a class="tab" href="#naha">나하공항 동선</a>
+    <a class="tab" href="#toss">토스 카드</a>
+    <a class="tab" href="#checklist">체크리스트</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- ────────── 핵심 요약 ────────── -->
+  <section id="summary">
+    <div class="sec-head">
+      <h2>핵심 요약</h2>
+      <p>이것만 알아도 됩니다. 자세한 내용은 아래 섹션에 있습니다.</p>
+    </div>
+    <div class="callout good">
+      <strong>대행사는 미리 고르는 게 아닙니다.</strong> 매장마다 쓰는 대행사가 정해져 있고, 여행자는 쇼핑한 뒤 영수증에 찍힌 QR 코드로 그 대행사 사이트에 등록만 하면 됩니다. 등록은 쇼핑한 날 저녁에 하는 게 제일 좋습니다. 등록하지 않으면 환급이 오지 않습니다.
+    </div>
+    <div class="cards">
+      <div class="card hot">
+        <div class="tags"><span class="tag coral">추천</span><span class="tag soft">우리 가족 기준</span></div>
+        <h3>J-TaxRefund + 토스 체크카드 환급</h3>
+        <p>돈키호테·유니클로·이온몰 오키나와 류콤이 쓰는 대행사입니다. 체크카드 환급을 명시적으로 지원하고, 돈키호테는 수수료가 없어 세금 전액을 돌려받습니다.</p>
+        <p class="note">예) ¥11,000 구매 시 세금 ¥1,000 → 돈키호테면 <b>¥1,000 전액</b> 환급. 백화점(Global Blue)에서는 약 ¥770 수준.</p>
+      </div>
+      <div class="card">
+        <div class="tags"><span class="tag teal">필수 순서</span></div>
+        <h3>나하공항에서는 순서가 생명</h3>
+        <p>3층 출국 로비 세관 키오스크 확인 → 수하물 위탁 → 출국심사 순서입니다. 출국심사 후에는 세관 확인을 하러 돌아올 수 없습니다.</p>
+        <p class="note">면세품은 키오스크 확인 때까지 손에 있어야 합니다. 확인이 끝나면 위탁수하물에 넣어도 됩니다.</p>
+      </div>
+      <div class="card">
+        <div class="tags"><span class="tag amber">주의</span></div>
+        <h3>영수증 단위로 환급됩니다</h3>
+        <p>한 영수증에 담긴 물건 중 하나라도 없으면 그 영수증 전체가 환급 불가입니다. 소모품(음식·화장품 등)을 일본 안에서 먹거나 쓰면 그 영수증도 환급이 안 됩니다.</p>
+        <p class="note">영수증은 꼭 보관하고, 면세품은 가방 위쪽에 모아두세요.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────── 새 제도 흐름 ────────── -->
+  <section id="flow">
+    <div class="sec-head">
+      <h2>새 제도 흐름</h2>
+      <p>2026년 11월 1일부터 매장에서 바로 면세가 되는 방식이 폐지되고, 출국 때 환급받는 방식으로 바뀌었습니다.</p>
+    </div>
+    <ol class="steps">
+      <li><span class="n">1</span><div class="t"><b>매장에서 여권 제시하고 세금 포함 가격으로 결제</b><span>예전처럼 매장에서 면세 가격으로 사지 않습니다. 정가(세금 포함)로 결제하고, 영수증과 대행사 안내를 받습니다. 결제할 때는 토스 체크카드로 엔화(JPY) 결제를 선택하세요.</span></div></li>
+      <li><span class="n">2</span><div class="t"><b>영수증 QR로 대행사에 등록 (쇼핑한 날 저녁 권장)</b><span>영수증에 찍힌 QR 코드를 스캔해 대행사 계정을 만들고, 여권을 인증하고, 환급 방법을 <b>카드 환급(토스 체크카드)</b>으로 선택합니다. 매장마다 대행사가 다를 수 있으니 영수증마다 확인하세요.</span></div></li>
+      <li><span class="n">3</span><div class="t"><b>출국 당일, 나하공항 3층 세관 키오스크에서 확인 (수하물 위탁 전)</b><span>여권과 면세품을 들고 키오스크에서 확인합니다. 녹색이면 완료, 빨간색이면 옆 검사장에서 물건을 보여줍니다. Visit Japan Web으로도 같은 확인이 가능합니다.</span></div></li>
+      <li><span class="n">4</span><div class="t"><b>수하물 위탁 → 출국심사</b><span>세관 확인이 끝난 물건은 위탁수하물에 넣어도 됩니다. 액체류·화장품·술도 확인 후에는 위탁이 가능합니다.</span></div></li>
+      <li><span class="n">5</span><div class="t"><b>환급금 입금 (수일 ~ 약 2개월)</b><span>대행사에 따라 다릅니다. Global Blue는 3~5일, J-TaxRefund는 수일~약 2개월, JPrefund 카드 환급은 수일~약 1개월 수준입니다. 귀국 후에도 각 대행사 사이트·앱에서 진행 상황을 확인하세요.</span></div></li>
+    </ol>
+    <div class="cards">
+      <div class="card">
+        <div class="tags"><span class="tag blue">기본 규칙</span></div>
+        <h3>알아둘 규칙</h3>
+        <ul>
+          <li><b>최소 구매 ¥5,000(세금 제외) / 매장·1일</b> — 예전과 동일합니다. 한 매장에서 하루에 합쳐서 계산합니다.</li>
+          <li><b>소모품·일반 구분 폐지</b> — 옷과 화장품을 합쳐서 ¥5,000을 채울 수 있고, 소모품 ¥50만 상한과 밀봉 포장도 없어졌습니다.</li>
+          <li><b>구매 후 90일 이내</b>에 출국하며 세관 확인을 받아야 합니다. 이번 여행(11/24~28 쇼핑, 11/28 출국)은 여유 있습니다.</li>
+          <li>세율은 일반 10%, 식품·무알코올 음료 8%입니다. 최대 환급액은 세금 포함 가격의 1/11입니다.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="tags"><span class="tag amber">주의</span></div>
+        <h3>환급이 안 되는 경우</h3>
+        <ul>
+          <li>소모품을 일본 안에서 먹거나 사용한 경우 — 해당 영수증 전체가 환급 불가입니다.</li>
+          <li>영수증에 있는 물건 중 하나라도 없는 경우 — 해당 영수증 전체가 환급 불가입니다.</li>
+          <li>세관 확인을 받지 않은 경우 — 키오스크 확인이 환급의 필수 조건입니다.</li>
+          <li>대행사에 등록하지 않은 경우 — 세관 확인만으로는 돈이 오지 않습니다. 등록 기한(J-TaxRefund 180일, JPrefund 200일)을 넘기면 소멸합니다.</li>
+          <li>별도 배송으로 보낸 물건은 면세 대상이 아닙니다.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────── 우리 가족 추천 ────────── -->
+  <section id="recommend">
+    <div class="sec-head">
+      <h2>우리 가족 추천</h2>
+      <p>나하공항 출국 + 토스 체크카드 사용 조건에서의 결론입니다.</p>
+    </div>
+    <div class="callout good">
+      <strong>추천: J-TaxRefund(J&J Tax Free) 매장을 우선 이용하고, 환급은 토스 체크카드로 받으세요.</strong><br>
+      돈키호테·유니클로·이온몰 오키나와 류콤이 J-TaxRefund를 씁니다. 돈키호테는 수수료가 없어 세금 전액을 돌려받고, 체크카드 환급도 공식 FAQ에서 명시적으로 지원합니다.
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="tags"><span class="tag green">카드 환급이 유리한 이유</span></div>
+        <h3>현금보다 카드 환급</h3>
+        <ul>
+          <li>나하공항 현금 기기(Self Tax Refund)는 세전 가격의 1.1%(환급액의 약 10%)를 수수료로 떼고 ¥100 단위로 내림합니다.</li>
+          <li>Global Blue로 산 물건은 나하공항에서 현금으로 받을 수 없습니다. 카드 환급이 유일한 방법입니다.</li>
+          <li>엔화 환급이 토스 외화계좌로 들어오면 환전 없이 그대로 쓸 수 있습니다. (입금 방식은 출발 전 토스뱅크 확인 필요 — 아래 '아직 확인되지 않은 것' 참고)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="tags"><span class="tag teal">쇼핑 팁</span></div>
+        <h3>어디서 사는 게 유리한가</h3>
+        <ul>
+          <li><b>드럭스토어·과자·화장품은 돈키호테</b>에서 — 수수료 무료라 세금 전액 환급입니다.</li>
+          <li>유니클로는 J-TaxRefund지만 약 10% 수수료가 붙습니다. 그래도 다른 대행사보다 나쁘지 않습니다.</li>
+          <li>백화점·브랜드 매장(Global Blue)은 세전 가격의 약 2.3%가 수수료로 빠집니다. 살 거면 감안하고 사세요.</li>
+          <li>JTC(WAmazing)는 환급액의 20%(최소 ¥300)를 떼니 가급적 피하세요.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────── 대행사 비교 ────────── -->
+  <section id="compare">
+    <div class="sec-head">
+      <h2>대행사 비교</h2>
+      <p>매장이 정하는 대행사입니다. 영수증에 적힌 대행사를 확인하세요. 수수료는 매장마다 다를 수 있고, 정부에서 정한 상한이 없습니다.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>대행사</th><th>이용 방법</th><th>환급 방법</th><th>수수료</th><th>처리 기간</th><th>나하 현금</th></tr></thead>
+        <tbody>
+          <tr><td><b>J-TaxRefund</b><br><span class="muted">J&amp;J Tax Free</span></td><td>웹사이트 (앱 없음)<br>영수증 QR로 등록</td><td>신용·<b>체크</b>·선불카드, Alipay, WeChat Pay, 계좌이체, 공항 현금</td><td class="best">돈키호테 무료<br>유니클로 약 10%<br><span class="muted">Visa는 환급액 ¥2,000 미만 시 US$0.70</span></td><td>수주~약 2개월<br><span class="muted">3일 만에 된 사례도 있음</span></td><td><b>가능</b><br><span class="muted">Self Tax Refund 기기</span></td></tr>
+          <tr><td><b>Global Blue</b></td><td>앱 (출발 전 등록 가능)</td><td>Visa·Mastercard 등 카드, Alipay, 시내 현금</td><td>세전 가격의 약 2.3%(최대 약 3%)<br><span class="muted">통화 변환 시 2~4% 추가</span></td><td>세관 확인 후 3~5일</td><td class="bad">불가<br><span class="muted">나하에 카운터·기기 없음</span></td></tr>
+          <tr><td><b>JPrefund</b><br><span class="muted">Smart Detax</span></td><td>웹사이트 (앱 없음)<br>영수증 QR로 등록</td><td>카드, Alipay+, WeChat Pay, Wise 계좌이체, 공항 현금(1회 ¥10만 한도)</td><td>환급액의 약 0.1~0.5%<br><span class="muted">매장별 상이</span></td><td>계좌 1~5영업일<br>카드 수일~약 1개월</td><td><b>가능</b><br><span class="muted">Self Tax Refund 기기</span></td></tr>
+          <tr><td><b>PIE VAT</b></td><td>앱</td><td>신용·체크카드, 계좌이체, PayPal, WeChat Pay</td><td>1.5~3.0% + 세전 가격의 0.28~0.32%</td><td>출금 신청 후 15영업일</td><td class="bad">불가<br><span class="muted">공항 현금 없음</span></td></tr>
+          <tr><td><b>Global TaxRefund</b><br><span class="muted">Planet</span></td><td>매장 안내에 따라</td><td>Visa·Mastercard, Alipay</td><td class="muted">미공개</td><td class="muted">미공개</td><td><b>가능</b><br><span class="muted">Self Tax Refund 기기</span></td></tr>
+          <tr><td><b>Ocean</b></td><td>LINE·WeChat 미니앱</td><td>계좌이체, 카드, PayPal, WeChat Pay</td><td>약 2.1% + 출금 수수료<br><span class="muted">일부 매장 무료</span></td><td class="muted">미공개</td><td class="bad">불가</td></tr>
+          <tr><td><b>WAmazing</b></td><td>앱·웹사이트</td><td>카드, 모바일 지갑, 계좌이체, 해외 현금 수령</td><td class="bad">환급액의 20%, 최소 ¥300</td><td class="muted">미공개</td><td class="bad">불가</td></tr>
+          <tr><td><b>현금 기기</b><br><span class="muted">Self Tax Refund</span></td><td>대행사 등록 후 공항에서</td><td>엔화 현금</td><td>세전 가격의 1.1%, ¥100 단위 내림<br><span class="muted">대행 수수료와 별도</span></td><td>즉시 (약 3분)</td><td><b>가능</b><br><span class="muted">2층 출국장, 06:45–21:30</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" style="margin-top:12px">Cash Japan(Global Blue 현금 기기)은 나하공항에 없습니다. 가장 가까운 곳은 후쿠오카공항입니다. 수수료는 2026.11.19 기준 확인된 내용이며, 매장·시점에 따라 바뀔 수 있습니다.</p>
+  </section>
+
+  <!-- ────────── 오키나와 매장 ────────── -->
+  <section id="shops">
+    <div class="sec-head">
+      <h2>오키나와 매장별 대행사</h2>
+      <p>나하공항 안내 기준입니다. 같은 체인이라도 지점·매장에 따라 다를 수 있으니 영수증 표기가 우선입니다.</p>
+    </div>
+    <div class="cards">
+      <div class="card hot">
+        <div class="tags"><span class="tag coral">J-TaxRefund</span><span class="tag soft">우리 가족 우선</span></div>
+        <h3>이온몰 오키나와 류콤 · 유니클로 · 돈키호테</h3>
+        <p>여행 중 가장 자주 갈 매장들입니다. 돈키호테는 수수료 무료, 유니클로는 약 10% 수수료입니다. 류콤은 11/26 수족관 일정과 함께 들를 수 있는 대형몰입니다.</p>
+      </div>
+      <div class="card">
+        <div class="tags"><span class="tag blue">Planet</span></div>
+        <h3>iias 오키나와 토요사키 · 이온 토요사키 · 우라소에 파르코 시티</h3>
+        <p>Global TaxRefund(Planet)를 씁니다. 수수료는 미공개입니다. 나하공항 현금 기기에서도 받을 수 있습니다.</p>
+      </div>
+      <div class="card">
+        <div class="tags"><span class="tag teal">JPrefund</span></div>
+        <h3>SAN-A 나하 메인 플레이스 · 스포츠 데포 · 빅카메라(공항)</h3>
+        <p>수수료가 낮은 편(환급액의 약 0.1~0.5%)입니다. 나하공항 현금 기기에서도 받을 수 있습니다.</p>
+      </div>
+      <div class="card">
+        <div class="tags"><span class="tag pink">Global Blue</span></div>
+        <h3>JINS · 디올 · 루이비통 · 오카시고텐 · ANA FESTA(공항)</h3>
+        <p>세전 가격의 약 2.3% 수수료가 붙습니다. <b>나하공항에서는 현금으로 받을 수 없으니 카드 환급으로 등록</b>하세요. Global Blue 앱은 출발 전에 미리 설치해 카드를 등록해둘 수 있습니다.</p>
+      </div>
+      <div class="card">
+        <div class="tags"><span class="tag amber">WAmazing</span></div>
+        <h3>JTC</h3>
+        <p>환급액의 20%(최소 ¥300) 수수료로 가장 비쌉니다. 같은 물건이면 다른 매장을 이용하는 게 유리합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────── 나하공항 동선 ────────── -->
+  <section id="naha">
+    <div class="sec-head">
+      <h2>나하공항 동선 (11/28 귀국일)</h2>
+      <p>귀국편 TW0282는 15:25 출발, 체크인 마감은 14:35입니다. 공항 13:30 도착을 목표로 합니다.</p>
+    </div>
+    <div class="callout coral">
+      <strong>순서를 바꾸면 안 됩니다.</strong> 출국심사를 통과한 뒤에는 출발 로비로 돌아올 수 없어 세관 확인을 할 수 없습니다. 수하물을 맡긴 뒤에도 꺼낼 수 없습니다. 반드시 <b>세관 확인 → 수하물 위탁 → 출국심사</b> 순서로 진행하세요.
+    </div>
+    <ol class="steps">
+      <li><span class="n">1</span><div class="t"><b>3층 국제선 체크인 로비 — 세관 키오스크에서 확인 (수하물 위탁 전)</b><span>여권과 면세품을 들고 갑니다. 키오스크는 B~C 체크인 카운터 근처, 정보 데스크가 있는 홀 끝 에스컬레이터·엘리베이터 쪽입니다. Visit Japan Web 앱으로도 같은 확인이 가능합니다 (전용 Wi-Fi: Customs_WiFi_For_TaxRefund / 비밀번호 jcustoms). 확인 자체는 3~5초지만 줄이 설 수 있으니 여유 있게 가세요. 빨간색 결과가 나오면 옆 검사장에서 물건을 보여줍니다.</span></div></li>
+      <li><span class="n">2</span><div class="t"><b>수하물 위탁</b><span>세관 확인이 끝난 물건은 위탁수하물에 넣어도 됩니다. 액체류·화장품·술도 확인 후에는 위탁이 가능합니다.</span></div></li>
+      <li><span class="n">3</span><div class="t"><b>보안검색 · 출국심사</b><span>이 지점을 지나면 출발 로비로 돌아갈 수 없습니다.</span></div></li>
+      <li><span class="n">4</span><div class="t"><b>(선택) 2층 출국장 Self Tax Refund 현금 기기 — 42번 게이트 근처</b><span>카드 환급이 안 됐거나 현금을 선택한 경우에만 사용합니다. 운영시간 06:45–21:30, 기기는 1대입니다. J-TaxRefund·JPrefund·Planet 구매만 가능하고 Global Blue는 안 됩니다. 수수료는 세전 가격의 1.1%이고 ¥100 단위로 내림합니다. 1회 최대 ¥100만, 최소 ¥100입니다.</span></div></li>
+    </ol>
+    <p class="note" style="margin-top:12px">나하공항 오후는 성수기입니다. 세관 확인까지 감안해 공항에 일찍 도착하세요. 면세점(출국장 안)은 별도입니다. 출국장 안 면세점은 탑승권 제시 시 현장에서 면세 가격으로 팔고, 시내 구매분 환급과는 무관합니다.</p>
+  </section>
+
+  <!-- ────────── 토스 카드 ────────── -->
+  <section id="toss">
+    <div class="sec-head">
+      <h2>토스 체크카드 확인사항</h2>
+      <p>이번 여행 결제는 토스뱅크 외화 환전 후 토스 체크카드를 사용합니다.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="tags"><span class="tag teal">출발 전</span></div>
+        <h3>카드 설정 확인</h3>
+        <ul>
+          <li><b>카드 앞면 로고 확인</b> — 토스 체크카드는 마스터카드일 가능성이 높습니다. Visa 소액 환급 수수료(US$0.70, 환급액 ¥2,000 미만)는 마스터카드에는 해당 없습니다.</li>
+          <li><b>토스 앱에서 해외·온라인 결제 활성화</b> — 토스 카드는 기본이 국내 전용이라 해외 사용 설정을 켜야 합니다. 대행사 카드 등록 시 3D Secure 인증이 필요할 수 있습니다.</li>
+          <li><b>외화계좌를 해외 결제 계좌로 연결</b>했는지 확인하세요.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="tags"><span class="tag amber">출발 전 전화 확인</span></div>
+        <h3>토스뱅크 1661-7654에 확인할 것</h3>
+        <ul>
+          <li>엔화 환급금이 토스 외화계좌(JPY 잔액)로 그대로 들어가는지, 원화로 환전되어 들어가는지.</li>
+          <li>체크카드가 해외 3D Secure 인증을 통과하는지.</li>
+          <li>남은 엔화는 재환전 수수료가 무료(0%)라, 환급금이 엔화로 들어와도 손해 없이 원화로 바꿀 수 있습니다.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="tags"><span class="tag blue">쇼핑할 때</span></div>
+        <h3>결제 시 주의</h3>
+        <ul>
+          <li>결제 단말기에서 통화 선택이 나오면 <b>반드시 엔화(JPY)</b>를 선택하고, 원화(KRW) 결제(DCC)는 거절하세요.</li>
+          <li>환급 카드는 결제 카드와 달라도 됩니다. 단, 여권 명의와 같은 명의의 카드여야 합니다.</li>
+          <li>현금으로 산 물건도 카드로 환급받을 수 있습니다.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────── 체크리스트 ────────── -->
+  <section id="checklist">
+    <div class="sec-head">
+      <h2>시기별 체크리스트</h2>
+      <p>체크 상태는 이 기기 브라우저에만 저장됩니다. 가족과 공유되지 않습니다.</p>
+    </div>
+    <div class="ckgroup" id="taxfreeCk">
+      <h3>출발 전 (11/24 이전)</h3>
+      <label class="ck"><input type="checkbox"><span>토스 체크카드 로고 확인 (마스터카드/ Visa)</span></label>
+      <label class="ck"><input type="checkbox"><span>토스 앱에서 해외·온라인 결제 활성화 확인</span></label>
+      <label class="ck"><input type="checkbox"><span>토스뱅크(1661-7654)에 엔화 환급 입금 방식 확인</span></label>
+      <label class="ck"><input type="checkbox"><span>Visit Japan Web 설정 (입국 + 면세 QR)</span></label>
+      <label class="ck"><input type="checkbox"><span>Global Blue 앱 설치 및 토스 카드 등록 (백업용)</span></label>
+      <h3>쇼핑할 때 (11/24~28)</h3>
+      <label class="ck"><input type="checkbox"><span>매장당 하루 ¥5,000(세금 제외) 이상 구매</span></label>
+      <label class="ck"><input type="checkbox"><span>여권 제시하고 세금 포함 가격으로 결제 (엔화 선택)</span></label>
+      <label class="ck"><input type="checkbox"><span>영수증 보관 + 대행사 이름 확인</span></label>
+      <label class="ck"><input type="checkbox"><span>소모품은 일본 안에서 먹거나 쓰지 않기</span></label>
+      <h3>매일 저녁 (호텔에서)</h3>
+      <label class="ck"><input type="checkbox"><span>영수증 QR 스캔 → 대행사 등록 → 카드 환급(토스 체크카드) 선택</span></label>
+      <label class="ck"><input type="checkbox"><span>주소 입력 시 한국 집 주소 영문으로 입력 (호텔 주소 금지)</span></label>
+      <label class="ck"><input type="checkbox"><span>등록 링크는 영수증 QR만 사용 (국세청 사칭 스캠 주의)</span></label>
+      <h3>귀국일 (11/28, 나하공항)</h3>
+      <label class="ck"><input type="checkbox"><span>면세품은 손에 들고 3층 세관 키오스크에서 확인 (수하물 위탁 전)</span></label>
+      <label class="ck"><input type="checkbox"><span>녹색 결과 확인 후 수하물 위탁 → 출국심사</span></label>
+      <label class="ck"><input type="checkbox"><span>(현금 선택 시에만) 2층 42번 게이트 근처 Self Tax Refund 기기 이용</span></label>
+      <h3>귀국 후</h3>
+      <label class="ck"><input type="checkbox"><span>각 대행사 사이트·앱에서 환급 진행 상황 확인 (수일~약 2개월)</span></label>
+      <label class="ck"><input type="checkbox"><span>누락된 구매가 있으면 영수증으로 대행사에 등록 (J-TaxRefund 180일, JPrefund 200일 이내)</span></label>
+      <div class="ck-bar"><span id="ckCount"></span><button type="button" id="ckReset">전체 해제</button></div>
+    </div>
+  </section>
+
+  <!-- ────────── 아직 확인되지 않은 것 ────────── -->
+  <section id="unverified">
+    <div class="sec-head">
+      <h2>아직 확인되지 않은 것</h2>
+      <p>2026.11.19 조사 기준, 확인이 안 된 항목입니다. 출발 전에 확인할수록 좋습니다.</p>
+    </div>
+    <div class="callout warn">
+      <ul style="margin:0; padding-left:18px">
+        <li><b>엔화 환급금이 토스 외화계좌로 들어가는지</b> — 토스뱅크 자료가 없어 미확인입니다. 하나 트래블로그는 엔화로 들어오는 사례가 있으나, 토스는 직접 확인이 필요합니다 (1661-7654).</li>
+        <li><b>토스 체크카드의 3D Secure 통과 여부</b> — J-TaxRefund·JPrefund는 카드 등록 시 3D Secure 인증을 요구합니다.</li>
+        <li><b>Global Blue가 엔화 환급을 원화로 바꾸는지</b> — 통화 변환 시 2~4% 수수료가 붙습니다. 앱에서 환급 금액을 확인한 뒤 확정하세요.</li>
+        <li><b>매장별 수수료는 수시로 바뀔 수 있습니다.</b> 이 페이지의 수치는 2026.11.19 기준이며, 돈키호테 무료 혜택도 예고 없이 바뀔 수 있습니다.</li>
+        <li><b>매장-대행사 대응표는 나하공항 안내 기준</b>으로, 지점·매장에 따라 다를 수 있습니다. 영수증 표기가 우선입니다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ────────── 출처 ────────── -->
+  <section id="sources">
+    <div class="sec-head">
+      <h2>출처</h2>
+      <p>2026.11.19 확인 기준입니다.</p>
+    </div>
+    <ul class="src-list">
+      <li>일본 관광청(JTA) — 외국인 여행자 대상 환급 방식 안내: <a href="https://www.mlit.go.jp/kankocho/tax-free/page01_000001_00028.html" target="_blank" rel="noopener">mlit.go.jp/kankocho/tax-free</a></li>
+      <li>일본 국세청(NTA) — 면세제도 환급 방식 이전 안내 (2025.4): <a href="https://www.nta.go.jp/publication/pamph/shohi/menzei/202506/pdf/0025006-106.pdf" target="_blank" rel="noopener">nta.go.jp (PDF)</a></li>
+      <li>나하공항 — 2026.11.1 시행 리펀드 방식 안내: <a href="https://www.naha-airport.co.jp/news/22570/" target="_blank" rel="noopener">naha-airport.co.jp</a></li>
+      <li>Self Tax Refund 공식 페이지 (Glory): <a href="https://www.glory.co.jp/selftaxrefund/en/" target="_blank" rel="noopener">glory.co.jp/selftaxrefund</a></li>
+      <li>J-TaxRefund 공식 FAQ: <a href="https://j-taxrefund.com/faqs" target="_blank" rel="noopener">j-taxrefund.com/faqs</a></li>
+      <li>일본 세관 — 세금 환급 키오스크·검사장 위치: <a href="https://www.customs.go.jp/kaigairyoko/taxrefund/map.htm" target="_blank" rel="noopener">customs.go.jp</a></li>
+    </ul>
+  </section>
+
+  <footer class="site">
+    <p>최근 업데이트 · 2026.11.19 — 일본 택스 리펀 가이드 페이지 신설 (15차). 이 페이지의 내용은 2026.11.19 조사 기준이며, 수수료·운영시간·대행사 정책은 바뀔 수 있습니다. 출발 전 공식 사이트에서 다시 확인하세요.</p>
+    <p>오키나와 6인 가족여행 · 2026.11.24–28 · 가족 전용 페이지입니다.</p>
+  </footer>
+</main>
+
+<script>
+/* 체크리스트 상태 저장 (이 기기 브라우저에만 저장, 가족과 공유되지 않음) */
+(function () {
+  "use strict";
+  var KEY = "okinawa-taxfree-checks-2026-v1";
+  var box = document.getElementById("taxfreeCk");
+  if (!box) return;
+  var inputs = box.querySelectorAll("input[type=checkbox]");
+  var count = document.getElementById("ckCount");
+  var reset = document.getElementById("ckReset");
+
+  function save() {
+    var state = [];
+    inputs.forEach(function (el) { state.push(el.checked ? 1 : 0); });
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+    update();
+  }
+  function update() {
+    var done = 0;
+    inputs.forEach(function (el) {
+      if (el.checked) done++;
+      var sp = el.parentNode.querySelector("span");
+      if (sp) sp.classList.toggle("done", el.checked);
+    });
+    if (count) count.textContent = done + " / " + inputs.length + " 완료";
+  }
+  try {
+    var saved = JSON.parse(localStorage.getItem(KEY) || "null");
+    if (saved && saved.length === inputs.length) {
+      inputs.forEach(function (el, i) { el.checked = !!saved[i]; });
+    }
+  } catch (e) {}
+  inputs.forEach(function (el) { el.addEventListener("change", save); });
+  if (reset) reset.addEventListener("click", function () {
+    inputs.forEach(function (el) { el.checked = false; });
+    save();
+  });
+  update();
+})();
+</script>
+</body>
+</html>
