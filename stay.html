@@ -30,18 +30,9 @@ details.fold{border:0;padding:0}details.fold>summary{font-size:1.18rem;font-weig
 .footer{margin-top:28px;padding:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}.btn{border:0;background:var(--coral);color:white;border-radius:10px;padding:9px 13px;font-weight:700}.muted{color:var(--muted)}.pill{display:inline-block;background:#f0eee7;padding:4px 9px;border-radius:999px;font-size:.84rem;margin:3px 3px 3px 0}
 @media(max-width:760px){.quick-grid{grid-template-columns:repeat(2,1fr)}.day-grid,.cols{grid-template-columns:1fr}.small-grid{grid-template-columns:1fr}.hero{padding-top:32px}.section-head{display:block}.keybox .keyrow{grid-template-columns:1fr;gap:2px}}
 @media print{body{background:white;padding-left:0}.hero{padding:20px}.sidebar,.topbar,.side-overlay,.btn,.subnav{display:none!important}main{padding:0}.panel{display:block!important;page-break-inside:avoid}.day-card,.card{box-shadow:none;break-inside:avoid}.day-grid{grid-template-columns:1fr 1fr}}
-#gate{position:fixed;inset:0;z-index:9999;background:linear-gradient(130deg,#123b45 0%,#1d5962 65%,#367b7c 100%);display:flex;align-items:center;justify-content:center;padding:20px}
-.gate-box{background:var(--paper);border-radius:18px;padding:28px 24px;max-width:360px;width:100%;text-align:center;box-shadow:0 12px 34px rgba(0,0,0,.3)}
-.gate-box h2{margin:10px 0 4px}
-.gate-box input{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:14px 0 10px}
-.gate-box .btn{width:100%}
-.gate-err{color:#b3402a;font-size:.85rem;min-height:1.3em;margin:8px 0 0}
-body.locked{overflow:hidden}
-body.locked>header,body.locked>main{visibility:hidden}
 </style>
 </head>
-<body class="locked">
-<div id="gate"><div class="gate-box"><div class="eyebrow" style="color:#1d5962">Family trip planner · Okinawa</div><h2>오키나와 가족여행 일정표</h2><p class="muted" style="margin:0;font-size:.9rem">가족 전용 페이지입니다.<br>비밀번호를 입력하세요.</p><input id="gatePw" type="password" placeholder="비밀번호" autocomplete="off"><button class="btn" id="gateBtn">일정 보기</button><p class="gate-err" id="gateErr"></p></div></div>
+<body>
 <aside class="sidebar" id="sidebar" aria-label="페이지 이동">
  <div class="side-head"><b>오키나와 가족여행</b><span>11/24(화)–28(토) · 6인</span></div>
  <button class="side-close" id="sideClose" aria-label="메뉴 닫기">✕</button>
@@ -64,7 +55,7 @@ body.locked>header,body.locked>main{visibility:hidden}
   <div class="eyebrow">Family trip planner · Okinawa</div>
   <h1>숙소 정보</h1>
   <p>르네상스 리조트 2박 · 아쿠아 펠리스 차탄 2박</p>
-  <div class="hero-meta"><span class="chip">11/24–26 르네상스</span><span class="chip">11/26–28 아쿠아 펠리스</span><span class="chip">최근 업데이트 · 2026.11.19 22:00</span></div>
+  <div class="hero-meta"><span class="chip">11/24–26 르네상스</span><span class="chip">11/26–28 아쿠아 펠리스</span><span class="chip">최근 업데이트 · 2026.11.19 22:07</span></div>
  </div>
 </header>
 <main>
@@ -191,8 +182,8 @@ body.locked>header,body.locked>main{visibility:hidden}
  </section>
  <footer class="footer">
   <p>이 페이지는 오키나와 6인 가족여행 일정표의 일부입니다. 전체 일정과 변경 이력은 <a href="index.html">일정표 페이지</a>에서 확인하세요.</p>
-  <p><strong>배포용 안내:</strong> 이 페이지는 비밀번호 화면이 적용된 공유용 버전으로, 개인 연락처·이메일·생년월일·주소·체크인 링크는 제외돼 있습니다. 전체 정보는 개인 파일을 참조하세요.</p>
-  <p class="note">최근 업데이트 · 2026.11.19 22:00</p>
+  <p><strong>배포용 안내:</strong> 이 페이지는 공유용 버전으로, 개인 연락처·이메일·생년월일·주소·체크인 링크는 제외돼 있습니다. 전체 정보는 개인 파일을 참조하세요.</p>
+  <p class="note">최근 업데이트 · 2026.11.19 22:07</p>
   <button class="btn" onclick="window.print()">이 페이지 인쇄 / PDF 저장</button>
  </footer>
 </main>
@@ -204,9 +195,6 @@ document.getElementById('sideOpen').addEventListener('click',()=>{sb.classList.a
 document.getElementById('sideClose').addEventListener('click',()=>{sb.classList.remove('open');so.hidden=true;});
 so.addEventListener('click',()=>{sb.classList.remove('open');so.hidden=true;});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){sb.classList.remove('open');so.hidden=true;}});
-</script>
-<script>
-(function(){var gate=document.getElementById('gate');var input=document.getElementById('gatePw');var err=document.getElementById('gateErr');function open(){try{sessionStorage.setItem('okinawa-gate','1');}catch(e){}gate.remove();document.body.classList.remove('locked');}try{if(sessionStorage.getItem('okinawa-gate')==='1'){gate.remove();document.body.classList.remove('locked');return;}}catch(e){}function check(){if(input.value==='okinawa1124'){open();}else{err.textContent='비밀번호가 맞지 않습니다. 다시 입력하세요.';input.value='';input.focus();}}document.getElementById('gateBtn').addEventListener('click',check);input.addEventListener('keydown',function(e){if(e.key==='Enter')check();});input.focus();})();
 </script>
 </body>
 </html>
