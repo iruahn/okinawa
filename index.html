@@ -7,19 +7,19 @@
 <title>오키나와 6인 가족여행 · 일정표 | 오키나와 6인 가족여행</title>
 <style>
 :root{--ink:#17343a;--muted:#4d6468;--sea:#123b45;--sea2:#1d5962;--sand:#f5f0e6;--paper:#fffdf8;--line:#e6e0d5;--coral:#e98262;--mint:#e5f1ec;--blue:#eaf2f4;--shadow:0 12px 34px rgba(23,52,58,.09)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7f6f1;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7f6f1;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.7;padding-left:240px}
 a{color:#176b78;text-underline-offset:3px}button{font:inherit;cursor:pointer}
 .hero{background:linear-gradient(130deg,#123b45 0%,#1d5962 65%,#367b7c 100%);color:#fff;padding:42px 22px 34px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:360px;height:360px;border:1px solid #ffffff26;border-radius:50%;right:-90px;top:-190px;box-shadow:0 0 0 35px #ffffff0b,0 0 0 75px #ffffff08}
 .wrap{max-width:1120px;margin:auto}.eyebrow{font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;color:#b8d9d5;font-weight:700}.hero h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.12;margin:12px 0}.hero p{margin:0;color:#d9e9e6}.hero-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.chip{border:1px solid #ffffff45;border-radius:999px;padding:6px 12px;font-size:.9rem;color:#f5fbfa}
 main{max-width:1120px;margin:0 auto;padding:22px 18px 70px}.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-2px}.quick{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}.quick b{display:block;font-size:1.15rem}.quick span{font-size:.9rem;color:var(--muted)}
-.nav{display:flex;gap:8px;overflow:auto;padding:22px 0 14px;position:sticky;top:0;background:#f7f6f1;z-index:5}.nav button,.nav a,.subnav button,.tabs button{white-space:nowrap;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:10px 16px;font-weight:650}.nav button.active,.nav a.active,.subnav button.active,.tabs button.active{background:var(--sea);color:#ffffff;border-color:var(--sea)}
+.sidebar{position:fixed;left:0;top:0;bottom:0;width:240px;background:var(--sea2);color:#fff;padding:20px 14px;overflow-y:auto;z-index:100}.side-head{padding:4px 8px 16px;border-bottom:1px solid rgba(255,255,255,.18);margin-bottom:12px}.side-head b{display:block;font-size:1.05rem}.side-head span{font-size:.85rem;color:#9ec3bd}.side-nav{display:flex;flex-direction:column;gap:2px}.side-nav>a{display:block;padding:10px 12px;border-radius:10px;color:#d9e9e6;text-decoration:none;font-weight:650}.side-nav>a.active{background:rgba(255,255,255,.14);color:#fff}.side-tabs{margin:2px 0 6px 12px;padding-left:10px;border-left:2px solid rgba(255,255,255,.25);display:flex;flex-direction:column;gap:2px}.side-tabs button{background:none;border:0;color:#c7dfdc;text-align:left;padding:7px 10px;border-radius:8px;font-size:.92rem;font-weight:500;cursor:pointer;font-family:inherit}.side-tabs button.active{background:rgba(255,255,255,.12);color:#fff;font-weight:700}.side-close{display:none}.side-overlay{display:none}.topbar{display:none}@media(max-width:900px){body{padding-left:0}.sidebar{width:280px;transform:translateX(-105%);transition:transform .25s ease;box-shadow:0 0 40px rgba(0,0,0,.3)}.sidebar.open{transform:none}.side-overlay{position:fixed;inset:0;background:rgba(18,59,69,.45);z-index:99;display:block}.side-overlay[hidden]{display:none}.side-close{display:block;position:absolute;top:10px;right:10px;background:none;border:0;color:#fff;font-size:1.2rem;cursor:pointer;padding:6px}.topbar{position:sticky;top:0;z-index:90;display:flex;align-items:center;gap:12px;background:var(--paper);border-bottom:1px solid var(--line);padding:10px 14px}.topbar-btn{background:none;border:1px solid var(--line);border-radius:10px;font-size:1.15rem;padding:6px 11px;cursor:pointer;color:var(--ink)}.topbar-loc{font-weight:700;font-size:.98rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.subnav{top:66px}}.nav button,.nav a,.subnav button,.tabs button{white-space:nowrap;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:10px 16px;font-weight:650}.nav button.active,.nav a.active,.subnav button.active,.tabs button.active{background:var(--sea);color:#ffffff;border-color:var(--sea)}
 section.panel{display:none;animation:fade .2s ease}section.panel.active{display:block}@keyframes fade{from{opacity:.45;transform:translateY(4px)}to{opacity:1;transform:none}}
 h2{font-size:1.7rem;margin:12px 0 6px;letter-spacing:-.03em}h3{font-size:1.18rem;margin:0 0 8px}p.lead{color:var(--muted);margin:0 0 20px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:8px 0 16px}.section-head small{color:var(--muted)}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow);margin:16px 0}.callout{background:var(--mint);border:1px solid #d2e5dc;border-radius:15px;padding:15px 17px;margin:14px 0}.warning{background:#fff2e9;border-color:#f1d7c7}.blue{background:var(--blue);border-color:#d7e5e8}
 .day-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.day-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}.day-top{padding:16px 18px;background:var(--sea);color:#fff}.day-top small{color:#c7dfdc}.day-top h3{font-size:1.2rem;margin:3px 0}.day-body{padding:15px 18px}.route{font-size:.95rem;color:var(--muted);margin-bottom:12px}.timeline{list-style:none;margin:0;padding:0}.timeline li{display:grid;grid-template-columns:86px 1fr;gap:10px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:1rem}.timeline li:last-child{border:0}.time{font-weight:750;color:var(--sea2);font-variant-numeric:tabular-nums}.note{font-size:.9rem;color:var(--muted)}#info .card>p,#info .card li{font-size:1rem}
 .tag{display:inline-block;border-radius:6px;padding:2px 7px;font-size:.8rem;font-weight:700;background:#edf1ed;color:#47655d;margin-right:4px}.tag.fixed{background:#e3eff1;color:#245b64}.tag.flex{background:#fff0e7;color:#9a563d}
-.subnav{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}.nav a{text-decoration:none}.schedule{display:none}.schedule.active{display:block}
+.subnav{display:flex;gap:8px;flex-wrap:nowrap;overflow-x:auto;margin:0 0 16px;position:sticky;top:0;z-index:5;background:#f7f6f1;padding:8px 0}
+.schedule{display:none}.schedule.active{display:block}
 table{width:100%;border-collapse:collapse;font-size:.98rem}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-size:.88rem;font-weight:700}
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}.place{display:flex;justify-content:space-between;gap:12px;align-items:start}.place a{font-size:.9rem;white-space:nowrap}
 .checklist label{display:flex;gap:10px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--line);cursor:pointer}.checklist input{margin-top:5px;accent-color:var(--sea);width:18px;height:18px;flex:none}.checklist input:checked+span{text-decoration:line-through;color:#8b9996}.progress{height:8px;background:#e8e8e1;border-radius:20px;overflow:hidden;margin:10px 0}.progress div{height:100%;width:0;background:#43877b;transition:width .2s}
@@ -27,9 +27,9 @@ details{border-bottom:1px solid var(--line);padding:12px 0}summary{font-weight:7
 details.fold{border:0;padding:0}details.fold>summary{font-size:1.18rem;font-weight:700;padding:2px 0}details.fold>*:not(summary){margin-top:12px}details.fold p:not(.note){color:inherit;font-size:1rem}
 .keybox{background:#eef5f2;border:1px solid #cfe3da;border-left:5px solid var(--sea2);border-radius:14px;padding:16px 18px;margin:14px 0}.keybox>strong{display:block;margin-bottom:6px}.keybox .keyrow{display:grid;grid-template-columns:150px 1fr;gap:10px;padding:8px 0;border-bottom:1px dashed #cfe3da}.keybox .keyrow:last-child{border:0;padding-bottom:0}.keybox .keyrow b{color:var(--sea2)}
 .small-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.small-card{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:15px}
-.footer{margin-top:28px;padding:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}.btn{border:0;background:var(--coral);color:white;border-radius:10px;padding:9px 13px;font-weight:700}.muted{color:var(--muted)}.pill{display:inline-block;background:#f0eee7;padding:4px 9px;border-radius:999px;font-size:.84rem;margin:3px 3px 3px 0}
-@media(max-width:760px){.quick-grid{grid-template-columns:repeat(2,1fr)}.day-grid,.cols{grid-template-columns:1fr}.small-grid{grid-template-columns:1fr}.hero{padding-top:32px}.nav{margin:0 -18px;padding-left:18px;padding-right:18px}.section-head{display:block}.keybox .keyrow{grid-template-columns:1fr;gap:2px}}
-@media print{body{background:white}.hero{padding:20px}.nav,.btn,.subnav,.tabs{display:none!important}main{padding:0}.panel{display:block!important;page-break-inside:avoid}.day-card,.card{box-shadow:none;break-inside:avoid}.day-grid{grid-template-columns:1fr 1fr}}
+.footer{margin-top:28px;padding:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}.changes{list-style:none;margin:0;padding:0}.changes li{padding:9px 0;border-bottom:1px dashed var(--line);font-size:.95rem;line-height:1.6}.changes li:last-child{border:0}.changes li b{color:var(--sea2)}.btn{border:0;background:var(--coral);color:white;border-radius:10px;padding:9px 13px;font-weight:700}.muted{color:var(--muted)}.pill{display:inline-block;background:#f0eee7;padding:4px 9px;border-radius:999px;font-size:.84rem;margin:3px 3px 3px 0}
+@media(max-width:760px){.quick-grid{grid-template-columns:repeat(2,1fr)}.day-grid,.cols{grid-template-columns:1fr}.small-grid{grid-template-columns:1fr}.hero{padding-top:32px}.section-head{display:block}.keybox .keyrow{grid-template-columns:1fr;gap:2px}}
+@media print{body{background:white;padding-left:0}.hero{padding:20px}.sidebar,.topbar,.side-overlay,.btn,.subnav{display:none!important}main{padding:0}.panel{display:block!important;page-break-inside:avoid}.day-card,.card{box-shadow:none;break-inside:avoid}.day-grid{grid-template-columns:1fr 1fr}}
 #gate{position:fixed;inset:0;z-index:9999;background:linear-gradient(130deg,#123b45 0%,#1d5962 65%,#367b7c 100%);display:flex;align-items:center;justify-content:center;padding:20px}
 .gate-box{background:var(--paper);border-radius:18px;padding:28px 24px;max-width:360px;width:100%;text-align:center;box-shadow:0 12px 34px rgba(0,0,0,.3)}
 .gate-box h2{margin:10px 0 4px}
@@ -42,38 +42,47 @@ body.locked>header,body.locked>main{visibility:hidden}
 </head>
 <body class="locked">
 <div id="gate"><div class="gate-box"><div class="eyebrow" style="color:#1d5962">Family trip planner · Okinawa</div><h2>오키나와 가족여행 일정표</h2><p class="muted" style="margin:0;font-size:.9rem">가족 전용 페이지입니다.<br>비밀번호를 입력하세요.</p><input id="gatePw" type="password" placeholder="비밀번호" autocomplete="off"><button class="btn" id="gateBtn">일정 보기</button><p class="gate-err" id="gateErr"></p></div></div>
-<header class="hero">
- <div class="wrap">
-  <div class="eyebrow">Family trip planner · Okinawa</div>
-  <h1>오키나와 6인 가족여행</h1>
-  <p>함께 즐기고, 무리하지 않고, 좋은 추억을 남기는 4박 5일</p>
-  <div class="hero-meta"><span class="chip">2026.11.24(화) – 11.28(토)</span><span class="chip">성인 5명 + 어린이 1명</span><span class="chip">렌터카 여행</span><span class="chip">최근 업데이트 · 2026.11.19 17:25</span></div>
- </div>
-</header>
-
-<main>
- <div class="quick-grid">
-  <div class="quick"><b>4박 5일</b><span>11월 24일 – 28일</span></div>
-  <div class="quick"><b>르네상스 2박</b><span>11/24 – 11/26 확정</span></div>
-  <div class="quick"><b>아쿠아 펠리스 차탄 2박</b><span>11/26 – 11/28 확정</span></div>
-  <div class="quick"><b>6명</b><span>부모님 · 부부 · 남동생 · 딸</span></div>
- </div>
-  <nav class="nav" aria-label="페이지 이동">
+<aside class="sidebar" id="sidebar" aria-label="페이지 이동">
+ <div class="side-head"><b>오키나와 가족여행</b><span>11/24(화)–28(토) · 6인</span></div>
+ <button class="side-close" id="sideClose" aria-label="메뉴 닫기">✕</button>
+ <nav class="side-nav">
   <a href="index.html" class="active">일정표</a>
+  <div class="side-tabs">
+   <button class="active" data-tab="overview">여행 한눈에</button>
+   <button data-tab="itinerary">날짜별 일정</button>
+   <button data-tab="backup">예비 일정</button>
+   <button data-tab="check">준비 체크</button>
+  </div>
   <a href="stay.html">숙소</a>
   <a href="car.html">렌터카</a>
   <a href="guide.html">준비 가이드</a>
   <a href="kids.html">🐬 키즈 가이드</a>
   <a href="taxfree.html">🧾 택스 리펀</a>
  </nav>
- <nav class="tabs" aria-label="페이지 내 메뉴">
-  <button class="active" data-tab="overview">여행 한눈에</button>
-  <button data-tab="itinerary">날짜별 일정</button>
-  <button data-tab="backup">예비 일정</button>
-  <button data-tab="check">준비 체크</button>
- </nav>
+</aside>
+<div class="side-overlay" id="sideOverlay" hidden></div>
+<div class="topbar">
+ <button class="topbar-btn" id="sideOpen" aria-label="메뉴 열기">☰</button>
+ <span class="topbar-loc" id="topLoc">일정표 › 여행 한눈에</span>
+</div>
+<header class="hero">
+ <div class="wrap">
+  <div class="eyebrow">Family trip planner · Okinawa</div>
+  <h1>오키나와 6인 가족여행</h1>
+  <p>함께 즐기고, 무리하지 않고, 좋은 추억을 남기는 4박 5일</p>
+  <div class="hero-meta"><span class="chip">2026.11.24(화) – 11.28(토)</span><span class="chip">성인 5명 + 어린이 1명</span><span class="chip">렌터카 여행</span><span class="chip">최근 업데이트 · 2026.11.19 22:00</span></div>
+ </div>
+</header>
+
+<main>
 <section id="overview" class="panel active">
   <div class="section-head"><div><h2>여행의 큰 그림</h2><p class="lead">북부 관광은 26일에 모으고, 27일은 남부 관광과 차탄 저녁을 즐기는 구성입니다.</p></div></div>
+ <div class="quick-grid">
+  <div class="quick"><b>4박 5일</b><span>11월 24일 – 28일</span></div>
+  <div class="quick"><b>르네상스 2박</b><span>11/24 – 11/26 확정</span></div>
+  <div class="quick"><b>아쿠아 펠리스 차탄 2박</b><span>11/26 – 11/28 확정</span></div>
+  <div class="quick"><b>6명</b><span>부모님 · 부부 · 남동생 · 딸</span></div>
+ </div>
   <div class="callout"><strong>가장 추천하는 흐름</strong><br>나하공항 → 르네상스 리조트(2박) → 츄라우미·만좌모 → 아쿠아 펠리스 차탄(2박) → 오키나와 월드·아메리칸 빌리지 → 우미카지 테라스 → 공항</div>
   <div class="callout warning"><strong>출발 전 확인 4가지 (최근 업데이트에서 추가)</strong><br>① 항공 운임 종류와 수하물 15kg 적용 여부 · ② 돌핀 비참가자 1명 확정 · ③ 아쿠아 펠리스 배정 건물 본관 확정 ✓ (호텔 메일 확인) · ④ Guest My Page 사전 등록과 Check-in Code 저장</div>
   <div class="day-grid">
@@ -163,13 +172,38 @@ body.locked>header,body.locked>main{visibility:hidden}
   <a href="https://www.umikajiterrace.com/" target="_blank" rel="noopener">우미카지 테라스</a>
   <p>이 페이지의 시간과 이동시간은 제공된 조사 보고서를 바탕으로 만든 계획용 안내입니다. 실제 운영시간·요금·교통·예약 조건은 변동될 수 있으므로 출발 전 공식 사이트와 예약처에서 확인하세요.</p>
   <p><strong>배포용 안내:</strong> 이 페이지는 비밀번호 화면이 적용된 공유용 버전으로, 개인 연락처·이메일·생년월일·주소·체크인 링크는 제외돼 있습니다. 전체 정보는 개인 파일을 참조하세요.</p>
-  <p class="note">최근 업데이트(2026.11.19 17:25): 항공사명·수하물·체크인 마감 정정, 운영시간 검증 결과 반영, 확인 필요 항목 표시, “여행 준비 정보” 탭과 체크리스트 항목 추가, 여행 준비 정보 탭 폰트 크기 통일. 2차 수정: Day 3 시간표 조정(09:30 출발), Day 2 리조트 혜택 일정화, 온천·수영장 시간 반영, 식당 후보 추가, 인천 출발 일정 추가. 3차 수정: 딸 초1 표기 통일, 11/27 어머니 생신·U-SHI 저녁 확정 반영. 4차 수정: Booking.com 예약 확인 — 아쿠아 펠리스 Premium Suite Condo·요금 ¥97,014·체크인 15:00~22:00·무료 취소 11/18까지 확정, 확정 예산 소계 ¥550,814로 업데이트. 5차 수정: 하온이 키즈 가이드(kids.html) 연결 — 네비 링크·Day 2 링크 추가. 6차 수정(11/16 13:01): 아쿠아 펠리스 결제 방식 정정 — '현장 결제'에서 '사전 카드 자동 청구 (11/16 23:46 예정)'로 바로잡음. 7차 수정(11/16 13:04): 최근 업데이트 표기에 시간 추가 — 헤더와 수정 항목에 시간을 함께 기록. 8차 수정(11/16 13:06): 숙소 비교표 결제 행 정정 — 르네상스 칸이 '사전 청구'로 잘못 바뀐 것을 '현지 지불'로 되돌림. 9차 수정(11/16 13:09): 상단 '최근 업데이트' 칩 날짜를 2026.11.12에서 최신 시간으로 맞춤. 10차 수정(11/16 13:16): 가독성 개선 — 숙소·준비 정보·렌터카 접기/펼치기, 패널별 핵심 요약 카드, 본문 글자 크기·여백 확대. 11차 수정(11/17 07:29): 아쿠아 펠리스 결제 표기 정정 — '사전 카드 자동 청구' 예정 표기를 '결제 완료 (11/16)'로 바로잡음 (Booking.com 결제 완료 메일 확인). 12차 수정(11/17 19:50): 11/25 저녁 식당 확정 — Royce (Loy's Sushi Bar) 19:15 예약 확정으로 식사표·Day 2 타임라인에 반영하고, 저녁 시간에 맞춰 온천을 21:00으로 조정. 13차 수정(11/18 09:09): 아쿠아 펠리스 본관 확정 — 호텔 안내 메일(11/18)로 Main Building 배정 확인, 배정 건물 관련 표기 정리 및 체크인 코드 발급 시점 정정. 14차 수정(11/19 08:00): U-SHI 11/27 생신 저녁 확정 사항 반영 — TableCheck 예약 확정(6명: 성인 5+어린이 1) 확인, 고기 케이크 'Happy Birthday' 사전 주문·좌석 2시간 표기 추가, 관련 체크리스트 항목 완료 처리. 15차 수정(11/19 10:24): 택스 리펀 가이드 페이지(taxfree.html) 추가 — 2026.11.1 시행 환급 방식 정리, 대행사 비교·오키나와 매장별 대행사·나하공항 동선·토스 카드 확인사항 수록, 네비 링크·Day 5 링크 추가. 16차 수정(11/19 10:58): 세 페이지 테마 통일(모래 & 바다) — 키즈 가이드·택스 리펀 페이지를 일정표 테마로 맞춤. Day 3(11/26) 순서 변경 — 츄라우미 관람 후 만좌모에서 일몰(17:37) 보고 차탄 이동, 체크아웃 11:00 정상화, 차탄 도착 19:00경으로 조정. 17차 수정(11/19 12:48): 11/25 Royce 저녁 17:30으로 변경 확정 — 리조트 답장(11/19)으로 17:30 6명 확정, 붙인 테이블·생신 arrangement 확인. 저녁 19:15→17:30, 온천 21:00→20:00, 일몰 산책 16:00–17:00으로 앞당김. 18차 수정(11/19 15:28): 렌터카 알파드 좌석 배치·짐 공간 확인 내용 반영 — 7인승 2-2-3 좌석 배치와 가족 좌석 배치 계획, 3열 슬라이드·반 접기 시 캐리어 적재 수량, 제2 운전자 현장 등록 안내 추가, 관련 체크리스트 항목 완료 처리. 페이지 분리 — 메뉴가 많아진 일정표를 일정표·숙소·렌터카·준비 가이드 4개 페이지로 나눔, 상단 네비를 6개 링크로 정리. 19차 수정(11/19 17:25): 상단 히어로(녹색 배너) 통일 — 키즈 가이드·택스 리펀 페이지의 히어로를 일정표와 같은 폰트·여백·구조(브랜드 문구·제목·설명·칩)로 맞춤. 키즈 가이드의 클럽 사비 라이트 토글은 히어로에서 본문 상단으로 이동. 배포용: 비밀번호 화면 추가, 개인 연락처·이메일·생년월일·주소·체크인 링크 제외.</p>
+  <p class="note">최근 업데이트 · 2026.11.19 22:00</p>
+  <details class="fold changelog">
+   <summary>변경 이력</summary>
+   <ul class="changes">
+    <li><b>20차 수정(11/19 22:00)</b>: 네비게이션 사이드바형으로 변경 — 왼쪽 메뉴에 페이지와 그 안의 탭을 함께 표시하고 현재 위치를 상단에 표시, 모바일에서는 ☰ 버튼으로 메뉴를 여닫음. 요약 카드를 여행 한눈에 패널 안으로 이동. 변경 이력 접기·목록화 — 푸터의 긴 변경 이력 문단을 접을 수 있는 목록으로 변경. 날짜 선택 버튼 고정 — 날짜별 일정·예비 일정의 날짜 버튼이 스크롤해도 상단에 남아 선택한 날짜를 계속 볼 수 있도록 변경.</li>
+    <li><b>19차 수정(11/19 17:25)</b>: 상단 히어로(녹색 배너) 통일 — 키즈 가이드·택스 리펀 페이지의 히어로를 일정표와 같은 폰트·여백·구조(브랜드 문구·제목·설명·칩)로 맞춤. 키즈 가이드의 클럽 사비 라이트 토글은 히어로에서 본문 상단으로 이동.</li>
+    <li><b>18차 수정(11/19 15:28)</b>: 렌터카 알파드 좌석 배치·짐 공간 확인 내용 반영 — 7인승 2-2-3 좌석 배치와 가족 좌석 배치 계획, 3열 슬라이드·반 접기 시 캐리어 적재 수량, 제2 운전자 현장 등록 안내 추가, 관련 체크리스트 항목 완료 처리. 페이지 분리 — 메뉴가 많아진 일정표를 일정표·숙소·렌터카·준비 가이드 4개 페이지로 나눔, 상단 네비를 6개 링크로 정리.</li>
+    <li><b>17차 수정(11/19 12:48)</b>: 11/25 Royce 저녁 17:30으로 변경 확정 — 리조트 답장(11/19)으로 17:30 6명 확정, 붙인 테이블·생신 arrangement 확인. 저녁 19:15→17:30, 온천 21:00→20:00, 일몰 산책 16:00–17:00으로 앞당김.</li>
+    <li><b>16차 수정(11/19 10:58)</b>: 세 페이지 테마 통일(모래 & 바다) — 키즈 가이드·택스 리펀 페이지를 일정표 테마로 맞춤. Day 3(11/26) 순서 변경 — 츄라우미 관람 후 만좌모에서 일몰(17:37) 보고 차탄 이동, 체크아웃 11:00 정상화, 차탄 도착 19:00경으로 조정.</li>
+    <li><b>15차 수정(11/19 10:24)</b>: 택스 리펀 가이드 페이지(taxfree.html) 추가 — 2026.11.1 시행 환급 방식 정리, 대행사 비교·오키나와 매장별 대행사·나하공항 동선·토스 카드 확인사항 수록, 네비 링크·Day 5 링크 추가.</li>
+    <li><b>14차 수정(11/19 08:00)</b>: U-SHI 11/27 생신 저녁 확정 사항 반영 — TableCheck 예약 확정(6명: 성인 5+어린이 1) 확인, 고기 케이크 'Happy Birthday' 사전 주문·좌석 2시간 표기 추가, 관련 체크리스트 항목 완료 처리.</li>
+    <li><b>13차 수정(11/18 09:09)</b>: 아쿠아 펠리스 본관 확정 — 호텔 안내 메일(11/18)로 Main Building 배정 확인, 배정 건물 관련 표기 정리 및 체크인 코드 발급 시점 정정.</li>
+    <li><b>12차 수정(11/17 19:50)</b>: 11/25 저녁 식당 확정 — Royce (Loy's Sushi Bar) 19:15 예약 확정으로 식사표·Day 2 타임라인에 반영하고, 저녁 시간에 맞춰 온천을 21:00으로 조정.</li>
+    <li><b>11차 수정(11/17 07:29)</b>: 아쿠아 펠리스 결제 표기 정정 — '사전 카드 자동 청구' 예정 표기를 '결제 완료 (11/16)'로 바로잡음 (Booking.com 결제 완료 메일 확인).</li>
+    <li><b>10차 수정(11/16 13:16)</b>: 가독성 개선 — 숙소·준비 정보·렌터카 접기/펼치기, 패널별 핵심 요약 카드, 본문 글자 크기·여백 확대.</li>
+    <li><b>9차 수정(11/16 13:09)</b>: 상단 '최근 업데이트' 칩 날짜를 2026.11.12에서 최신 시간으로 맞춤.</li>
+    <li><b>8차 수정(11/16 13:06)</b>: 숙소 비교표 결제 행 정정 — 르네상스 칸이 '사전 청구'로 잘못 바뀐 것을 '현지 지불'로 되돌림.</li>
+    <li><b>7차 수정(11/16 13:04)</b>: 최근 업데이트 표기에 시간 추가 — 헤더와 수정 항목에 시간을 함께 기록.</li>
+    <li><b>6차 수정(11/16 13:01)</b>: 아쿠아 펠리스 결제 방식 정정 — '현장 결제'에서 '사전 카드 자동 청구 (11/16 23:46 예정)'로 바로잡음.</li>
+    <li><b>5차 수정</b>: 하온이 키즈 가이드(kids.html) 연결 — 네비 링크·Day 2 링크 추가.</li>
+    <li><b>4차 수정</b>: Booking.com 예약 확인 — 아쿠아 펠리스 Premium Suite Condo·요금 ¥97,014·체크인 15:00~22:00·무료 취소 11/18까지 확정, 확정 예산 소계 ¥550,814로 업데이트.</li>
+    <li><b>3차 수정</b>: 딸 초1 표기 통일, 11/27 어머니 생신·U-SHI 저녁 확정 반영.</li>
+    <li><b>2차 수정</b>: Day 3 시간표 조정(09:30 출발), Day 2 리조트 혜택 일정화, 온천·수영장 시간 반영, 식당 후보 추가, 인천 출발 일정 추가.</li>
+    <li><b>1차 수정</b>: 항공사명·수하물·체크인 마감 정정, 운영시간 검증 결과 반영, 확인 필요 항목 표시, “여행 준비 정보” 탭과 체크리스트 항목 추가, 여행 준비 정보 탭 폰트 크기 통일.</li>
+   </ul>
+  <p class="note">배포용: 비밀번호 화면 추가, 개인 연락처·이메일·생년월일·주소·체크인 링크 제외.</p></details>
   <button class="btn" onclick="window.print()">일정 인쇄 / PDF 저장</button>
  </footer>
 </main>
 <script>
-const tabs=[...document.querySelectorAll('.tabs button')];
-tabs.forEach(b=>b.addEventListener('click',()=>{tabs.forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===b.dataset.tab));window.scrollTo({top:document.querySelector('.nav').offsetTop-5,behavior:'smooth'});}));
+const tabs=[...document.querySelectorAll('.side-tabs button')];
+tabs.forEach(b=>b.addEventListener('click',()=>{tabs.forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===b.dataset.tab));document.getElementById('topLoc').textContent='일정표 › '+b.textContent;document.getElementById('sidebar').classList.remove('open');document.getElementById('sideOverlay').hidden=true;window.scrollTo({top:document.querySelector('main').offsetTop-60,behavior:'smooth'});}));
 function wireSubnav(buttonId,attr,prefix){const bs=[...document.querySelectorAll('#'+buttonId+' button')];bs.forEach(b=>b.addEventListener('click',()=>{bs.forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.schedule[id^="'+prefix+'"]').forEach(s=>s.classList.toggle('active',s.id===b.dataset[attr]));}));}
 wireSubnav('dayButtons','day','d');wireSubnav('backupButtons','back','b');
 const checks=[...document.querySelectorAll('.checklist input[type=checkbox]')];
@@ -179,6 +213,11 @@ function update(){const done=checks.filter(c=>c.checked).length;document.getElem
 checks.forEach(c=>c.addEventListener('change',update));document.getElementById('resetChecks').addEventListener('click',()=>{checks.forEach(c=>c.checked=false);update();});update();
 window.addEventListener('beforeprint',()=>{document.querySelectorAll('details').forEach(d=>{d.dataset.wasOpen=d.open?'1':'';d.open=true;});});
 window.addEventListener('afterprint',()=>{document.querySelectorAll('details').forEach(d=>{if(!d.dataset.wasOpen)d.open=false;});});
+const sb=document.getElementById('sidebar'),so=document.getElementById('sideOverlay');
+document.getElementById('sideOpen').addEventListener('click',()=>{sb.classList.add('open');so.hidden=false;});
+document.getElementById('sideClose').addEventListener('click',()=>{sb.classList.remove('open');so.hidden=true;});
+so.addEventListener('click',()=>{sb.classList.remove('open');so.hidden=true;});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){sb.classList.remove('open');so.hidden=true;}});
 </script>
 <script>
 (function(){var gate=document.getElementById('gate');var input=document.getElementById('gatePw');var err=document.getElementById('gateErr');function open(){try{sessionStorage.setItem('okinawa-gate','1');}catch(e){}gate.remove();document.body.classList.remove('locked');}try{if(sessionStorage.getItem('okinawa-gate')==='1'){gate.remove();document.body.classList.remove('locked');return;}}catch(e){}function check(){if(input.value==='okinawa1124'){open();}else{err.textContent='비밀번호가 맞지 않습니다. 다시 입력하세요.';input.value='';input.focus();}}document.getElementById('gateBtn').addEventListener('click',check);input.addEventListener('keydown',function(e){if(e.key==='Enter')check();});input.focus();})();
