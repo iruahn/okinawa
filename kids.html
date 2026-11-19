@@ -27,7 +27,7 @@
     background:var(--bg); color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
     line-height:1.7; -webkit-text-size-adjust:100%;
-    padding-bottom:64px;
+    padding-bottom:64px; padding-left:240px;
   }
   .wrap{width:100%; max-width:1120px; margin:0 auto; padding:0 16px}
 
@@ -70,21 +70,33 @@
   .switch[aria-pressed="true"] .track{background:#ffd166}
   .switch[aria-pressed="true"] .knob{transform:translateX(18px)}
 
-  /* ── tabs ── */
-  .tabs{
-    position:sticky; top:0; z-index:30; background:#f7f6f1;
-    border-bottom:1px solid var(--line);
+  /* ── sidebar nav (20차 패턴) ── */
+  .sidebar{position:fixed;left:0;top:0;bottom:0;width:240px;background:var(--sea2);color:#fff;padding:20px 14px;overflow-y:auto;z-index:100}
+  .side-head{padding:4px 8px 16px;border-bottom:1px solid rgba(255,255,255,.18);margin-bottom:12px}
+  .side-head b{display:block;font-size:1.05rem}
+  .side-head span{font-size:.85rem;color:#9ec3bd}
+  .side-nav{display:flex;flex-direction:column;gap:2px}
+  .side-nav>a{display:block;padding:10px 12px;border-radius:10px;color:#d9e9e6;text-decoration:none;font-weight:650}
+  .side-nav>a.active{background:rgba(255,255,255,.14);color:#fff}
+  .side-tabs{margin:2px 0 6px 12px;padding-left:10px;border-left:2px solid rgba(255,255,255,.25);display:flex;flex-direction:column;gap:2px}
+  .side-tabs button,.side-tabs a{background:none;border:0;color:#c7dfdc;text-align:left;padding:7px 10px;border-radius:8px;font-size:.92rem;font-weight:500;cursor:pointer;font-family:inherit;text-decoration:none;display:block}
+  .side-tabs button.active,.side-tabs a.active{background:rgba(255,255,255,.12);color:#fff;font-weight:700}
+  .side-tabs .tab[aria-selected="true"]{background:rgba(255,255,255,.12);color:#fff;font-weight:700}
+  .side-tabs .n{font-weight:800;color:#ffb4a2}
+  .side-close{display:none}
+  .side-overlay{display:none}
+  .topbar{display:none}
+  @media(max-width:900px){
+    body{padding-left:0}
+    .sidebar{width:280px;transform:translateX(-105%);transition:transform .25s ease;box-shadow:0 0 40px rgba(0,0,0,.3)}
+    .sidebar.open{transform:none}
+    .side-overlay{position:fixed;inset:0;background:rgba(18,59,69,.45);z-index:99;display:block}
+    .side-overlay[hidden]{display:none}
+    .side-close{display:block;position:absolute;top:10px;right:10px;background:none;border:0;color:#fff;font-size:1.2rem;cursor:pointer;padding:6px}
+    .topbar{position:sticky;top:0;z-index:90;display:flex;align-items:center;gap:12px;background:var(--paper);border-bottom:1px solid var(--line);padding:10px 14px}
+    .topbar-btn{background:none;border:1px solid var(--line);border-radius:10px;font-size:1.15rem;padding:6px 11px;cursor:pointer;color:var(--ink)}
+    .topbar-loc{font-weight:700;font-size:.98rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   }
-  .tabs-inner{display:flex; gap:6px; overflow-x:auto; padding:9px 16px; max-width:1120px; margin:0 auto; scrollbar-width:none}
-  .tabs-inner::-webkit-scrollbar{display:none}
-  .tab{
-    flex:0 0 auto; font:inherit; font-size:14px; font-weight:700; color:var(--muted);
-    background:transparent; border:1px solid transparent; border-radius:999px;
-    padding:8px 14px; cursor:pointer; white-space:nowrap;
-  }
-  .tab[aria-selected="true"]{background:var(--sea); color:#fff; border-color:var(--sea)}
-  .tab .n{font-weight:800; color:var(--coral)}
-  a.tab{text-decoration:none}
 
   /* ── filter bar ── */
   .filters{margin:18px 0 0; background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); padding:14px; box-shadow:var(--shadow)}
@@ -223,7 +235,7 @@
 
   /* ── 비밀번호 잠금 ── */
   body.locked{overflow:hidden}
-  body.locked>.hero, body.locked>.tabs, body.locked>main{visibility:hidden}
+  body.locked>.hero, body.locked>.sidebar, body.locked>.topbar, body.locked>main{visibility:hidden}
   #gate{
     position:fixed; inset:0; z-index:1000; display:flex; align-items:center; justify-content:center; padding:20px;
     background:linear-gradient(130deg,#123b45 0%,#1d5962 65%,#367b7c 100%);
@@ -246,6 +258,7 @@
   }
   .gate-btn:active{transform:translateY(1px)}
   .gate-err{margin:10px 0 0; min-height:1.2em; font-size:12.5px; color:#b3402a}
+  @media print{body{padding-left:0}.sidebar,.topbar,.side-overlay{display:none!important}}
 </style>
 </head>
 <body class="locked">
@@ -369,6 +382,28 @@
 })();
 </script>
 
+<aside class="sidebar" id="sidebar" aria-label="페이지 이동">
+ <div class="side-head"><b>오키나와 가족여행</b><span>11/24(화)–28(토) · 6인</span></div>
+ <button class="side-close" id="sideClose" aria-label="메뉴 닫기">✕</button>
+ <nav class="side-nav">
+  <a href="index.html">일정표</a>
+  <a href="stay.html">숙소</a>
+  <a href="car.html">렌터카</a>
+  <a href="guide.html">준비 가이드</a>
+  <a href="kids.html" class="active">🐬 키즈 가이드</a>
+  <div class="side-tabs">
+   <button class="tab" role="tab" data-act="tab" data-tab="activities" aria-selected="true">① 액티비티 찾기</button>
+   <button class="tab" role="tab" data-act="tab" data-tab="plan" aria-selected="false">② 나만의 일정 <span class="n" id="tabPlanCount">0</span></button>
+   <button class="tab" role="tab" data-act="tab" data-tab="tips" aria-selected="false">③ 꿀팁 &amp; 체크리스트</button>
+  </div>
+  <a href="taxfree.html">🧾 택스 리펀</a>
+ </nav>
+</aside>
+<div class="side-overlay" id="sideOverlay" hidden></div>
+<div class="topbar">
+ <button class="topbar-btn" id="sideOpen" aria-label="메뉴 열기">☰</button>
+ <span class="topbar-loc" id="topLoc">키즈 가이드 › 액티비티 찾기</span>
+</div>
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">Family trip planner · Okinawa</div>
@@ -382,15 +417,6 @@
     </div>
   </div>
 </header>
-
-<nav class="tabs" role="tablist" aria-label="보기 선택">
-  <div class="tabs-inner">
-    <a class="tab" href="index.html">← 전체 일정표</a>
-    <button class="tab" role="tab" data-act="tab" data-tab="activities" aria-selected="true">① 액티비티 찾기</button>
-    <button class="tab" role="tab" data-act="tab" data-tab="plan" aria-selected="false">② 나만의 일정 <span class="n" id="tabPlanCount">0</span></button>
-    <button class="tab" role="tab" data-act="tab" data-tab="tips" aria-selected="false">③ 꿀팁 &amp; 체크리스트</button>
-  </div>
-</nav>
 
 <main class="wrap">
   <div class="csl-box">
@@ -571,7 +597,7 @@
     </div>
     <footer class="site">
       르네상스 리조트 오키나와 · 2026.11.24–26 · 안성호 님 가족(하온이) 키즈 가이드 ·
-      공식 사이트 확인일 2026-11-14. 표시 가격은 세금 포함, 인원·팀 단위는 카드에 적었습니다.
+      공식 사이트 확인일 2026-11-14. 표시 가격은 세금 포함, 인원·팀 단위는 카드에 적었습니다. 최근 업데이트 · 2026.11.19 22:00 — 사이드바 네비게이션 통일(21차).
     </footer>
   </section>
 </main>
@@ -1004,6 +1030,9 @@ function renderTabs() {
   for (var i = 0; i < tabs.length; i++) {
     tabs[i].setAttribute("aria-selected", tabs[i].getAttribute("data-tab") === state.tab ? "true" : "false");
   }
+  var tabLabels = {activities: "액티비티 찾기", plan: "나만의 일정", tips: "꿀팁 & 체크리스트"};
+  var topLoc = document.getElementById("topLoc");
+  if (topLoc) topLoc.textContent = "키즈 가이드 › " + (tabLabels[state.tab] || "");
   document.getElementById("panel-activities").classList.toggle("hidden", state.tab !== "activities");
   document.getElementById("panel-plan").classList.toggle("hidden", state.tab !== "plan");
   document.getElementById("panel-tips").classList.toggle("hidden", state.tab !== "tips");
@@ -1292,6 +1321,8 @@ document.addEventListener("click", function (ev) {
   if (act === "tab") {
     state.tab = el.getAttribute("data-tab");
     save(); renderAll();
+    document.getElementById("sidebar").classList.remove("open");
+    document.getElementById("sideOverlay").hidden = true;
     window.scrollTo({ top: 0, behavior: "smooth" });
     return;
   }
@@ -1461,6 +1492,17 @@ function fallbackCopy(text) {
 
 /* ─────────────────────────── 시작 ─────────────────────────── */
 renderAll();
+</script>
+<script>
+/* 사이드바 서랍 (모바일) */
+(function () {
+  "use strict";
+  var sb = document.getElementById("sidebar"), so = document.getElementById("sideOverlay");
+  document.getElementById("sideOpen").addEventListener("click", function () { sb.classList.add("open"); so.hidden = false; });
+  document.getElementById("sideClose").addEventListener("click", function () { sb.classList.remove("open"); so.hidden = true; });
+  so.addEventListener("click", function () { sb.classList.remove("open"); so.hidden = true; });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") { sb.classList.remove("open"); so.hidden = true; } });
+})();
 </script>
 </body>
 </html>
